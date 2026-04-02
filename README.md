@@ -5,7 +5,8 @@ Repositorio de clases, guías y evaluaciones de Matemática.
 ## Estructura
 
 - Fundamentos de Matemática Básica
-- Razonamiento Lógico
-- Aplicaciones en Agronomía
+- Pensamiento Matemático
+- Calculo I
+- Introducción a la Matemática
 
 Autor: Luis Tulio González
