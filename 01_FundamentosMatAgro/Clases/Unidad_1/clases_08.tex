@@ -1,0 +1,345 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+
+%==================================================
+% PAQUETES
+%==================================================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+
+%==================================================
+% COLORES AGRONOMÍA
+%==================================================
+\definecolor{Primary}{HTML}{1B5E20}
+\definecolor{Secondary}{HTML}{2E7D32}
+\definecolor{Accent}{HTML}{66BB6A}
+
+\setbeamercolor{frametitle}{bg=Primary, fg=white}
+\setbeamercolor{title}{fg=Primary}
+\setbeamercolor{structure}{fg=Primary}
+
+%==================================================
+\title{Expresiones Algebraicas en Agronomía}
+\subtitle{Nivel Medio - Avanzado}
+\author{MAT016}
+\date{}
+
+%==================================================
+\begin{document}
+	
+	%--------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%--------------------------------------------------
+	\begin{frame}{Ruta de la clase}
+		\tableofcontents
+	\end{frame}
+	
+	%==================================================
+	\section{Contexto Agronómico}
+	
+	%--------------------------------------------------
+	\begin{frame}{Motivación}
+		En agronomía, muchos fenómenos se modelan con expresiones algebraicas:
+		
+		\pause
+		
+		\begin{itemize}
+			\item Producción de cultivos 🌾
+			\item Uso de fertilizantes 🌱
+			\item Sistemas de riego 💧
+		\end{itemize}
+		
+		\pause
+		
+		\textbf{Ejemplo:}
+		
+		\[
+		3x^2y + 5x^2y - 2xy^2
+		\]
+		
+		\pause
+		
+		Representa producción dependiendo de:
+		\begin{itemize}
+			\item $x$: fertilización
+			\item $y$: humedad del suelo
+		\end{itemize}
+		
+	\end{frame}
+	
+	%==================================================
+	\section{Términos y Expresiones}
+	
+	%--------------------------------------------------
+	\begin{frame}{Términos Algebraicos}
+		Un término algebraico tiene:
+		
+		\pause
+		
+		\begin{itemize}
+			\item Coeficiente
+			\item Variable
+			\item Exponente
+		\end{itemize}
+		
+		\pause
+		
+		\textbf{Ejemplo agronómico:}
+		
+		\[
+		7x^3y^2
+		\]
+		
+		\pause
+		
+		Interpretación:
+		\begin{itemize}
+			\item Fertilización elevada
+			\item Alta interacción con humedad
+		\end{itemize}
+		
+	\end{frame}
+	
+	%--------------------------------------------------
+	\begin{frame}{Términos Semejantes}
+		\[
+		3x^2y + 5x^2y - 2xy^2
+		\]
+		
+		\pause
+		
+		\begin{itemize}
+			\item $3x^2y$ y $5x^2y$ → semejantes
+			\item $2xy^2$ → distinto comportamiento agrícola
+		\end{itemize}
+		
+		\pause
+		
+		\textbf{Resultado:}
+		\[
+		8x^2y - 2xy^2
+		\]
+		
+	\end{frame}
+	
+	%==================================================
+	\section{Operaciones Algebraicas}
+	
+	%--------------------------------------------------
+	\begin{frame}{Suma y Resta}
+		Producción en dos parcelas:
+		
+		\[
+		(4x^2 + 3xy - 2y^2) + (5x^2 - xy + y^2)
+		\]
+		
+		\pause
+		
+		\[
+		= 9x^2 + 2xy - y^2
+		\]
+		
+		\pause
+		
+		\textbf{Interpretación:}
+		\begin{itemize}
+			\item Se combinan producciones
+			\item Se reducen efectos similares
+		\end{itemize}
+		
+	\end{frame}
+	
+	%--------------------------------------------------
+	\begin{frame}{Multiplicación}
+		Aplicación de fertilizante:
+		
+		\[
+		3x(2x^2 - 5xy + y^2)
+		\]
+		
+		\pause
+		
+		\[
+		= 6x^3 - 15x^2y + 3xy^2
+		\]
+		
+		\pause
+		
+		\textbf{Interpretación:}
+		\begin{itemize}
+			\item Escalamiento del cultivo
+			\item Efectos no lineales
+		\end{itemize}
+		
+	\end{frame}
+	
+	%==================================================
+	\section{Productos Notables}
+	
+	%--------------------------------------------------
+	\begin{frame}{Cuadrado de Binomio}
+		\[
+		(x + 3y)^2
+		\]
+		
+		\pause
+		
+		\[
+		= x^2 + 6xy + 9y^2
+		\]
+		
+		\pause
+		
+		\textbf{Interpretación agrícola:}
+		\begin{itemize}
+			\item $x^2$: crecimiento base
+			\item $6xy$: interacción suelo-humedad
+			\item $9y^2$: efecto climático fuerte
+		\end{itemize}
+		
+	\end{frame}
+	
+	%--------------------------------------------------
+	\begin{frame}{Diferencia de Cuadrados}
+		\[
+		(x-4)(x+4)
+		\]
+		
+		\pause
+		
+		\[
+		= x^2 - 16
+		\]
+		
+		\pause
+		
+		\textbf{Interpretación:}
+		\begin{itemize}
+			\item Diferencia entre potencial y pérdida
+		\end{itemize}
+		
+	\end{frame}
+	
+	%==================================================
+	\section{Aplicaciones}
+	
+	%--------------------------------------------------
+	\begin{frame}{Ejemplo Aplicado}
+		Sistema de riego:
+		
+		\[
+		(2x + y)(x - y)
+		\]
+		
+		\pause
+		
+		\[
+		= 2x^2 - xy - y^2
+		\]
+		
+		\pause
+		
+		\textbf{Interpretación:}
+		\begin{itemize}
+			\item Balance entre riego y pérdidas
+		\end{itemize}
+		
+	\end{frame}
+	
+	%==================================================
+	\section{Ejercicios}
+	
+	%--------------------------------------------------
+	\begin{frame}{Ejercicios Guiados}
+		Simplifique:
+		
+		\pause
+		
+		\[
+		(3x + 2y)^2 - (x+y)^2
+		\]
+		
+		\pause
+		
+		\textbf{Pista:}
+		\begin{itemize}
+			\item Expanda ambos cuadrados
+		\end{itemize}
+		
+	\end{frame}
+	
+	%--------------------------------------------------
+	\begin{frame}{Ejercicios Propuestos}
+		\begin{enumerate}
+			\item 
+			\[
+			(2x^2 + 3xy) + (x^2 - 5xy)
+			\]
+			
+			\pause
+			
+			\item 
+			\[
+			(x+2y)(x-2y)
+			\]
+			
+			\pause
+			
+			\item 
+			\[
+			(x^2 + xy)(x+y)
+			\]
+			
+			\pause
+			
+			\item 
+			\[
+			2x^2 + 3xy + x^2 - xy
+			\]
+			
+		\end{enumerate}
+		
+	\end{frame}
+	
+	%==================================================
+	\section{Desafío}
+	
+	%--------------------------------------------------
+	\begin{frame}{Desafío Final}
+		Modelo de producción:
+		
+		\[
+		P(x,y) = (x+y)^2 + (x-y)^2 + 2xy
+		\]
+		
+		\pause
+		
+		\textbf{Actividades:}
+		\begin{itemize}
+			\item Simplifique
+			\item Interprete
+			\item Detecte redundancias
+		\end{itemize}
+		
+	\end{frame}
+	
+	%--------------------------------------------------
+	\begin{frame}{Cierre}
+		\begin{itemize}
+			\item Las expresiones modelan fenómenos reales
+			\item La simplificación permite entender mejor el sistema
+			\item Detectar errores es clave en agronomía
+		\end{itemize}
+		
+	\end{frame}
+	
+\end{document}
