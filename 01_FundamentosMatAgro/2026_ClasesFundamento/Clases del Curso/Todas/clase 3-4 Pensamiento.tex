@@ -1,0 +1,661 @@
+% !TEX program = pdflatex
+% !TEX option  = -synctex=1 -interaction=nonstopmode -output-directory=build
+% ==========================================================
+% BEAMER PRO — PENSAMIENTO MATEMÁTICO (PSICOLOGÍA)
+% Tema: Conectivos lógicos, axiomas y análisis de proposiciones
+% Autor: Luis Tulio González Alcaino
+% Compilación: pdfLaTeX
+% ==========================================================
+
+% -------------------------
+% MODO
+% -------------------------
+\newif\ifhandout
+\handoutfalse
+% \handouttrue
+
+\ifhandout
+\documentclass[aspectratio=169,10pt,handout]{beamer}
+\else
+\documentclass[aspectratio=169,10pt]{beamer}
+\fi
+
+% -------------------------
+% PAQUETES
+% -------------------------
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{array,booktabs,multirow}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% -------------------------
+% COLORES — PALETA PSICOLOGÍA
+% -------------------------
+\definecolor{PsyPrimary}{HTML}{5B4B8A}
+\definecolor{PsySecondary}{HTML}{7C6CB3}
+\definecolor{PsyAccent}{HTML}{3AA6B9}
+\definecolor{PsyLight}{HTML}{F4F1FB}
+\definecolor{PsyDark}{HTML}{1F2230}
+\definecolor{PsySoft}{HTML}{E7E1F5}
+\definecolor{PsyWarn}{HTML}{E67E22}
+\definecolor{PsyGood}{HTML}{2E8B57}
+\definecolor{PsyBad}{HTML}{C0392B}
+
+% -------------------------
+% CONFIGURACIÓN GENERAL
+% -------------------------
+\setlength{\parskip}{0.35em}
+
+\setbeamercolor{normal text}{fg=PsyDark,bg=white}
+\setbeamercolor{structure}{fg=PsyPrimary}
+\setbeamercolor{frametitle}{fg=white,bg=PsyPrimary}
+\setbeamercolor{title}{fg=white,bg=PsyPrimary}
+\setbeamercolor{subtitle}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+
+\setbeamercolor{block title}{fg=white,bg=PsyPrimary}
+\setbeamercolor{block body}{fg=PsyDark,bg=PsyLight}
+
+\setbeamercolor{block title alerted}{fg=white,bg=PsyBad}
+\setbeamercolor{block body alerted}{fg=PsyDark,bg=red!5}
+
+\setbeamercolor{block title example}{fg=white,bg=PsyGood}
+\setbeamercolor{block body example}{fg=PsyDark,bg=green!5}
+
+\setbeamerfont{title}{series=\bfseries,size=\Large}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+
+\setbeamertemplate{navigation symbols}{}
+
+% -------------------------
+% FOOTLINE MODERNA
+% -------------------------
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.72\paperwidth,ht=2.8ex,dp=1.2ex,leftskip=1em]{author in head/foot}
+			\color{PsyDark}\footnotesize \textbf{Pensamiento Matemático} \;--\; Psicología
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.28\paperwidth,ht=2.8ex,dp=1.2ex,rightskip=1em plus1fil]{date in head/foot}
+			\color{PsyDark}\footnotesize \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+}
+
+% -------------------------
+% FRAMETITLE
+% -------------------------
+\setbeamertemplate{frametitle}{
+	\nointerlineskip
+	\begin{beamercolorbox}[wd=\paperwidth,ht=3.2ex,dp=1.2ex,leftskip=0.8em,rightskip=0.3em]{frametitle}
+		\usebeamerfont{frametitle}\insertframetitle
+	\end{beamercolorbox}
+	\vspace{0.15cm}
+}
+
+% -------------------------
+% TÍTULO
+% -------------------------
+\title{Pensamiento Matemático}
+\subtitle{Conectivos lógicos, axiomas y análisis del carácter de una proposición}
+\author{Profesor Luis Tulio González Alcaino}
+\institute{Primer año universitario -- Psicología}
+\date{Universidad Santo Tomás}
+
+% -------------------------
+% COMANDOS PERSONALIZADOS
+% -------------------------
+\newcommand{\destacado}[1]{\textcolor{PsyPrimary}{\textbf{#1}}}
+\newcommand{\clave}[1]{\textcolor{PsyAccent}{\textbf{#1}}}
+\newcommand{\verdadero}{\textcolor{PsyGood}{\textbf{V}}}
+\newcommand{\falso}{\textcolor{PsyBad}{\textbf{F}}}
+
+\newenvironment{IdeaClave}[1]
+{
+	\begin{block}{#1}
+		\justifying
+	}
+	{
+	\end{block}
+}
+
+\newenvironment{Alerta}[1]
+{
+	\begin{alertblock}{#1}
+		\justifying
+	}
+	{
+	\end{alertblock}
+}
+
+\newenvironment{Ejemplo}[1]
+{
+	\begin{exampleblock}{#1}
+		\justifying
+	}
+	{
+	\end{exampleblock}
+}
+
+% -------------------------
+% PORTADA PERSONALIZADA
+% -------------------------
+\setbeamertemplate{title page}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[PsyPrimary] (current page.south west) rectangle (current page.north east);
+		\fill[PsySecondary] (current page.south west) rectangle ([xshift=4.2cm]current page.north west);
+		\fill[PsyAccent,opacity=0.18] ([xshift=10.8cm,yshift=1.2cm]current page.south west) circle (2.2cm);
+		\fill[white,opacity=0.06] ([xshift=12.3cm,yshift=5.8cm]current page.south west) circle (1.5cm);
+		\draw[white,opacity=0.10,line width=1.2pt] ([xshift=1.1cm,yshift=1.0cm]current page.south west) -- ([xshift=14.8cm,yshift=1.0cm]current page.south west);
+	\end{tikzpicture}
+	
+	\vspace*{0.8cm}
+	
+	\begin{columns}[T,totalwidth=\textwidth]
+		\begin{column}{0.62\textwidth}
+			{\color{white}\usebeamerfont{title}\inserttitle\par}
+			\vspace{0.35cm}
+			{\color{white}\usebeamerfont{subtitle}\insertsubtitle\par}
+			\vspace{0.8cm}
+			{\color{white}\normalsize \textbf{\insertauthor}\par}
+			\vspace{0.2cm}
+			{\color{white}\small \insertinstitute\par}
+			\vspace{0.2cm}
+			{\color{white}\small \insertdate\par}
+		\end{column}
+		
+		\begin{column}{0.34\textwidth}
+			\vspace{0.4cm}
+			\begin{tikzpicture}[scale=0.9]
+				\draw[white,line width=1.5pt] (0,0) circle (1.0);
+				\draw[white,line width=1.2pt] (-0.45,0.25) .. controls (-0.7,0.55) and (-0.25,0.75) .. (0,0.55);
+				\draw[white,line width=1.2pt] (0,0.55) .. controls (0.25,0.8) and (0.7,0.55) .. (0.45,0.2);
+				\draw[white,line width=1.2pt] (-0.35,-0.05) .. controls (-0.15,0.15) and (0.15,0.15) .. (0.35,-0.05);
+				\draw[white,line width=1.2pt] (0,-0.45) -- (0,-0.05);
+				\filldraw[white] (-1.1,-1.2) circle (0.07);
+				\filldraw[white] (0,-1.55) circle (0.07);
+				\filldraw[white] (1.1,-1.15) circle (0.07);
+				\draw[white,line width=1pt] (-1.1,-1.2)--(0,-1.55)--(1.1,-1.15);
+				\draw[white,line width=1pt] (-0.25,-0.95)--(-1.1,-1.2);
+				\draw[white,line width=1pt] (0,-1.0)--(0,-1.55);
+				\draw[white,line width=1pt] (0.25,-0.95)--(1.1,-1.15);
+			\end{tikzpicture}
+			
+			\vspace{0.5cm}
+			
+			\begin{beamercolorbox}[wd=\linewidth,sep=0.4em,rounded=true,center]{block body}
+				\color{PsyPrimary}\small
+				\textbf{Lógica, análisis y razonamiento}\\
+				aplicados al contexto psicológico
+			\end{beamercolorbox}
+		\end{column}
+	\end{columns}
+	
+	\vfill
+}
+
+% -------------------------
+% DOCUMENTO
+% -------------------------
+\begin{document}
+	
+	% ------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Resultados de aprendizaje}
+		\begin{IdeaClave}{Al finalizar la clase, el estudiante será capaz de:}
+			\begin{itemize}[leftmargin=*,label=\textcolor{PsyAccent}{\large$\blacktriangleright$}]
+				\item Reconocer los \destacado{conectivos lógicos} a través de enunciados gramaticales.
+				\item Utilizar los \destacado{axiomas de los conectivos lógicos}.
+				\item Emplear esquemas lógicos determinando si una proposición es \destacado{tautología, contradicción o contingencia}.
+				\item Integrar \destacado{patrones y relaciones matemáticas} en las actividades realizadas.
+				\item Detectar \destacado{patrones, relaciones e inconsistencias} en distintos razonamientos.
+			\end{itemize}
+		\end{IdeaClave}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Motivación inicial}
+		\begin{Alerta}{Situación para analizar}
+			\begin{quote}
+				``Si una persona presenta estrés, entonces necesariamente presentará ansiedad.''
+			\end{quote}
+		\end{Alerta}
+		
+		\pause
+		
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.52\textwidth}
+				\begin{IdeaClave}{Preguntas orientadoras}
+					\begin{itemize}[leftmargin=*]
+						\item ¿Es siempre verdadera esa afirmación?
+						\item ¿Qué relación lógica aparece?
+						\item ¿Puede existir una excepción?
+					\end{itemize}
+				\end{IdeaClave}
+			\end{column}
+			\begin{column}{0.44\textwidth}
+				\begin{Ejemplo}{Idea central}
+					La lógica no decide por sí sola si una afirmación psicológica es empíricamente cierta, pero sí permite \destacado{analizar su estructura de razonamiento}.
+				\end{Ejemplo}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Conectivos lógicos en lenguaje natural}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.35}
+			\begin{tabular}{>{\raggedright\arraybackslash}p{3.2cm} >{\centering\arraybackslash}p{1.7cm} >{\raggedright\arraybackslash}p{5.8cm}}
+				\toprule
+				\textbf{Conectivo} & \textbf{Símbolo} & \textbf{Expresión habitual} \\
+				\midrule
+				Negación & $\neg p$ & no, nunca, no es cierto que \\
+				Conjunción & $p \land q$ & y, además, junto con \\
+				Disyunción & $p \lor q$ & o, o bien \\
+				Condicional & $p \to q$ & si... entonces... \\
+				Bicondicional & $p \leftrightarrow q$ & si y solo si \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\pause
+		
+		\begin{Ejemplo}{Ejemplos contextualizados en Psicología}
+			\begin{itemize}[leftmargin=*]
+				\item ``El paciente presenta ansiedad \textbf{y} alteraciones del sueño.'' $\Rightarrow p \land q$
+				\item ``El paciente \textbf{no} presenta depresión.'' $\Rightarrow \neg p$
+				\item ``\textbf{Si} existe estrés crónico, \textbf{entonces} puede disminuir la concentración.'' $\Rightarrow p \to q$
+			\end{itemize}
+		\end{Ejemplo}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Traducción de enunciados al lenguaje simbólico}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.48\textwidth}
+				\begin{IdeaClave}{Definimos}
+					\[
+					p:\ \text{``El estudiante duerme bien''}
+					\]
+					\[
+					q:\ \text{``El estudiante mantiene una buena atención''}
+					\]
+				\end{IdeaClave}
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\begin{Ejemplo}{Traducción}
+					\begin{itemize}[leftmargin=*]
+						\item Duerme bien y mantiene buena atención:
+						\[
+						p \land q
+						\]
+						\item No duerme bien:
+						\[
+						\neg p
+						\]
+						\item Si duerme bien, entonces mantiene buena atención:
+						\[
+						p \to q
+						\]
+					\end{itemize}
+				\end{Ejemplo}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Axiomas y relaciones fundamentales}
+		\begin{IdeaClave}{Dos esquemas esenciales}
+			\[
+			p \lor \neg p
+			\qquad\qquad
+			p \land \neg p
+			\]
+		\end{IdeaClave}
+		
+		\pause
+		
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.48\textwidth}
+				\begin{Ejemplo}{Ley del tercero excluido}
+					\[
+					p \lor \neg p
+					\]
+					Siempre resulta \destacado{verdadera}. Por eso es una \clave{tautología}.
+					
+					Ejemplo:
+					\begin{quote}
+						``Una persona presenta ansiedad o no presenta ansiedad.''
+					\end{quote}
+				\end{Ejemplo}
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\begin{Alerta}{Ley de no contradicción}
+					\[
+					p \land \neg p
+					\]
+					Siempre resulta \destacado{falsa}. Por eso es una \clave{contradicción}.
+					
+					Ejemplo:
+					\begin{quote}
+						``Una persona presenta ansiedad y no presenta ansiedad.''
+					\end{quote}
+				\end{Alerta}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Tabla de verdad: conjunción}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{c c c}
+				\toprule
+				$p$ & $q$ & $p \land q$ \\
+				\midrule
+				\verdadero & \verdadero & \verdadero \\
+				\verdadero & \falso     & \falso \\
+				\falso     & \verdadero & \falso \\
+				\falso     & \falso     & \falso \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\pause
+		
+		\begin{IdeaClave}{Interpretación}
+			La proposición compuesta $p \land q$ es verdadera \destacado{solo cuando ambas proposiciones son verdaderas}.
+		\end{IdeaClave}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Tabla de verdad: condicional}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{c c c}
+				\toprule
+				$p$ & $q$ & $p \to q$ \\
+				\midrule
+				\verdadero & \verdadero & \verdadero \\
+				\verdadero & \falso     & \falso \\
+				\falso     & \verdadero & \verdadero \\
+				\falso     & \falso     & \verdadero \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\pause
+		
+		\begin{Ejemplo}{Lectura del condicional}
+			Si decimos:
+			\[
+			p:\ \text{``El estudiante estudia''}, \qquad
+			q:\ \text{``El estudiante aprueba''}
+			\]
+			entonces la única situación que hace falsa a $p \to q$ es:
+			\begin{quote}
+				\textbf{Estudia, pero no aprueba.}
+			\end{quote}
+		\end{Ejemplo}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Carácter de una proposición}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.35}
+			\begin{tabular}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}p{3.3cm} >{\raggedright\arraybackslash}p{5.2cm}}
+				\toprule
+				\textbf{Tipo} & \textbf{Definición} & \textbf{Ejemplo} \\
+				\midrule
+				Tautología & Siempre verdadera & $p \lor \neg p$ \\
+				Contradicción & Siempre falsa & $p \land \neg p$ \\
+				Contingencia & A veces verdadera y a veces falsa & $p \to q$ \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\pause
+		
+		\begin{IdeaClave}{Criterio práctico}
+			Para clasificar una proposición se analiza su \destacado{tabla de verdad completa}.
+			\begin{itemize}[leftmargin=*]
+				\item Todas verdaderas $\Rightarrow$ tautología
+				\item Todas falsas $\Rightarrow$ contradicción
+				\item Mezcla de valores $\Rightarrow$ contingencia
+			\end{itemize}
+		\end{IdeaClave}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Ejemplo de clasificación}
+		\begin{Ejemplo}{Analicemos la proposición}
+			\[
+			(p \to q)
+			\]
+		\end{Ejemplo}
+		
+		\begin{center}
+			\renewcommand{\arraystretch}{1.4}
+			\begin{tabular}{c c c}
+				\toprule
+				$p$ & $q$ & $p \to q$ \\
+				\midrule
+				\verdadero & \verdadero & \verdadero \\
+				\verdadero & \falso     & \falso \\
+				\falso     & \verdadero & \verdadero \\
+				\falso     & \falso     & \verdadero \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\pause
+		
+		\begin{Alerta}{Conclusión}
+			Como aparecen valores \destacado{verdaderos y falsos}, la proposición es una \clave{contingencia}.
+		\end{Alerta}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Patrones, relaciones e inconsistencias}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.48\textwidth}
+				\begin{IdeaClave}{Patrón lógico}
+					Observar regularidades permite anticipar comportamientos de una estructura lógica.
+					
+					Ejemplo:
+					\[
+					p \lor \neg p
+					\]
+					siempre es verdadera.
+				\end{IdeaClave}
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\begin{Alerta}{Inconsistencia}
+					Una inconsistencia aparece cuando un razonamiento afirma algo y su negación al mismo tiempo.
+					
+					Ejemplo:
+					\[
+					p \land \neg p
+					\]
+				\end{Alerta}
+			\end{column}
+		\end{columns}
+		
+		\pause
+		
+		\begin{Ejemplo}{Enunciado contextualizado}
+			\begin{quote}
+				``Todos los pacientes mejoran con terapia''
+				
+				``Algunos pacientes no mejoran con terapia''
+			\end{quote}
+			Estas afirmaciones no pueden sostenerse simultáneamente sin revisión, pues generan una \destacado{tensión lógica}.
+		\end{Ejemplo}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Actividad guiada I: reconocer conectivos}
+		\begin{IdeaClave}{Indique el conectivo lógico principal de cada enunciado}
+			\begin{enumerate}[leftmargin=*,label=\textbf{\arabic*.}]
+				\item El paciente está ansioso \textbf{y} presenta insomnio.
+				\item El estudiante \textbf{no} manifiesta agotamiento emocional.
+				\item \textbf{Si} existe sobrecarga académica, \textbf{entonces} puede disminuir la atención.
+				\item El paciente presenta síntomas de estrés \textbf{o} de ansiedad.
+				\item Una intervención es efectiva \textbf{si y solo si} mejora el bienestar reportado.
+			\end{enumerate}
+		\end{IdeaClave}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Actividad guiada II: simbolización}
+		\begin{IdeaClave}{Sea}
+			\[
+			p:\ \text{``La persona duerme adecuadamente''}
+			\qquad
+			q:\ \text{``La persona mantiene buena concentración''}
+			\]
+		\end{IdeaClave}
+		
+		\begin{Ejemplo}{Escriba simbólicamente}
+			\begin{enumerate}[leftmargin=*,label=\textbf{\alph*)}]
+				\item La persona duerme adecuadamente y mantiene buena concentración.
+				\item La persona no duerme adecuadamente.
+				\item Si la persona duerme adecuadamente, entonces mantiene buena concentración.
+				\item La persona duerme adecuadamente o mantiene buena concentración.
+			\end{enumerate}
+		\end{Ejemplo}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Actividad guiada III: clasificar proposiciones}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.5\textwidth}
+				\begin{Ejemplo}{Determine el carácter lógico}
+					\begin{enumerate}[leftmargin=*,label=\textbf{\arabic*.}]
+						\item $p \lor \neg p$
+						\item $p \land \neg p$
+						\item $p \to q$
+						\item $(p \land q) \to p$
+					\end{enumerate}
+				\end{Ejemplo}
+			\end{column}
+			\begin{column}{0.46\textwidth}
+				\begin{IdeaClave}{Opciones de clasificación}
+					\begin{itemize}[leftmargin=*]
+						\item Tautología
+						\item Contradicción
+						\item Contingencia
+					\end{itemize}
+				\end{IdeaClave}
+				
+				\pause
+				
+				\begin{Alerta}{Sugerencia}
+					Antes de responder, identifique el patrón lógico y luego confirme con tabla de verdad.
+				\end{Alerta}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Análisis de un razonamiento cotidiano}
+		\begin{Alerta}{Afirmación}
+			\begin{quote}
+				``Si una persona sonríe, entonces es feliz.''
+			\end{quote}
+		\end{Alerta}
+		
+		\pause
+		
+		\begin{IdeaClave}{Discusión}
+			\begin{itemize}[leftmargin=*]
+				\item ¿La estructura lógica es condicional? Sí, $p \to q$.
+				\item ¿Es necesariamente verdadera en todos los casos? No.
+				\item ¿Qué carácter tiene como esquema? \destacado{Contingencia}.
+			\end{itemize}
+		\end{IdeaClave}
+		
+		\pause
+		
+		\begin{Ejemplo}{Reflexión}
+			En Psicología, la conducta observable no siempre garantiza un único estado interno; por eso es importante distinguir entre \destacado{apariencia}, \destacado{interpretación} y \destacado{estructura lógica}.
+		\end{Ejemplo}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Síntesis visual de la clase}
+		\begin{center}
+			\begin{tikzpicture}[
+				node distance=1.9cm,
+				every node/.style={rounded corners=8pt, align=center, minimum height=1cm, text width=3.0cm, font=\small},
+				flecha/.style={->, thick, color=PsyPrimary}
+				]
+				\node[fill=PsySoft,draw=PsyPrimary] (a) {Conectivos\\lógicos};
+				\node[fill=PsySoft,draw=PsyPrimary,right=of a] (b) {Axiomas y\\relaciones básicas};
+				\node[fill=PsySoft,draw=PsyPrimary,right=of b] (c) {Tablas de\\verdad};
+				\node[fill=PsySoft,draw=PsyPrimary,below=of b] (d) {Tautología,\\contradicción y\\contingencia};
+				
+				\draw[flecha] (a) -- (b);
+				\draw[flecha] (b) -- (c);
+				\draw[flecha] (c) -- (d);
+				\draw[flecha] (b) -- (d);
+			\end{tikzpicture}
+		\end{center}
+		
+		\vspace{0.3cm}
+		
+		\begin{IdeaClave}{Idea final}
+			La lógica permite reconocer estructuras, detectar inconsistencias y fortalecer el razonamiento en contextos académicos y profesionales de la Psicología.
+		\end{IdeaClave}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Evaluación formativa}
+		\begin{IdeaClave}{Responde brevemente}
+			\begin{enumerate}[leftmargin=*,label=\textbf{\arabic*.}]
+				\item ¿Qué conectivo lógico representa la palabra ``y''?
+				\item ¿Qué diferencia existe entre tautología y contradicción?
+				\item ¿Por qué $p \to q$ suele ser una contingencia?
+				\item Escriba un ejemplo simple de inconsistencia lógica.
+				\item ¿Cómo ayuda la lógica al análisis de afirmaciones en Psicología?
+			\end{enumerate}
+		\end{IdeaClave}
+	\end{frame}
+	
+	% ------------------------------------------------
+	\begin{frame}{Cierre}
+		\begin{Ejemplo}{Conclusiones}
+			\begin{itemize}[leftmargin=*,label=\textcolor{PsyAccent}{\large$\checkmark$}]
+				\item Los conectivos lógicos permiten traducir lenguaje natural a lenguaje simbólico.
+				\item Los axiomas ayudan a reconocer proposiciones siempre verdaderas o siempre falsas.
+				\item Las tablas de verdad permiten clasificar proposiciones.
+				\item Detectar patrones e inconsistencias fortalece el pensamiento crítico.
+			\end{itemize}
+		\end{Ejemplo}
+		
+		\vspace{0.4cm}
+		
+		\begin{center}
+			{\Large \textcolor{PsyPrimary}{\textbf{Pensar con lógica también es comprender mejor la conducta humana.}}}
+		\end{center}
+	\end{frame}
+	
+\end{document}

@@ -1,0 +1,189 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{array}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\headheight}{45pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Encabezado con logo e información institucional
+\lhead{%
+	\makebox[0pt][l]{%
+		\begin{minipage}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{logoUst.png}
+		\end{minipage}
+	}%
+	\hspace{2.5cm}%
+	\begin{minipage}{0.8\textwidth}
+		\raggedright
+		\small
+		\textbf{Universidad Santo Tomás}\\
+		Departamento de Ciencias Básicas\\
+		Fundamentos de Matemática Básica
+	\end{minipage}
+}
+\rhead{}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\vspace*{0.5em}
+	
+	\begin{center}
+		{\Large \textbf{Guía 06 Ayudantía}}\\[0.3em]
+		{\small Ecuaciones}
+	\end{center}
+	
+	\vspace{0.2cm}
+	
+	%%%%%%%%%%%%%%
+	
+	\begin{enumerate}
+			\item 	Un modelo de aplicación de nitrógeno considera pérdidas por lixiviación:
+			
+			\[
+			0{,}85(12x + 150) - 60 = 900
+			\]
+		¿Cuántas hectáreas deben ser fertilizadas para que el cultivo reciba exactamente 900 kg de nitrógeno efectivo?
+		
+		\item En un sistema de riego se modela por la siguiente ecuación:
+				
+		\[
+		\frac{3}{4}(20x + 200) - (5x + 80) = 600
+		\]
+		
+		donde $x$: horas de riego. Determine el tiempo de riego necesario. Analice si el sistema es eficiente.
+		
+		\item En fertirrigación se combinan dos soluciones:
+		
+		\[
+		\frac{5x + 40}{3} - \frac{2x - 10}{4} = 100
+		\]
+		
+		donde $x$: concentración base (mg/L)
+		
+		\begin{enumerate}
+			\item Elimine denominadores.
+			\item Resuelva la ecuación.
+			\item Interprete el resultado en términos de concentración.
+		\end{enumerate}
+		
+		\item El ingreso y costo de producción están dados por:
+		
+		\[
+		15x + 200 = 8x + 500
+		\]
+		
+		donde:
+		\begin{itemize}
+			\item $x$: toneladas producidas
+		\end{itemize}
+		
+		\begin{enumerate}
+			\item Determine el punto de equilibrio.
+			\item Interprete el resultado económicamente.
+		\end{enumerate}
+		
+		\item Dada la siguiente ecuación:	$V = axt - bx + c$
+		
+		donde:
+		\begin{itemize}
+			\item $V$: volumen total (L)
+			\item $a$: tasa de aplicación
+			\item $b$: pérdidas por infiltración
+			\item $c$: volumen inicial
+		\end{itemize}
+		
+		
+		Despeje $x$.
+		
+		
+		\newpage
+		\vspace*{0.2em}
+		
+		\item Un estudiante plantea la siguiente ecuación: $
+		2(5x + 50) - 3x = 10x + 100$
+		
+		
+		y concluye que: $x = -10$
+				
+		\begin{enumerate}
+			\item Verifique el resultado.
+			\item Analice si tiene sentido físico en agronomía.
+			\item Corrija si es necesario.
+		\end{enumerate}
+		
+		\item Dada la siguiente ecuación:
+		\[
+		\frac{2(3x + 60)}{5} + \frac{x - 20}{2} = 150
+		\]
+		
+		\begin{enumerate}
+			\item Resuelva la ecuación.
+			\item Interprete el resultado como dosis de fertilizante.
+			\item Evalúe coherencia del modelo.
+		\end{enumerate}
+		
+		\item Considere la siguiente ecuación:
+			\[
+		0{,}9(10x + 300) - 0{,}2(5x + 100) = 1000
+		\]
+		
+		\begin{enumerate}
+			\item Determine $x$.
+			\item Interprete el resultado en consumo energético.
+		\end{enumerate}
+	
+	\item Un modelo agrícola integrado está dado por:
+	
+	\[
+	\frac{3(4x + 120)}{2} - \frac{2(5x - 50)}{3} = 500
+	\]
+	
+	\begin{enumerate}
+		\item Resuelva la ecuación.
+		\item Interprete el resultado en contexto productivo.
+		\item Analice posibles errores de modelación.
+	\end{enumerate}
+	
+	\item Un estudiante de agronomía trabaja como ayudante en un predio agrícola durante la temporada de cosecha. Durante tres días consecutivos, recibe pagos por labores de apoyo en terreno (riego, monitoreo de cultivos y aplicación de insumos). Se sabe que: El primer día recibe un pago base por su jornada. Cada día siguiente recibe $5/4$ del pago del día anterior, debido a una disminución progresiva en las horas trabajadas.
+	El total recibido en los tres días es de $\$219\,600$.
+	
+	\item En un estudio fitosanitario, un equipo de agrónomos evalúa la presencia de una enfermedad fúngica en cultivos de trigo dentro de una zona agrícola.
+	
+	Se analiza una muestra de \textbf{450 plantas}, de las cuales \textbf{36 presentan síntomas de infección}.
+	
+	Si la zona total de cultivo contiene aproximadamente \textbf{200.000 plantas}, se desea estimar cuántas plantas podrían estar infectadas en toda la zona.
+	
+	\item En un programa de fortalecimiento del sector agrícola, se incorporan \textbf{88 profesionales del área agronómica} (ingenieros agrónomos, técnicos agrícolas y especialistas en riego), los cuales son distribuidos en dos equipos de trabajo: \textbf{Grupo A} y \textbf{Grupo B}.
+	
+	Se sabe que el \textbf{Grupo A tiene 20 profesionales más que el Grupo B}.
+	
+	\bigskip
+	
+	\textbf{Pregunta:}  
+	¿Cuántos profesionales conforman el Grupo A?
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+				% =========================================================
+				
+				% =========================================================
+				
+				
+				
+			\end{enumerate}
+			
+\end{document}

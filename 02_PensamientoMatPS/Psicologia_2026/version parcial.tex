@@ -1,0 +1,294 @@
+\documentclass[10pt]{beamer}
+
+% =========================================================
+% PAQUETES
+% =========================================================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathpazo}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+% =========================================================
+% TEMA Y ESTILO
+% =========================================================
+\usetheme{CambridgeUS}
+\usecolortheme[RGB={0,88,127}]{structure}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+
+% =========================================================
+% ENTORNOS
+% =========================================================
+\newtheorem{definicion}{Definición}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{ejemplos}{Ejemplos}
+
+% =========================================================
+% DATOS
+% =========================================================
+\title[MAT-016]{Razonamiento Lógico Matemático}
+\subtitle{Unidad II: Álgebra en los Números Reales\\
+	Clase 7: Conjuntos Numéricos y Operatoria}
+\author[]{Profesor Luis Tulio González Alcaino\\
+	Magíster en Matemática}
+\institute{Universidad Santo Tomás\\
+	Departamento Ciencias Básicas - Talca}
+\date{Semestre I - 2026}
+
+% =========================================================
+\begin{document}
+	
+	% =========================================================
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Contenidos de la clase}
+		\begin{enumerate}
+			\item Conjuntos Numéricos
+			\item Operatoria
+		\end{enumerate}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Resultado de Aprendizaje}
+		\begin{enumerate}
+			\item Resolver operatoria en los distintos conjuntos numéricos.
+		\end{enumerate}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			Se iniciará definiendo los conjuntos de números que conforman a los números reales.
+			
+			\begin{enumerate}
+				\item \textbf{Los Números Naturales} \(\mathbb{N}\)
+				
+				También conocidos como números para contar o enteros positivos.
+				\[
+				\mathbb{N}=\{1,2,3,\ldots\}
+				\]
+				
+				\pause
+				
+				\item \textbf{Los Números Enteros} \(\mathbb{Z}\)
+				
+				Son los números enteros positivos, negativos y el cero:
+				\[
+				\mathbb{Z}=\{\ldots,-3,-2,-1,0,1,2,3,\ldots\}
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\begin{enumerate}
+				\item[3.] \textbf{Los Números Racionales} \(\mathbb{Q}\)
+				
+				Los números racionales son los números reales que se pueden expresar como razón de dos números enteros. Se denota el conjunto de los números racionales por \(\mathbb{Q}\), y se escribe
+				\[
+				\mathbb{Q}=
+				\left\{
+				\dfrac{a}{b}:\text{ donde }a \text{ y } b \text{ son números enteros con } b\neq 0
+				\right\}
+				\]
+				\[
+				\left\{
+				\ldots,-\frac{3}{2},\ldots,-\frac{5}{4},\ldots,-1,\ldots,-\frac{1}{2},\ldots,0,\ldots,\frac{1}{2},\ldots,\frac{8}{5},\ldots
+				\right\}
+				\]
+				
+				Por otro lado, su desarrollo decimal es finito o infinito periódico o semiperiódico.
+				
+				\textbf{Ejemplos:}
+				\[
+				\frac{1}{4}=0.25
+				\qquad
+				\frac{5}{3}=1.666\ldots = 1.\overline{6}
+				\qquad
+				\frac{19}{12}=1.58333\ldots = 1.58\overline{3}
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\begin{enumerate}
+				\item[4.] \textbf{Los Números Irracionales}
+				
+				Son los números que no pueden expresarse como un cociente de enteros y su desarrollo decimal es infinito no periódico.
+				\[
+				\mathbb{I}=
+				\left\{
+				x:\text{ donde }x\text{ no es un número racional}
+				\right\}
+				\]
+				\[
+				\left\{
+				\ldots,-\pi,\ldots,-\sqrt{3},\ldots,\sqrt{2},\ldots,e,\ldots
+				\right\}
+				\]
+				
+				\textbf{Ejemplos:}
+				\[
+				\sqrt{2}=1.414213562\ldots
+				\qquad
+				\pi=3.141592654\ldots
+				\qquad
+				e=2.718281828\ldots
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\begin{enumerate}
+				\item[5.] \textbf{Los Números Reales} \(\mathbb{R}\)
+				
+				La unión del conjunto de los números racionales y de los números irracionales se conoce como el conjunto de los números reales, es decir,
+				\[
+				\mathbb{R}=\mathbb{Q}\cup\mathbb{I}
+				\]
+			\end{enumerate}
+			
+			Una manera bastante práctica de representar el conjunto de números reales es en una recta a la que se denomina \textbf{recta numérica}, como la que aparece a continuación.
+		\end{block}
+		
+		\begin{center}
+			\begin{tikzpicture}[scale=0.95]
+				\draw[-{Stealth[length=3mm]}] (-5.5,0) -- (5.5,0);
+				\foreach \x/\lab in {-5/-5,-4/-4,-3/-3,-2/-2,-1/-1,0/0,1/1,2/2,3/3,4/4,5/5}{
+					\draw (\x,0.12)--(\x,-0.12);
+					\node[below] at (\x,-0.12) {\lab};
+				}
+			\end{tikzpicture}
+		\end{center}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\textbf{Recta numérica}
+			
+			\begin{center}
+				\begin{tikzpicture}[scale=0.95]
+					\draw[-{Stealth[length=3mm]}] (-5.5,0) -- (5.5,0);
+					\foreach \x/\lab in {-5/-5,-4/-4,-3/-3,-2/-2,-1/-1,0/0,1/1,2/2,3/3,4/4,5/5}{
+						\draw (\x,0.12)--(\x,-0.12);
+						\node[below] at (\x,-0.12) {\lab};
+					}
+				\end{tikzpicture}
+			\end{center}
+			
+			Mediante las ideas de igualdad y desigualdad pueden compararse dos números reales cualesquiera. Se utilizan símbolos para representar estas ideas:
+		\end{block}
+		
+		\pause
+		\textbf{Ejemplos}
+		
+		\begin{itemize}
+			\item Para decir que \(7\) es menor que \(12\), escribimos \(7<12\).
+			\pause
+			\item También para decir que \(-3\) es mayor que \(-10\), escribimos \(-3>-10\).
+			\pause
+			\item Podemos tener claro el significado de los símbolos menor que \(<\) y mayor que \(>\), si recordamos que éstos siempre apuntan hacia el número más pequeño: \(-5<1\), así como \(15>6\).
+			\pause
+			\item Hay otros dos símbolos \(\leq\) y \(\geq\), que también representan la idea de desigualdad. El símbolo \(\leq\) significa “es menor o igual que”, por lo que \(10\leq15\) significa que 10 es menor o igual a 15.
+		\end{itemize}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Ejercicio}
+			Complete el siguiente cuadro: marque con ``\(\surd\)'' el (o los) conjunto(s) numérico(s) al(los) cual(es) pertenece cada número.
+			
+			\[
+			\begin{array}{|c|c|c|c|c|c|}
+				\hline
+				\text{Número} & \mathbb{N} & \mathbb{Z} & \mathbb{Q} & \mathbb{I} & \mathbb{R}\\
+				\hline
+				-5 & & & & & \\
+				\hline
+				\sqrt{3} & & & & & \\
+				\hline
+				\frac{5}{8} & & & & & \\
+				\hline
+				\frac{\pi}{2} & & & & & \\
+				\hline
+				1,2 & & & & & \\
+				\hline
+			\end{array}
+			\]
+		\end{block}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Adición}
+			Para sumar números enteros, debemos tener en cuenta que:
+			
+			\begin{enumerate}
+				\item “Si son del mismo signo (positivos o negativos), se suman los números (sin considerar el signo) y se conserva el signo de los números (positivo o negativo)”.
+				
+				\textbf{Ejemplos:}
+				\begin{enumerate}
+					\item \(2+5=7\)
+					\item \(-4+(-7)=-11\)
+				\end{enumerate}
+				
+				\pause
+				
+				\item “Si son de distinto signo (positivos o negativos o viceversa), se restan los números y se conserva el signo del número mayor sin considerar el signo”.
+				
+				\textbf{Ejemplos:}
+				\begin{enumerate}
+					\item \(8+(-3)=5\)
+					\item \(-10+9=-1\)
+				\end{enumerate}
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% =========================================================
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Observaciones}
+			\begin{enumerate}
+				\item La expresión “\(a+(-b)\)” se escribe como “\(a-b\)”.
+				
+				\textbf{Ejemplo.} \(6+(-8)=6-8=-2\)
+				
+				\pause
+				
+				\item La expresión “\(a-(-b)\)” se escribe como “\(a+b\)”.
+				
+				\textbf{Ejemplo.} \(12-(-4)=12+4=16\)
+				
+				\pause
+				
+				\item La expresión “\(a+b\)” es equivalente a “\(b+a\)”, es decir \(a+b=b+a\) (propiedad conmutativa).
+				
+				\textbf{Ejemplo.} \((-25)+10=10+(-25)=10-25=-15\)
+				
+				\pause
+				
+				\item La expresión “\(a+(b+c)\)” es equivalente a “\((a+b)+c\)", es decir, propiedad asociativa
+			\end{enumerate}
+		\end{block}	
+	\end{frame}
+\end{document}	
+		\end{document}	

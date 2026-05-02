@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\geometry{margin=2.5cm}
+
+\begin{document}
+	
+	\begin{center}
+		{\Large \textbf{Problema 4: Perfiles Clínicos}} \\[4pt]
+		{\large Operaciones de Conjuntos}
+	\end{center}
+	
+	\bigskip
+	
+	\section*{Descripción del Problema}
+	
+	Se estudia un grupo de \textbf{20 personas} para identificar perfiles clínicos asociados
+	a su bienestar emocional, cognitivo y social. El universo de estudio es:
+	\[
+	U = \{1, 2, 3, \ldots, 20\}
+	\]
+	
+	A partir de entrevistas clínicas se identifican las siguientes características:
+	\begin{itemize}
+		\item \textbf{Ansiedad elevada} $(A)$: altos niveles de activación emocional,
+		preocupación constante o síntomas ansiosos.
+		\item \textbf{Dificultades en la interacción social} $(S)$: problemas en habilidades
+		sociales, comunicación o relaciones interpersonales.
+		\item \textbf{Estrés crónico} $(E)$: sobrecarga sostenida, fatiga emocional o
+		dificultades para afrontar demandas del entorno.
+	\end{itemize}
+	
+	\section*{Conjuntos Dados}
+	
+	\begin{align*}
+		A &= \{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\} \\[4pt]
+		S &= \{5, 7, 9, 11, 13\} \\[4pt]
+		E &= \{3, 6, 9, 12, 15, 18\}
+	\end{align*}
+	
+	\noindent\textbf{Observación clave:} $A \cap S = \emptyset$, es decir, ningún elemento
+	de $S$ pertenece a $A$.
+	
+	\bigskip
+	
+	\section*{Parte a) — Conjunto por Comprensión}
+	
+	Se determina el conjunto:
+	\[
+	(A - E) \cup (S \cap E)
+	\]
+	
+	\subsection*{Paso 1: $A - E$}
+	
+	Se eliminan de $A$ los elementos que pertenecen a $E$
+	(es decir, $6, 12, 18 \in A \cap E$):
+	\[
+	A - E
+	= \{2,\, 4,\, \cancel{6},\, 8,\, 10,\, \cancel{12},\, 14,\, 16,\, \cancel{18},\, 20\}
+	= \{2, 4, 8, 10, 14, 16, 20\}
+	\]
+	
+	\subsection*{Paso 2: $S \cap E$}
+	
+	Se buscan los elementos comunes entre $S$ y $E$:
+	\[
+	S \cap E
+	= \{5, 7, \mathbf{9}, 11, 13\} \cap \{3, 6, \mathbf{9}, 12, 15, 18\}
+	= \{9\}
+	\]
+	
+	\subsection*{Paso 3: Unión}
+	
+	\[
+	(A - E) \cup (S \cap E)
+	= \{2, 4, 8, 10, 14, 16, 20\} \cup \{9\}
+	= \{2, 4, 8, 9, 10, 14, 16, 20\}
+	\]
+	
+	\medskip
+	\noindent\textbf{Descripción por comprensión:} Conjunto de personas que
+	\textit{presentan ansiedad elevada pero no estrés crónico}, o que
+	\textit{tienen simultáneamente dificultades sociales y estrés crónico}.
+	
+	\bigskip
+	
+	\section*{Parte b) — Conjunto por Extensión y Cardinalidad}
+	
+	Se determina el conjunto (aplicando precedencia estándar de operaciones):
+	\[
+	\bigl[(A - S)^c \cap A^c\bigr] - E
+	\]
+	
+	\subsection*{Paso 1: $A - S$}
+	
+	Como $A \cap S = \emptyset$, ningún elemento de $S$ pertenece a $A$, por lo tanto:
+	\[
+	A - S = A = \{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\}
+	\]
+	
+	\subsection*{Paso 2: $(A - S)^c = A^c$}
+	
+	Se calcula el complemento respecto a $U$:
+	\[
+	A^c = U - A = \{1, 3, 5, 7, 9, 11, 13, 15, 17, 19\}
+	\]
+	
+	\subsection*{Paso 3: $(A-S)^c \cap A^c$}
+	
+	Como $(A-S)^c = A^c$, la intersección es:
+	\[
+	A^c \cap A^c = A^c = \{1, 3, 5, 7, 9, 11, 13, 15, 17, 19\}
+	\]
+	
+	\subsection*{Paso 4: $A^c - E$}
+	
+	Se eliminan de $A^c$ los elementos que pertenecen a $E$
+	(es decir, $3, 9, 15 \in A^c \cap E$):
+	\[
+	A^c - E
+	= \{1,\, \cancel{3},\, 5,\, 7,\, \cancel{9},\, 11,\, 13,\, \cancel{15},\, 17,\, 19\}
+	= \{1, 5, 7, 11, 13, 17, 19\}
+	\]
+	
+	\medskip
+	\noindent\textbf{Resultado por extensión:}
+	\[
+	(A-S)^c \cap A^c - E = \{1,\, 5,\, 7,\, 11,\, 13,\, 17,\, 19\}
+	\]
+	
+	\noindent\textbf{Cardinalidad:}
+	\[
+	\bigl|(A-S)^c \cap A^c - E\bigr| = 7
+	\]
+	
+	\bigskip
+	
+	\section*{Resumen de Resultados}
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{1.6}
+		\begin{tabular}{ccc}
+			\toprule
+			\textbf{Parte} & \textbf{Conjunto resultante} & \textbf{Cardinalidad} \\
+			\midrule
+			a) & $\{2,\, 4,\, 8,\, 9,\, 10,\, 14,\, 16,\, 20\}$ & $8$ \\
+			b) & $\{1,\, 5,\, 7,\, 11,\, 13,\, 17,\, 19\}$       & $7$ \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+\end{document}

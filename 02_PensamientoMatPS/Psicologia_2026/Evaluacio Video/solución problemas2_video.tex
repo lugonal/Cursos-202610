@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{array}
+
+\begin{document}
+	
+	\section*{Problema 2: Pensamiento Matemático - Psicología}
+	
+	\subsection*{a) Proposiciones simples}
+	
+	Definimos las proposiciones:
+	
+	
+	\[
+	\begin{aligned}
+		p &: \text{La persona sigue las estrategias terapéuticas indicadas.} \\
+		\sim p &: \text{La persona no sigue las estrategias terapéuticas indicadas.} \\
+		q &: \text{La persona presenta dificultades emocionales.} \\
+		r &: \text{La persona logra mejorar su bienestar psicológico.}
+		\sim r &: \text{La persona no logra mejorar su bienestar psicológico.}
+	\end{aligned}
+	\]
+	
+	
+	
+	El enunciado:  
+	\textit{“Si una persona no sigue las estrategias terapéuticas indicadas, entonces presenta dificultades emocionales o no logra mejorar su bienestar psicológico.”}
+	
+	En lenguaje simbólico:
+	
+	
+	\[
+	\sim p \to (q \, \lor \sim r)
+	\]
+	
+	
+	
+	\subsection*{b) Tabla de verdad}
+	
+	La proposición compuesta es:
+	
+	
+	\[
+	\sim p \to (q \, \lor \sim r)
+	\]
+	
+	
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			$p$ & $q$ & $r$ & $\sim p$ & $\sim r$ & $q \lor \sim r$ & $\sim p \to (q \, \lor  \sim r)$ \\
+			\hline
+			V & V & V & F & F & V \\
+			V & V & F & F & V & V \\
+			V & F & V & F & F & V \\
+			V & F & F & F & V & V \\
+			F & V & V & V & F & V \\
+			F & V & F & V & V & V \\
+			F & F & V & V & F & F \\
+			F & F & F & V & V & V \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection*{Conclusión}
+	
+	La proposición es verdadera en la mayoría de los casos, excepto cuando la persona no sigue las estrategias terapéuticas (\(\sim p = V\)) y no presenta dificultades emocionales ni falta de bienestar (\(q \lor \sim r = V\)).  
+	Por lo tanto, la proposición es una:
+	
+	
+	\[
+	\boxed{\text{Contingencia}}
+	\]
+	
+	
+	
+\end{document}

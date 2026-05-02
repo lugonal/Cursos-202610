@@ -1,0 +1,630 @@
+% !TEX program = pdflatex
+% ==========================================================
+% Universidad Santo Tomás
+% Fundamentos de Matemática Básica
+% Clase 3: Potencias
+% Luis Tulio González Alcaino
+% ==========================================================
+
+\newif\ifhandout
+\handoutfalse
+%\handouttrue
+
+\ifhandout
+\documentclass[aspectratio=169,10pt,handout]{beamer}
+\else
+\documentclass[aspectratio=169,10pt]{beamer}
+\fi
+
+% ----------------------------------------------------------
+% PAQUETES
+% ----------------------------------------------------------
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+% ----------------------------------------------------------
+% COLORES INSTITUCIONALES
+% ----------------------------------------------------------
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTTeal}{RGB}{0,153,117}
+\definecolor{USTGray}{RGB}{120,120,120}
+\definecolor{USTSoft}{RGB}{248,249,250}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{WarmGray}{RGB}{120,120,120}
+
+% ----------------------------------------------------------
+% TEMA BASE
+% ----------------------------------------------------------
+\usetheme{Madrid}
+\usecolortheme[named=USTBlue]{structure}
+\setbeamertemplate{navigation symbols}{}
+
+% ----------------------------------------------------------
+% AJUSTES VISUALES
+% ----------------------------------------------------------
+\setlength{\parskip}{0.2em}
+\setlist[itemize]{itemsep=0.35em}
+\setlist[enumerate]{itemsep=0.35em}
+
+% ----------------------------------------------------------
+% COLORES DE PIE
+% ----------------------------------------------------------
+\setbeamercolor{author in head/foot}{bg=USTSoft,fg=USTGray}
+\setbeamercolor{date in head/foot}{bg=USTSoft,fg=USTGray}
+\setbeamercolor{title in head/foot}{bg=USTSoft,fg=USTGray}
+
+% ----------------------------------------------------------
+% PIE DE PÁGINA
+% ----------------------------------------------------------
+\setbeamertemplate{footline}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.85\paperwidth,ht=2.5ex,dp=1ex,leftskip=0.4cm]{author in head/foot}%
+			\scriptsize
+			\textbf{Fundamentos de Matemática Básica}
+			\quad|\quad
+			Agronomía
+			\quad|\quad
+			Universidad Santo Tomás Talca
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.15\paperwidth,ht=2.5ex,dp=1ex,rightskip=0.3cm plus1fil]{date in head/foot}%
+			\scriptsize \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}%
+	}%
+}
+
+% ----------------------------------------------------------
+% BLOQUES PEDAGÓGICOS
+% ----------------------------------------------------------
+\setbeamercolor{block title}{bg=USTBlue!15,fg=USTBlueDark}
+\setbeamercolor{block body}{bg=USTSoft,fg=black}
+
+\setbeamercolor{block title example}{bg=USTTeal!20,fg=USTBlueDark}
+\setbeamercolor{block body example}{bg=USTSoft,fg=black}
+
+\setbeamercolor{block title alerted}{bg=red!15,fg=black}
+\setbeamercolor{block body alerted}{bg=red!3,fg=black}
+
+% ----------------------------------------------------------
+% COMANDOS Y ENTORNOS AUXILIARES
+% ----------------------------------------------------------
+\newcommand{\destacar}[1]{\textcolor{USTBlueDark}{\textbf{#1}}}
+\newcommand{\alerta}[1]{\textcolor{red!70!black}{\textbf{#1}}}
+\newcommand{\pp}{\pause}
+
+\newenvironment{metaBox}
+{\begin{block}{Meta de aprendizaje}}
+	{\end{block}}
+
+\newenvironment{ideaBox}
+{\begin{exampleblock}{Idea clave}}
+	{\end{exampleblock}}
+
+% ----------------------------------------------------------
+% DATOS DEL CURSO
+% ----------------------------------------------------------
+\title{Fundamentos de Matemática Básica}
+\subtitle{Unidad I: Operaciones algebraicas en los reales\\Clase 3: Potencias}
+\author{Prof. Luis González Alcaino}
+\date{Universidad Santo Tomás -- Agronomía 2026}
+
+% ==========================================================
+% DOCUMENTO
+% ==========================================================
+\begin{document}
+	
+	% ----------------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Contenidos de la clase}
+		\begin{block}{Aprendizajes de la sesión}
+			\begin{enumerate}
+				\item Comprender el concepto de \destacar{potencia}.
+				\item Interpretar la \destacar{base} y el \destacar{exponente}.
+				\item Aplicar las \destacar{propiedades de las potencias}.
+				\item Reconocer \destacar{patrones numéricos}.
+				\item Resolver \destacar{problemas contextualizados en Agronomía}.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	
+	% ----------------------------------------------------------
+	\begin{frame}{¿Por qué estudiar potencias en Agronomía?}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.52\textwidth}
+				\begin{block}{Situaciones reales}
+					\begin{itemize}
+						\item Número de semillas por hectárea.
+						\item Cantidad de bacterias en una muestra de suelo.
+						\item Concentración de micronutrientes.
+						\item Conversión de unidades y escalas.
+					\end{itemize}
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.44\textwidth}
+				\begin{exampleblock}{Ejemplo rápido}
+					Una dosis puede expresarse como:
+					\[
+					0{,}00045\ \text{kg}=4{,}5\times10^{-4}\ \text{kg}
+					\]
+					La segunda forma es más clara para calcular, comparar y comunicar.
+				\end{exampleblock}
+			\end{column}
+		\end{columns}
+		
+		\vspace{0.2cm}
+		\centering
+		{\small \textcolor{WarmGray}{La matemática permite simplificar, modelar y validar información técnica.}}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Concepto de potencia}
+		\begin{block}{Definición}
+			Una \destacar{potencia} representa una multiplicación repetida de un mismo factor:
+			\[
+			a^n=\underbrace{a\cdot a\cdot a\cdots a}_{n \text{ veces}}
+			\]
+			donde:
+			\begin{itemize}
+				\item \(a\) es la \destacar{base},
+				\item \(n\) es el \destacar{exponente}.
+			\end{itemize}
+		\end{block}
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			2^4 = 2\cdot2\cdot2\cdot2 = 16
+			\qquad
+			10^3 = 1000
+			\]
+			\[
+			5^2 = 25
+			\qquad
+			10^{-2}=\frac{1}{10^2}=\frac{1}{100}=0{,}01
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Propiedades de las potencias I}
+		\begin{block}{1. Producto de potencias de igual base}
+			\[
+			a^m \cdot a^n = a^{m+n}
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			2^3\cdot2^4 = 2^{3+4}=2^7=128
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{2. Cociente de potencias de igual base}
+			\[
+			\frac{a^m}{a^n}=a^{m-n}, \qquad a\neq 0
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			\frac{5^6}{5^2}=5^{6-2}=5^4=625
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Propiedades de las potencias II}
+		\begin{block}{3. Potencia de una potencia}
+			\[
+			(a^m)^n = a^{m\cdot n}
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			(3^2)^4 = 3^{2\cdot4}=3^8=6561
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{4. Potencia de un producto}
+			\[
+			(ab)^n = a^n b^n
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			(2\cdot5)^3 = 2^3\cdot5^3 = 8\cdot125 = 1000
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Propiedades de las potencias III}
+		\begin{block}{5. Potencia de un cociente}
+			\[
+			\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}, \qquad b\neq 0
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			\left(\frac{2}{3}\right)^3 = \frac{2^3}{3^3}=\frac{8}{27}
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{6. Exponente cero}
+			\[
+			a^0 = 1, \qquad a\neq 0
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			7^0 = 1
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Propiedades de las potencias IV}
+		\begin{block}{7. Exponente uno}
+			\[
+			a^1 = a
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			9^1 = 9
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{8. Exponente negativo}
+			\[
+			a^{-n}=\frac{1}{a^n}, \qquad a\neq 0
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			2^{-3}=\frac{1}{2^3}=\frac{1}{8}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Propiedades de las potencias V}
+		\begin{block}{9. Base igual a uno}
+			\[
+			1^n = 1
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			1^8 = 1
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{10. Base igual a cero}
+			\[
+			0^n = 0, \qquad n>0
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			0^5 = 0
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Importante: errores frecuentes}
+		\begin{alertblock}{Cuidado}
+			No se pueden sumar ni restar exponentes en una suma de potencias:
+			\[
+			a^m + a^n \neq a^{m+n}
+			\]
+		\end{alertblock}
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			2^2 + 2^3 = 4 + 8 = 12
+			\]
+			pero
+			\[
+			2^{2+3}=2^5=32
+			\]
+			Por lo tanto,
+			\[
+			2^2 + 2^3 \neq 2^5
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Patrones}
+		Observe la secuencia:
+		\[
+		2^1 = 2
+		\]
+		\[
+		2^2 = 4
+		\]
+		\[
+		2^3 = 8
+		\]
+		\[
+		2^4 = 16
+		\]
+		
+		\begin{block}{Preguntas}
+			\begin{itemize}
+				\item ¿Qué ocurre cuando el exponente aumenta en 1?
+				\item ¿Cómo crecerá la secuencia?
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Patrones y relaciones en las potencias de 10}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.48\textwidth}
+				\begin{block}{Observación}
+					\[
+					10^1 = 10
+					\]
+					\[
+					10^2 = 100
+					\]
+					\[
+					10^3 = 1000
+					\]
+					\[
+					10^4 = 10000
+					\]
+					Cada vez que el exponente aumenta en 1, el número se multiplica por 10.
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.48\textwidth}
+				\begin{exampleblock}{Hacia exponentes negativos}
+					\[
+					10^0 = 1
+					\]
+					\[
+					10^{-1} = 0{,}1
+					\]
+					\[
+					10^{-2} = 0{,}01
+					\]
+					\[
+					10^{-3} = 0{,}001
+					\]
+					Cada vez que el exponente disminuye en 1, el número se divide por 10.
+				\end{exampleblock}
+			\end{column}
+		\end{columns}
+		
+		\vspace{0.2cm}
+		\begin{ideaBox}
+			\textbf{Patrón clave:} los exponentes permiten describir regularidades de crecimiento o disminución en escala decimal.
+		\end{ideaBox}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Ejercicios}
+		Resuelva:
+		\begin{enumerate}
+			\item \(2^4 \cdot 2^3\)
+			\item \((3^2)^3\)
+			\item \(5^3 \cdot 5^2\)
+			\item \(\dfrac{10^6}{10^2}\)
+			\item En un cultivo se plantan \(3^4\) semillas por parcela. Si hay \(3^2\) parcelas, ¿cuántas semillas hay en total?
+		\end{enumerate}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Ejercicio contextualizado}
+		\begin{block}{Situación agrícola}
+			Una parcela experimental utiliza:
+			\[
+			2^5
+			\]
+			semillas por metro cuadrado.
+			
+			Si el cultivo cubre:
+			\[
+			2^3
+			\]
+			metros cuadrados, ¿cuántas semillas se utilizan en total?
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Resolución}
+			\[
+			2^5 \cdot 2^3 = 2^{5+3} = 2^8
+			\]
+			\[
+			2^8 = 256
+			\]
+			Se utilizan aproximadamente \textbf{256 semillas}.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Crecimiento de bacterias en el suelo}
+		\begin{block}{Contexto}
+			Una colonia bacteriana se duplica cada hora.
+			
+			La cantidad inicial es:
+			\[
+			2^3
+			\]
+			bacterias.
+			
+			Después de 4 horas:
+			\[
+			2^3 \cdot 2^4
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Cálculo}
+			\[
+			2^3 \cdot 2^4 = 2^{7}
+			\]
+			\[
+			2^7 = 128
+			\]
+			Después de 4 horas hay \textbf{128 bacterias}.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Fertilización}
+		\begin{block}{Situación}
+			Un fertilizante se aplica en dosis proporcionales a potencias de 10.
+			
+			En un ensayo se utiliza:
+			\[
+			5\times10^2
+			\]
+			gramos por hectárea.
+			
+			Si el cultivo ocupa:
+			\[
+			10^3
+			\]
+			hectáreas experimentales, calcule la cantidad total.
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Resolución}
+			\[
+			(5\times10^2)(10^3)=5\times10^{5}
+			\]
+			Se requieren aproximadamente:
+			\[
+			500000\text{ gramos}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Ejercicios contextualizados}
+		\begin{enumerate}
+			\item En una parcela experimental se plantan
+			\[
+			2^6
+			\]
+			semillas de trigo por sector.
+			
+			Si el terreno tiene
+			\[
+			2^3
+			\]
+			sectores iguales, ¿cuántas semillas se plantan en total?
+			
+			\pause
+			
+			\item Una bacteria del suelo se duplica cada hora. Si inicialmente hay
+			\[
+			2^2
+			\]
+			bacterias, ¿cuántas habrá después de 6 horas?
+			
+			\pause
+			
+			\item Un cultivo utiliza una densidad de
+			\[
+			5^3
+			\]
+			plantas por unidad experimental.
+			
+			Si se instalan
+			\[
+			5^2
+			\]
+			unidades experimentales, ¿cuántas plantas se utilizan en total?
+			
+			\pause
+			
+			\item En un laboratorio agrícola se almacenan muestras de suelo. Cada caja contiene
+			\[
+			3^4
+			\]
+			muestras.
+			
+			Si se tienen
+			\[
+			3^2
+			\]
+			cajas, ¿cuántas muestras hay en total?
+		\end{enumerate}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Síntesis}
+		\begin{block}{Ideas clave}
+			\begin{itemize}
+				\item Las potencias representan multiplicaciones repetidas.
+				\item Las propiedades de las potencias permiten simplificar cálculos.
+				\item Las potencias aparecen frecuentemente en fenómenos de crecimiento.
+				\item En Agronomía permiten modelar poblaciones, concentraciones y escalas.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+		\begin{frame}{Trabajo personal del estudiante}
+		
+		\centering
+		
+		\vspace{0.3cm}
+		
+		Libro Álgebra, trigonometría y geometría análitica
+		Dennis G. Zill - Jaqueline.M Dewar
+		
+		\medskip
+		
+		Ejercicio 2.3 Páginas 68-70	
+		
+	\end{frame}	
+	
+	
+\end{document}

@@ -1,0 +1,515 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% =========================
+% Idioma y codificación
+% =========================
+\usepackage[spanish,es-noshorthands]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[latin1]{inputenc}
+\usepackage{tcolorbox}
+% =========================
+% Matemática
+% =========================
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{bm}
+
+% =========================
+% Diseño
+% =========================
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{hyperref}
+
+% =========================
+% Tema Beamer
+% =========================
+\usetheme{Madrid}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% =========================
+% Colores
+% =========================
+\definecolor{USTGreen}{RGB}{27,94,32}
+\definecolor{USTGreen2}{RGB}{46,125,50}
+\definecolor{USTLight}{RGB}{232,245,233}
+\definecolor{USTDark}{RGB}{21,58,26}
+\definecolor{USTGray}{RGB}{79,91,98}
+
+\setbeamercolor{structure}{fg=USTGreen}
+\setbeamercolor{title}{fg=white,bg=USTGreen}
+\setbeamercolor{frametitle}{fg=white,bg=USTGreen}
+\setbeamercolor{subtitle}{fg=white}
+\setbeamercolor{author}{fg=USTDark}
+\setbeamercolor{date}{fg=USTGray}
+
+\setbeamercolor{block title}{fg=white,bg=USTGreen2}
+\setbeamercolor{block body}{fg=black,bg=USTLight}
+
+\setbeamercolor{alerted text}{fg=red!75!black}
+\setbeamercolor{item projected}{fg=white,bg=USTGreen2}
+
+\setbeamercolor{footline left}{fg=white,bg=USTGreen}
+\setbeamercolor{footline right}{fg=white,bg=USTDark}
+
+% =========================
+% Pie de página
+% =========================
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.82\paperwidth,ht=2.7ex,dp=1.2ex,leftskip=1em]{footline left}
+			Razonamiento Lógico Matemático
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.18\paperwidth,ht=2.7ex,dp=1.2ex,rightskip=1em plus1fil]{footline right}
+			\insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+}
+
+% =========================
+% Entornos
+% =========================
+\newtheorem{definicion}{Definici\'on}
+\newtheorem{ejemplo}{Ejemplo}
+
+\newenvironment{stepenumerate}
+{\begin{enumerate}[<+->]}
+	{\end{enumerate}}
+
+\newenvironment{stepitemize}
+{\begin{itemize}[<+->]}
+	{\end{itemize}}
+
+\newenvironment{stepenumeratewithalert}
+{\begin{enumerate}[<+-| alert@+>]}
+	{\end{enumerate}}
+
+\newenvironment{stepitemizewithalert}
+{\begin{itemize}[<+-| alert@+>]}
+	{\end{itemize}}
+
+\newtcolorbox{agro}{colback=yellow!10,colframe=black}
+% =========================
+% Datos portada
+% =========================
+\title[MAT-016]{Fundamentos de Matemática Básica}
+\subtitle{Unidad II: Ecuaciones de Primer Grado y Sistema de Ecuaciones\\[0.2em]
+	Clase: Ecuaciones de primer grado}
+\author[Prof. Luis Tulio Gonz\'alez Alcaino]{Profesor Luis Tulio Gonz\'alez Alcaino\\
+	Mag\'ister en Matem\'atica}
+\institute[UST Talca]{Universidad Santo Tom\'as\\
+	Departamento de Ciencias B\'asicas -- Talca}
+\date{}
+
+\begin{document}
+	
+	% =========================
+	% Portada
+	% =========================
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[USTGreen] (current page.north west) rectangle ([yshift=-1.8cm]current page.north east);
+			\fill[USTLight] (current page.south west) rectangle ([yshift=1.2cm]current page.south east);
+			\fill[USTGreen2,opacity=0.15] ([xshift=-1cm,yshift=-1cm]current page.north east) circle (2.4cm);
+			\fill[USTGreen2,opacity=0.10] ([xshift=1cm,yshift=1cm]current page.south west) circle (2.8cm);
+		\end{tikzpicture}
+		
+		\vspace{0.7cm}
+		{\usebeamerfont{title}\color{USTGreen}\inserttitle\par}
+		\vspace{0.3cm}
+		{\usebeamerfont{subtitle}\color{USTGray}\insertsubtitle\par}
+		\vspace{0.8cm}
+		{\usebeamerfont{author}\insertauthor\par}
+		\vspace{0.3cm}
+		{\usebeamerfont{institute}\color{USTGray}\insertinstitute\par}
+		\vfill
+	\end{frame}
+	
+	\begin{frame}{Contenidos de la clase}
+		\begin{itemize}
+			\item Ecuaciones de primer grado
+			\item Resolución algebraica
+			\item Modelación agronómica
+			\item Aplicaciones reales
+			\item Ejercicios.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Ecuaciones}
+		\begin{definicion}
+			Una ecuaci\'on es una igualdad que presenta una o m\'as variables, y que es verdadera solamente para algunos valores de estas variables.
+		\end{definicion}
+		
+		\pause
+		
+		\begin{block}{Ejemplos de ecuaciones}
+			\begin{stepenumeratewithalert}
+				\item $2x+5=3$, ecuaci\'on de primer grado, cuya soluci\'on es $x=-1$. En efecto:
+				\[
+				2(-1)+5=3,\qquad -2+5=3,\qquad 3=3.
+				\]
+				
+				\item $\dfrac{5x+2}{x+1}-1=3$, ecuaci\'on fraccionaria, cuya soluci\'on es $x=2$.
+			\end{stepenumeratewithalert}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ecuaciones}
+		\begin{block}{Resolver ecuaciones}
+			\textbf{Resolver una ecuaci\'on} significa encontrar todos los valores de sus variables para los cuales la ecuaci\'on es verdadera. Estos valores se llaman \textbf{soluciones de la ecuaci\'on}.
+			
+			Cuando s\'olo interviene una variable, una soluci\'on tambi\'en puede llamarse \textbf{ra\'iz}. A la letra que representa la cantidad desconocida se le suele llamar \textbf{inc\'ognita}.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ecuaciones}
+		\begin{block}{Propiedades de la igualdad}
+			Para resolver una ecuaci\'on debemos tener presentes las siguientes propiedades:
+			\begin{stepitemizewithalert}
+				\item Al sumar o restar la misma cantidad en ambos lados de una ecuaci\'on, la igualdad se mantiene.
+				
+				\medskip
+				\textbf{Ejemplo:}
+				\[
+				x-3=5 \quad /+3
+				\]
+				\[
+				x-3+3=5+3
+				\]
+				\[
+				x=8
+				\]
+				
+				\item Al multiplicar o dividir por una cantidad distinta de cero en ambos lados de una ecuaci\'on, la igualdad se mantiene.
+				
+				\medskip
+				\textbf{Ejemplo:}
+				\[
+				3x=12 \quad /\div 3
+				\]
+				\[
+				\frac{3x}{3}=\frac{12}{3}
+				\]
+				\[
+				x=4
+				\]
+			\end{stepitemizewithalert}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ecuaciones de primer grado en una variable}
+		Para resolver una ecuaci\'on de primer grado en una variable, realizamos operaciones equivalentes hasta aislar la inc\'ognita en uno de los miembros de la igualdad.
+		
+		\pause
+		
+		\begin{ejemplo}
+			Resolver la ecuaci\'on: $5x-6=3x+4$
+			
+			\medskip
+			\textbf{Soluci\'on:}
+			\[
+			\begin{array}{rcl}
+				5x-6 &=& 3x+4 \pause \\[0.3em]
+				5x-3x &=& 4+6 \pause \\[0.3em]
+				2x &=& 10 \pause \\[0.3em]
+				x &=& \dfrac{10}{2} \pause \\[0.3em]
+				x &=& 5
+			\end{array}
+			\]
+			
+			Por tanto, la soluci\'on de la ecuaci\'on es:
+			\[
+			\boxed{x=5}
+			\]
+		\end{ejemplo}
+	\end{frame}
+	
+	\begin{frame}{Ejemplos de ecuaciones de primer grado}
+		Resolver las siguientes ecuaciones:
+		
+		\begin{stepenumerate}
+			\item
+			\[
+			2\bigl[(3x+1)-2(x+4)\bigr]-(3x+5)=5+x
+			\]
+			\begin{stepitemize}
+				\item Soluci\'on: \(\boxed{x=-12}\)
+			\end{stepitemize}
+			
+			\item
+			\[
+			2(x-1)=3(2-3x)-5(x-2)
+			\]
+			\begin{stepitemize}
+				\item Soluci\'on: \(\boxed{x=\frac{9}{8}}\)
+			\end{stepitemize}
+		\end{stepenumerate}
+	\end{frame}
+	
+		
+	\begin{frame}{Ejercicios}
+		Resolver para \(x\) las siguientes ecuaciones:
+		
+		\begin{enumerate}
+			
+			\item \(3(x-2) = 24\) \pause
+		
+			\medskip
+			
+			\textbf{Sol.} $x=10$
+			
+			\item $2x+5(3x-4)=6x+13$ \pause
+			
+			\medskip
+			
+			\textbf{Sol.} $x=3$
+			
+			\item $	7x-3(2-3x)=5(2x+12)$	\pause
+			
+			\medskip
+			
+			\textbf{Sol.} $x=11$
+			
+			\item $3(x-3)-4x=4(x-1)-6x$	\pause
+			
+			\medskip
+			
+			\textbf{Sol.} $x=5$
+		\end{enumerate}
+		
+	\end{frame}
+	
+		
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}{Importancia en Agronomía}
+		
+		Las ecuaciones permiten modelar fenómenos como:
+		\begin{itemize}
+			\item rendimiento de cultivos, uso de agua, fertilización entre otros.
+		\end{itemize}
+		
+		\begin{agro}
+			Ejemplo real: En un estudio agronómico, se analiza la relación entre la densidad de siembra y el rendimiento de un cultivo.	Se ha determinado que el rendimiento \(R\) (en unidades de producción por hectárea) depende de la densidad de siembra \(D\) (en plantas por metro cuadrado) según el siguiente modelo lineal: $R = 47 + 45D$
+			
+			\begin{enumerate}
+				\item Interprete el significado de los coeficientes del modelo.
+				\item Determine el rendimiento esperado si la densidad de siembra es de \(D = 3\).
+			\end{enumerate}
+						
+			\textbf{Solución:}
+			
+			\begin{itemize}
+			\item El valor \(47\) representa el rendimiento base del cultivo cuando la densidad de siembra es cero.
+			\item El coeficiente \(45\) indica que por cada unidad adicional en la densidad de siembra, el rendimiento aumenta en \(45\) unidades.
+			\end{itemize}
+			
+			Para \(D = 3\): $R = 47 + 45(3)= 47 + 135=182$
+			
+			\textbf{Respuesta:} El rendimiento esperado es de \(182\) unidades de producción por hectárea.
+			
+		\end{agro}
+		
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Propiedades de la igualdad}
+		
+	Un sistema requiere una cierta cantidad de unidades de un recurso para alcanzar el equilibrio. Se sabe que el modelo que describe esta situación es:
+	
+	\[
+	3x + 12 = 30
+	\]
+	
+	donde \(x\) representa la cantidad de unidades del recurso necesarias.
+	
+	\textbf{Solución:}
+	
+	
+\[
+\begin{array}{rcl}
+	3x + 12 &=& 30 \\
+	3x &=& 30 - 12 \\
+	3x &=& 18 \\
+	x &=& \dfrac{18}{3}\\
+	x &=& 6
+\end{array}
+\]
+		
+	\begin{agro}
+	\textbf{Interpretación:}
+	
+	Se requieren \(6\) unidades del recurso para que el sistema alcance el equilibrio.
+	\end{agro}
+	
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Aplicación de fertilizante}
+		
+		Un cultivo requiere en total \(240\) kg de fertilizante para su adecuado desarrollo. Inicialmente, ya se han aplicado \(60\) kg.
+		
+		El fertilizante restante se distribuirá en \(6\) aplicaciones iguales a lo largo del ciclo del cultivo.
+		
+		\begin{enumerate}
+			\item Plantee una ecuación que modele la situación.
+			\item Determine cuántos kilogramos de fertilizante deben aplicarse en cada aplicación.
+		\end{enumerate}
+		
+		\textbf{Solución:}
+		
+		Sea \(x\) la cantidad de fertilizante (en kg) aplicada en cada aplicación.
+		
+		\[
+		60 + 6x = 240
+		\]
+		
+		\[
+		6x = 180
+		\]
+		
+		\[
+		x = 30
+		\]
+		\begin{agro}
+			\textbf{Respuesta:} Cada aplicación debe ser de 30 kg.
+		\end{agro}
+		
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Modelo de riego}
+		
+		Un sistema de riego funciona con un caudal constante de \(35\) litros por minuto.
+				
+			Si se requiere suministrar un volumen total de \(8400\) litros de agua para un cultivo, determine el tiempo necesario para completar el riego.
+						
+			\textbf{Solución:}
+			
+			Sea \(t\) el tiempo (en minutos) necesario para suministrar el agua.
+			
+			\[
+			35t = 8400
+			\]
+			
+			\[
+			t = \frac{8400}{35}
+			\]
+			
+			\[
+			t = 240 \text{ minutos}
+			\]
+			
+		\begin{agro}
+			\textbf{Respuesta:} El tiempo necesario es \(240\) minutos, es decir, \(4\) horas.
+		\end{agro}
+		
+	\end{frame}
+	
+	% =========================
+	
+	\begin{frame}{Modelo económico agrícola}
+		
+		\begin{block}{Problema}
+			Precio: \$300/kg  
+			Costo variable: \$150/kg  
+			Costo fijo: \$600000  
+		\end{block}
+		
+		\[
+		300x = 150x + 600000
+		\]
+		
+		\[
+		150x = 600000 \Rightarrow x = 4000
+		\]
+		
+		\begin{agro}
+			Producción mínima: 4 toneladas.
+		\end{agro}
+		
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Problema avanzado (ingeniería)}
+		
+		\begin{block}{Situación}
+			Un sistema de fertirriego mezcla agua y solución nutritiva.
+			
+			Volumen total: 500 L  
+			Agua inicial: 100 L  
+			Se agregan \(x\) recipientes de 25 L.
+		\end{block}
+		
+		\[
+		100 + 25x = 500
+		\]
+		
+		\[
+		25x = 400 \Rightarrow x = 16
+		\]
+		
+		\begin{agro}
+			Se necesitan 16 recipientes de solución.
+		\end{agro}
+		
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Problema de balance agrícola}
+		
+		\begin{block}{Situación}
+			Un campo tiene 3 parcelas.  
+			Cada una produce \(x\) toneladas.  
+			Una parcela adicional produce 5 toneladas menos.  
+			Producción total: 55 toneladas.
+		\end{block}
+		
+		\[
+		3x + (x - 5) = 55
+		\]
+		
+		\[
+		4x - 5 = 55
+		\]
+		
+		\[
+		x = 15
+		\]
+		
+		\begin{agro}
+			Producción base por parcela: 15 toneladas.
+		\end{agro}
+		
+	\end{frame}
+	
+		\begin{frame}{Cierre}
+		
+		\begin{block}{Idea clave}
+			Las ecuaciones lineales permiten modelar procesos agrícolas reales.
+		\end{block}
+		
+		\begin{agro}
+			Se utilizan para:
+			\begin{itemize}
+				\item optimizar recursos
+				\item predecir producción
+				\item tomar decisiones técnicas
+			\end{itemize}
+		\end{agro}
+		
+	\end{frame} 
+	
+	% =========================
+		
+	%%%%%%%%%%%%%%%%%%
+	
+	
+	
+\end{document}

@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\geometry{letterpaper, margin=2cm}
+
+\begin{document}
+	
+	\section*{Solución del problema}
+	
+	\textbf{Datos:}
+	
+	\begin{itemize}
+		\item Dosis recomendada: $140 \text{ kg/ha}$
+		\item Superficie: $3{,}6 \text{ ha}$
+	\end{itemize}
+	
+	\vspace{0.3cm}
+	
+	\textbf{1. Verificación del cálculo}
+	
+	El técnico realiza:
+	\[
+	140 \times 3{,}6 = 504
+	\]
+	
+	Descomponiendo:
+	\[
+	140 \times 3 = 420 \quad \text{y} \quad 140 \times 0{,}6 = 84
+	\]
+	
+	\[
+	420 + 84 = 504
+	\]
+	
+	\textbf{Conclusión:} El cálculo es \textbf{correcto}. El resultado es $504 \text{ kg}$.
+	
+	\vspace{0.3cm}
+	
+	\textbf{2. Análisis de razonabilidad}
+	
+	Si:
+	\[
+	1 \text{ ha} \rightarrow 140 \text{ kg}
+	\]
+	
+	Entonces:
+	\[
+	3{,}6 \text{ ha} \rightarrow 140 \times 3{,}6 = 504 \text{ kg}
+	\]
+	
+	Además, como $3{,}6 \approx 4$:
+	\[
+	140 \times 4 = 560 \text{ kg}
+	\]
+	
+	El valor obtenido ($504$ kg) es menor que $560$ kg, lo cual es coherente ya que $3{,}6 < 4$.
+	
+	\textbf{Conclusión:} El resultado es \textbf{razonable}.
+	
+	\vspace{0.3cm}
+	
+	\textbf{3. Análisis del resultado}
+	
+	\begin{itemize}
+		\item \textbf{Unidad:}
+		
+		\[
+		\text{kg/ha} \times \text{ha} = \text{kg}
+		\]
+		
+		La unidad final es \textbf{kilogramos (kg)}.
+		
+		\item \textbf{Magnitud:}
+		
+		\[
+		\frac{504}{3{,}6} = 140 \text{ kg/ha}
+		\]
+		
+		El resultado coincide con la dosis recomendada.
+		
+		\item \textbf{Coherencia del contexto:}
+		
+		El cálculo es proporcional y consistente con la recomendación técnica.
+	\end{itemize}
+	
+	\vspace{0.3cm}
+	
+	\textbf{4. Cálculo de sacos}
+	
+	Cada saco contiene $25$ kg:
+	
+	\[
+	\frac{504}{25} = 20{,}16
+	\]
+	
+	\textbf{Cantidad de sacos:}
+	
+	No es posible comprar fracciones de saco, por lo tanto:
+	
+	\[
+	\boxed{21 \text{ sacos}}
+	\]
+	
+	\textbf{Justificación del redondeo:}
+	
+	\begin{itemize}
+		\item $20$ sacos $\rightarrow 20 \times 25 = 500$ kg (insuficiente)
+		\item $21$ sacos $\rightarrow 21 \times 25 = 525$ kg (suficiente)
+	\end{itemize}
+	
+	Se debe redondear \textbf{hacia arriba} para asegurar la cantidad necesaria de fertilizante.
+	
+	\vspace{0.3cm}
+	
+	\textbf{Conclusión final:}
+	
+	\begin{itemize}
+		\item El cálculo del técnico es correcto.
+		\item El resultado es razonable y coherente.
+		\item La unidad es kg.
+		\item Se deben comprar \textbf{21 sacos}.
+	\end{itemize}
+	
+\end{document}

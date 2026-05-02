@@ -1,0 +1,525 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{lmodern}
+
+\usetheme{Madrid}
+
+\definecolor{USTGreen}{RGB}{27,94,32}
+\setbeamercolor{structure}{fg=USTGreen}
+\setbeamertemplate{blocks}[rounded]
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{ejemplos}{Ejemplos}
+\newcommand{\pp}{\pause}
+
+%====================================================
+\title{Fundamentos de Matemática}
+\subtitle{Ecuaciones Fraccionarias, Literales, Modelar Situaciones en Agronomía}
+\author{Prof. Luis Tulio González}
+\institute{Universidad Santo Tomás}
+\date{}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	%====================================================
+	\begin{frame}{Objetivos de la clase}
+		\begin{itemize}
+			\item Modelar situaciones agrícolas mediante ecuaciones de primer grado
+			\item Resolver ecuaciones fraccionarias y literales
+			\item Interpretar resultados en contexto agronómico
+			\item Detectar patrones e inconsistencias
+			\item Validar la coherencia de los resultados
+		\end{itemize}
+	\end{frame}
+	
+	%====================================================
+	
+	
+	\begin{frame}{Ecuaciones de primer grado fraccionarias}
+	
+	Para resolver ecuaciones fraccionarias de primer grado, se sugiere utilizar
+	la técnica de multiplicar por el mínimo comoún múltiplo de
+	los denominadores para dejar todos los coeficientes enteros. Luego resolver
+	una ecuación resultante con coeficientes enteros.\pause
+	
+	\begin{ejemplo}
+		Resolver $\dfrac{7x}{2}-\dfrac{9x}{4}$ $=\dfrac{2x-1}{4}+\dfrac{1}{2}$%
+		\pause
+		
+		\textbf{Solución:} Primero eliminamos las fracciones, multiplicando
+		ambos lados de la ecuación por mínimo común múltiplo de los
+		denominadores, que es 4.
+		
+		\begin{enumerate}
+			\item $4\cdot \left( \dfrac{7x}{2}\right) -4\cdot \dfrac{9x}{4}=4\cdot
+			\left( \dfrac{2x-1}{4}\right) +4\cdot \left( \dfrac{1}{2}\right) $
+			
+			\item $14x-9x=2x-1+2$
+			
+			\item $5x=2x+1$
+			
+			\item $5x-2x=1$
+			
+			\item $3x=1$
+			
+			\item $x=\dfrac{1}{3}\Longrightarrow $ \ La solución o raíz de la
+			ecuación es $x=\dfrac{1}{3}$
+		\end{enumerate}
+	\end{ejemplo}
+	
+\end{frame}
+
+\begin{frame}{Ecuaciones de primer grado fraccionarias}
+
+\begin{ejemplo}
+	Resolver $\dfrac{x-1}{3}+\dfrac{x}{2}$ $=\dfrac{x+3}{6}-2$
+	
+	\textbf{Solución: }Eliminamos las fracciones, multiplicando ambos lados
+	de la ecuación por mínimo común múltiplo de los
+	denominadores, que es $6$.
+	
+	\begin{itemize}
+		\item $6\cdot \left( \dfrac{x-1}{3}\right) +6\cdot \left( \dfrac{x}{2}%
+		\right) $ $=6\cdot \left( \dfrac{x+3}{6}\right) -6\cdot 2$
+		
+		\item $2(x-1)+3x$ $=x+3-12$
+		
+		\item $2x-2+3x=x-9$
+		
+		\item $5x-2=x-9$
+		
+		\item $5x-x=-9+2$
+		
+		\item $4x=-7$
+		
+		\item $x=-\dfrac{7}{4}$ $\ \Longrightarrow $ $\ $La solución de la 
+		ecuación es $x=-\dfrac{7}{4}$
+	\end{itemize}
+\end{ejemplo}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\begin{frame}{Ejemplos de ecuaciones de primer fraccionarias}
+
+Resolver las siguientes ecuaciones:
+
+\begin{enumerate}
+	\item $\dfrac{x}{2}+\dfrac{2x}{5}=\dfrac{6x}{4}-\dfrac{5x-1}{10}$
+	
+	\begin{itemize}
+		\item $x=-1$
+	\end{itemize}
+	
+	\item $\dfrac{x-1}{2}-\dfrac{x+2}{4}=\dfrac{x+3}{6}$
+	
+	\begin{itemize}
+		\item $x=18$
+	\end{itemize}
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{Ecuaciones Fraccionarias}
+	
+	\begin{frame}{Modelo de distribución de agua}
+		
+		Un sistema de riego distribuye agua en dos sectores:
+		
+		\[
+		\frac{x}{3} + \frac{x}{4} = 140
+		\]
+		
+		\pp
+		
+		Multiplicamos por 12:
+		
+		\[
+		4x + 3x = 1680
+		\]
+		
+		\pp
+		
+		\[
+		7x = 1680
+		\]
+		
+		\pp
+		
+		\[
+		x = 240
+		\]
+		
+		\pp
+		
+		\begin{block}{Interpretación}
+			El volumen total de agua disponible es \textbf{240 L}.
+		\end{block}
+		
+	\end{frame}
+	
+	%====================================================
+	\begin{frame}{Modelo de fertirrigación}
+		
+		\[
+		\frac{2x + 40}{5} = \frac{x + 20}{2}
+		\]
+		
+		\pp
+		
+		Multiplicamos por 10:
+		
+		\[
+		2(2x + 40) = 5(x + 20)
+		\]
+		
+		\pp
+		
+		\[
+		4x + 80 = 5x + 100
+		\]
+		
+		\pp
+		
+		\[
+		-20 = x
+		\]
+		
+		\pp
+		
+		\begin{block}{Análisis}
+			Resultado negativo → \textbf{inconsistencia física}.
+			
+			El modelo no es válido en contexto agronómico.
+		\end{block}
+		
+	\end{frame}
+	
+	%====================================================
+	\section{Ecuaciones Literales}
+	
+	\begin{frame}{Ecuaciones Literales: Modelo de costo agrícola}
+		
+		\[
+		C = px + b
+		\]
+		
+		\pp
+		
+		Despejamos $x$:
+		
+		\[
+		x = \frac{C - b}{p}
+		\]
+		
+		\pp
+		
+		\begin{block}{Interpretación}
+			\begin{itemize}
+				\item $C$: costo total
+				\item $p$: costo por hectárea
+				\item $b$: costo fijo
+				\item $x$: superficie cultivada
+			\end{itemize}
+		\end{block}
+		
+	\end{frame}
+	
+	%====================================================
+	\begin{frame}{Modelo de riego}
+		
+		\[
+		Q = kt + c
+		\]
+		
+		\pp
+		
+		Despejamos $t$:
+		
+		\[
+		t = \frac{Q - c}{k}
+		\]
+		
+		\pp
+		
+		\begin{block}{Interpretación}
+			Permite determinar el tiempo necesario de riego.
+		\end{block}
+		
+	\end{frame}
+	
+	
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	
+\begin{frame}{Problemas con ecuaciones de primer grado}
+
+En la mayoría de los casos, para resolver problemas pr\'{a}cticos deben
+
+traducirse las relaciones establecidas a símbolos matem\'{a}ticos. Esto
+es
+
+conocido como modelación. No existe un método o regla general para
+
+resolver problemas de aplicación, sin embargo, existen algunos pasos a
+
+seguir que con frecuencia son útiles para obtener la solución:
+
+\begin{itemize}
+	\item Leer detenidamente el problema.
+	
+	\item Hacer un esquema o dibujo, si tiene sentido hacerlo.
+	
+	\item Representar el(los) término(s) desconocido(s) por medio de una(s)
+	variable(s).
+	
+	\item Si es posible, representar todas las dem\'{a}s cantidades en té%
+	rminos de la o las variables utilizadas.
+	
+	\item Expresar la situación descrita en el problema en términos matem%
+	\'{a}ticos,
+	
+	\item es decir, plantear la(s) ecuación(es).
+	
+	\item Resolver la(s) ecuación(es) planteadas.
+	
+	\item Verificar que la soluciones concuerde con las condiciones planteadas
+	en el problema, analizar.
+	
+	\item Dar respuesta al problema planteado.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\begin{frame}{Ejemplos de problemas con ecuaciones de primer grado}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejemplo de aplicación}}}%
+	%BeginExpansion
+	\begin{block}{Ejemplo de aplicación}%
+		%EndExpansion
+		
+		\textbf{Ejemplo 1.} Una empresa agrícola exportó sólo un cuarto
+		de su producción
+		
+		de duraznos y 2/3 de la producción se consumió en la Región del
+		Maule. Si
+		
+		este consumo fue de 240 toneladas, determine la producción de duraznos
+		
+		que se exportó.
+		
+		%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+	%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\begin{frame}{Ejemplos de problemas con ecuaciones de primer grado}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejemplo de aplicación}}}%
+	%BeginExpansion
+	\begin{block}{Ejemplo de aplicación}%
+		%EndExpansion
+		
+		\textbf{Ejemplo 2.} En un predio agrícola, un agrónomo realiza un análisis de un invernadero donde se cultivan plantas en distintas etapas de desarrollo. Se clasifican en:
+		
+		\begin{itemize}
+			\item Plantas adultas (en producción),
+			\item Plantas jóvenes (en crecimiento),
+			\item Plantas en vivero (etapa inicial).
+		\end{itemize}
+		
+		Se sabe que:
+		
+		\begin{itemize}
+			\item Hay 5 plantas adultas más que plantas jóvenes.
+			\item Hay 3 plantas jóvenes más que plantas en vivero.
+			\item En total hay 50 plantas.
+		\end{itemize}
+		
+		\textbf{Pregunta:} ¿Cuántas plantas hay en cada categoría?
+		
+		%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+	%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\begin{frame}{Ejemplos de problemas con ecuaciones de primer grado}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejemplo de aplicación}}}%
+	%BeginExpansion
+	\begin{block}{Ejemplo de aplicación}%
+		%EndExpansion
+		
+		\textbf{Ejemplo 3.} En un predio agrícola, un agrónomo analiza la edad productiva de dos parcelas de cultivo:
+		
+		La parcela A corresponde a un cultivo más desarrollado.
+		La parcela B corresponde a un cultivo más joven.
+		
+		Se sabe que:
+		
+		La edad de la parcela A es el doble de la edad de la parcela B.
+		Debido al crecimiento de los cultivos, se estima que en cinco años más la suma de las edades de ambas parcelas será de 43 años.
+			
+		¿Cuál es la edad actual de cada parcela (cultivo A y cultivo B)?
+		
+		%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+	%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\begin{frame}{Problemas con ecuaciones de primer grado}\begin{block}{Idea central}\small Para resolver problemas prácticos, es necesario traducir la situación planteada a símbolos matemáticos.  Este proceso se conoce como \textbf{modelación}.\end{block}\pause\begin{block}{Pasos sugeridos}\small \begin{enumerate}\item Leer detenidamente el problema.\item Hacer un esquema o dibujo, si es útil.\item Representar lo desconocido mediante una variable.\item Expresar las demás cantidades en función de esa variable.\item Plantear la ecuación que modela la situación.\item Resolver la ecuación.\item Verificar que la solución cumpla las condiciones del problema.\item Responder en el contexto planteado.\end{enumerate}\end{block}\pause\begin{alertblock}{\small Conclusión}\small Resolver problemas no consiste solo en calcular, sino también en \textbf{interpretar, modelar, verificar y responder con sentido}.\end{alertblock}\end{frame}
+	%====================================================
+	\section{Detección de patrones}
+	
+	\begin{frame}{Patrón en fertilización}
+		
+		\[
+		10x + 100 = 200
+		\]
+		
+		\pp
+		
+		\[
+		10x = 100 \Rightarrow x = 10
+		\]
+		
+		\pp
+		
+		\[
+		20x + 100 = 300 \Rightarrow x = 10
+		\]
+		
+		\pp
+		
+			\[
+		30x + 100 = 400 \Rightarrow x = 10
+		\]
+		
+		\pp
+		
+		\begin{block}{Patrón}
+			El valor de $x$ se mantiene constante.
+		\end{block}
+		
+	\end{frame}
+	
+	%====================================================
+	\section{Inconsistencias}
+	
+	\begin{frame}{Análisis crítico}
+		
+		\[
+		3(2x + 50) = 6x + 150
+		\]
+		
+		\pp
+		
+		\[
+		6x + 150 = 6x + 150
+		\]
+		
+		\pp
+		
+		\begin{block}{Conclusión}
+			\begin{itemize}
+				\item Identidad matemática
+				\item Infinitas soluciones
+				\item Modelo no permite tomar decisiones agrícolas
+			\end{itemize}
+		\end{block}
+		
+	\end{frame}
+	
+	%====================================================
+	\begin{frame}{Otro caso}
+		
+		\[
+		4x + 20 = 4x + 50
+		\]
+		
+		\pp
+		
+		\[
+		20 = 50
+		\]
+		
+		\pp
+		
+		\begin{block}{Conclusión}
+			\begin{itemize}
+				\item Contradicción
+				\item No tiene solución
+				\item Error en modelación del problema agrícola
+			\end{itemize}
+		\end{block}
+		
+	\end{frame}
+	
+	%====================================================
+	\section{Actividad}
+	
+	\begin{frame}{Ejercicio Desafío}
+		
+		\[
+		\frac{3x + 60}{4} + \frac{x - 20}{2} = 200
+		\]
+		
+		\begin{itemize}
+			\item Resuelva la ecuación
+			\item Interprete el resultado
+			\item Evalúe si es coherente en contexto agrícola
+		\end{itemize}
+		
+	\end{frame}
+	
+	%====================================================
+	\begin{frame}{Cierre}
+		
+		\begin{itemize}
+			\item Las ecuaciones modelan procesos agrícolas reales
+			\item No todo resultado es válido físicamente
+			\item Validar es tan importante como resolver
+		\end{itemize}
+		
+	\end{frame}
+	
+\end{document}

@@ -1,0 +1,168 @@
+\documentclass[12pt]{article}
+
+% ------------------------------------------------
+% PAQUETES
+% ------------------------------------------------
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{setspace}
+
+% ------------------------------------------------
+% CONFIGURACIÓN
+% ------------------------------------------------
+\geometry{margin=1.5cm}
+\setstretch{1.15}
+
+% ------------------------------------------------
+% DOCUMENTO
+% ------------------------------------------------
+\begin{document}
+	
+	\begin{center}
+		{\Large \textbf{Solución Problema 2}}\\[0.3cm]
+		{\normalsize Pensamiento Matemático}\\[0.2cm]
+		{\normalsize Contexto: Psicología}
+	\end{center}
+	
+	\vspace{0.4cm}
+	
+	\noindent
+	\textbf{Problema 2}
+	
+	\vspace{0.2cm}
+	
+	Considere la siguiente proposición compuesta:
+	
+	\begin{quote}
+		``Si una persona no sigue las estrategias terapéuticas indicadas, entonces presenta dificultades emocionales o no logra mejorar su bienestar psicológico.''
+	\end{quote}
+	
+	\begin{enumerate}[label=\alph*)]
+		
+		\item \textbf{Identificación de proposiciones simples y expresión en lenguaje simbólico}
+		
+		Definimos las siguientes proposiciones simples:
+		
+		$p:\ \text{La persona sigue las estrategias terapéuticas indicadas.}$
+
+
+		$q:\ \text{La persona presenta dificultades emocionales.}$
+		
+		$r:\ \text{La persona logra mejorar su bienestar psicológico.}$
+		
+		
+		Ahora traducimos el enunciado parte por parte:
+		
+		\begin{itemize}
+			\item ``La persona no sigue las estrategias terapéuticas indicadas'' se representa por:
+			\[
+			\sim p
+			\]
+			
+			\item ``presenta dificultades emocionales'' se representa por:
+			\[
+			q
+			\]
+			
+			\item ``no logra mejorar su bienestar psicológico'' se representa por:
+			\[
+			\sim r
+			\]
+			
+			\item La expresión ``dificultades emocionales o no logra mejorar su bienestar psicológico'' se representa por:
+			\[
+			q \lor \sim r
+			\]
+			
+			\item Como todo el enunciado tiene la forma ``Si \dots entonces \dots'', la proposición completa queda:
+			\[
+			\sim p \to (q \lor \sim r)
+			\]
+		\end{itemize}
+		
+		\textbf{Respuesta final:}
+		
+		La proposición en lenguaje simbólico es:
+		\[
+		\boxed{\sim p \to (q \lor \sim r)}
+		\]
+		
+		\vspace{0.4cm}
+		
+		\item \textbf{Tabla de verdad y clasificación lógica}
+		
+		Construimos la tabla de verdad de la proposición:
+		\[
+		\sim p \to (q \lor \sim r)
+		\]
+		
+		\textbf{Paso 1:} Recordamos que:
+		\begin{itemize}
+			\item La negación cambia \(V\) por \(F\) y \(F\) por \(V\).
+			\item La disyunción \(q \lor \sim r\) es verdadera cuando al menos una de las dos proposiciones es verdadera.
+			\item La implicación \(A \to B\) solo es falsa cuando \(A\) es verdadera y \(B\) es falsa.
+		\end{itemize}
+		
+		\vspace{0.3cm}
+		
+		\begin{center}
+			\begin{tabular}{|c |c| c| c| c| c|}
+				\toprule
+				\(p\) & \(q\) & \(r\) & \(\sim p\) & \(q \lor \sim r\) & \(\sim p \to (q \lor \sim r)\) \\
+				\midrule
+				V & V & V & F & V & V \\
+				V & V & F & F & V & V \\
+				V & F & V & F & F & V \\
+				V & F & F & F & V & V \\
+				F & V & V & V & V & V \\
+				F & V & F & V & V & V \\
+				F & F & V & V & F & F \\
+				F & F & F & V & V & V \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
+		\vspace{0.2cm}
+		
+		\textbf{Paso 2:} Analizamos la última columna.
+		
+		Observamos que en la columna final aparecen valores verdaderos y también aparece un valor falso.
+		
+		Por lo tanto:
+		
+		\begin{itemize}
+			\item No es \textbf{tautología}, porque no todos los valores son verdaderos.
+			\item No es \textbf{contradicción}, porque no todos los valores son falsos.
+			\item Sí es una \textbf{contingencia}, porque tiene al menos un valor verdadero y al menos un valor falso.
+		\end{itemize}
+		
+		\textbf{Justificación puntual del caso falso:}
+		
+		La proposición resulta falsa cuando:
+	$
+		p=F,\qquad q=F,\qquad r=V
+	$
+		
+	
+		
+		\textbf{Respuesta final:}
+		
+		La proposición
+		\[
+		\sim p \to (q \lor \sim r)
+		\]
+		es una:
+		\[
+		\boxed{\text{Contingencia}}
+		\]
+		
+	\end{enumerate}
+	
+\end{document}

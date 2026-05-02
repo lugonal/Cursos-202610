@@ -1,0 +1,1032 @@
+\documentclass[handout,aspectratio=169]{beamer}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{multicol}
+
+%------------------------------------------------
+% TEMA
+%------------------------------------------------
+\usetheme{Madrid}
+\useinnertheme{rounded}
+
+%------------------------------------------------
+% COLORES UST
+%------------------------------------------------
+\definecolor{USTGreen}{HTML}{1B5E20}
+\definecolor{USTLightGreen}{HTML}{E8F5E9}
+\definecolor{USTDark}{HTML}{263238}
+\definecolor{USTGray}{HTML}{F5F5F5}
+\definecolor{USTAccent}{HTML}{2E7D32}
+\definecolor{AlertRed}{HTML}{C62828}
+
+\setbeamercolor{structure}{fg=USTGreen}
+\setbeamercolor{frametitle}{bg=USTGreen,fg=white}
+\setbeamercolor{title}{fg=white,bg=USTGreen}
+\setbeamercolor{block title}{bg=USTGreen,fg=white}
+\setbeamercolor{block body}{bg=USTLightGreen,fg=black}
+\setbeamercolor{alerted text}{fg=AlertRed}
+
+\setbeamertemplate{navigation symbols}{}
+
+%------------------------------------------------
+% FOOTLINE
+%------------------------------------------------
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.82\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}
+			\hspace{1em} Fundamentos de Matemática Básica
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.18\paperwidth,ht=2.5ex,dp=1ex,center]{date in head/foot}
+			\insertframenumber/\inserttotalframenumber
+	\end{beamercolorbox}}%
+}
+
+%------------------------------------------------
+% CAJAS
+%------------------------------------------------
+\newtcolorbox{idea}{
+	colback=USTLightGreen,
+	colframe=USTGreen,
+	arc=2mm,
+	boxrule=0.8pt,
+	title=\textbf{Idea clave}
+}
+
+\newtcolorbox{alerta}{
+	colback=red!5,
+	colframe=AlertRed,
+	arc=2mm,
+	boxrule=0.8pt,
+	title=\textbf{Cuidado}
+}
+
+\newtcolorbox{actividad}{
+	colback=blue!5,
+	colframe=blue!60!black,
+	arc=2mm,
+	boxrule=0.8pt,
+	title=\textbf{Actividad}
+}
+
+%------------------------------------------------
+% DATOS
+%------------------------------------------------
+\title[Potencias y Álgebra en los Reales]{Potencias, Expresiones Algebraicas y Patrones}
+\subtitle{Nivel universitario}
+\author{Prof. Luis Tulio González Alcaino}
+\institute{Universidad Santo Tomás \\ Departamento de Ciencias Básicas}
+\date{\today}
+
+%------------------------------------------------
+\begin{document}
+	%------------------------------------------------
+	
+	%------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ruta de la clase}
+		\tableofcontents
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Objetivos de aprendizaje}
+	
+	\begin{frame}{Objetivos de aprendizaje}
+		Al finalizar la clase, el estudiante será capaz de:
+		
+		\begin{enumerate}
+			\item Reconocer el concepto de potencia y sus elementos.
+			\item Aplicar correctamente las propiedades de las potencias en los reales.
+			\item Identificar términos, expresiones algebraicas y términos semejantes.
+			\item Simplificar expresiones algebraicas mediante reducción de términos semejantes.
+			\item Integrar patrones y relaciones matemáticas en situaciones algebraicas.
+			\item Detectar inconsistencias frecuentes en procedimientos con potencias y álgebra.
+		\end{enumerate}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Concepto de potencia}
+	
+	\begin{frame}{Concepto de potencia}
+		\begin{idea}
+			Una potencia representa una multiplicación reiterada de un mismo factor.
+		\end{idea}
+		
+		\[
+		a^n = 
+		\underbrace{a\cdot a\cdot a\cdots a}_{n\text{ veces}}
+		\]
+		
+		\pause
+		
+		\begin{block}{Elementos}
+			\[
+			a^n
+			\]
+			
+			\begin{itemize}
+				\item \(a\): base.
+				\item \(n\): exponente.
+				\item \(a^n\): potencia.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			3^4 = 3\cdot 3\cdot 3\cdot 3 = 81
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Interpretación matemática}
+		La potencia permite modelar fenómenos de crecimiento repetitivo, escalamiento y patrones multiplicativos.
+		
+		\pause
+		
+		\begin{block}{Ejemplos}
+			\[
+			2^1=2,\qquad 2^2=4,\qquad 2^3=8,\qquad 2^4=16
+			\]
+			
+			\pause
+			
+			El patrón es:
+			
+			\[
+			2,\ 4,\ 8,\ 16,\ 32,\ldots
+			\]
+			
+			Cada término se obtiene multiplicando el anterior por \(2\).
+		\end{block}
+		
+		\pause
+		
+		\begin{actividad}
+			Explique qué patrón aparece en la sucesión:
+			\[
+			3^1,\ 3^2,\ 3^3,\ 3^4,\ 3^5
+			\]
+		\end{actividad}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Propiedades de las potencias}
+	
+	\begin{frame}{Producto de potencias de igual base}
+		\begin{idea}
+			Cuando se multiplican potencias de igual base, se conserva la base y se suman los exponentes.
+		\end{idea}
+		
+		\[
+		a^m\cdot a^n = a^{m+n}
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			x^3\cdot x^5 = x^{3+5}=x^8
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{Justificación}
+			\[
+			x^3\cdot x^5
+			=
+			(x\cdot x\cdot x)(x\cdot x\cdot x\cdot x\cdot x)
+			=
+			x^8
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Cociente de potencias de igual base}
+		\begin{idea}
+			Cuando se dividen potencias de igual base, se conserva la base y se restan los exponentes.
+		\end{idea}
+		
+		\[
+		\frac{a^m}{a^n}=a^{m-n},
+		\qquad a\neq 0
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			\frac{x^7}{x^3}=x^{7-3}=x^4
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{alerta}
+			La restricción \(a\neq 0\) es fundamental, porque no existe división por cero.
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Potencia de una potencia}
+		\begin{idea}
+			Cuando una potencia se eleva a otra potencia, se multiplican los exponentes.
+		\end{idea}
+		
+		\[
+		(a^m)^n=a^{mn}
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			(x^4)^3=x^{4\cdot 3}=x^{12}
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{Interpretación}
+			\[
+			(x^4)^3=x^4\cdot x^4\cdot x^4=x^{4+4+4}=x^{12}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Potencia de un producto}
+		\begin{idea}
+			La potencia de un producto se distribuye sobre cada factor.
+		\end{idea}
+		
+		\[
+		(ab)^n=a^n b^n
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			(3x)^4=3^4x^4=81x^4
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{alerta}
+			No confundir:
+			\[
+			(3+x)^2 \neq 3^2+x^2
+			\]
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Exponente cero y exponente negativo}
+		\begin{block}{Exponente cero}
+			\[
+			a^0=1,
+			\qquad a\neq 0
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			7^0=1,\qquad x^0=1\quad (x\neq 0)
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{Exponente negativo}
+			\[
+			a^{-n}=\frac{1}{a^n},
+			\qquad a\neq 0
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			x^{-3}=\frac{1}{x^3}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Síntesis de propiedades}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.6}
+			\begin{tabular}{>{\centering\arraybackslash}m{4cm} >{\centering\arraybackslash}m{5cm}}
+				\toprule
+				\textbf{Propiedad} & \textbf{Regla} \\
+				\midrule
+				Producto igual base & \(a^m a^n=a^{m+n}\) \\
+				Cociente igual base & \(\dfrac{a^m}{a^n}=a^{m-n}\) \\
+				Potencia de potencia & \((a^m)^n=a^{mn}\) \\
+				Potencia de producto & \((ab)^n=a^n b^n\) \\
+				Exponente cero & \(a^0=1\) \\
+				Exponente negativo & \(a^{-n}=\dfrac{1}{a^n}\) \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Errores frecuentes con potencias}
+	
+	\begin{frame}{Detección de inconsistencias}
+		Analicemos los siguientes procedimientos.
+		
+		\pause
+		
+		\begin{alerta}
+			\[
+			x^3+x^5=x^8
+			\]
+		\end{alerta}
+		
+		\pause
+		
+		Esto es incorrecto.
+		
+		\[
+		x^3+x^5
+		\]
+		
+		no puede simplificarse sumando exponentes, porque la propiedad
+		
+		\[
+		x^m\cdot x^n=x^{m+n}
+		\]
+		
+		solo se aplica en multiplicaciones.
+		
+		\pause
+		
+		\begin{block}{Conclusión}
+			\[
+			x^3+x^5
+			\]
+			
+			queda expresado como suma, salvo que exista factorización:
+			
+			\[
+			x^3+x^5=x^3(1+x^2)
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Más inconsistencias}
+		Determine si cada afirmación es verdadera o falsa.
+		
+		\begin{enumerate}
+			\item \((x^2)^5=x^{10}\)
+			\item \(x^4\cdot x^3=x^{12}\)
+			\item \(\dfrac{x^9}{x^4}=x^5\)
+			\item \((2x)^3=2x^3\)
+			\item \(x^{-2}=\dfrac{1}{x^2}\)
+		\end{enumerate}
+		
+		\pause
+		
+		\begin{block}{Respuestas}
+			\[
+			\begin{array}{c|c}
+				\text{Afirmación} & \text{Valor lógico} \\
+				\hline
+				1 & \text{Verdadera} \\
+				2 & \text{Falsa} \\
+				3 & \text{Verdadera} \\
+				4 & \text{Falsa} \\
+				5 & \text{Verdadera}
+			\end{array}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Elementos básicos del álgebra}
+	
+	\begin{frame}{Término algebraico}
+		\begin{idea}
+			Un término algebraico es una expresión formada por números y letras unidos mediante multiplicación y potencias.
+		\end{idea}
+		
+		\pause
+		
+		\[
+		-5x^3y^2
+		\]
+		
+		\pause
+		
+		\begin{block}{Elementos}
+			\begin{itemize}
+				\item Coeficiente numérico: \(-5\).
+				\item Parte literal: \(x^3y^2\).
+				\item Variables: \(x\), \(y\).
+				\item Exponentes: \(3\), \(2\).
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Expresión algebraica}
+		\begin{idea}
+			Una expresión algebraica es una combinación de términos algebraicos mediante operaciones.
+		\end{idea}
+		
+		\[
+		4x^2-7x+3
+		\]
+		
+		\pause
+		
+		\begin{block}{Ejemplos}
+			\[
+			3x+5
+			\]
+			
+			\[
+			2a^2b-4ab^2+7
+			\]
+			
+			\[
+			\frac{x^2-1}{x+3}
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{alerta}
+			Una expresión algebraica no siempre es una ecuación.  
+			Una ecuación debe contener una igualdad.
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Términos semejantes}
+		\begin{idea}
+			Dos términos son semejantes si tienen exactamente la misma parte literal.
+		\end{idea}
+		
+		\pause
+		
+		\[
+		7x^2y
+		\qquad\text{y}\qquad
+		-3x^2y
+		\]
+		
+		son términos semejantes.
+		
+		\pause
+		
+		\[
+		5xy^2
+		\qquad\text{y}\qquad
+		5x^2y
+		\]
+		
+		no son términos semejantes.
+		
+		\pause
+		
+		\begin{block}{Criterio}
+			Para que sean semejantes:
+			
+			\begin{itemize}
+				\item deben tener las mismas variables;
+				\item cada variable debe tener el mismo exponente;
+				\item el coeficiente puede ser distinto.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Reducción de términos semejantes}
+		\begin{exampleblock}{Ejemplo}
+			Reducir:
+			
+			\[
+			8x^2-3x+5x^2+9x-4
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		Agrupamos términos semejantes:
+		
+		\[
+		(8x^2+5x^2)+(-3x+9x)-4
+		\]
+		
+		\pause
+		
+		Sumamos coeficientes:
+		
+		\[
+		13x^2+6x-4
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			8x^2-3x+5x^2+9x-4
+			=
+			13x^2+6x-4
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Patrones y relaciones algebraicas}
+	
+	\begin{frame}{Patrones numéricos y algebraicos}
+		Observe la siguiente tabla:
+		
+		\[
+		\begin{array}{c|c}
+			n & 3n+2 \\
+			\hline
+			1 & 5 \\
+			2 & 8 \\
+			3 & 11 \\
+			4 & 14 \\
+			5 & 17
+		\end{array}
+		\]
+		
+		\pause
+		
+		\begin{idea}
+			El patrón aumenta de \(3\) en \(3\), por lo tanto puede modelarse mediante una expresión lineal.
+		\end{idea}
+		
+		\pause
+		
+		\[
+		a_n=3n+2
+		\]
+		
+		\pause
+		
+		\begin{block}{Interpretación}
+			La variable \(n\) representa la posición del término dentro de la secuencia.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Patrón cuadrático}
+		Considere la sucesión:
+		
+		\[
+		1,\ 4,\ 9,\ 16,\ 25,\ 36,\ldots
+		\]
+		
+		\pause
+		
+		Esta sucesión corresponde a:
+		
+		\[
+		1^2,\ 2^2,\ 3^2,\ 4^2,\ 5^2,\ 6^2,\ldots
+		\]
+		
+		\pause
+		
+		\begin{block}{Modelo}
+			\[
+			a_n=n^2
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{actividad}
+			Determine el término general de la sucesión:
+			
+			\[
+			2,\ 8,\ 18,\ 32,\ 50,\ldots
+			\]
+		\end{actividad}
+		
+		\pause
+		
+		\[
+		2=2\cdot1^2,\quad 8=2\cdot2^2,\quad 18=2\cdot3^2
+		\]
+		
+		\[
+		a_n=2n^2
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Patrones con potencias}
+		Considere:
+		
+		\[
+		5,\ 10,\ 20,\ 40,\ 80,\ldots
+		\]
+		
+		\pause
+		
+		Cada término se obtiene multiplicando por \(2\).
+		
+		\pause
+		
+		\[
+		5,\quad 5\cdot 2,\quad 5\cdot 2^2,\quad 5\cdot 2^3,\quad 5\cdot 2^4
+		\]
+		
+		\pause
+		
+		\begin{block}{Término general}
+			Si \(n\) comienza en \(1\), entonces:
+			
+			\[
+			a_n=5\cdot 2^{n-1}
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{alerta}
+			El exponente es \(n-1\), no \(n\), porque el primer término corresponde a \(2^0\).
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Aplicaciones de nivel universitario}
+	
+	\begin{frame}{Ejemplo aplicado 1: crecimiento multiplicativo}
+		Una población bacteriana en una muestra se duplica cada hora.  
+		Inicialmente hay \(P_0=1200\) bacterias.
+		
+		\pause
+		
+		\begin{block}{Modelo}
+			Después de \(t\) horas:
+			
+			\[
+			P(t)=1200\cdot 2^t
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Pregunta}
+			¿Cuántas bacterias habrá después de \(6\) horas?
+		\end{exampleblock}
+		
+		\pause
+		
+		\[
+		P(6)=1200\cdot 2^6
+		\]
+		
+		\[
+		P(6)=1200\cdot 64
+		\]
+		
+		\[
+		P(6)=76800
+		\]
+		
+		\pause
+		
+		\begin{block}{Respuesta}
+			Después de \(6\) horas habrá \(76800\) bacterias.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo aplicado 2: simplificación algebraica}
+		Simplifique:
+		
+		\[
+		A=4x^3y^2\cdot 3x^2y^5
+		\]
+		
+		\pause
+		
+		Multiplicamos coeficientes:
+		
+		\[
+		4\cdot 3=12
+		\]
+		
+		\pause
+		
+		Aplicamos producto de potencias de igual base:
+		
+		\[
+		x^3\cdot x^2=x^5
+		\]
+		
+		\[
+		y^2\cdot y^5=y^7
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			A=12x^5y^7
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo aplicado 3: expresión con cocientes}
+		Simplifique:
+		
+		\[
+		B=\frac{18x^7y^4}{6x^3y}
+		\]
+		
+		\pause
+		
+		Reducimos coeficientes:
+		
+		\[
+		\frac{18}{6}=3
+		\]
+		
+		\pause
+		
+		Restamos exponentes de igual base:
+		
+		\[
+		\frac{x^7}{x^3}=x^4
+		\]
+		
+		\[
+		\frac{y^4}{y}=y^3
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			B=3x^4y^3
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{alerta}
+			Restricción:
+			\[
+			x\neq 0,\qquad y\neq 0
+			\]
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo aplicado 4: términos semejantes}
+		Simplifique:
+		
+		\[
+		C=7a^2b-3ab^2+5a^2b+9ab^2-4b
+		\]
+		
+		\pause
+		
+		Agrupamos términos semejantes:
+		
+		\[
+		(7a^2b+5a^2b)+(-3ab^2+9ab^2)-4b
+		\]
+		
+		\pause
+		
+		\[
+		12a^2b+6ab^2-4b
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			C=12a^2b+6ab^2-4b
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Actividades guiadas}
+	
+	\begin{frame}{Actividad 1: propiedades de potencias}
+		Simplifique las siguientes expresiones:
+		
+		\[
+		\begin{array}{ll}
+			\text{a)} & x^4\cdot x^7 \\[0.2cm]
+			\text{b)} & \dfrac{a^{10}}{a^3} \\[0.3cm]
+			\text{c)} & (y^5)^4 \\[0.2cm]
+			\text{d)} & (2x^3y)^2 \\[0.2cm]
+			\text{e)} & \dfrac{12x^6y^4}{3x^2y}
+		\end{array}
+		\]
+		
+		\pause
+		
+		\begin{block}{Respuestas}
+			\[
+			\begin{array}{ll}
+				\text{a)} & x^{11} \\[0.2cm]
+				\text{b)} & a^7 \\[0.2cm]
+				\text{c)} & y^{20} \\[0.2cm]
+				\text{d)} & 4x^6y^2 \\[0.2cm]
+				\text{e)} & 4x^4y^3
+			\end{array}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Actividad 2: términos semejantes}
+		Reduzca la expresión:
+		
+		\[
+		D=9x^2-5x+4-3x^2+11x-8
+		\]
+		
+		\pause
+		
+		\[
+		D=(9x^2-3x^2)+(-5x+11x)+(4-8)
+		\]
+		
+		\pause
+		
+		\[
+		D=6x^2+6x-4
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			D=6x^2+6x-4
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Actividad 3: detectar errores}
+		Un estudiante realiza el siguiente procedimiento:
+		
+		\[
+		(3x^2)^3=3x^6
+		\]
+		
+		\pause
+		
+		\begin{alerta}
+			El procedimiento es incorrecto.
+		\end{alerta}
+		
+		\pause
+		
+		La potencia debe aplicarse al coeficiente y a la parte literal:
+		
+		\[
+		(3x^2)^3=3^3(x^2)^3
+		\]
+		
+		\pause
+		
+		\[
+		=27x^6
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado correcto}
+			\[
+			(3x^2)^3=27x^6
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Actividad 4: análisis de patrón}
+		Una secuencia está dada por:
+		
+		\[
+		4,\ 12,\ 36,\ 108,\ 324,\ldots
+		\]
+		
+		\pause
+		
+		\begin{block}{Pregunta}
+			Determine el patrón y proponga una expresión para el término general.
+		\end{block}
+		
+		\pause
+		
+		Cada término se multiplica por \(3\):
+		
+		\[
+		4,\quad 4\cdot 3,\quad 4\cdot 3^2,\quad 4\cdot 3^3
+		\]
+		
+		\pause
+		
+		\begin{block}{Término general}
+			\[
+			a_n=4\cdot 3^{n-1}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Síntesis final}
+	
+	\begin{frame}{Síntesis conceptual}
+		\begin{block}{Potencias}
+			Las potencias permiten representar multiplicaciones reiteradas y modelar patrones de crecimiento.
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Álgebra en los reales}
+			Un término algebraico posee coeficiente, parte literal y exponentes.  
+			Una expresión algebraica combina términos mediante operaciones.
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Términos semejantes}
+			Solo pueden reducirse términos con idéntica parte literal.
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Pensamiento matemático}
+			Detectar patrones, relaciones e inconsistencias permite justificar procedimientos y evitar errores mecánicos.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Cierre}
+		\begin{center}
+			{\Huge \textbf{Conclusión}}
+			
+			\vspace{0.5cm}
+			
+			\Large
+			Las potencias y el álgebra permiten expresar regularidades, simplificar modelos y analizar relaciones matemáticas de manera rigurosa.
+			
+			\vspace{0.7cm}
+			
+			\textbf{Pregunta final:}
+			
+			\[
+			x^2+x^2=2x^2
+			\]
+			
+			pero
+			
+			\[
+			x^2\cdot x^2=x^4
+			\]
+			
+			\pause
+			
+			¿Por qué ambas operaciones tienen resultados distintos?
+		\end{center}
+	\end{frame}
+	
+	%------------------------------------------------
+\end{document}

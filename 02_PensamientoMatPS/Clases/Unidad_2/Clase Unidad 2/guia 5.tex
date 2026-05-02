@@ -1,0 +1,495 @@
+\documentclass[12pt]{article}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\geometry{margin=2.5cm}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Solución -- Ayudantía 5}
+\rhead{Trigonometría: Funciones y Aplicaciones}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{Solución completa -- Ayudantía 5}}\\[0.3em]
+		{\large Trigonometría: Funciones y Aplicaciones}
+	\end{center}
+	
+	\section*{Ejercicio 1: Transformaciones de sistemas de medición angular}
+	Usamos las equivalencias:
+	\[
+	180^\circ = \pi \text{ rad}, \qquad 1^\circ = \frac{\pi}{180} \text{ rad}, \qquad 1\text{ rad} = \frac{180^\circ}{\pi}.
+	\]
+	
+	\begin{enumerate}[label=\arabic*)]
+		\item \(72^\circ\) a radianes:
+		\[
+		72^\circ\left(\frac{\pi}{180^\circ}\right)=\frac{72\pi}{180}=\frac{2\pi}{5}.
+		\]
+		
+		\item \(-225^\circ\) a radianes:
+		\[
+		-225^\circ\left(\frac{\pi}{180^\circ}\right)=\frac{-225\pi}{180}=-\frac{5\pi}{4}.
+		\]
+		
+		\item \(\dfrac{7\pi}{12}\) rad a grados:
+		\[
+		\frac{7\pi}{12}\left(\frac{180^\circ}{\pi}\right)=7\cdot 15^\circ=105^\circ.
+		\]
+		
+		\item \(-\dfrac{11\pi}{5}\) rad a grados:
+		\[
+		-\frac{11\pi}{5}\left(\frac{180^\circ}{\pi}\right)=-11\cdot 36^\circ=-396^\circ.
+		\]
+	\end{enumerate}
+	
+	\textbf{Respuesta final:}
+	\[
+	72^\circ=\frac{2\pi}{5}, \qquad -225^\circ=-\frac{5\pi}{4}, \qquad \frac{7\pi}{12}=105^\circ, \qquad -\frac{11\pi}{5}=-396^\circ.
+	\]
+	
+	\section*{Ejercicio 2: Ángulo entre las manecillas a las 4:00}
+	A las 4:00, la manecilla minutera apunta al \(12\) y la horaria apunta al \(4\).
+	
+	Cada hora del reloj representa:
+	\[
+	\frac{360^\circ}{12}=30^\circ.
+	\]
+	
+	Entonces, el ángulo entre ambas manecillas es:
+	\[
+	4\cdot 30^\circ=120^\circ.
+	\]
+	
+	Como piden el ángulo menor, ese es justamente \(120^\circ\). Lo convertimos a radianes:
+	\[
+	120^\circ\left(\frac{\pi}{180^\circ}\right)=\frac{2\pi}{3}.
+	\]
+	
+	\textbf{Respuesta final:}
+	\[
+	\boxed{\frac{2\pi}{3}\text{ rad}}
+	\]
+	
+	\section*{Ejercicio 3: Razones trigonométricas exactas}
+	
+	\begin{enumerate}[label=\arabic*)]
+		\item \(\sin(150^\circ)\)
+		
+		\(150^\circ\) está en el II cuadrante y su ángulo de referencia es \(30^\circ\). En el II cuadrante el seno es positivo.
+		\[
+		\sin(150^\circ)=\sin(30^\circ)=\frac{1}{2}.
+		\]
+		
+		\item \(\cos(225^\circ)\)
+		
+		\(225^\circ=180^\circ+45^\circ\), está en el III cuadrante. En el III cuadrante el coseno es negativo.
+		\[
+		\cos(225^\circ)=-\cos(45^\circ)=-\frac{\sqrt{2}}{2}.
+		\]
+		
+		\item \(\tan(300^\circ)\)
+		
+		\(300^\circ=360^\circ-60^\circ\), está en el IV cuadrante. En el IV cuadrante la tangente es negativa.
+		\[
+		\tan(300^\circ)=-\tan(60^\circ)=-\sqrt{3}.
+		\]
+		
+		\item \(\sec\left(\dfrac{7\pi}{6}\right)\)
+		
+		\[
+		\frac{7\pi}{6}=\pi+\frac{\pi}{6},
+		\]
+		está en el III cuadrante, donde el coseno es negativo.
+		\[
+		\cos\left(\frac{7\pi}{6}\right)=-\cos\left(\frac{\pi}{6}\right)=-\frac{\sqrt{3}}{2}.
+		\]
+		Entonces,
+		\[
+		\sec\left(\frac{7\pi}{6}\right)=\frac{1}{-\sqrt{3}/2}=-\frac{2}{\sqrt{3}}=-\frac{2\sqrt{3}}{3}.
+		\]
+		
+		\item \(\csc\left(\dfrac{5\pi}{3}\right)\)
+		
+		\[
+		\frac{5\pi}{3}=2\pi-\frac{\pi}{3},
+		\]
+		está en el IV cuadrante, donde el seno es negativo.
+		\[
+		\sin\left(\frac{5\pi}{3}\right)=-\sin\left(\frac{\pi}{3}\right)=-\frac{\sqrt{3}}{2}.
+		\]
+		Por tanto,
+		\[
+		\csc\left(\frac{5\pi}{3}\right)=\frac{1}{-\sqrt{3}/2}=-\frac{2}{\sqrt{3}}=-\frac{2\sqrt{3}}{3}.
+		\]
+		
+		\item \(\cot\left(\dfrac{11\pi}{4}\right)\)
+		
+		Reducimos el ángulo módulo \(2\pi\):
+		\[
+		\frac{11\pi}{4}-2\pi=\frac{11\pi}{4}-\frac{8\pi}{4}=\frac{3\pi}{4}.
+		\]
+		Entonces,
+		\[
+		\cot\left(\frac{11\pi}{4}\right)=\cot\left(\frac{3\pi}{4}\right)=\frac{\cos(3\pi/4)}{\sin(3\pi/4)}=\frac{-\sqrt{2}/2}{\sqrt{2}/2}=-1.
+		\]
+		
+		\item \(\sin\left(-\dfrac{5\pi}{6}\right)\)
+		
+		Usamos que el seno es función impar:
+		\[
+		\sin(-\theta)=-\sin(\theta).
+		\]
+		Entonces,
+		\[
+		\sin\left(-\frac{5\pi}{6}\right)=-\sin\left(\frac{5\pi}{6}\right)=-\frac{1}{2}.
+		\]
+	\end{enumerate}
+	
+	\textbf{Respuestas finales:}
+	\[
+	\sin(150^\circ)=\frac12,
+	\quad
+	\cos(225^\circ)=-\frac{\sqrt2}{2},
+	\quad
+	\tan(300^\circ)=-\sqrt3,
+	\]
+	\[
+	\sec\left(\frac{7\pi}{6}\right)=-\frac{2\sqrt3}{3},
+	\quad
+	\csc\left(\frac{5\pi}{3}\right)=-\frac{2\sqrt3}{3},
+	\quad
+	\cot\left(\frac{11\pi}{4}\right)=-1,
+	\quad
+	\sin\left(-\frac{5\pi}{6}\right)=-\frac12.
+	\]
+	
+	\section*{Ejercicio 4: Seis razones trigonométricas desde el punto \(P(-5,12)\)}
+	Sea \(x=-5\), \(y=12\). Entonces:
+	\[
+	r=\sqrt{x^2+y^2}=\sqrt{(-5)^2+12^2}=\sqrt{25+144}=\sqrt{169}=13.
+	\]
+	
+	Como \(x<0\) e \(y>0\), el ángulo está en el II cuadrante.
+	
+	Por definición:
+	\[
+	\sin\theta=\frac{y}{r}=\frac{12}{13},
+	\qquad
+	\cos\theta=\frac{x}{r}=-\frac{5}{13},
+	\qquad
+	\tan\theta=\frac{y}{x}=\frac{12}{-5}=-\frac{12}{5}.
+	\]
+	
+	Y sus recíprocas:
+	\[
+	\csc\theta=\frac{13}{12},
+	\qquad
+	\sec\theta=-\frac{13}{5},
+	\qquad
+	\cot\theta=-\frac{5}{12}.
+	\]
+	
+	\textbf{Respuesta final:}
+	\[
+	\boxed{\sin\theta=\frac{12}{13},\quad \cos\theta=-\frac{5}{13},\quad \tan\theta=-\frac{12}{5}}
+	\]
+	\[
+	\boxed{\csc\theta=\frac{13}{12},\quad \sec\theta=-\frac{13}{5},\quad \cot\theta=-\frac{5}{12}}
+	\]
+	
+	\section*{Ejercicio 5: Cálculo de \(E=\tan(\alpha)+\csc(\alpha)\)}
+	Se sabe que:
+	\[
+	\cos(\alpha)=\frac13,
+	\]
+	con \(\alpha\) en el IV cuadrante. En el IV cuadrante, \(\cos\alpha>0\) y \(\sin\alpha<0\).
+	
+	Usamos la identidad pitagórica:
+	\[
+	\sin^2\alpha+\cos^2\alpha=1.
+	\]
+	Entonces,
+	\[
+	\sin^2\alpha=1-\left(\frac13\right)^2=1-\frac19=\frac89.
+	\]
+	Como \(\alpha\) está en el IV cuadrante:
+	\[
+	\sin\alpha=-\sqrt{\frac89}=-\frac{2\sqrt2}{3}.
+	\]
+	
+	Ahora calculamos:
+	\[
+	\tan\alpha=\frac{\sin\alpha}{\cos\alpha}=\frac{-2\sqrt2/3}{1/3}=-2\sqrt2.
+	\]
+	
+	Además,
+	\[
+	\csc\alpha=\frac{1}{\sin\alpha}=\frac{1}{-2\sqrt2/3}=-\frac{3}{2\sqrt2}=-\frac{3\sqrt2}{4}.
+	\]
+	
+	Por tanto,
+	\[
+	E=\tan\alpha+\csc\alpha=-2\sqrt2-\frac{3\sqrt2}{4}.
+	\]
+	Llevando a común denominador:
+	\[
+	E=-\frac{8\sqrt2}{4}-\frac{3\sqrt2}{4}=-\frac{11\sqrt2}{4}.
+	\]
+	
+	\textbf{Respuesta final:}
+	\[
+	\boxed{E=-\frac{11\sqrt2}{4}}
+	\]
+	
+	\section*{Ejercicio 6: Deducción de \(\sec^2\alpha-\tan^2\alpha=1\)}
+	Partimos de la identidad fundamental:
+	\[
+	\sin^2\alpha+\cos^2\alpha=1.
+	\]
+	
+	Dividimos ambos lados por \(\cos^2\alpha\) (suponiendo \(\cos\alpha\neq 0\)):
+	\[
+	\frac{\sin^2\alpha}{\cos^2\alpha}+\frac{\cos^2\alpha}{\cos^2\alpha}=\frac{1}{\cos^2\alpha}.
+	\]
+	
+	Simplificando:
+	\[
+	\tan^2\alpha+1=\sec^2\alpha.
+	\]
+	
+	Restando \(\tan^2\alpha\) a ambos lados:
+	\[
+	1=\sec^2\alpha-\tan^2\alpha.
+	\]
+	
+	Luego,
+	\[
+	\boxed{\sec^2\alpha-\tan^2\alpha=1.}
+	\]
+	
+	\section*{Ejercicio 7: Justificación de \(\arcsin(1.5)\)}
+	La función original es:
+	\[
+	f(x)=\sin(x).
+	\]
+	
+	El recorrido del seno es:
+	\[
+	-1\leq \sin(x) \leq 1.
+	\]
+	
+	Por lo tanto, la función inversa \(\arcsin(x)\) sólo está definida para valores de entrada que pertenezcan al intervalo:
+	\[
+	[-1,1].
+	\]
+	
+	Como:
+	\[
+	1.5\notin[-1,1],
+	\]
+	se concluye que \(\arcsin(1.5)\) no está definida en los números reales. Por eso la calculadora arroja error matemático.
+	
+	\textbf{Conclusión:}
+	\[
+	\boxed{\arcsin(1.5)\text{ no existe en }\mathbb{R}.}
+	\]
+	
+	\section*{Ejercicio 8: Funciones trigonométricas inversas}
+	\subsection*{a) Evaluar \(\arcsin(\sin(5\pi/6))\)}
+	Primero,
+	\[
+	\sin\left(\frac{5\pi}{6}\right)=\frac12.
+	\]
+	Entonces,
+	\[
+	\arcsin\left(\sin\left(\frac{5\pi}{6}\right)\right)=\arcsin\left(\frac12\right).
+	\]
+	
+	Ahora bien, \(\arcsin(x)\) devuelve el ángulo principal en el intervalo:
+	\[
+	\left[-\frac\pi2,\frac\pi2\right].
+	\]
+	El ángulo de ese intervalo cuyo seno es \(1/2\) es:
+	\[
+	\frac\pi6.
+	\]
+	
+	Por tanto,
+	\[
+	\arcsin\left(\sin\left(\frac{5\pi}{6}\right)\right)=\frac\pi6.
+	\]
+	
+	La conjetura ``\(\arcsin(\sin\alpha)=\alpha\) siempre'' es \textbf{falsa} en general.
+	
+	\subsection*{b) Evaluar \(\cos(\arctan(-4/3))\)}
+	Sea:
+	\[
+	\theta=\arctan\left(-\frac43\right).
+	\]
+	Entonces,
+	\[
+	\tan\theta=-\frac43.
+	\]
+	
+	Como \(\arctan\) entrega ángulos principales en \((-\pi/2,\pi/2)\), \(\theta\) está en el IV cuadrante. Construimos un triángulo rectángulo con:
+	\[
+	\text{cateto opuesto}=-4, \qquad \text{cateto adyacente}=3.
+	\]
+	La hipotenusa es:
+	\[
+	r=\sqrt{(-4)^2+3^2}=\sqrt{16+9}=5.
+	\]
+	
+	Así,
+	\[
+	\cos\theta=\frac{\text{adyacente}}{\text{hipotenusa}}=\frac35.
+	\]
+	Por lo tanto,
+	\[
+	\boxed{\cos\left(\arctan\left(-\frac43\right)\right)=\frac35.}
+	\]
+	
+	\section*{Ejercicio 9: Distancia horizontal entre dos aeronaves}
+	Sea \(x_A\) la distancia horizontal desde la base de la torre hasta la aeronave A, y \(x_B\) la distancia horizontal hasta la aeronave B.
+	
+	Como el ángulo de depresión es igual al ángulo de elevación correspondiente, se tiene:
+	\[
+	\tan(25^\circ)=\frac{50}{x_A}
+	\qquad\Rightarrow\qquad
+	x_A=\frac{50}{\tan(25^\circ)}=50\cot(25^\circ).
+	\]
+	
+	Análogamente,
+	\[
+	\tan(15^\circ)=\frac{50}{x_B}
+	\qquad\Rightarrow\qquad
+	x_B=\frac{50}{\tan(15^\circ)}=50\cot(15^\circ).
+	\]
+	
+	La separación horizontal entre ambas aeronaves es:
+	\[
+	D=x_B-x_A=\frac{50}{\tan(15^\circ)}-\frac{50}{\tan(25^\circ)}.
+	\]
+	Es decir,
+	\[
+	\boxed{D=50\left(\cot 15^\circ-\cot 25^\circ\right)}.
+	\]
+	
+	Aproximando:
+	\[
+	D\approx 50(3.73205-2.14451)\approx 79.38\text{ m}.
+	\]
+	
+	\textbf{Respuesta final:}
+	\[
+	\boxed{D=50\left(\cot 15^\circ-\cot 25^\circ\right)\text{ m}\approx 79.38\text{ m}}
+	\]
+	
+	\section*{Ejercicio 10: Ángulo de elevación de una rampa}
+	La rampa debe salvar un desnivel vertical de \(0.8\) m y su base horizontal máxima es \(6\) m. Entonces,
+	\[
+	\tan\theta=\frac{0.8}{6}=\frac{8}{60}=\frac{2}{15}.
+	\]
+	Por tanto,
+	\[
+	\theta=\arctan\left(\frac{2}{15}\right).
+	\]
+	
+	Aproximando en grados:
+	\[
+	\theta\approx 7.59^\circ.
+	\]
+	
+	Como la exigencia máxima legal es \(8^\circ\), se cumple que:
+	\[
+	7.59^\circ<8^\circ.
+	\]
+	
+	\textbf{Conclusión:} la rampa \textbf{sí cumple} con la normativa.
+	
+	\textbf{Respuesta final:}
+	\[
+	\boxed{\theta=\arctan\left(\frac{2}{15}\right)\approx 7.59^\circ}
+	\]
+	
+	\section*{Ejercicio 11: Altura de la montaña}
+	Sea \(x\) la distancia horizontal desde el punto \(Q\) hasta la base de la montaña. Entonces, desde \(P\), la distancia horizontal hasta la base es \(x+800\).
+	
+	Sea \(h\) la altura de la montaña.
+	
+	Desde \(P\):
+	\[
+	\tan(30^\circ)=\frac{h}{x+800}.
+	\]
+	Como \(\tan 30^\circ=\frac{1}{\sqrt3}\), resulta:
+	\[
+	\frac{1}{\sqrt3}=\frac{h}{x+800}
+	\qquad\Rightarrow\qquad
+	h=\frac{x+800}{\sqrt3}.
+	\]
+	
+	Desde \(Q\):
+	\[
+	\tan(45^\circ)=\frac{h}{x}.
+	\]
+	Como \(\tan45^\circ=1\), se tiene:
+	\[
+	1=\frac{h}{x}
+	\qquad\Rightarrow\qquad
+	h=x.
+	\]
+	
+	Sustituyendo \(h=x\) en la primera ecuación:
+	\[
+	x=\frac{x+800}{\sqrt3}.
+	\]
+	Multiplicamos por \(\sqrt3\):
+	\[
+	x\sqrt3=x+800.
+	\]
+	Entonces,
+	\[
+	x(\sqrt3-1)=800.
+	\]
+	Despejando:
+	\[
+	x=\frac{800}{\sqrt3-1}.
+	\]
+	Racionalizamos:
+	\[
+	x=\frac{800}{\sqrt3-1}\cdot\frac{\sqrt3+1}{\sqrt3+1}
+	=\frac{800(\sqrt3+1)}{3-1}
+	=400(\sqrt3+1).
+	\]
+	Como \(h=x\), se concluye que:
+	\[
+	\boxed{h=400(\sqrt3+1)\text{ m}}.
+	\]
+	
+	\section*{Resumen de respuestas}
+	\begin{itemize}
+		\item \textbf{Ej. 1:} \(\dfrac{2\pi}{5},\; -\dfrac{5\pi}{4},\; 105^\circ,\; -396^\circ\).
+		\item \textbf{Ej. 2:} \(\dfrac{2\pi}{3}\) rad.
+		\item \textbf{Ej. 3:} \(\dfrac12,\; -\dfrac{\sqrt2}{2},\; -\sqrt3,\; -\dfrac{2\sqrt3}{3},\; -\dfrac{2\sqrt3}{3},\; -1,\; -\dfrac12\).
+		\item \textbf{Ej. 4:} \(\sin\theta=\dfrac{12}{13},\; \cos\theta=-\dfrac{5}{13},\; \tan\theta=-\dfrac{12}{5},\; \csc\theta=\dfrac{13}{12},\; \sec\theta=-\dfrac{13}{5},\; \cot\theta=-\dfrac{5}{12}\).
+		\item \textbf{Ej. 5:} \(E=-\dfrac{11\sqrt2}{4}\).
+		\item \textbf{Ej. 6:} \(\sec^2\alpha-\tan^2\alpha=1\).
+		\item \textbf{Ej. 7:} \(\arcsin(1.5)\) no existe en \(\mathbb{R}\).
+		\item \textbf{Ej. 8:} \(\arcsin(\sin(5\pi/6))=\dfrac\pi6\), \quad \(\cos(\arctan(-4/3))=\dfrac35\).
+		\item \textbf{Ej. 9:} \(D=50(\cot15^\circ-\cot25^\circ)\approx 79.38\text{ m}\).
+		\item \textbf{Ej. 10:} \(\theta=\arctan(2/15)\approx 7.59^\circ\), sí cumple.
+		\item \textbf{Ej. 11:} \(h=400(\sqrt3+1)\text{ m}\).
+	\end{itemize}
+	
+\end{document}

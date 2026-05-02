@@ -1,0 +1,215 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\geometry{letterpaper, margin=2cm}
+
+\title{\textbf{Solución Guía 02}\\ Potencias y Notación Científica}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Parte I: Simplificación de potencias}
+	
+	\begin{enumerate}
+		
+		\item $
+		\dfrac{2^5\cdot 2^3\cdot 2^{-2}}{2^4}
+		=2^{5+3-2-4}
+		=2^2
+		=4
+		$
+		
+		\item $
+		(3^2\cdot 3^4)^2
+		=(3^{2+4})^2
+		=(3^6)^2
+		=3^{12}
+		=531441
+		$
+		
+		\item $
+		\dfrac{5^7}{5^3\cdot 5^{-1}}
+		=\dfrac{5^7}{5^{3+(-1)}}
+		=\dfrac{5^7}{5^2}
+		=5^{7-2}
+		=5^5
+		=3125
+		$
+		
+		\item $
+		\dfrac{(2^3)^4}{2^5}
+		=\dfrac{2^{12}}{2^5}
+		=2^{12-5}
+		=2^7
+		=128
+		$
+		
+		\item $
+		\left(\dfrac{4^3\cdot 4^2}{4^4}\right)^2
+		\left(\dfrac{2^5}{2^2}\right)^3
+		=
+		\left(4^{3+2-4}\right)^2
+		\left(2^{5-2}\right)^3
+		=
+		(4^1)^2(2^3)^3
+		=4^2\cdot 2^9
+		=16\cdot 512
+		=8192
+		$
+		
+	\end{enumerate}
+	
+	\section*{Parte II: Operaciones en notación científica}
+	
+	\begin{enumerate}
+		
+		\item $
+		(4\times10^5)(3\times10^3)
+		=(4\cdot 3)\times10^{5+3}
+		=12\times10^8
+		=1.2\times10^9
+		$
+		
+		\item $
+		\dfrac{6\times10^8}{2\times10^4}
+		=\left(\dfrac{6}{2}\right)\times10^{8-4}
+		=3\times10^4
+		$
+		
+		\item $
+		(2.5\times10^3)(4\times10^{-2})
+		=(2.5\cdot 4)\times10^{3+(-2)}
+		=10\times10^1
+		=1\times10^2
+		$
+		
+		\item $
+		\dfrac{9\times10^{-4}}{3\times10^{-2}}
+		=\left(\dfrac{9}{3}\right)\times10^{-4-(-2)}
+		=3\times10^{-2}
+		$
+		
+	\end{enumerate}
+	
+	\section*{Parte III: Exprese en notación científica las siguientes cantidades}
+	
+	\begin{enumerate}
+		
+		\item $
+		4.500.000.000=4.5\times10^9
+		$
+		
+		\item $
+		8.200.000=8.2\times10^6
+		$
+		
+		\item $
+		35.000.000=3.5\times10^7
+		$
+		
+		\item $
+		7.600.000=7.6\times10^6
+		$
+		
+		\item $
+		950.000=9.5\times10^5
+		$
+		
+		\item $
+		0.00045=4.5\times10^{-4}
+		$
+		
+		\item $
+		0.0000028=2.8\times10^{-6}
+		$
+		
+		\item $
+		0.00003=3\times10^{-5}
+		$
+		
+		\item $
+		0.0000000015=1.5\times10^{-9}
+		$
+		
+		\item $
+		0.00000032=3.2\times10^{-7}
+		$
+		
+		\item $
+		0.0007=7\times10^{-4}
+		$
+		
+		\item $
+		0.00000008=8\times10^{-8}
+		$
+		
+	\end{enumerate}
+	
+	\section*{Parte IV: Aplicaciones en Agronomía}
+	
+	\textbf{Nota:} En el archivo original hay un ejercicio sin \verb|\item|. Aquí se presenta la versión corregida y resuelta.
+	
+	\begin{enumerate}[start=9]
+		
+		\item En una parcela experimental se plantan \(3^5\) semillas por sector.  
+		Si el terreno tiene \(3^3\) sectores iguales, determine el número total de semillas sembradas.
+		
+		\[
+		3^5\cdot 3^3=3^{5+3}=3^8=6561
+		\]
+		
+		\textbf{Respuesta:} Se siembran \(\boxed{6561}\) semillas.
+		
+		\item Una colonia de bacterias del suelo se duplica cada hora.  
+		Si inicialmente hay \(2^4\) bacterias, ¿cuántas bacterias habrá después de 8 horas?
+		
+		\[
+		2^4\cdot 2^8=2^{12}=4096
+		\]
+		
+		\textbf{Respuesta:} Habrá \(\boxed{4096}\) bacterias.
+		
+		\item Un fertilizante contiene \(4\times10^{-3}\) kg de micronutriente por kilogramo de producto.  
+		Si se aplican \(3\times10^3\) kg de fertilizante, determine la cantidad total de micronutriente aplicada.
+		
+		\[
+		(4\times10^{-3})(3\times10^3)
+		=12\times10^0
+		=12
+		\]
+		
+		\textbf{Respuesta:} Se aplican \(\boxed{12\text{ kg}}\) de micronutriente.
+		
+		\item Un fertilizante contiene \(8\times10^{-4}\) kg de micronutriente por kilogramo de producto.  
+		Si se aplican \(2\times10^4\) kg de fertilizante, determine la cantidad total de micronutriente aplicada.
+		
+		\[
+		(8\times10^{-4})(2\times10^4)
+		=16\times10^0
+		=16
+		\]
+		
+		\textbf{Respuesta:} Se aplican \(\boxed{16\text{ kg}}\) de micronutriente.
+		
+		\item Un cultivo utiliza \(5^4\) semillas por parcela.  
+		Si existen \(5^3\) parcelas en el terreno, ¿cuántas semillas se utilizan en total?
+		
+		\[
+		5^4\cdot 5^3=5^{4+3}=5^7=78125
+		\]
+		
+		\textbf{Respuesta:} Se utilizan \(\boxed{78125}\) semillas.
+		
+	\end{enumerate}
+	
+\end{document}

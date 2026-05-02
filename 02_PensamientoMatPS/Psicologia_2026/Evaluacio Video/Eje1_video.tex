@@ -1,0 +1,221 @@
+\documentclass[12pt]{article}
+
+% -----------------------------
+% PAQUETES
+% -----------------------------
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{xcolor}
+
+% -----------------------------
+% CONFIGURACIÓN
+% -----------------------------
+\geometry{margin=1.5cm}
+\setstretch{1.15}
+
+% -----------------------------
+% DOCUMENTO
+% -----------------------------
+\begin{document}
+	
+	\begin{center}
+		{\Large \textbf{Solución Problema 1}}\\[0.3cm]
+		{\normalsize Pensamiento Matemático}\\[0.2cm]
+		{\normalsize Contexto: Psicología}
+	\end{center}
+	
+	\vspace{0.4cm}
+
+\begin{enumerate}
+	
+	\item[] \textbf{Problema 1}
+	
+	Dadas las siguientes proposiciones relacionadas con procesos cognitivos:
+	
+	
+	\qquad $p:\ \text{La memoria a corto plazo tiene capacidad ilimitada.}$
+	
+	\qquad $q:\ \text{La memoria sensorial tiene una duración de varios minutos.}$
+	
+	\qquad $r:\ \text{La memoria a largo plazo es de duración prolongada.}$
+	
+	\qquad $s:\ \text{El individuo utiliza la información para tomar decisiones.}$
+	
+	\begin{enumerate}[label=\alph*)]
+		
+		\item \textbf{Traducción a lenguaje usual de la proposición compuesta}
+		
+		Se pide traducir:
+		\[
+		(p \to q)\land (\sim r \to s)
+		\]
+		
+		\textbf{Paso 1:} Interpretamos cada parte.
+		
+		\[
+		p \to q
+		\]
+		significa:
+		
+		\begin{quote}
+			Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos.
+		\end{quote}
+		
+		\[
+		\sim r \to s
+		\]
+		significa:
+		
+		\begin{quote}
+			Si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones.
+		\end{quote}
+		
+		Como ambas proposiciones están unidas por el conector
+		\[
+		\land
+		\]
+		que significa ``y'', la traducción completa es:
+		
+		\begin{quote}
+			\textbf{Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos, y si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones.}
+		\end{quote}
+		
+		\textbf{Respuesta final:}
+		\[
+		(p \to q)\land (\sim r \to s)
+		\]
+		se traduce como:
+		
+		\begin{quote}
+			Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos, y si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones.
+		\end{quote}
+		
+		\vspace{0.4cm}
+		
+		\item \textbf{Determinación del valor de verdad de la proposición compuesta}
+		
+		Se debe analizar:
+		\[
+		[(p\land \sim q)\lor r]\to s
+		\]
+		
+		\textbf{Paso 1:} Asignamos valores de verdad según el contexto.
+		
+		\begin{itemize}
+			\item \(p\): ``La memoria a corto plazo tiene capacidad ilimitada''.
+			
+			Esto es \textbf{falso}, porque la memoria a corto plazo es limitada.
+			
+			\[
+			p=F
+			\]
+			
+			\item \(q\): ``La memoria sensorial tiene una duración de varios minutos''.
+			
+			Esto es \textbf{falso}, porque la memoria sensorial dura muy poco tiempo.
+			
+			\[
+			q=F
+			\]
+			
+			\item \(r\): ``La memoria a largo plazo es de duración prolongada''.
+			
+			Esto es \textbf{verdadero}.
+			
+			\[
+			r=V
+			\]
+			
+			\item \(s\): ``El individuo utiliza la información para tomar decisiones''.
+			
+			Esto se considera \textbf{verdadero}.
+			
+			\[
+			s=V
+			\]
+		\end{itemize}
+		
+		\textbf{Paso 2:} Sustituimos en la expresión.
+		
+		\[
+		[(p\land \sim q)\lor r]\to s
+		\]
+		
+		\[
+		=[(F\land \sim F)\lor V]\to V
+		\]
+		
+		\textbf{Paso 3:} Calculamos la negación.
+		
+		\[
+		\sim F = V
+		\]
+		
+		Entonces:
+		
+		\[
+		[(F\land V)\lor V]\to V
+		\]
+		
+		\textbf{Paso 4:} Calculamos la conjunción.
+		
+		\[
+		F\land V = F
+		\]
+		
+		Entonces:
+		
+		\[
+		[F\lor V]\to V
+		\]
+		
+		\textbf{Paso 5:} Calculamos la disyunción.
+		
+		\[
+		F\lor V = V
+		\]
+		
+		Entonces:
+		
+		\[
+		V\to V
+		\]
+		
+		\textbf{Paso 6:} Evaluamos la implicación.
+		
+		Sabemos que:
+		
+		\[
+		V\to V = V
+		\]
+		
+		Por lo tanto:
+		
+		\[
+		[(p\land \sim q)\lor r]\to s = V
+		\]
+		
+		\textbf{Conclusión:}
+		
+		La proposición compuesta es \textbf{verdadera}.
+		
+		\textbf{Respuesta final:}
+		\[
+		[(p\land \sim q)\lor r]\to s
+		\]
+		tiene valor de verdad:
+		\[
+		\boxed{\text{Verdadero}}
+		\]
+		
+	\end{enumerate}
+	
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,693 @@
+\documentclass[12pt]{article}
+
+% =========================================================
+% PAQUETES
+% =========================================================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\usepackage{booktabs}
+\usepackage{multicol}
+
+
+\usepackage{array,booktabs,multirow}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,fit,backgrounds}
+\usepackage{multicol}
+
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% =========================================================
+% CONFIGURACIÓN
+% =========================================================
+\geometry{letterpaper, margin=1.2cm}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTGray}{RGB}{70,70,70}
+
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTBlueSoft}{RGB}{228,238,248}
+\definecolor{USTTeal}{RGB}{0,153,117}
+\definecolor{USTGray}{RGB}{95,99,104}
+\definecolor{USTLight}{RGB}{247,249,252}
+\definecolor{USTBorder}{RGB}{210,220,230}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{USTAccent}{RGB}{109,76,139}
+
+\titleformat{\section}
+{\large\bfseries\color{USTBlue}}
+{\thesection.}{0.5em}{}
+
+\titleformat{\subsection}
+{\normalsize\bfseries\color{USTGray}}
+{\thesubsection.}{0.5em}{}
+
+% =========================================================
+% DOCUMENTO
+% =========================================================
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{Guion completo para el video}}\\[0.3cm]
+		{\large Evaluación Unidad 1 -- Pensamiento Matemático -- Psicología}
+	\end{center}
+	
+	\vspace{0.4cm}
+	
+	% =========================================================
+	\section*{Estructura sugerida del video}
+	
+	\textbf{Duración total:} máximo	16 minutos.
+	
+	\subsection*{Orden recomendado}
+	\begin{enumerate}
+		\item Presentación inicial.
+		\item Problema 1.
+		\item Problema 2.
+		\item Problema 3.
+		\item Problema 4.
+		\item Cierre final.
+	\end{enumerate}
+	
+	\subsection*{Recomendaciones de grabación}
+	\begin{itemize}
+		\item Hablar pausado y claro.
+		\item Mostrar cada paso en hoja, pizarra o diapositiva.
+		\item Decir siempre qué propiedad lógica o de conjuntos se está usando.
+		\item Evitar solo ``dar la respuesta'': hay que justificar.
+	\end{itemize}
+	
+	% =========================================================
+	\section*{Guion de apertura}
+	
+	\subsection{Texto sugerido para decir al inicio por cada alumno}
+	\begin{quote}
+		En este video resolveré paso a paso el problema que se me asignó de la  Evaluación Unidad 1 de Pensamiento Matemático, contextualizada al área de Psicología. Desarrollaré este problema mostrando el procedimiento, la justificación lógica y explicación correcta en la resolución.
+	\end{quote}
+\newpage	
+	% =========================================================
+	\section*{Problema 1}
+		
+	Dadas las siguientes proposiciones relacionadas con procesos cognitivos:
+	
+	\begin{itemize}
+		\item $p$: La memoria a corto plazo tiene capacidad ilimitada.			
+		\item $q$: La memoria sensorial tiene una duración de varios minutos.		
+		\item $r$: La memoria a largo plazo es de duración prolongada			
+		\item $s$: El individuo utiliza la información para tomar decisiones.
+		
+	\end{itemize}
+	
+	\begin{enumerate}[label=\alph*)]
+		\item Traduzca a lenguaje usual la proposición compuesta:
+		\[
+		(p \rightarrow q) \land (\sim r \rightarrow s)
+		\]
+		
+		\item Determine el valor de verdad de la siguiente proposición compuesta:
+		\[
+		[(p \land \sim q) \lor r] \rightarrow s
+		\]
+		Justifique mediante análisis lógico.
+	\end{enumerate}
+
+	\subsection*{\textbf \Large SOLUCIÓN}
+	\subsection*{Guion hablado -- Problema 1(a)}
+	
+	\begin{quote}
+		En el apartado a) debo traducir a lenguaje usual la proposición
+		\[
+		(p \to q)\land(\sim r \to s).
+		\]
+		
+		Primero, \(p \to q\) se lee: ‘Si \(p\), entonces \(q\).
+		
+		Entonces queda:
+		
+		Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos.
+				
+		Luego, \(\sim r \to s\) se lee:
+		
+		Si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones.
+		
+		Como ambas están unidas por \(\land\), que significa ‘y’, la traducción completa es:
+		
+		\textbf{Respuesta Correcta Problema 1(a): \\ "Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos, y si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones".}
+	\end{quote}
+	
+	
+	\subsection*{Guion hablado -- Problema 1(b)}
+	
+	\begin{quote}
+		Ahora debo determinar el valor de verdad de
+		\[
+		[(p\land \sim q)\lor r]\to s.
+		\]
+		
+		Para analizarla, considero el valor de verdad más razonable de cada proposición según el contenido psicológico.
+		
+		La proposición \(p\): ‘La memoria a corto plazo tiene capacidad ilimitada’ es falsa (\textbf{F}), porque la memoria a corto plazo es limitada.
+		
+		La proposición \(q\): ‘La memoria sensorial tiene una duración de varios minutos’ es falsa (\textbf{F}), porque la memoria sensorial dura muy poco tiempo.
+		
+		La proposición \(r\): ‘La memoria a largo plazo es de duración prolongada’ es verdadera (\textbf{V}).
+		
+		La proposición \(s\): ‘El individuo utiliza la información para tomar decisiones’ la consideramos verdadera (\textbf{V}).
+		
+		Sustituyendo en la proposición los valores de verdad: 
+		\[
+		[(F\land \sim F)\lor V]\to V.
+		\]
+		
+		Como \(\sim F = V\), entonces:
+		\[
+		[(F\land V)\lor V]\to V.
+		\]
+		
+		Pero \(F\land V = F\), entonces:
+		\[
+		[F\lor V]\to V.
+		\]
+		
+		Finalmente queda:
+		\[
+		V\to V = V.
+		\]
+		
+		\textbf{Respuesta Correta Problema 1(b):\\
+			La proposición compuesta $\ [(p\land \sim q)\lor r]\to s$\  es verdadera.}
+		\end{quote}
+	
+\newpage
+	
+	% =========================================================
+	\section*{Problema 2}
+	
+	Considere la siguiente proposición compuesta:
+	
+	\textit{“Si una persona no sigue las estrategias terapéuticas indicadas, entonces presenta dificultades emocionales o no logra mejorar su bienestar psicológico.”}
+	
+	\begin{enumerate}[label=\alph*)]
+		\item Identifique y defina las proposiciones simples involucradas. Luego, exprese el enunciado en lenguaje simbólico.
+		
+		\item Construya una tabla de verdad de la proposición compuesta y, a partir de ella, indique si corresponde a una tautología, contradicción o contingencia. Justifique su respuesta.
+	\end{enumerate}
+
+	\subsection*{\textbf \Large SOLUCIÓN}
+	\subsection*{Guion hablado -- Problema 2(a)}
+	
+	\begin{quote}
+		“Primero identifico las proposiciones simples.
+		
+		Sea \(p\): ‘La persona sigue las estrategias terapéuticas indicadas’.
+		
+		Sea \(q\): ‘La persona presenta dificultades emocionales’.
+		
+		Sea \(r\): ‘La persona logra mejorar su bienestar psicológico’.
+		
+		Como el enunciado dice ‘no sigue’, eso corresponde a \(\sim p\).
+		
+		Además dice ‘dificultades emocionales o no logra mejorar’, que se representa como \(q\lor \sim r\).
+		
+			Entonces, el enunciado en lenguaje simbólico es $\sim p \to (q\lor \sim r)$
+		
+			\textbf{Respuesta correcta 2(a)}
+		\[
+		\sim p \to (q\lor \sim r).
+		\]
+	\end{quote}
+	
+	\subsection*{Guion hablado -- Problema 2(b)}
+	
+	\begin{quote}
+		Ahora construiré la tabla de verdad de  $\sim p \to (q\lor \sim r)$.
+		
+		Recordemos que una implicación solo es falsa cuando el antecedente es verdadero y el consecuente es falso.”
+	\end{quote}
+	
+	\subsection*{Tabla de verdad}
+	\[
+\small 	\begin{array}{|c|c|c|c|c|c|c|} \hline
+		p & q & r & \sim p & \sim r & q\lor \sim r & \sim p \to (q\lor \sim r)\\
+		\hline
+		V & V & V & F & F & F & V\\
+		V & V & F & F & V & V & V\\
+		V & F & V & F & F & F & V\\
+		V & F & F & F & V & V & V\\
+		F & V & V & V & V & F & V\\
+		F & V & F & V & V & V & V\\
+		F & F & V & V & F & F & F\\
+		F & F & F & V & V & V & V\\ \hline 
+	\end{array}
+	\]
+	
+	\subsection*{Análisis}
+	
+	La columna final (columna principal) tiene valores verdaderos y falsos.
+	
+	Por lo tanto, la proposición no es tautología y no es contradicción, es una contingencia.
+	
+	\textbf{Respuesta Correcta Problema 2(b)\\La proposición $\sim p \to (q\lor \sim r)$ es una \textbf{contingencia}.}
+	
+	
+	% =========================================================
+	\section*{Problema 3}
+	
+		Un centro de atención psicológica ha registrado a 20 personas según el tipo de intervención terapéutica que reciben.  
+	Cada persona puede participar en más de una intervención según sus necesidades.
+	
+	Las intervenciones disponibles son:
+	\begin{itemize}
+		\item Regulación emocional (R)
+		\item Entrenamiento cognitivo (C)
+		\item Habilidades sociales (H)
+	\end{itemize}
+	
+	La información se presenta en la siguiente tabla:
+	\small{
+		\begin{center}
+			\begin{tabular}{|c|c|c|c||c|c|c|c|}
+				\hline
+				\textbf{Persona} & R & C & H & \textbf{Persona} & R & C & H \\
+				\hline
+				P1 & X &   & X & P11 & X &   &   \\
+				P2 &   & X &   & P12 &   &   & X \\
+				P3 & X & X &   & P13 & X & X & X \\
+				P4 &   &   & X & P14 &   & X &   \\
+				P5 & X &   &   & P15 & X &   & X \\
+				P6 &   & X & X & P16 &   &   & X \\
+				P7 & X &   & X & P17 & X & X &   \\
+				P8 &   &   & X & P18 &   & X & X \\
+				P9 & X & X &   & P19 & X &   &   \\
+				P10 &   & X &   & P20 &   &   & X \\
+				\hline
+			\end{tabular}
+	\end{center}}
+	
+	Sea $U$ el conjunto de todas las personas registradas.
+	
+	\begin{enumerate}[label=\alph*)]
+		
+		\item Represente la información de la tabla mediante un diagrama de Venn.
+		
+		\item Exprese por extensión y determine la cardinalidad del conjunto:
+		\[
+		A = \{x \in U \mid x \text{ participa exactamente en dos intervenciones}\}
+		\]
+		
+		\item Exprese por extensión el conjunto de personas que participan \textbf{sólo} en Habilidades Sociales, o participan simultáneamente en Regulación Emocional y Entrenamiento Cognitivo.
+		
+	\end{enumerate}
+	%==================================================
+	\subsection*{\textbf \Large SOLUCIÓN}
+	Se presentan tres intervenciones terapéuticas, R, C y H. Leyendo la tabla del enunciado, la clasificación de conjuntos correcta es:
+	
+	\[
+	\begin{array}{l}
+		R = \{P1, P3, P5, P7, P9, P11, P13, P15, P17, P19\} \\[6pt]
+		C = \{P2, P3, P6, P9, P10, P13, P14, P17, P18\} \\[6pt]
+		H = \{P1, P4, P6, P7, P8, P12, P13, P15, P16, P18, P20\}
+	\end{array}
+	\]
+	
+	\subsection*{Organización para el diagrama de Venn}
+	
+	\textbf{Regiones exactas}
+	\begin{itemize}
+		\item Solo \(R\): \(\{P5,P11,P19\}\)
+		\item Solo \(C\): \(\{P2,P10,P14\}\)
+		\item Solo \(H\): \(\{P4,P8,P12,P16,P20\}\)
+		\item \(R\cap C\) solo: \(\{P3,P9,P17\}\)
+		\item \(R\cap H\) solo: \(\{P1,P7,P15\}\)
+		\item \(C\cap H\) solo: \(\{P6,P18\}\)
+		\item \(R\cap C\cap H\): \(\{P13\}\)
+	\end{itemize}
+	
+	
+\subsection*{Guion hablado -- Problema 3(a)}
+	
+	\begin{quote}
+		Para representar la información en un diagrama de Venn, distribuyo las personas según participen en una, dos o tres intervenciones.
+		
+		En solo Regulación Emocional van \(\{P5,P11,P19\}\).
+		
+		En solo Entrenamiento Cognitivo van \(\{P2,P10,P14\}\).
+		
+		En solo Habilidades Sociales van \(\{P4,P8,P12,P16,P20\}\).
+		
+		En la intersección de \(R\) y \(C\), sin \(H\), van \(\{P3,P9,P17\}\).
+		
+		En la intersección de \(R\) y \(H\), sin \(C\), van \(\{P1,P7,P15\}\).
+		
+		En la intersección de \(C\) y \(H\), sin \(R\), van \(\{P6,P18\}\).
+		
+		Y en la intersección triple \(R\cap C\cap H\)  va \(\{P13\}\).
+	\end{quote}
+	
+	\begin{center}
+		\begin{tikzpicture}
+			% Rectángulo del universo
+			\draw[thick] (-3,-3) rectangle (5,5);
+			\node[anchor=north east] at (5,5) {\(U\)};
+			
+			% Círculos de los conjuntos
+			\draw[thick] (0,2) circle (2cm);      % H
+			\draw[thick] (2,2) circle (2cm);      % D
+			\draw[thick] (1,0.1) circle (2cm);    % C
+			
+			% Etiquetas de los conjuntos
+			\node at (-1.7, 3.8) {\textbf{R}};
+			\node at (3.3, 4) {\textbf{C}};
+			\node at (0.5,-2.3) {\textbf{H}};
+			
+			% Elementos en cada región
+			\node at (-1, 2) {\small P5\; P11\; P19};               % Solo H
+			\node at (3, 2.2) {\small P2\; P10\; P14};                % Solo D
+			\node at (1,-0.7) {\small P4\; P8\; P12\; P16\; P20};              % Solo C
+			\node at (1,2.5) {\small P3\; P9\; P17};                    % H ∩ D
+			\node at (-0.2,0.5) {\small P1\; P7\; P15 };                     % H ∩ C
+			\node at (2.15,0.5) {\small P6\; \;P18};                         % D ∩ C
+			\node at (1,1.2) {\small P13};                      % H ∩ D ∩ C
+			%\node at (3.5,-2) {\small 11\; 18};                     % Fuera de los conjuntos
+		\end{tikzpicture}
+\end{center}
+	
+\textbf{Respuesta Correcta Problema 3(a): Diagrama de Venn}	
+	
+\newpage	
+
+	\subsection*{Guion hablado -- Problema 3(b)}
+	
+	\begin{quote}
+		Ahora debo formar el conjunto
+		\[
+		A=\{x\in U\mid x \text{ participa exactamente en dos intervenciones}\}.
+		\]
+		
+		Eso significa que debo reunir solamente a quienes están en intersecciones dobles, pero no en la triple.
+		
+		Entonces:
+		\begin{itemize}
+			\item de \(R\cap C\) solo: \(\{P3,P9,P17\}\)
+			\item de \(R\cap H\) solo: \(\{P1,P7,P15\}\)
+			\item de \(C\cap H\) solo: \(\{P6,P18\}\)
+		\end{itemize}
+		
+		Por lo tanto:
+		\[
+		A=\{P1,P3,P6,P7,P9,P15,P17,P18\}
+		\]
+		
+		Su cardinalidad es:
+		\[
+		|A|=8.
+		\]
+	\end{quote}
+	
+	\textbf{Respuesta Correcta Problema 3(b)}
+	
+	\[
+	A=\{P1,P3,P6,P7,P9,P15,P17,P18\}\quad \text{y su cardinalidad } |A|=8
+	\]
+	
+	\subsection*{Guion hablado -- Problema 3(c)}
+	
+	Debo expresar por extensión el conjunto de personas que participan solo en Habilidades Sociales, o bien participan simultáneamente en Regulación Emocional y Entrenamiento Cognitivo.
+		
+		Los que están solo en \(H\) son:
+		\[
+		\{P4,P8,P12,P16,P20\}
+		\]
+		
+		Los que participan simultáneamente en \(R\) y \(C\) son los que están en \(R\cap C\). Eso incluye:
+		\[
+		\{P3,P9,P13,P17\}
+		\]
+		
+		Entonces el conjunto pedido es la unión:
+		\[
+		\{P4,P8,P12,P16,P20\}\cup \{P3,P9,P13,P17\}
+		\]
+		
+		y por extensión queda:
+		\[
+		\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}.
+		\]
+	
+	\textbf{Respuesta Correcta Problema 3(c)}
+	
+	\[
+	\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}
+	\]
+	
+	% =========================================================
+	\section*{Problema 4}
+	
+	En un centro de evaluación psicológica se realiza un estudio a un grupo de 20 personas con el objetivo de identificar distintos perfiles clínicos asociados a su bienestar emocional, cognitivo y social.
+	
+	El universo de estudio está dado por:
+	\[
+	U = \{1,2,3,\dots,20\}
+	\]
+	
+	A partir de entrevistas clínicas, pruebas psicométricas y observación conductual, se identifican las siguientes características:
+	
+	\begin{itemize}
+		\item Ansiedad elevada (A): incluye a quienes presentan altos niveles de activación emocional, preocupación constante o síntomas ansiosos.
+		\item Dificultades en la interacción social (S): incluye a quienes presentan problemas en habilidades sociales, comunicación o relaciones interpersonales.
+		\item Estrés crónico (E): incluye a quienes manifiestan sobrecarga sostenida, fatiga emocional o dificultades para afrontar demandas del entorno.
+	\end{itemize}
+	
+	Los conjuntos asociados a cada característica son los siguientes:
+	
+	\[
+	\begin{array}{rcl}
+		A &=& \{2,4,6,8,10,12,14,16,18,20\} \\
+		S &=& \{5,7,9,11,13\} \\
+		E &=& \{3,6,9,12,15,18\}
+	\end{array}
+	\]
+	
+	\begin{enumerate}[label=\alph*)]
+		
+		\item Determine el siguiente conjunto por comprensión:
+		\[
+		(A - E)\cup(S \cap E) 
+		\]
+		
+		\item Escriba por extensión el siguiente conjunto y determine su cardinalidad:
+		\[
+		(A -S)^c\cap A^c-E
+		\]
+		
+		
+	\end{enumerate}
+	
+	
+		\subsection*{\textbf \Large SOLUCIÓN}
+		
+	El enunciado da los conjuntos:
+	
+	\[
+	\begin{array}{l}
+	U=\{1,2,3,\dots,20\} \\[6pt]
+	A=\{2,4,6,8,10,12,14,16,18,20\} \\[6pt]
+	S=\{5,7,9,11,13\} \\[6pt]
+	E=\{3,6,9,12,15,18\}
+	\end{array}
+	\]
+		
+	y pide trabajar con operaciones de conjuntos.
+	
+	\subsection*{Problema 4(a)}
+	
+	Se pide:
+	\[
+	(A-E)\cup(S\cap E)
+	\]
+	
+	\subsection*{Guion hablado}
+	
+	\begin{quote}
+		Primero calculo \(A-E\), es decir, los elementos de \(A\) que no están en \(E\).
+		
+		Como
+		\[
+		A=\{2,4,6,8,10,12,14,16,18,20\}
+		\]
+		
+		y
+		\[
+		E=\{3,6,9,12,15,18\}
+		\]
+		
+		elimino de \(A\) los elementos 6, 12 y 18.
+		
+		Entonces:
+		\[
+		A-E=\{2,4,8,10,14,16,20\}
+		\]
+		
+		Ahora calculo \(S\cap E\), es decir, los elementos comunes entre \(S\) y \(E\).
+		
+		Como
+		\[
+		S=\{5,7,9,11,13\},\qquad E=\{3,6,9,12,15,18\}
+		\]
+		
+		el único común es 9.
+		
+		Entonces:
+		\[
+		S\cap E=\{9\}
+		\]
+		
+		Finalmente uno ambos resultados:
+		\[
+		(A-E)\cup(S\cap E)=\{2,4,8,9,10,14,16,20\}.
+		\]
+	\end{quote}
+	
+	\textbf{Respuesta Correcta Problema 4(a)}
+	
+	\textbf{Por comprensión el conjunto $(A-E)\cup(S\cap E)$ se escribe:}
+		
+	\(\{x\in U \mid x \textbf{ con ansiedad sin estrés crónico, o con dificultades de interacción social y además con estrés crónico}\}\)	
+	\medskip 
+	
+	\textbf{Y por extensión:}
+	\[
+	(A-E)\cup(S\cap E)=\{2,4,8,9,10,14,16,20\}
+	\]
+	
+	\subsection*{Problema 4(b)}
+	
+	En el conjunto pedida es:
+	\[
+	(A-S)^c\cap A^c - E
+	\]
+	
+	Lo interpretamos como:
+	\[
+	\big((A-S)^c\cap A^c\big)-E
+	\]
+	
+	\subsection*{Guion hablado}
+	
+	\begin{quote}
+	 Usando operaciones con conjuntos, primero calculo \(A-S\).
+		
+		Como \(A\) y \(S\) no tienen elementos en común $A\cap S=\emptyset$, entonces:
+		\[
+		A-S=A
+		\]
+		
+		Por tanto:
+		\[
+		(A-S)^c=A^c
+		\]
+		
+		Ahora calculo \(A^c\) respecto de
+		\[
+		U=\{1,2,3,\dots,20\}
+		\]
+		
+		Entonces:
+		\[
+		A^c=\{1,3,5,7,9,11,13,15,17,19\}
+		\]
+		
+		Ahora resto \(E\):
+		\[
+		A^c-E=\{1,3,5,7,9,11,13,15,17,19\}-\{3,6,9,12,15,18\}
+		\]
+		
+		Eliminando 3, 9 y 15 queda:
+		\[
+		\{1,5,7,11,13,17,19\}
+		\]
+		
+		La cardinalidad de este conjunto es:
+		\[
+		7.
+		\]
+	\end{quote}
+	
+	\textbf{Respuesta Correcta Problema 4(b)}
+	
+	\[
+	\big((A-S)^c\cap A^c\big)-E=\{1,5,7,11,13,17,19\}
+	\]
+	
+	y
+	
+	\[
+	\left|\big((A-S)^c\cap A^c\big)-E\right|=7
+	\]
+	
+	% =========================================================
+	\section*{Guion de cierre}
+	
+	\subsection*{Texto sugerido para decir al final}
+	
+	\begin{quote}
+		“En esta resolución trabajamos proposiciones simples y compuestas, lenguaje simbólico, tablas de verdad, clasificación lógica, diagramas de Venn, operaciones entre conjuntos y cálculo de cardinalidad.
+		
+		En cada problema se mostró el procedimiento completo y la justificación matemática correspondiente. Muchas gracias.”
+	\end{quote}
+	
+	% =========================================================
+	\section*{Resumen muy breve de respuestas finales}
+	
+	\subsection*{Problema 1}
+	\begin{itemize}
+		\item[a)] “Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos, y si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones.”
+		\item[b)] Valor de verdad: \textbf{Verdadera}
+	\end{itemize}
+	
+	\subsection*{Problema 2}
+	\begin{itemize}
+		\item[a)] \(\sim p\to(q\lor \sim r)\)
+		\item[b)] Clasificación: \textbf{Contingencia}
+	\end{itemize}
+	
+	\subsection*{Problema 3}
+	\begin{itemize}
+		\item[b)] 
+		\[
+		A=\{P1,P3,P6,P7,P9,P15,P17,P18\},\qquad |A|=8
+		\]
+		\item[c)]
+		\[
+		\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}
+		\]
+	\end{itemize}
+	
+	\subsection*{Problema 4}
+	\begin{itemize}
+		\item[a)]
+		\(\{x\in U \mid x \text{ con ansiedad sin estrés crónico, o con dificultades de interacción social y además con estrés crónico}\}\)
+		\[
+		(A-E)\cup(S\cap E)=\{2,4,8,9,10,14,16,20\}
+		\]
+		\item[b)]
+		\[
+		\big((A-S)^c\cap A^c\big)-E=\{1,5,7,11,13,17,19\}
+		\]
+		\[
+		\text{Cardinalidad}=7
+		\]
+	\end{itemize}
+	
+\end{document}

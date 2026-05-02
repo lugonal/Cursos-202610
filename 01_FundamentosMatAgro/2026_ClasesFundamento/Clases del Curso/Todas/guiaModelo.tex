@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+
+%------------------------------------------------
+% COLORES
+%------------------------------------------------
+\definecolor{Titulo}{HTML}{0F2D52}
+\definecolor{Subtitulo}{HTML}{4E5D6C}
+\definecolor{Caja}{HTML}{F5F7FA}
+\definecolor{Borde}{HTML}{D6DEE6}
+
+%------------------------------------------------
+% ENCABEZADO Y PIE
+%------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{Subtitulo}{Ayudantía 1}}
+\rhead{\textcolor{Subtitulo}{Lógica proposicional}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%------------------------------------------------
+% CAJAS
+%------------------------------------------------
+\newtcolorbox{ejercicio}{
+	colback=white,
+	colframe=Borde,
+	boxrule=0.7pt,
+	arc=3pt,
+	left=6pt,
+	right=6pt,
+	top=6pt,
+	bottom=6pt
+}
+
+\newtcolorbox{solucion}{
+	colback=Caja,
+	colframe=Borde,
+	boxrule=0.7pt,
+	arc=3pt,
+	left=6pt,
+	right=6pt,
+	top=6pt,
+	bottom=6pt
+}
+
+%------------------------------------------------
+% DOCUMENTO
+%------------------------------------------------
+\begin{document}
+	
+	\begin{center}
+		% \includegraphics[width=2cm]{logo_ust.png}
+		
+		{\LARGE\bfseries\textcolor{Titulo}{Ayudantía 1}}
+		
+		\vspace{3mm}
+		
+		{\large\bfseries\textcolor{Subtitulo}{Lógica proposicional}}
+		
+		\vspace{4mm}
+		
+		{\normalsize Manuel Concha}
+		
+		{\small Universidad Santo Tomás}
+	\end{center}
+	
+	\vspace{8mm}
+	
+	{\Large\bfseries\textcolor{Titulo}{Ejercicios}}
+	
+	\vspace{4mm}
+	
+	%------------------------------------------------
+	% EJERCICIO 1
+	%------------------------------------------------
+	\begin{ejercicio}
+		\textbf{Ejercicio 1.} Indique cuáles de los siguientes enunciados son proposiciones.
+		
+		\begin{enumerate}[label=\arabic*.]
+			\item El precio del producto aumenta.
+			\item ¿Cuál es el valor del dólar hoy?
+			\item 15 es divisible por 3.
+			\item ¡Excelente inversión!
+		\end{enumerate}
+	\end{ejercicio}
+	
+	\begin{solucion}
+		\textbf{Solución}
+		
+		\begin{itemize}
+			\item (1) Sí es proposición.
+			\item (2) No es proposición, porque es una pregunta.
+			\item (3) Sí es proposición y es verdadera.
+			\item (4) No es proposición, porque es una exclamación.
+		\end{itemize}
+	\end{solucion}
+	
+	\vspace{5mm}
+	
+	%------------------------------------------------
+	% EJERCICIO 2
+	%------------------------------------------------
+	\begin{ejercicio}
+		\textbf{Ejercicio 2.} Sean las proposiciones:
+		\[
+		p:\ \text{``Aumenta el precio''}
+		\qquad
+		q:\ \text{``Disminuye la demanda''}
+		\]
+		
+		Escriba en lenguaje usual:
+		
+		\begin{enumerate}[label=\alph*)]
+			\item \(p \land q\)
+			\item \(p \lor q\)
+			\item \(\neg p\)
+		\end{enumerate}
+	\end{ejercicio}
+	
+	\begin{solucion}
+		\textbf{Solución}
+		
+		\begin{itemize}
+			\item \(p \land q\): Aumenta el precio y disminuye la demanda.
+			\item \(p \lor q\): Aumenta el precio o disminuye la demanda.
+			\item \(\neg p\): No aumenta el precio.
+		\end{itemize}
+	\end{solucion}
+	
+	\vspace{5mm}
+	
+	%------------------------------------------------
+	% EJERCICIO 3
+	%------------------------------------------------
+	\begin{ejercicio}
+		\textbf{Ejercicio 3.} Considere las proposiciones:
+		\[
+		p:\ \text{``8 es par''}
+		\qquad
+		q:\ \text{``8 es múltiplo de 3''}
+		\]
+		
+		Determine el valor de verdad de:
+		
+		\begin{enumerate}[label=\arabic*.]
+			\item \(p\)
+			\item \(q\)
+			\item \(p \land q\)
+			\item \(p \lor q\)
+		\end{enumerate}
+	\end{ejercicio}
+	
+	\begin{solucion}
+		\textbf{Solución}
+		
+		\[
+		p = V
+		\qquad
+		q = F
+		\]
+		
+		\begin{itemize}
+			\item \(p\) es verdadero.
+			\item \(q\) es falso.
+			\item \(p \land q = F\).
+			\item \(p \lor q = V\).
+		\end{itemize}
+	\end{solucion}
+	
+\end{document}

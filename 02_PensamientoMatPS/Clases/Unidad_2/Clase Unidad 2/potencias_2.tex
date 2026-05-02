@@ -1,0 +1,1387 @@
+\documentclass[aspectratio=169]{beamer}
+
+%------------------------------------------------
+% PAQUETES
+%------------------------------------------------
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{multicol}
+
+%------------------------------------------------
+% TEMA
+%------------------------------------------------
+\usetheme{Madrid}
+\useinnertheme{rounded}
+\setbeamertemplate{navigation symbols}{}
+
+%------------------------------------------------
+% COLORES PSICOLOGÍA / UST
+%------------------------------------------------
+\definecolor{Primary}{HTML}{6A1B9A}
+\definecolor{Secondary}{HTML}{8E24AA}
+\definecolor{LightBg}{HTML}{F3E5F5}
+\definecolor{DarkText}{HTML}{263238}
+\definecolor{AlertRed}{HTML}{C62828}
+
+\setbeamercolor{structure}{fg=Primary}
+\setbeamercolor{frametitle}{bg=Primary,fg=white}
+\setbeamercolor{title}{fg=white,bg=Primary}
+\setbeamercolor{block title}{bg=Primary,fg=white}
+\setbeamercolor{block body}{bg=LightBg,fg=black}
+\setbeamercolor{alerted text}{fg=AlertRed}
+
+%------------------------------------------------
+% FOOTLINE
+%------------------------------------------------
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.82\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}
+			\hspace{1em} Pensamiento Matemático Ciencias Sociales | Psicología
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.18\paperwidth,ht=2.5ex,dp=1ex,center]{date in head/foot}
+			\insertframenumber/\inserttotalframenumber
+	\end{beamercolorbox}}%
+}
+
+%------------------------------------------------
+% CAJAS
+%------------------------------------------------
+\newtcolorbox{idea}{
+	colback=LightBg,
+	colframe=Primary,
+	arc=2mm,
+	boxrule=0.8pt,
+	title=\textbf{Idea clave}
+}
+
+\newtcolorbox{alerta}{
+	colback=red!5,
+	colframe=AlertRed,
+	arc=2mm,
+	boxrule=0.8pt,
+	title=\textbf{Cuidado}
+}
+
+\newtcolorbox{actividad}{
+	colback=blue!5,
+	colframe=blue!60!black,
+	arc=2mm,
+	boxrule=0.8pt,
+	title=\textbf{Actividad}
+}
+
+%------------------------------------------------
+% DATOS
+%------------------------------------------------
+\title[Potencias y Álgebra]{Potencias, Expresiones Algebraicas y Patrones}
+\subtitle{Aplicaciones contextualizadas a Psicología}
+\author{Prof. Luis Tulio González Alcaino}
+\institute{Universidad Santo Tomás \\ Departamento de Ciencias Básicas}
+\date{\today}
+
+%------------------------------------------------
+\begin{document}
+	%------------------------------------------------
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Ruta de la clase}
+		\tableofcontents
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Objetivos de aprendizaje}
+	
+	\begin{frame}{Objetivos de aprendizaje}
+		Al finalizar la clase, el estudiante será capaz de:
+		
+		\begin{enumerate}
+			\item Reconocer el concepto de potencia y sus propiedades.
+			\item Identificar término algebraico, expresión algebraica y término semejante.
+			\item Aplicar propiedades de potencias en situaciones contextualizadas a Psicología.
+			\item Simplificar expresiones algebraicas asociadas a modelos psicológicos simples.
+			\item Integrar patrones y relaciones matemáticas en escalas, registros y mediciones.
+			\item Detectar inconsistencias frecuentes en procedimientos algebraicos.
+		\end{enumerate}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Concepto de potencia}
+	
+	\begin{frame}{Concepto de potencia}
+		\begin{idea}
+			Una potencia representa una multiplicación reiterada de un mismo factor.
+		\end{idea}
+		
+		\[
+		a^n=
+		\underbrace{a\cdot a\cdot a\cdots a}_{n\text{ veces}}
+		\]
+		
+		\pause
+		
+			\begin{itemize}
+				\item \(a\): base.
+				\item \(n\): exponente.
+				\item \(a^n\): potencia.
+			\end{itemize}
+	
+		\pause
+		
+		\begin{exampleblock}{Ejemplo en Psicología}
+			Si una tarea de memoria duplica su dificultad en cada nivel, el número relativo de combinaciones puede modelarse como: $2^n$, donde \(n\) representa el nivel de dificultad.
+		\end{exampleblock}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Ejemplo: carga cognitiva}
+		En una prueba experimental, la cantidad de estímulos visuales aumenta duplicándose en cada etapa. $2^1=2,\quad 2^2=4,\quad 2^3=8,\quad 2^4=16$
+		
+		\pause
+		
+		\begin{block}{Interpretación}
+			Cada nuevo nivel exige procesar el doble de estímulos que el nivel anterior.
+		\end{block}
+		
+		\pause
+		
+		\begin{actividad}
+			Complete la tabla:
+			\[\begin{array}{c|c}
+				\text{Nivel} & \text{Estímulos} \\
+				\hline
+				1 & 2 \\
+				2 & 4 \\
+				3 & 8 \\
+				4 & 16 \\
+				5 & ? \\
+				6 & ?
+			\end{array}
+			\]
+		\end{actividad}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Propiedades de las potencias}
+	
+	\begin{frame}{Producto de potencias de igual base}
+		\begin{idea}
+			Cuando se multiplican potencias de igual base, se conserva la base y se suman los exponentes.
+		\end{idea}
+		
+		\[
+		a^m\cdot a^n=a^{m+n}
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo contextualizado}
+			En un modelo de registro conductual, una variable \(x\) representa la frecuencia base de una conducta observada. 
+			$x^3\cdot x^4=x^{3+4}=x^7$			
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{Interpretación}
+			Se combinan dos factores de crecimiento asociados a la misma variable psicológica.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Cociente de potencias de igual base}
+		\begin{idea}
+			Cuando se dividen potencias de igual base, se conserva la base y se restan los exponentes.
+		\end{idea}		
+		\[
+		\frac{a^m}{a^n}=a^{m-n},
+		\qquad a\neq 0
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo contextualizado}
+			Un índice de atención se modela como: $\dfrac{x^8}{x^3}$
+			Entonces: $\dfrac{x^8}{x^3}=x^{8-3}=x^5$
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{alerta}
+			La restricción es:$x\neq 0$, porque no existe división por cero.
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Potencia de una potencia}
+		\begin{idea}
+			Cuando una potencia se eleva a otra potencia, se multiplican los exponentes.
+		\end{idea}
+		
+		\[
+		(a^m)^n=a^{mn}
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo en memoria de trabajo}
+			Si un modelo de desempeño en memoria se expresa como:
+			$(M^2)^3$
+				
+			entonces: $(M^2)^3=M^{2\cdot 3}=M^6$
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{Interpretación}
+			La variable \(M\) representa un indicador de memoria de trabajo sometido a transformaciones sucesivas.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Potencia de un producto}
+		\begin{idea}
+			La potencia de un producto se distribuye sobre cada factor.
+		\end{idea}		
+		\[
+		(ab)^n=a^n b^n
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo contextualizado}
+			Suponga que \(a\) mide activación fisiológica y \(b\) mide demanda cognitiva. Entonces:			
+			\[
+			(2ab)^3=2^3a^3b^3=8a^3b^3
+			\]
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{alerta}
+			No confundir: $(a+b)^2\neq a^2+b^2$. Esto es un error frecuente al analizar expresiones algebraicas.
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Exponente cero y negativo}
+		\begin{block}{Exponente cero}
+			\[
+			a^0=1,\qquad a\neq 0
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			E^0=1
+			\]
+			
+			si \(E\neq 0\), donde \(E\) puede representar un indicador de estrés.
+		\end{exampleblock}
+		
+		\pause
+		
+		\begin{block}{Exponente negativo}
+			$a^{-n}=\dfrac{1}{a^n},	\qquad a\neq 0$
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo}
+			$T^{-2}=\dfrac{1}{T^2}$, donde \(T\) puede representar tiempo de respuesta.
+		\end{exampleblock}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Errores e inconsistencias}
+	
+	\begin{frame}{Error frecuente 1}
+		Un estudiante escribe:
+		
+		\[
+		A^3+A^5=A^8
+		\]
+		
+		\pause
+		
+		\begin{alerta}
+			Esto es incorrecto.
+		\end{alerta}
+		
+		\pause
+		
+		La propiedad:
+		
+		\[
+		A^m\cdot A^n=A^{m+n}
+		\]
+		
+		se aplica solamente en multiplicaciones, no en sumas.
+		
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Error frecuente 2}
+		En un modelo de ansiedad, un estudiante plantea:
+		
+		\[
+		(3A^2)^3=3A^6
+		\]
+		
+		\pause
+		
+		\begin{alerta}
+			El resultado es incorrecto.
+		\end{alerta}
+		
+		\pause
+		
+		La potencia afecta tanto al coeficiente como a la variable:
+		
+		\[
+		(3A^2)^3=3^3(A^2)^3
+		\]
+		
+		\[
+		=27A^6
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado correcto}
+			\[
+			(3A^2)^3=27A^6
+			\]
+		\end{block}
+	\end{frame}
+	 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Potencias en contextos psicológicos}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 1: carga cognitiva creciente}
+		En una tarea experimental, la carga cognitiva se modela por:
+		\[
+		C(n)=3\cdot 2^{n-1}
+		\]
+		donde \(n\) es el nivel de dificultad. Calcular $C(5)$.
+		
+		\[
+		C(5)=3\cdot 2^{5-1}
+		\]
+		
+		\[
+		C(5)=3\cdot 2^4
+		\]
+		
+		\[
+		C(5)=3\cdot 16=48
+		\]
+		
+		\begin{block}{Interpretación}
+			En el nivel 5, la carga cognitiva relativa es de \(48\) unidades.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 1: carga cognitiva}
+		Una tarea de memoria visual comienza con \(4\) estímulos. En cada nivel, la cantidad de estímulos se triplica.
+		
+		\begin{enumerate}
+			\item Modele la cantidad de estímulos en el nivel \(n\).
+			\item Calcule la cantidad de estímulos en el nivel \(6\).
+		\end{enumerate}
+		
+		\pause
+		
+		\begin{block}{Solución}
+			\[
+			E(n)=4\cdot 3^{n-1}
+			\]
+			
+			\[
+			E(6)=4\cdot 3^5=4\cdot 243=972
+			\]
+			
+			El crecimiento es exponencial porque cada nivel multiplica por \(3\) al anterior.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 2: reducción de ansiedad}
+		Después de cada sesión terapéutica, un indicador de ansiedad se reduce al \(80\%\) del valor anterior.
+		
+		\[
+		A(n)=A_0(0{,}8)^n
+		\]
+		
+		Si \(A_0=75\), entonces después de \(5\) sesiones:
+		
+		\[
+		A(5)=75(0{,}8)^5
+		\]
+		
+		\[
+		A(5)=75(0{,}32768)
+		\]
+		
+		\[
+		A(5)=24{,}576
+		\]
+		
+		\begin{block}{Interpretación}
+			Después de 5 sesiones, el indicador estimado de ansiedad es aproximadamente \(24{,}58\).
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 3: memoria y olvido}
+		Un modelo simple de retención de información (en porcentaje) está dado por:
+		\[
+		R(t)=100(0{,}7)^t
+		\]
+		donde \(t\) representa días desde el aprendizaje inicial.
+		
+		Determinar el porcentaje de retensión después de 3 días.
+		
+		\[
+		R(3)=100(0{,}7)^3
+		\]
+		
+		\[
+		R(3)=100(0{,}343)=34{,}3
+		\]
+		
+		\begin{block}{Interpretación}
+			Después de 3 días, se retiene aproximadamente el \(34{,}3\%\) de la información inicial.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 3: retención de información}
+		Un estudiante retiene el \(92\%\) de lo aprendido cada día. Inicialmente domina el \(100\%\) de un contenido.
+		
+		\begin{enumerate}
+			\item Plantee el modelo de retención.
+			\item Calcule la retención después de \(7\) días.
+			\item Interprete el resultado.
+		\end{enumerate}
+		
+		\pause
+		
+		\begin{block}{Solución}
+			\[
+			\begin{array}{rcl}
+				R(t)   & = & 100(0{,}92)^t \\[0.3cm]
+				R(7)   & = & 100(0{,}92)^7 \\[0.3cm]
+				R(7)   & \approx & 100(0{,}5578) \\[0.3cm]
+				R(7)   & \approx & 55{,}78
+			\end{array}
+			\]
+			
+			Después de 7 días, retiene aproximadamente el \(55{,}78\%\).
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 4: simplificación algebraica con potencias}
+		Un índice combinado de ansiedad \(A\), memoria \(M\) y atención \(T\) está dado por:
+		
+		\[
+		I=\frac{12A^5M^3T^4}{3A^2MT}
+		\]
+		
+		\[
+		I=4A^{5-2}M^{3-1}T^{4-1}
+		\]
+		
+		\[
+		I=4A^3M^2T^3
+		\]
+		
+		\begin{block}{Restricciones}
+			\[
+			A\neq 0,\qquad M\neq 0,\qquad T\neq 0
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 4: índice psicológico compuesto}
+		Simplifique el siguiente índice:
+		
+		\[
+		P=\frac{18E^7A^4M^5}{6E^2A^3M}
+		\]
+		
+		donde \(E\) representa estrés, \(A\) ansiedad y \(M\) memoria de trabajo.
+		
+		\pause
+		
+		\begin{block}{Solución}
+			\[
+			P=3E^{7-2}A^{4-3}M^{5-1}
+			\]
+			
+			\[
+			P=3E^5AM^4
+			\]
+			
+			\[
+			E\neq 0,\qquad A\neq 0,\qquad M\neq 0
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 5: error frecuente en potencia de producto}
+		Un estudiante simplifica:
+		
+		\[
+		(4A^2M^3)^2
+		\]
+		
+		como:
+		
+		\[
+		4A^4M^6
+		\]
+		
+		\begin{alertblock}{Error}
+			No elevó el coeficiente \(4\) al cuadrado.
+		\end{alertblock}
+		
+		\[
+		(4A^2M^3)^2
+		=
+		4^2(A^2)^2(M^3)^2
+		\]
+		
+		\[
+		=16A^4M^6
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 5: detectar inconsistencia}
+		Un estudiante afirma que:
+		
+		\[
+		(5E^3T^2)^2=5E^6T^4
+		\]
+		
+		\begin{enumerate}
+			\item Identifique el error.
+			\item Corrija el desarrollo.
+			\item Interprete por qué el coeficiente también debe elevarse.
+		\end{enumerate}
+		
+		\pause
+		
+		\begin{block}{Solución}
+			\[
+			(5E^3T^2)^2
+			=
+			5^2(E^3)^2(T^2)^2
+			\]
+			
+			\[
+			=25E^6T^4
+			\]
+			
+			El coeficiente forma parte del producto completo.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 6: patrón exponencial en difusión social}
+		En una simulación de influencia social, cada participante comparte una recomendación con \(3\) nuevas personas. Inicialmente participan \(6\) personas. El modelo del número de personas alcanzadas en la etapa $n$ es 
+			\[
+		P(n)=6\cdot 3^{n-1}
+		\]
+	Calcule el número de personas alcanzadas en la etapa \(5\).
+					
+		\pause
+		
+		\begin{block}{Solución}
+			\[
+			P(5)=6\cdot 3^4=6\cdot81=486
+			\]
+			
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 7: comparación de modelos}
+		Dos programas de intervención reducen un indicador de estrés de la siguiente forma:
+		\[
+		E_1(n)=80(0{,}9)^n
+		\]
+		
+		\[
+		E_2(n)=80(0{,}75)^n
+		\]
+		
+		\begin{enumerate}
+			\item Calcule ambos valores para \(n=4\).
+			\item Determine cuál reduce más rápido el estrés.
+			\item Explique usando potencias.
+		\end{enumerate}
+		
+		\pause
+		
+		\begin{block}{Solución}
+			\[
+			E_1(4)=80(0{,}9)^4=80(0{,}6561)=52{,}488
+			\]
+			
+			\[
+			E_2(4)=80(0{,}75)^4=80(0{,}31640625)=25{,}3125
+			\]
+			
+			El segundo programa reduce más rápido el estrés.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 8}
+		Simplifique:
+		
+		\[
+		K=
+		\frac{(6A^3M^2)^2}{3A^2M}
+		\]
+		
+		\pause
+		
+		Primero:
+		
+		\[
+		(6A^3M^2)^2
+		=
+		36A^6M^4
+		\]
+		
+		Luego:
+		
+		\[
+		K=\frac{36A^6M^4}{3A^2M}
+		\]
+		
+		\[
+		K=12A^{6-2}M^{4-1}
+		\]
+		
+		\[
+		K=12A^4M^3
+		\]
+		
+		
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 9: modelo integrado}
+		Un índice experimental se define por: $	I=\dfrac{(2E^2A^3)^3}{4EA^2}$
+		
+		donde \(E\) representa estrés y \(A\) ansiedad.
+		
+		\begin{enumerate}
+			\item Simplifique el índice.
+			\item Determine restricciones.
+			\item Explique qué propiedad de potencias se utiliza en cada paso.
+		\end{enumerate}
+		
+		\pause
+		
+		\begin{block}{Solución}
+			\[
+			\begin{array}{rcl}
+				(2E^2A^3)^3 & = & 2^3E^6A^9 \\[0.3cm]
+				& = & 8E^6A^9 \\[0.3cm]
+				I           & = & \dfrac{8E^6A^9}{4EA^2} \\[0.3cm]
+				I           & = & 2E^5A^7
+			\end{array}
+			\]
+			
+			Restricciones:$	E\neq0,\quad A\neq0$
+		\end{block}
+	\end{frame}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%------------------------------------------------
+	\section{Elementos básicos del álgebra}
+		
+	\begin{frame}{Término algebraico}
+		\begin{idea}
+			Un término algebraico es una expresión formada por números y letras unidos mediante multiplicación y potencias.
+		\end{idea}
+		
+		\[
+		-5x^3y^2
+		\]
+		
+		\pause
+		
+		\begin{block}{Elementos}
+			\begin{itemize}
+				\item Coeficiente numérico: \(-5\).
+				\item Parte literal: \(x^3y^2\).
+				\item Variables: \(x\), \(y\).
+				\item Exponentes: \(3\), \(2\).
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Elementos básicos del álgebra}
+	\begin{frame}{Expresión algebraica}
+		\begin{idea}
+			Una expresión algebraica combina términos algebraicos mediante operaciones.
+		\end{idea}
+		\[
+		4x^2-7x+3
+		\]
+		
+		\pause
+		
+		\begin{exampleblock}{Ejemplo contextualizado}
+			Un puntaje estimado de desempeño puede modelarse mediante:
+					\[
+			P(t)=4t^2-7t+3
+			\]
+			donde \(t\) representa el tiempo de práctica en semanas.
+		\end{exampleblock}
+	\end{frame}	
+	
+	\begin{frame}{Diferencia ente expresión algebraica y ecuación}
+		
+		\begin{alerta}
+			Una expresión algebraica no es necesariamente una ecuación.
+			
+			\[
+			4t^2-7t+3
+			\]
+			
+			es una expresión.
+			
+			\[
+			4t^2-7t+3=20
+			\]
+			
+			es una ecuación.
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Términos semejantes}
+		\begin{idea}
+			Dos términos son semejantes si tienen exactamente la misma parte literal.
+		\end{idea}
+		
+		\[
+		7x^2y
+		\qquad\text{y}\qquad
+		-3x^2y
+		\]
+		
+		son semejantes.
+		
+		\pause
+		
+		\[
+		5xy^2
+		\qquad\text{y}\qquad
+		5x^2y
+		\]
+		
+		no son semejantes.
+		
+		\pause
+		
+		\begin{exampleblock}{Contexto psicológico}
+			Si \(A\) representa ansiedad y \(M\) motivación:
+			
+			\[
+			8A^2M
+			\qquad\text{y}\qquad
+			-3A^2M \qquad 
+			 \text{son términos semejantes}
+			 \]
+		\end{exampleblock}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Reducción de términos semejantes}
+		\begin{exampleblock}{Ejemplo}
+			Simplifique el siguiente modelo de puntaje psicológico:
+			
+			\[
+			P=8A^2-3A+5A^2+9A-4
+			\]
+			
+			donde \(A\) representa un indicador de ansiedad.
+		\end{exampleblock}
+		
+		\pause
+		
+		Agrupamos términos semejantes:
+		
+		\[
+		P=(8A^2+5A^2)+(-3A+9A)-4
+		\]
+		
+		\pause
+		
+		\[
+		P=13A^2+6A-4
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			P=13A^2+6A-4
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Patrones y relaciones matemáticas}
+	
+	\begin{frame}{Patrón lineal: sesiones terapéuticas}
+		Un estudiante registra el número acumulado de ejercicios de autorregulación realizados por un paciente:
+		
+		\[
+		\begin{array}{c|c}
+			\text{Semana} & \text{Ejercicios acumulados} \\
+			\hline
+			1 & 5 \\
+			2 & 8 \\
+			3 & 11 \\
+			4 & 14 \\
+			5 & 17
+		\end{array}
+		\]
+		
+		\pause
+		
+		\begin{block}{Patrón}
+			El número aumenta de \(3\) en \(3\). \qquad  $a_n=3n+2$
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Interpretación}
+			En la semana \(n\), el paciente acumula \(3n+2\) ejercicios.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Patrón cuadrático: tareas cognitivas}
+		En una prueba de memoria, la cantidad de combinaciones posibles aumenta como:
+		
+		\[
+		1,\ 4,\ 9,\ 16,\ 25,\ldots
+		\]
+		
+		\pause
+		
+		\[
+		1^2,\ 2^2,\ 3^2,\ 4^2,\ 5^2,\ldots
+		\]
+		
+		\pause
+		
+		\begin{block}{Modelo}
+			\[
+			a_n=n^2
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{actividad}
+			En una tarea de asociación de palabras, el número de relaciones posibles se modela por:
+			
+			\[
+			a_n=2n^2
+			\]
+			
+			Calcule \(a_3\), \(a_4\) y \(a_5\).
+		\end{actividad}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Patrón exponencial: propagación de respuestas}
+		En una simulación de dinámica grupal, cada participante transmite una instrucción a dos nuevos participantes.
+		
+		\[
+		5,\ 10,\ 20,\ 40,\ 80,\ldots
+		\]
+		
+		\pause
+		
+		\[
+		5,\quad 5\cdot2,\quad 5\cdot2^2,\quad 5\cdot2^3,\quad 5\cdot2^4
+		\]
+		
+		\pause
+		
+		\begin{block}{Modelo}
+			\[
+			a_n=5\cdot2^{n-1}
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{alerta}
+			El exponente es \(n-1\), porque el primer término corresponde a:
+			
+			\[
+			5\cdot2^0=5
+			\]
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Ejemplos contextualizados}
+	
+	\begin{frame}{Ejemplo 1: registro de respuestas}
+		En un experimento, el número de respuestas registradas aumenta al doble en cada bloque.  
+		Inicialmente se registran \(120\) respuestas.
+		
+		\pause
+		
+		\begin{block}{Modelo}
+			\[
+			R(t)=120\cdot2^t
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{Pregunta}
+			¿Cuántas respuestas se esperan después de \(5\) bloques?
+		\end{exampleblock}
+		
+		\pause
+		
+	\[
+	\begin{array}{rcl}
+		R(5) & = & 120\cdot 2^5 \\[0.3cm]
+		& = & 120\cdot 32 \\[0.3cm]
+		& = & 3840
+	\end{array}
+	\]
+		
+		\pause
+		
+		\textbf{Respuesta:} 
+			Después de \(5\) bloques se esperan \(3840\) respuestas registradas.
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Ejemplo 2: índice combinado de atención}
+		Un índice experimental combina atención sostenida \(A\) y memoria de trabajo \(M\):
+		
+		\[
+		I=4A^3M^2\cdot3A^2M^5
+		\]
+		
+		\pause
+		
+		Multiplicamos coeficientes:
+		
+		\[
+		4\cdot3=12
+		\]
+		
+		\pause
+		
+		Aplicamos propiedades de potencias:
+		
+		\[
+		A^3\cdot A^2=A^5
+		\]
+		
+		\[
+		M^2\cdot M^5=M^7
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			I=12A^5M^7
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Ejemplo 3: razón entre indicadores}
+		Un modelo compara dos indicadores de respuesta emocional:
+		
+		\[
+		Q=\frac{18E^7T^4}{6E^3T}
+		\]
+		
+		donde \(E\) representa intensidad emocional y \(T\) tiempo de respuesta.
+		
+		\pause
+		
+		\[
+		\begin{array}{rcl}
+			\dfrac{18}{6} & = & 3 \\[0.3cm]
+			\dfrac{E^7}{E^3} & = & E^4 \\[0.3cm]
+			\dfrac{T^4}{T} & = & T^3
+		\end{array}
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			Q=3E^4T^3
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{alerta}
+			Restricciones:
+			
+			\[
+			E\neq0,\qquad T\neq0
+			\]
+		\end{alerta}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Ejemplo 4: escala compuesta}
+		Una escala simplificada de ajuste psicológico se representa por:
+		
+		\[
+		S=7A^2M-3AM^2+5A^2M+9AM^2-4M
+		\]
+		
+		donde:
+		
+		\begin{itemize}
+			\item \(A\): ansiedad.
+			\item \(M\): motivación.
+		\end{itemize}
+		
+		\pause
+		
+		Agrupamos términos semejantes:
+		
+		\[
+		S=(7A^2M+5A^2M)+(-3AM^2+9AM^2)-4M
+		\]
+		
+		\pause
+		
+		\[
+		S=12A^2M+6AM^2-4M
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			S=12A^2M+6AM^2-4M
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Actividades}
+	
+	\begin{frame}{Actividad 1: potencias en contexto psicológico}
+		Simplifique las siguientes expresiones:
+		
+		\[
+		\begin{array}{ll}
+			\text{a)} & A^4\cdot A^7 \\[0.2cm]
+			\text{b)} & \dfrac{M^{10}}{M^3} \\[0.3cm]
+			\text{c)} & (E^5)^4 \\[0.2cm]
+			\text{d)} & (2A^3M)^2 \\[0.2cm]
+			\text{e)} & \dfrac{12E^6T^4}{3E^2T}
+		\end{array}
+		\]
+		
+		\pause
+		
+		\begin{block}{Respuestas}
+			\[
+			\begin{array}{ll}
+				\text{a)} & A^{11} \\[0.2cm]
+				\text{b)} & M^7 \\[0.2cm]
+				\text{c)} & E^{20} \\[0.2cm]
+				\text{d)} & 4A^6M^2 \\[0.2cm]
+				\text{e)} & 4E^4T^3
+			\end{array}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Actividad 2: reducción algebraica}
+		Un modelo simplificado de desempeño académico-emocional está dado por:
+		
+		\[
+		D=9A^2-5A+4-3A^2+11A-8
+		\]
+		
+		\pause
+		
+		Agrupamos términos semejantes:
+		
+		\[
+		D=(9A^2-3A^2)+(-5A+11A)+(4-8)
+		\]
+		
+		\pause
+		
+		\[
+		D=6A^2+6A-4
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			D=6A^2+6A-4
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Actividad 3: detectar inconsistencias}
+		Un estudiante simplifica el modelo:
+		
+		\[
+		(4M^2)^3
+		\]
+		
+		de la siguiente manera:
+		
+		\[
+		(4M^2)^3=4M^6
+		\]
+		
+		\pause
+		
+		\begin{alerta}
+			Detecte el error.
+		\end{alerta}
+		
+		\pause
+		
+		La potencia afecta al coeficiente y a la variable:
+		
+		\[
+		(4M^2)^3=4^3(M^2)^3
+		\]
+		
+		\[
+		=64M^6
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado correcto}
+			\[
+			(4M^2)^3=64M^6
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Actividad 4: patrón en intervención psicológica}
+		En un programa de intervención, el número de registros conductuales sigue la secuencia:
+		
+		\[
+		4,\ 12,\ 36,\ 108,\ 324,\ldots
+		\]
+		
+		\pause
+		
+		\begin{block}{Pregunta}
+			Determine el patrón y proponga el término general.
+		\end{block}
+		
+		\pause
+		
+		Cada término se multiplica por \(3\):
+		
+		\[
+		4,\quad 4\cdot3,\quad 4\cdot3^2,\quad 4\cdot3^3
+		\]
+		
+		\pause
+		
+		\[
+		a_n=4\cdot3^{n-1}
+		\]
+		
+		\pause
+		
+		\begin{block}{Interpretación}
+			En la sesión \(n\), el número estimado de registros es:
+			
+			\[
+			4\cdot3^{n-1}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Actividad 5: caso integrador}
+		Un equipo de investigación psicológica propone el siguiente índice:
+		
+		\[
+		I=\frac{6A^4M^3}{2A^2M}\,+\,5A^2M^2-3A^2M^2
+		\]
+		
+		donde:
+		
+		\begin{itemize}
+			\item \(A\): ansiedad.
+			\item \(M\): memoria de trabajo.
+		\end{itemize}
+		
+		\pause
+		
+		Simplificamos el cociente:
+		
+		\[
+		\frac{6A^4M^3}{2A^2M}
+		=
+		3A^2M^2
+		\]
+		
+		\pause
+		
+		Entonces:
+		
+		\[
+		I=3A^2M^2+5A^2M^2-3A^2M^2
+		\]
+		
+		\pause
+		
+		\[
+		I=5A^2M^2
+		\]
+		
+		\pause
+		
+		\begin{block}{Resultado}
+			\[
+			I=5A^2M^2
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\section{Síntesis final}
+	
+	\begin{frame}{Síntesis conceptual}
+		\begin{block}{Potencias}
+			Permiten representar multiplicaciones reiteradas y modelar crecimiento, escalamiento y patrones.
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Álgebra}
+			Un término algebraico posee coeficiente, variables y exponentes.  
+			Una expresión algebraica combina términos mediante operaciones.
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Psicología}
+			Las expresiones algebraicas pueden representar modelos simplificados de atención, ansiedad, memoria, motivación o desempeño.
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Pensamiento crítico}
+			Detectar errores algebraicos permite interpretar mejor los modelos y evitar conclusiones incorrectas.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+	\begin{frame}{Cierre}
+		\begin{center}
+			{\Huge \textbf{Conclusión}}
+			
+			\vspace{0.5cm}
+			
+			\Large
+			Las potencias y el álgebra permiten representar patrones, simplificar modelos y analizar relaciones presentes en fenómenos psicológicos.
+			
+			\vspace{0.7cm}
+			
+			\textbf{Pregunta final:}
+			
+			\[
+			A^2+A^2=2A^2
+			\]
+			
+			pero
+			
+			\[
+			A^2\cdot A^2=A^4
+			\]
+			
+			\vspace{0.4cm}
+			
+			¿Por qué ambas operaciones producen resultados distintos?
+		\end{center}
+	\end{frame}
+	
+	%------------------------------------------------
+\end{document}

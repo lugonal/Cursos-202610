@@ -1,0 +1,656 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+% =========================================================
+% PAQUETES
+% =========================================================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% =========================================================
+% TEMA
+% =========================================================
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+% =========================================================
+% COLORES
+% =========================================================
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTTeal}{RGB}{0,153,117}
+\definecolor{USTSoft}{RGB}{245,247,250}
+\definecolor{USTGray}{RGB}{90,90,90}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{USTPurple}{RGB}{109,76,139}
+
+\setbeamercolor{title}{fg=white,bg=USTBlue}
+\setbeamercolor{frametitle}{fg=white,bg=USTBlue}
+\setbeamercolor{structure}{fg=USTBlue}
+\setbeamercolor{normal text}{fg=USTText,bg=white}
+\setbeamercolor{block title}{fg=white,bg=USTBlueDark}
+\setbeamercolor{block body}{fg=black,bg=USTSoft}
+\setbeamercolor{block title alerted}{fg=white,bg=USTPurple}
+\setbeamercolor{block body alerted}{fg=black,bg=USTSoft}
+\setbeamercolor{block title example}{fg=white,bg=USTTeal}
+\setbeamercolor{block body example}{fg=black,bg=USTSoft}
+
+% =========================================================
+% FOOTLINE
+% =========================================================
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.78\paperwidth,ht=2.6ex,dp=1.2ex,leftskip=0.4cm]{author in head/foot}
+			\color{white}\bfseries Guion de Video -- Evaluación Unidad 1 -- Pensamiento Matemático
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.22\paperwidth,ht=2.6ex,dp=1.2ex,rightskip=0.35cm plus1fil]{date in head/foot}
+			\color{white}\bfseries \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+}
+\setbeamercolor{author in head/foot}{bg=USTBlueDark,fg=white}
+\setbeamercolor{date in head/foot}{bg=USTBlue,fg=white}
+
+% =========================================================
+% ENTORNOS
+% =========================================================
+\newcommand{\IdeaClave}[1]{
+	\begin{alertblock}{Idea clave}
+		#1
+	\end{alertblock}
+}
+
+\newcommand{\Guion}[1]{
+	\begin{exampleblock}{Guion sugerido para narrar}
+		#1
+	\end{exampleblock}
+}
+
+\newcommand{\Resultado}[1]{
+	\begin{block}{Resultado}
+		#1
+	\end{block}
+}
+
+% =========================================================
+% DATOS
+% =========================================================
+\title{Guion Completo en Video\\Evaluación Unidad 1}
+\subtitle{Pensamiento Matemático -- Psicología}
+\author{Luis Tulio González Alcaino}
+\institute{Universidad Santo Tomás \\ Departamento de Ciencias Básicas}
+\date{}
+
+% =========================================================
+\begin{document}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Ruta del video}
+		\tableofcontents
+	\end{frame}
+	
+	% =========================================================
+	\section{Estructura general del video}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Estructura sugerida del video}
+		\begin{block}{Duración recomendada}
+			12 a 18 minutos.
+		\end{block}
+		
+		\begin{enumerate}[label=\arabic*.]
+			\item Presentación inicial.
+			\item Problema 1.
+			\item Problema 2.
+			\item Problema 3.
+			\item Problema 4.
+			\item Cierre final.
+		\end{enumerate}
+		
+		\IdeaClave{
+			En el video se debe mostrar no solo la respuesta final, sino también el procedimiento, la justificación lógica y la interpretación matemática.
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Recomendaciones para la grabación}
+		\begin{itemize}
+			\item Hablar de forma pausada y clara.
+			\item Escribir cada paso en hoja, pizarra o diapositiva.
+			\item Nombrar la propiedad lógica o la operación de conjuntos que se está usando.
+			\item Evitar dar solo el resultado.
+			\item Justificar cada conclusión.
+		\end{itemize}
+		
+		\Guion{
+			``Hola. En este video resolveré paso a paso la Evaluación de la Unidad 1 de Pensamiento Matemático, contextualizada al área de la Psicología. Desarrollaré cada problema mostrando el procedimiento, la justificación lógica y la interpretación final de los resultados.''}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 1}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 1: Enunciado}
+		Dadas las proposiciones:
+		
+		\begin{align*}
+			p &: \text{La memoria a corto plazo tiene capacidad ilimitada.} \\
+			q &: \text{La memoria sensorial tiene una duración de varios minutos.} \\
+			r &: \text{La memoria a largo plazo es de duración prolongada.} \\
+			s &: \text{El individuo utiliza la información para tomar decisiones.}
+		\end{align*}
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Traduzca a lenguaje usual:
+			\[
+			(p \to q)\land(\sim r \to s)
+			\]
+			\item Determine el valor de verdad de:
+			\[
+			[(p\land \sim q)\lor r]\to s
+			\]
+		\end{enumerate}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 1(a): Traducción a lenguaje usual}
+		\Guion{
+			``Primero analizo la proposición compuesta \((p\to q)\land(\sim r\to s)\).\\[0.2cm]
+			La primera parte, \(p\to q\), se lee: si \(p\), entonces \(q\).\\
+			La segunda parte, \(\sim r\to s\), se lee: si no \(r\), entonces \(s\).\\
+			Como ambas están unidas por la conjunción \(\land\), la traducción final se expresa usando la palabra \textit{y}.''}
+		
+		\Resultado{
+			\[
+			(p\to q)\land(\sim r\to s)
+			\]
+			se traduce como:
+			\vspace{0.2cm}
+			
+			\emph{``Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos, y si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones.''}
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 1(b): Análisis lógico}
+		\Guion{
+			``Ahora debo determinar el valor de verdad de la proposición
+			\[
+			[(p\land \sim q)\lor r]\to s.
+			\]
+			Para ello asigno a cada proposición simple un valor de verdad razonable según el contexto psicológico.''}
+		
+		\begin{block}{Valores de verdad}
+			\[
+			p=F,\qquad q=F,\qquad r=V,\qquad s=V
+			\]
+		\end{block}
+		
+		\IdeaClave{
+			La memoria a corto plazo no tiene capacidad ilimitada, la memoria sensorial no dura varios minutos, la memoria a largo plazo sí es prolongada y el individuo sí usa información para tomar decisiones.
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 1(b): Desarrollo paso a paso}
+		Sustituyendo en
+		\[
+		[(p\land \sim q)\lor r]\to s
+		\]
+		obtenemos:
+		\[
+		[(F\land \sim F)\lor V]\to V
+		\]
+		
+		Como
+		\[
+		\sim F = V,
+		\]
+		queda:
+		\[
+		[(F\land V)\lor V]\to V
+		\]
+		
+		Luego:
+		\[
+		F\land V = F
+		\]
+		por lo tanto:
+		\[
+		[F\lor V]\to V
+		\]
+		
+		Entonces:
+		\[
+		V\to V = V
+		\]
+		
+		\Resultado{
+			La proposición compuesta es \textbf{verdadera}.
+		}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 2}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 2: Enunciado}
+		Considere la proposición:
+		
+		\begin{quote}
+			``Si una persona no sigue las estrategias terapéuticas indicadas, entonces presenta dificultades emocionales o no logra mejorar su bienestar psicológico.''
+		\end{quote}
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Identifique las proposiciones simples y exprese el enunciado en lenguaje simbólico.
+			\item Construya una tabla de verdad e indique si corresponde a una tautología, contradicción o contingencia.
+		\end{enumerate}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 2(a): Simbolización}
+		Definimos:
+		
+		\begin{align*}
+			p &: \text{La persona sigue las estrategias terapéuticas indicadas.} \\
+			q &: \text{La persona presenta dificultades emocionales.} \\
+			r &: \text{La persona logra mejorar su bienestar psicológico.}
+		\end{align*}
+		
+		Entonces:
+		\begin{itemize}
+			\item ``no sigue las estrategias'' corresponde a \(\sim p\),
+			\item ``dificultades emocionales o no mejora'' corresponde a \(q\lor \sim r\).
+		\end{itemize}
+		
+		\Resultado{
+			La proposición en lenguaje simbólico es:
+			\[
+			\sim p \to (q\lor \sim r)
+			\]
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 2(b): Tabla de verdad}
+		\small
+		\[
+		\begin{array}{c|c|c|c|c|c}
+			p & q & r & \sim p & q\lor \sim r & \sim p \to (q\lor \sim r)\\
+			\hline
+			V & V & V & F & V & V\\
+			V & V & F & F & V & V\\
+			V & F & V & F & F & V\\
+			V & F & F & F & V & V\\
+			F & V & V & V & V & V\\
+			F & V & F & V & V & V\\
+			F & F & V & V & F & F\\
+			F & F & F & V & V & V
+		\end{array}
+		\]
+		\normalsize
+		
+		\IdeaClave{
+			En la última columna aparecen valores verdaderos y falsos. Por eso, la proposición no es tautología ni contradicción.
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 2(b): Conclusión}
+		\Guion{
+			``Al revisar la tabla de verdad, observo que la proposición compuesta toma valor verdadero en algunas filas y valor falso en otra. Por lo tanto, se clasifica como una contingencia.''}
+		
+		\Resultado{
+			\[
+			\sim p \to (q\lor \sim r)
+			\]
+			es una \textbf{contingencia}.
+		}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 3}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 3: Datos del problema}
+		Intervenciones terapéuticas:
+		\[
+		R=\text{Regulación emocional},\qquad
+		C=\text{Entrenamiento cognitivo},\qquad
+		H=\text{Habilidades sociales}
+		\]
+		
+		A partir de la tabla se obtiene:
+		
+		\[
+		R=\{P1,P3,P5,P7,P9,P11,P13,P15,P17,P19\}
+		\]
+		
+		\[
+		C=\{P2,P3,P6,P9,P10,P13,P14,P17,P18\}
+		\]
+		
+		\[
+		H=\{P1,P4,P6,P7,P8,P12,P13,P15,P16,P18,P20\}
+		\]
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 3(a): Organización para el diagrama de Venn}
+		\small
+		\begin{multicols}{2}
+			\begin{block}{Solo \(R\)}
+				\[
+				\{P5,P11,P19\}
+				\]
+			\end{block}
+			
+			\begin{block}{Solo \(C\)}
+				\[
+				\{P2,P10,P14\}
+				\]
+			\end{block}
+			
+			\begin{block}{Solo \(H\)}
+				\[
+				\{P4,P8,P12,P16,P20\}
+				\]
+			\end{block}
+			
+			\begin{block}{\(R\cap C\) solo}
+				\[
+				\{P3,P9,P17\}
+				\]
+			\end{block}
+			
+			\begin{block}{\(R\cap H\) solo}
+				\[
+				\{P1,P7,P15\}
+				\]
+			\end{block}
+			
+			\begin{block}{\(C\cap H\) solo}
+				\[
+				\{P6,P18\}
+				\]
+			\end{block}
+			
+			\begin{alertblock}{Intersección triple}
+				\[
+				R\cap C\cap H=\{P13\}
+				\]
+			\end{alertblock}
+		\end{multicols}
+		\normalsize
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 3(a): Guion para explicar el diagrama}
+		\Guion{
+			``Para construir el diagrama de Venn, distribuyo a las personas según participen en una sola intervención, en exactamente dos o en las tres.\\[0.2cm]
+			En solo Regulación Emocional ubico \(P5, P11, P19\).\\
+			En solo Entrenamiento Cognitivo ubico \(P2, P10, P14\).\\
+			En solo Habilidades Sociales ubico \(P4, P8, P12, P16, P20\).\\
+			Luego coloco en las intersecciones dobles a \(P3, P9, P17\), \(P1, P7, P15\) y \(P6, P18\), y finalmente en la intersección triple ubico a \(P13\).''}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 3(b): Exactamente dos intervenciones}
+		Se pide:
+		\[
+		A=\{x\in U \mid x \text{ participa exactamente en dos intervenciones}\}
+		\]
+		
+		Por lo tanto, tomamos solo las intersecciones dobles sin incluir la triple:
+		
+		\[
+		R\cap C \text{ solo }=\{P3,P9,P17\}
+		\]
+		\[
+		R\cap H \text{ solo }=\{P1,P7,P15\}
+		\]
+		\[
+		C\cap H \text{ solo }=\{P6,P18\}
+		\]
+		
+		Entonces:
+		\[
+		A=\{P1,P3,P6,P7,P9,P15,P17,P18\}
+		\]
+		
+		\Resultado{
+			\[
+			|A|=8
+			\]
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 3(c): Conjunto por extensión}
+		Se pide el conjunto de personas que:
+		
+		\begin{center}
+			\emph{participan solo en Habilidades Sociales, o participan simultáneamente en Regulación Emocional y Entrenamiento Cognitivo.}
+		\end{center}
+		
+		Tenemos:
+		\[
+		\text{Solo }H=\{P4,P8,P12,P16,P20\}
+		\]
+		y
+		\[
+		R\cap C=\{P3,P9,P13,P17\}
+		\]
+		
+		Por lo tanto:
+		\[
+		\{P4,P8,P12,P16,P20\}\cup\{P3,P9,P13,P17\}
+		\]
+		
+		\Resultado{
+			\[
+			\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}
+			\]
+		}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 4}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 4: Datos del problema}
+		Sea el universo:
+		\[
+		U=\{1,2,3,\dots,20\}
+		\]
+		
+		Conjuntos dados:
+		\[
+		A=\{2,4,6,8,10,12,14,16,18,20\}
+		\]
+		\[
+		S=\{5,7,9,11,13\}
+		\]
+		\[
+		E=\{3,6,9,12,15,18\}
+		\]
+		
+		Se pide resolver operaciones entre conjuntos.
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 4(a): Desarrollo}
+		Calcular:
+		\[
+		(A-E)\cup (S\cap E)
+		\]
+		
+		Primero:
+		\[
+		A-E=\{2,4,8,10,14,16,20\}
+		\]
+		
+		porque de \(A\) se eliminan los elementos comunes con \(E\): \(6,12,18\).
+		
+		Luego:
+		\[
+		S\cap E=\{9\}
+		\]
+		
+		Finalmente:
+		\[
+		(A-E)\cup (S\cap E)=\{2,4,8,9,10,14,16,20\}
+		\]
+		
+		\Resultado{
+			\[
+			(A-E)\cup (S\cap E)=\{2,4,8,9,10,14,16,20\}
+			\]
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 4(a): Guion sugerido}
+		\Guion{
+			``Primero calculo \(A-E\), es decir, los elementos de \(A\) que no pertenecen a \(E\).\\
+			Como \(A=\{2,4,6,8,10,12,14,16,18,20\}\) y \(E=\{3,6,9,12,15,18\}\), elimino de \(A\) los elementos \(6\), \(12\) y \(18\).\\
+			Así obtengo \(A-E=\{2,4,8,10,14,16,20\}\).\\[0.2cm]
+			Luego calculo \(S\cap E\), o sea, los elementos comunes entre \(S\) y \(E\). El único común es \(9\).\\
+			Por eso \(S\cap E=\{9\}\).\\[0.2cm]
+			Finalmente uno ambos resultados y obtengo \(\{2,4,8,9,10,14,16,20\}\).''}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 4(b): Desarrollo}
+		Interpretamos la expresión como:
+		\[
+		\big((A-S)^c\cap A^c\big)-E
+		\]
+		
+		Primero, como \(A\) y \(S\) no tienen elementos en común:
+		\[
+		A-S=A
+		\]
+		
+		Entonces:
+		\[
+		(A-S)^c=A^c
+		\]
+		
+		Ahora calculamos el complemento de \(A\) respecto de \(U\):
+		\[
+		A^c=\{1,3,5,7,9,11,13,15,17,19\}
+		\]
+		
+		Luego:
+		\[
+		(A-S)^c\cap A^c=A^c\cap A^c=A^c
+		\]
+		
+		Finalmente:
+		\[
+		A^c-E=\{1,3,5,7,9,11,13,15,17,19\}-\{3,6,9,12,15,18\}
+		\]
+		\[
+		=\{1,5,7,11,13,17,19\}
+		\]
+		
+		\Resultado{
+			\[
+			\big((A-S)^c\cap A^c\big)-E=\{1,5,7,11,13,17,19\}
+			\]
+			y su cardinalidad es
+			\[
+			7.
+			\]
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 4(b): Guion sugerido}
+		\Guion{
+			``Como los conjuntos \(A\) y \(S\) no comparten elementos, entonces \(A-S=A\).\\
+			Por ello, \((A-S)^c=A^c\).\\
+			El complemento de \(A\) en el universo es \(\{1,3,5,7,9,11,13,15,17,19\}\).\\
+			Al intersectarlo nuevamente con \(A^c\), el resultado sigue siendo \(A^c\).\\
+			Después resto el conjunto \(E\), es decir, elimino \(3\), \(9\) y \(15\).\\
+			Así obtengo el conjunto final \(\{1,5,7,11,13,17,19\}\), cuya cardinalidad es \(7\).''}
+	\end{frame}
+	
+	% =========================================================
+	\section{Cierre}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Resumen final de respuestas}
+		\small
+		\begin{block}{Problema 1}
+			\begin{itemize}
+				\item[a)] Traducción correcta de \((p\to q)\land(\sim r\to s)\).
+				\item[b)] \(\;[(p\land \sim q)\lor r]\to s\) es \textbf{verdadera}.
+			\end{itemize}
+		\end{block}
+		
+		\begin{block}{Problema 2}
+			\begin{itemize}
+				\item[a)] \(\sim p\to(q\lor \sim r)\)
+				\item[b)] Es una \textbf{contingencia}.
+			\end{itemize}
+		\end{block}
+		
+		\begin{block}{Problema 3}
+			\[
+			A=\{P1,P3,P6,P7,P9,P15,P17,P18\},\qquad |A|=8
+			\]
+			\[
+			\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}
+			\]
+		\end{block}
+		
+		\begin{block}{Problema 4}
+			\[
+			(A-E)\cup(S\cap E)=\{2,4,8,9,10,14,16,20\}
+			\]
+			\[
+			\big((A-S)^c\cap A^c\big)-E=\{1,5,7,11,13,17,19\}
+			\]
+			Cardinalidad: \(7\)
+		\end{block}
+		\normalsize
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Cierre del video}
+		\Guion{
+			``En esta evaluación trabajamos lógica proposicional, traducción al lenguaje usual, lenguaje simbólico, tablas de verdad, diagramas de Venn, operaciones entre conjuntos y cardinalidad.\\[0.2cm]
+			En cada problema se mostró el desarrollo paso a paso y la justificación matemática correspondiente. Muchas gracias.''}
+		
+		\vfill
+		\begin{center}
+			{\Large \textbf{Fin del video}}
+		\end{center}
+	\end{frame}
+	
+	% =========================================================
+\end{document}

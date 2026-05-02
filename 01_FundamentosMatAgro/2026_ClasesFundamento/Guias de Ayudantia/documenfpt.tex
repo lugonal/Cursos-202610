@@ -1,0 +1,283 @@
+\documentclass[aspectratio=169,handout,11pt]{beamer}
+
+% =========================
+% PAQUETES
+% =========================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{lmodern}
+\usepackage{xcolor}
+
+% =========================
+% TEMA
+% =========================
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+
+% =========================
+% COLORES
+% =========================
+\definecolor{AgroVerde}{RGB}{34,102,51}
+\definecolor{AgroCrema}{RGB}{248,245,238}
+\definecolor{AgroAzul}{RGB}{20,90,130}
+\definecolor{AgroRojo}{RGB}{170,50,40}
+
+\setbeamercolor{title}{fg=white,bg=AgroVerde}
+\setbeamercolor{frametitle}{fg=white,bg=AgroVerde}
+\setbeamercolor{block title}{fg=white,bg=AgroVerde}
+\setbeamercolor{block body}{fg=black,bg=AgroCrema}
+\setbeamercolor{block title alerted}{fg=white,bg=AgroRojo}
+\setbeamercolor{block body alerted}{fg=black,bg=red!5}
+\setbeamercolor{block title example}{fg=white,bg=AgroAzul}
+\setbeamercolor{block body example}{fg=black,bg=blue!5}
+
+% =========================
+% ENTORNOS
+% =========================
+\newenvironment{idea}{\begin{block}{Idea clave}}{\end{block}}
+\newenvironment{ejemplo}{\begin{exampleblock}{Caso agronómico}}{\end{exampleblock}}
+\newenvironment{alerta}{\begin{alertblock}{Alerta técnica}}{\end{alertblock}}
+
+% =========================
+% DATOS
+% =========================
+\title{Fracciones Algebraicas en Agronomía}
+\author{Luis Tulio González}
+\date{2026}
+
+\begin{document}
+	
+	% =========================
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Motivación}
+		\begin{idea}
+			Las fracciones algebraicas modelan relaciones entre variables agrícolas, pero siempre deben respetar restricciones.
+		\end{idea}
+		
+		\pause
+		
+		\begin{itemize}[<+->]
+			\item Dosis (kg/ha)
+			\item Riego (L/h)
+			\item Rendimiento (ton/ha)
+		\end{itemize}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Simplificación con restricciones}
+		\begin{ejemplo}
+			\[
+			\frac{x^2-9}{x+3}
+			\]
+		\end{ejemplo}
+		
+		\pause
+		
+		\[
+		= x-3
+		\]
+		
+		\pause
+		
+		\begin{block}{Restricción}
+			\[
+			x \neq -3
+			\]
+		\end{block}
+		
+		\pause
+		
+		\begin{alerta}
+			Aunque se simplifique, la restricción se mantiene.
+		\end{alerta}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Ejemplo aplicado}
+		\begin{ejemplo}
+			\[
+			\frac{x^2+5x+6}{x+2}
+			\]
+		\end{ejemplo}
+		
+		\pause
+		
+		\[
+		= x+3
+		\]
+		
+		\pause
+		
+		\begin{block}{Restricción}
+			\[
+			x \neq -2
+			\]
+		\end{block}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Suma con restricciones}
+		\begin{ejemplo}
+			\[
+			\frac{2}{x}+\frac{3}{x+1}
+			\]
+		\end{ejemplo}
+		
+		\pause
+		
+		\[
+		= \frac{5x+2}{x(x+1)}
+		\]
+		
+		\pause
+		
+		\begin{block}{Restricciones}
+			\[
+			x \neq 0, \quad x \neq -1
+			\]
+		\end{block}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Multiplicación}
+		\begin{ejemplo}
+			\[
+			\frac{x^2-9}{x^2-4x+4}\cdot\frac{x-2}{x+3}
+			\]
+		\end{ejemplo}
+		
+		\pause
+		
+		\[
+		= \frac{x-3}{x-2}
+		\]
+		
+		\pause
+		
+		\begin{block}{Restricciones}
+			\[
+			x \neq 2, \quad x \neq -3
+			\]
+		\end{block}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{División}
+		\begin{ejemplo}
+			\[
+			\frac{x^2-1}{x}\div\frac{x+1}{x^2}
+			\]
+		\end{ejemplo}
+		
+		\pause
+		
+		\[
+		= (x-1)x
+		\]
+		
+		\pause
+		
+		\begin{block}{Restricciones}
+			\[
+			x \neq 0, \quad x \neq -1
+			\]
+		\end{block}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Errores frecuentes}
+		\begin{alerta}
+			Errores comunes:
+		\end{alerta}
+		
+		\begin{itemize}[<+->]
+			\item Olvidar restricciones
+			\item Simplificar mal
+			\item Aplicar valores prohibidos
+		\end{itemize}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Ejercicios}
+		\small
+		
+		\begin{enumerate}
+			\item \[
+			\frac{x^2-25}{x-5}
+			\]
+			Restricción: \(x \neq 5\)
+			
+			\item \[
+			\frac{2}{x}+\frac{5}{x-3}
+			\]
+			Restricciones: \(x \neq 0, 3\)
+			
+			\item \[
+			\frac{x^2-9}{x^2-6x+9}
+			\]
+			Restricción: \(x \neq 3\)
+			
+		\end{enumerate}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Ejercicios II}
+		\small
+		
+		\begin{enumerate}
+			\setcounter{enumi}{3}
+			
+			\item \[
+			\frac{x+1}{x-2}-\frac{2x}{x+3}
+			\]
+			Restricciones: \(x \neq 2, -3\)
+			
+			\item \[
+			\frac{x^2-4}{x}\div\frac{x-2}{x+1}
+			\]
+			Restricciones: \(x \neq 0, 2, -1\)
+			
+			\item \[
+			\frac{3}{x+1}+\frac{4}{x-2}
+			\]
+			Restricciones: \(x \neq -1, 2\)
+			
+		\end{enumerate}
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Problema Agronómico}
+		\small
+		
+		\[
+		\frac{x^2+7x+12}{x+3}
+		\]
+		
+		\begin{itemize}
+			\item Simplifique
+			\item Restricción: \(x \neq -3\)
+			\item Interprete el resultado
+		\end{itemize}
+		
+	\end{frame}
+	
+	% =========================
+	\begin{frame}{Cierre}
+		\begin{idea}
+			Toda expresión algebraica tiene restricciones que deben respetarse en la realidad.
+		\end{idea}
+		
+		\pause
+		
+		\centering
+		\textbf{Nunca evaluar donde el modelo no existe}
+		
+	\end{frame}
+	
+\end{document}

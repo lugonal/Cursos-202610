@@ -1,0 +1,913 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\definecolor{USTGreen}{RGB}{27,94,32}
+\definecolor{USTLight}{RGB}{232,245,233}
+\definecolor{USTDark}{RGB}{18,68,25}
+
+\setbeamercolor{structure}{fg=USTGreen}
+\setbeamercolor{frametitle}{fg=white,bg=USTGreen}
+\setbeamercolor{title}{fg=white,bg=USTGreen}
+\setbeamercolor{block title}{fg=white,bg=USTGreen}
+\setbeamercolor{block body}{bg=USTLight,fg=black}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\title[Sistemas de ecuaciones lineales]{Sistemas de Ecuaciones Lineales con Dos Incógnitas}
+\subtitle{Clasificación, métodos algebraicos e interpretación en contextos agronómicos}
+\author{Fundamentos de Matemática Básica}
+\institute{Universidad Santo Tomás}
+\date{}
+
+\begin{document}
+	
+%------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Objetivo general}
+	Analizar y resolver sistemas de ecuaciones lineales con dos incógnitas mediante métodos algebraicos y geométricos, interpretando el significado de sus soluciones en situaciones propias de la agronomía.
+	
+	\bigskip
+	
+	\begin{block}{Resultados de aprendizaje}
+		\begin{itemize}
+			\item Identificar sistemas compatibles determinados, compatibles indeterminados e incompatibles.
+			\item Resolver sistemas mediante sustitución, igualación y reducción.
+			\item Interpretar geométricamente y técnicamente la solución de un sistema.
+			\item Detectar patrones, relaciones e inconsistencias en datos agrícolas.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Motivación agronómica}
+	En agronomía es frecuente trabajar con dos variables que se relacionan simultáneamente.
+	
+	\bigskip
+	
+	\begin{block}{Ejemplos de variables}
+		\begin{itemize}
+			\item Superficie sembrada con dos cultivos distintos.
+			\item Cantidad de dos fertilizantes en una mezcla.
+			\item Litros de agua aplicados por riego y por fertirriego.
+			\item Jornadas de maquinaria y jornadas de mano de obra.
+		\end{itemize}
+	\end{block}
+	
+	\bigskip
+	
+	Un sistema permite modelar restricciones simultáneas, por ejemplo: presupuesto, superficie, dosis, volumen o productividad.
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Definición}
+	Un sistema de ecuaciones lineales con dos incógnitas tiene la forma:
+	
+	\[
+	\begin{cases}
+		ax+by=c\\
+		dx+ey=f
+	\end{cases}
+	\]
+	
+	donde:
+	
+	\[
+	a,b,c,d,e,f\in\mathbb{R}
+	\]
+	
+	\bigskip
+	
+	Resolver el sistema significa encontrar los valores de \(x\) e \(y\) que satisfacen simultáneamente ambas ecuaciones.
+	
+	\bigskip
+	
+	\begin{block}{Lectura en contexto}
+		Si \(x\) representa hectáreas de maíz e \(y\) hectáreas de trigo, la solución debe tener sentido agronómico: no puede haber hectáreas negativas y las unidades deben ser coherentes.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Interpretación geométrica}
+	Cada ecuación lineal representa una recta en el plano cartesiano.
+	
+	\bigskip
+	
+	Por lo tanto, resolver un sistema equivale a estudiar la relación entre dos rectas.
+	
+	\bigskip
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Caso} & \textbf{Rectas} & \textbf{Soluciones} \\
+			\hline
+			Compatible determinado & Se cortan & Una solución \\
+			\hline
+			Compatible indeterminado & Coinciden & Infinitas soluciones \\
+			\hline
+			Incompatible & Paralelas & Sin solución \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Sistema compatible determinado}
+	Tiene una única solución.
+	
+	\[
+	\begin{cases}
+		x+y=5\\
+		2x-y=4
+	\end{cases}
+	\]
+	
+	\smallskip
+	
+	Sumamos ambas ecuaciones:
+	
+\[
+\begin{array}{rcl}
+	(x+y)+(2x-y) &=& 5+4 \\[4pt]
+	3x &=& 9 \\[4pt]
+	x &=& 3
+\end{array}
+\]
+	
+	Luego:
+	
+	\[
+	\begin{array}{rcl}
+	3+y &=& 5 \\
+	y &=& 2
+	\end{array}
+	\]
+	
+	\[
+	\boxed{(x,y)=(3,2)}
+	\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejemplo agronómico: sistema compatible determinado}
+	\small
+	Un predio destina \(5\) hectáreas a dos cultivos: maíz y trigo. Sea:
+	
+	\[
+	x=\text{hectáreas de maíz}, \qquad y=\text{hectáreas de trigo}
+	\]
+	
+	La superficie total es \(5\) ha. Además, por una restricción de fertilización nitrogenada, se obtiene el modelo:
+	
+	\[
+	\begin{cases}
+		x+y=5\\
+		2x-y=4
+	\end{cases}
+	\]
+	
+	\begin{block}{Interpretación}
+		La solución \((3,2)\) indica que se deben sembrar \(3\) ha de maíz y \(2\) ha de trigo. Es un sistema compatible determinado porque existe una única planificación que satisface ambas restricciones.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Sistema compatible indeterminado}
+	Tiene infinitas soluciones.
+	
+	\[
+	\begin{cases}
+		x+y=4\\
+		2x+2y=8
+	\end{cases}
+	\]
+	
+	La segunda ecuación es múltiplo de la primera:
+	
+	\[
+	2(x+y)=8
+	\]
+	
+	\[
+	x+y=4
+	\]
+	
+	\bigskip
+	
+	Ambas ecuaciones representan la misma recta.
+	
+	\[
+	\boxed{\text{Infinitas soluciones}}
+	\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejemplo agronómico: sistema compatible indeterminado}
+	\small
+	Un técnico registra la cantidad de dos enmiendas aplicadas en una parcela:
+	
+	\[
+	x=\text{toneladas de compost}, \qquad y=\text{toneladas de guano}
+	\]
+	
+	Dos informes indican:
+	
+	\[
+	\begin{cases}
+		x+y=4\\
+		2x+2y=8
+	\end{cases}
+	\]
+	
+	\begin{block}{Análisis}
+		Los informes entregan exactamente la misma información, porque la segunda ecuación es solo el doble de la primera. Por lo tanto, cualquier combinación que sume \(4\) toneladas cumple ambas condiciones.
+	\end{block}
+	
+	\[
+	\boxed{\text{Sistema compatible indeterminado}}
+	\]
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Sistema incompatible}
+	No tiene solución.
+	
+	\[
+	\begin{cases}
+		x+y=3\\
+		x+y=7
+	\end{cases}
+	\]
+	
+	\bigskip
+	
+	La misma expresión \(x+y\) no puede ser igual a 3 y a 7 al mismo tiempo.
+	
+	\bigskip
+	
+	Esto genera una contradicción:
+	
+	\[
+	3=7
+	\]
+	
+	\[
+	\boxed{\text{Sistema incompatible}}
+	\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejemplo agronómico: sistema incompatible}
+	\small
+	En una planificación de riego, \(x\) representa metros cúbicos aplicados por goteo e \(y\) metros cúbicos aplicados por aspersión.
+	
+	\bigskip
+	
+	Dos registros del mismo día indican:
+	
+	\[
+	\begin{cases}
+		x+y=3\\
+		x+y=7
+	\end{cases}
+	\]
+	
+	\begin{block}{Interpretación técnica}
+		La cantidad total de agua aplicada no puede ser simultáneamente \(3\) m\(^3\) y \(7\) m\(^3\). Esto evidencia una inconsistencia en los datos o en el registro del predio.
+	\end{block}
+	
+	\[
+	\boxed{\text{No existe solución válida}}
+	\]
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Método de sustitución}
+	Consiste en despejar una incógnita en una ecuación y reemplazarla en la otra.
+	
+	\bigskip
+	
+	Resolver:
+	
+	\[
+	\begin{cases}
+		x+y=10\\
+		x=y+2
+	\end{cases}
+	\]
+	
+	Sustituimos \(x=y+2\):
+	
+	\[
+	(y+2)+y=10
+	\]
+	
+	\[
+	2y+2=10
+	\]
+	
+	\[
+	2y=8
+	\]
+	
+	\[
+	y=4
+	\]
+	
+	\[
+	x=4+2=6
+	\]
+	
+	\[
+	\boxed{(x,y)=(6,4)}
+	\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejemplo agronómico por sustitución}
+	\small
+	Para preparar \(120\) litros de solución nutritiva se mezclan agua y concentrado. Sea:
+	
+	\[
+	x=\text{litros de agua}, \qquad y=\text{litros de concentrado}
+	\]
+	
+	La receta indica que el agua debe ser cinco veces el concentrado:
+	
+	\[
+	\begin{cases}
+		x+y=120\\
+		x=5y
+	\end{cases}
+	\]
+	
+	\begin{align*}
+	5y+y&=120\\
+	6y&=120\\
+	y&=20\\
+	x&=5(20)=100
+	\end{align*}
+	
+	\[
+	\boxed{x=100\text{ L de agua},\qquad y=20\text{ L de concentrado}}
+	\]
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Método de igualación}
+	Consiste en despejar la misma incógnita en ambas ecuaciones e igualar las expresiones.
+	
+	\bigskip
+	
+	Resolver:
+	
+	\[
+	\begin{cases}
+		x=8-y\\
+		x=2y+2
+	\end{cases}
+	\]
+	
+	Igualamos:
+	
+	\[
+	8-y=2y+2
+	\]
+	
+	\[
+	6=3y
+	\]
+	
+	\[
+	y=2
+	\]
+	
+	Luego:
+	
+	\[
+	x=8-2=6
+	\]
+	
+	\[
+	\boxed{(x,y)=(6,2)}
+	\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejemplo agronómico por igualación}
+	\small
+	En un invernadero se distribuyen bandejas de lechuga entre dos sectores. Sea:
+	
+	\[
+	x=\text{bandejas en el sector A}, \qquad y=\text{bandejas en el sector B}
+	\]
+	
+	Dos criterios operativos entregan:
+	
+	\[
+	\begin{cases}
+		x=90-2y\\
+		x=y+15
+	\end{cases}
+	\]
+	
+	\begin{align*}
+	90-2y&=y+15\\
+	75&=3y\\
+	y&=25
+	\end{align*}
+	
+	\[
+	x=y+15=25+15=40
+	\]
+	
+	\[
+	\boxed{x=40\text{ bandejas},\qquad y=25\text{ bandejas}}
+	\]
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Método de reducción}
+	Consiste en eliminar una incógnita sumando o restando ecuaciones.
+	
+	\bigskip
+	
+	Resolver:
+	
+	\[
+	\begin{cases}
+		2x+y=11\\
+		x-y=1
+	\end{cases}
+	\]
+	
+	Sumamos:
+	
+	\[
+	(2x+y)+(x-y)=11+1
+	\]
+	
+	\[
+	3x=12
+	\]
+	
+	\[
+	x=4
+	\]
+	
+	Sustituimos:
+	
+	\[
+	4-y=1
+	\]
+	
+	\[
+	y=3
+	\]
+	
+	\[
+	\boxed{(x,y)=(4,3)}
+	\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejemplo agronómico por reducción}
+	\small
+	Se desea mezclar dos fertilizantes líquidos A y B. Sea:
+	
+	\[
+	x=\text{litros del fertilizante A}, \qquad y=\text{litros del fertilizante B}
+	\]
+	
+	El aporte total de nitrógeno y fósforo queda modelado por:
+	
+	\[
+	\begin{cases}
+		30x+20y=260\\
+		10x+20y=140
+	\end{cases}
+	\]
+	
+	Restamos la segunda ecuación a la primera:
+	
+	\begin{align*}
+	(30x+20y)-(10x+20y)&=260-140\\
+	20x&=120\\
+	x&=6
+	\end{align*}
+	
+	Sustituyendo:
+	
+	\[
+	10(6)+20y=140\quad \Rightarrow\quad 20y=80\quad \Rightarrow\quad y=4
+	\]
+	
+	\[
+	\boxed{x=6\text{ L de A},\qquad y=4\text{ L de B}}
+	\]
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Ejercicio 1: fertirriego por sustitución}
+	\small
+	Un estanque debe preparar \(72\) litros de mezcla entre agua y fertilizante soluble. La cantidad de agua debe ser el triple de la cantidad de fertilizante.
+	
+	\bigskip
+	
+	Sea:
+	
+	\[
+	x=\text{litros de agua}, \qquad y=\text{litros de fertilizante soluble}
+	\]
+	
+	\[
+	\begin{cases}
+		x+y=72\\
+		x=3y
+	\end{cases}
+	\]
+	
+	\begin{block}{Preguntas}
+		\begin{itemize}
+			\item Resuelva el sistema por sustitución.
+			\item Interprete la solución en litros.
+			\item Verifique si las cantidades cumplen la proporción indicada.
+		\end{itemize}
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Solución ejercicio 1}
+	\small
+	Sistema:
+	
+	\[
+	\begin{cases}
+		x+y=72\\
+		x=3y
+	\end{cases}
+	\]
+	
+	Sustituimos \(x=3y\):
+	
+	\begin{align*}
+	3y+y&=72\\
+	4y&=72\\
+	y&=18
+	\end{align*}
+	
+	\[
+	x=3(18)=54
+	\]
+	
+	\[
+	\boxed{x=54\text{ L de agua},\qquad y=18\text{ L de fertilizante}}
+	\]
+	
+	\begin{block}{Verificación}
+		\(54+18=72\) y \(54=3\cdot18\). El sistema es compatible determinado.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Ejercicio 2: bandejas de almácigos por igualación}
+	\small
+	En un vivero, la cantidad de bandejas ubicadas en el sector A puede describirse de dos formas según restricciones de espacio y manejo:
+	
+	\[
+	x=\text{bandejas en el sector A}, \qquad y=\text{bandejas en el sector B}
+	\]
+	
+	\[
+	\begin{cases}
+		x=90-2y\\
+		x=y+15
+	\end{cases}
+	\]
+	
+	\begin{block}{Tarea}
+		Resolver por igualación, clasificar el sistema e interpretar la solución en el contexto del vivero.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Solución ejercicio 2}
+	\small
+	Igualamos las expresiones para \(x\):
+	
+	\begin{align*}
+	90-2y&=y+15\\
+	75&=3y\\
+	y&=25
+	\end{align*}
+	
+	Luego:
+	
+	\[
+	x=y+15=25+15=40
+	\]
+	
+	\[
+	\boxed{(x,y)=(40,25)}
+	\]
+	
+	\begin{block}{Interpretación}
+		Se deben ubicar \(40\) bandejas en el sector A y \(25\) bandejas en el sector B. El sistema es compatible determinado.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Ejercicio 3: costos agrícolas por reducción}
+	\small
+	Un predio compra dos tipos de insumos: bioestimulante y corrector de suelo. Sea:
+	
+	\[
+	x=\text{unidades de bioestimulante}, \qquad y=\text{unidades de corrector de suelo}
+	\]
+	
+	Dos presupuestos parciales quedan representados por:
+	
+	\[
+	\begin{cases}
+		4x+2y=540\\
+		3x+2y=450
+	\end{cases}
+	\]
+	
+	\begin{block}{Tarea}
+		Resolver por reducción, verificar la solución e interpretar las cantidades obtenidas.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Solución ejercicio 3}
+	\small
+	Restamos la segunda ecuación a la primera:
+	
+	\begin{align*}
+	(4x+2y)-(3x+2y)&=540-450\\
+	x&=90
+	\end{align*}
+	
+	Sustituimos en la segunda ecuación:
+	
+	\begin{align*}
+	3(90)+2y&=450\\
+	270+2y&=450\\
+	2y&=180\\
+	y&=90
+	\end{align*}
+	
+	\[
+	\boxed{(x,y)=(90,90)}
+	\]
+	
+	\begin{block}{Verificación}
+		\(4(90)+2(90)=540\) y \(3(90)+2(90)=450\). El sistema es compatible determinado.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Patrones e inconsistencias}
+	Durante la resolución pueden aparecer patrones importantes:
+	
+	\bigskip
+	
+	\begin{block}{Contradicción}
+		Si aparece una igualdad falsa:
+		
+		\[
+		0=5
+		\]
+		
+		el sistema es incompatible.
+	\end{block}
+	
+	\begin{block}{Identidad}
+		Si aparece una igualdad verdadera:
+		
+		\[
+		0=0
+		\]
+		
+		el sistema es compatible indeterminado.
+	\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Patrones en datos agrícolas}
+	\small
+	En agronomía, estos patrones pueden revelar información relevante:
+	
+	\begin{block}{Caso 1: identidad}
+		Dos restricciones de fertilización son equivalentes. Esto indica que falta una condición adicional para determinar una única mezcla.
+	\end{block}
+	
+	\begin{block}{Caso 2: contradicción}
+		Dos registros de riego, superficie o dosis se contradicen. Esto indica error de medición, transcripción o interpretación técnica.
+	\end{block}
+	
+	\begin{block}{Caso 3: solución única}
+		Las restricciones son independientes y permiten tomar una decisión concreta: cuánto sembrar, cuánto aplicar o cuánto comprar.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Actividad de clasificación contextualizada}
+	\small
+	Clasifique cada sistema e interprete su significado agrícola.
+	
+	\[
+	A)
+	\begin{cases}
+		x+y=10\\
+		2x+2y=20
+	\end{cases}
+	\]
+	
+	\[
+	B)
+	\begin{cases}
+		x+y=10\\
+		x+y=15
+	\end{cases}
+	\]
+	
+	\[
+	C)
+	\begin{cases}
+		x+y=10\\
+		x-y=2
+	\end{cases}
+	\]
+	
+	\begin{block}{Contexto común}
+		\(x\): hectáreas destinadas a cultivo A. \quad \(y\): hectáreas destinadas a cultivo B.
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Solución actividad de clasificación}
+	\small
+	\[
+	A)
+	\begin{cases}
+		x+y=10\\
+		2x+2y=20
+	\end{cases}
+	\]
+	
+	Compatible indeterminado: ambas ecuaciones expresan la misma superficie total.
+	
+	\bigskip
+	
+	\[
+	B)
+	\begin{cases}
+		x+y=10\\
+		x+y=15
+	\end{cases}
+	\]
+	
+	Incompatible: el mismo predio no puede tener simultáneamente \(10\) ha y \(15\) ha asignadas.
+	
+	\bigskip
+	
+	\[
+	C)
+	\begin{cases}
+		x+y=10\\
+		x-y=2
+	\end{cases}
+	\]
+	
+	Compatible determinado: existe una única distribución de hectáreas.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejercicios propuestos: agronomía aplicada}
+	\small
+	\begin{enumerate}
+		\item \textbf{Superficie de cultivos.} Un predio tiene \(18\) ha entre hortalizas y frutales. La superficie de frutales es el doble de la superficie de hortalizas.
+		\[
+		\begin{cases}
+		x+y=18\\
+		x=2y
+		\end{cases}
+		\]
+		Resolver por sustitución.
+		
+		\item \textbf{Planificación de riego.} Dos criterios técnicos para el volumen del sector A son:
+		\[
+		\begin{cases}
+		x=20-2y\\
+		x=y+5
+		\end{cases}
+		\]
+		Resolver por igualación.
+	\end{enumerate}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ejercicios propuestos: reducción y clasificación}
+	\small
+	\begin{enumerate}
+		\setcounter{enumi}{2}
+		\item \textbf{Compra de insumos.} Un agricultor compra dos productos A y B. Las restricciones de costo se modelan por:
+		\[
+		\begin{cases}
+		3x+2y=24\\
+		x-2y=0
+		\end{cases}
+		\]
+		Resolver por reducción.
+		
+		\item \textbf{Control de consistencia.} Clasifique los sistemas e indique si representan datos coherentes o inconsistentes:
+		\[
+		\begin{cases}
+		x+y=8\\
+		3x+3y=24
+		\end{cases}
+		\qquad
+		\begin{cases}
+		2x-y=5\\
+		4x-2y=12
+		\end{cases}
+		\]
+	\end{enumerate}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Cierre}
+	\begin{block}{Ideas clave}
+		\begin{itemize}
+			\item Un sistema lineal con dos incógnitas representa dos rectas y dos restricciones simultáneas.
+			\item Puede tener una solución, infinitas soluciones o ninguna solución.
+			\item Los métodos algebraicos principales son sustitución, igualación y reducción.
+			\item La solución debe verificarse algebraicamente y analizarse en contexto agronómico.
+			\item En aplicaciones reales, una contradicción puede indicar datos mal registrados o restricciones imposibles.
+		\end{itemize}
+	\end{block}
+\end{frame}
+	
+%------------------------------------------------
+\begin{frame}{Tarea contextualizada}
+	\small
+	Resolver y clasificar los siguientes sistemas. En cada caso, indique la interpretación agronómica de la solución.
+	
+	\[
+	1)
+	\begin{cases}
+		2x+y=15\\
+		x-y=3
+	\end{cases}
+	\qquad
+	\begin{array}{l}
+	 x=\text{hectáreas de cultivo A}\vspace{1mm}\\
+	 y=\text{hectáreas de cultivo B}
+	\end{array}
+	\]
+	
+	\[
+	2)
+	\begin{cases}
+		x+y=8\\
+		3x+3y=24
+	\end{cases}
+	\qquad
+	\begin{array}{l}
+	 x=\text{toneladas de compost}\vspace{1mm}\\
+	 y=\text{toneladas de guano}
+	\end{array}
+	\]
+	
+	\[
+	3)
+	\begin{cases}
+		2x-y=5\\
+		4x-2y=12
+	\end{cases}
+	\qquad
+	\begin{array}{l}
+	 x=\text{m}^{3}\text{ de agua de pozo}\vspace{1mm}\\
+	 y=\text{m}^{3}\text{ de agua acumulada}
+	\end{array}
+	\]
+\end{frame}
+	
+\end{document}

@@ -1,0 +1,467 @@
+\documentclass[handout,aspectratio=169]{beamer}
+
+%================================================
+% PAQUETES
+%================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{ragged2e}
+
+\sisetup{
+	output-decimal-marker={,}
+}
+
+%================================================
+% COLORES UST MODERNO
+%================================================
+
+\definecolor{Primary}{HTML}{0B6E4F}
+\definecolor{Secondary}{HTML}{1B4332}
+\definecolor{Accent}{HTML}{2D6A4F}
+\definecolor{Soft}{HTML}{F4F7F5}
+\definecolor{Dark}{HTML}{1C1C1C}
+
+\setbeamercolor{title}{fg=white,bg=Primary}
+\setbeamercolor{frametitle}{fg=white,bg=Primary}
+\setbeamercolor{structure}{fg=Primary}
+\setbeamercolor{block title}{fg=white,bg=Primary}
+\setbeamercolor{block body}{bg=Soft}
+\setbeamercolor{normal text}{fg=Dark}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+%================================================
+% FOOTLINE
+%================================================
+
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.82\paperwidth,ht=2.5ex,dp=1ex,leftskip=.3cm]{author in head/foot}
+			\color{white}\small Fundamentos de Matemática Básica
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.18\paperwidth,ht=2.5ex,dp=1ex,center]{date in head/foot}
+			\color{white}\small \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+}
+
+\setbeamercolor{author in head/foot}{bg=Secondary}
+\setbeamercolor{date in head/foot}{bg=Primary}
+
+%================================================
+% DATOS
+%================================================
+
+\title{Clase Aplicación de ecuaciones}
+\subtitle{Ecuaciones de Primer Grado Aplicadas a la Agronomía}
+\author{Prof. Luis Tulio González Alcaino}
+\institute{Universidad Santo Tomás\\Departamento de Ciencias Básicas}
+\date{2026}
+
+%================================================
+% DOCUMENTO
+%================================================
+
+\begin{document}
+	
+	%================================================
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Objetivo de la clase}
+		\begin{block}{Aprendizaje esperado}
+			Aplicar ecuaciones de primer grado para modelar y resolver
+			situaciones contextualizadas en Agronomía e Ingeniería Agrícola,
+			distinguiendo ecuaciones enteras, fraccionarias y literales,
+			analizando patrones, relaciones e inconsistencias en los resultados.
+		\end{block}
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Ruta de la clase}
+		\tableofcontents
+	\end{frame}
+	
+	%================================================
+	\section{Modelación Matemática}
+	
+	\begin{frame}{¿Por qué modelamos?}
+		
+		En Agronomía, muchas decisiones técnicas se toman a partir de:
+		
+		\begin{itemize}
+			\item dosis de fertilización
+			\item consumo hídrico
+			\item costos de producción
+			\item rendimiento por hectárea
+			\item eficiencia de riego
+			\item control fitosanitario
+		\end{itemize}
+		
+		Todo esto puede representarse mediante ecuaciones.
+		
+		\begin{block}{Idea clave}
+			Resolver una ecuación significa encontrar el valor desconocido
+			que hace verdadera una situación real.
+		\end{block}
+		
+	\end{frame}
+	
+	%================================================
+	\section{Ecuaciones Enteras}
+	
+	\begin{frame}{Ecuaciones Enteras}
+		
+		Forma general:
+		
+		\[
+		ax+b=c
+		\]
+		
+		donde:
+		
+		\begin{itemize}
+			\item \(a\): coeficiente
+			\item \(x\): incógnita
+			\item \(b\): término independiente
+			\item \(c\): valor conocido
+		\end{itemize}
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Ejemplo 1: Fertilización nitrogenada}
+		
+		Un cultivo requiere 240 kg de nitrógeno.
+		
+		Ya se aplicaron 60 kg.
+		
+		Cada saco aporta 15 kg.
+		
+		¿Cuántos sacos deben agregarse?
+		
+		\[
+		15x + 60 = 240
+		\]
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Resolución paso a paso}
+		
+		\[
+		15x + 60 = 240
+		\]
+		
+		\pause
+		
+		\[
+		15x = 240 - 60
+		\]
+		
+		\pause
+		
+		\[
+		15x = 180
+		\]
+		
+		\pause
+		
+		\[
+		x = \frac{180}{15}
+		\]
+		
+		\pause
+		
+		\[
+		x = 12
+		\]
+		
+		\begin{block}{Interpretación}
+			Se requieren 12 sacos de fertilizante.
+		\end{block}
+		
+	\end{frame}
+	
+	%================================================
+	\section{Ecuaciones Fraccionarias}
+	
+	\begin{frame}{Ecuaciones Fraccionarias}
+		
+		Contienen fracciones algebraicas o numéricas.
+		
+		Ejemplo general:
+		
+		\[
+		\frac{x}{a} + b = c
+		\]
+		
+		Se recomienda eliminar denominadores primero.
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Ejemplo 2: Sistema de riego}
+		
+		Cada planta necesita 2,5 litros diarios.
+		
+		Un estanque entrega en total 255 litros.
+		
+		Si ya se consumieron 75 litros:
+		
+		\[
+		\frac{x}{2,5} + 75 = 255
+		\]
+		
+		Determinar la cantidad de plantas abastecidas.
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Resolución}
+		
+		\[
+		\frac{x}{2,5} + 75 = 255
+		\]
+		
+		\pause
+		
+		\[
+		\frac{x}{2,5} = 180
+		\]
+		
+		\pause
+		
+		\[
+		x = 180(2,5)
+		\]
+		
+		\pause
+		
+		\[
+		x = 450
+		\]
+		
+		\begin{block}{Conclusión}
+			El sistema abastece correctamente a 450 plantas.
+		\end{block}
+		
+	\end{frame}
+	
+	%================================================
+	\section{Ecuaciones Literales}
+	
+	\begin{frame}{Ecuaciones Literales}
+		
+		Son ecuaciones donde además de la incógnita aparecen letras
+		como parámetros.
+		
+		Ejemplo:
+		
+		\[
+		A = bx + c
+		\]
+		
+		Se despeja una variable respecto de otra.
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Ejemplo 3: Producción agrícola}
+		
+		La producción total está dada por:
+		
+		\[
+		P = rx + 120
+		\]
+		
+		donde:
+		
+		\begin{itemize}
+			\item \(P\): producción total
+			\item \(r\): rendimiento por hectárea
+			\item \(x\): hectáreas cultivadas
+		\end{itemize}
+		
+		Despejar \(x\).
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Resolución}
+		
+		\[
+		P = rx + 120
+		\]
+		
+		\pause
+		
+		\[
+		P - 120 = rx
+		\]
+		
+		\pause
+		
+		\[
+		x = \frac{P-120}{r}
+		\]
+		
+		\begin{block}{Interpretación}
+			Permite estimar superficie cultivada
+			a partir de producción observada.
+		\end{block}
+		
+	\end{frame}
+	
+	%================================================
+	\section{Patrones e Inconsistencias}
+	
+	\begin{frame}{Detectar inconsistencias}
+		
+		No basta resolver.
+		
+		Debemos validar:
+		
+		\begin{itemize}
+			\item unidad correcta
+			\item signo correcto
+			\item magnitud razonable
+			\item coherencia agronómica
+		\end{itemize}
+		
+		\begin{block}{Ejemplo}
+			Si obtenemos:
+			
+			\[
+			x=-15
+			\]
+			
+			y \(x\) representa número de sacos,
+			el resultado es inconsistente.
+		\end{block}
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Análisis de patrones}
+		
+		Observe:
+		
+		\[
+		10x+100=200
+		\]
+		
+		\[
+		20x+100=300
+		\]
+		
+		\[
+		30x+100=400
+		\]
+		
+		\pause
+		
+		¿Qué patrón aparece?
+		
+		\pause
+		
+		\[
+		x=10
+		\]
+		
+		en todos los casos.
+		
+		\begin{block}{Conclusión}
+			Existe regularidad estructural,
+			no solo cálculo aislado.
+		\end{block}
+		
+	\end{frame}
+	
+	%================================================
+	\section{Ejercicios Propuestos}
+	
+	\begin{frame}{Ejercicio 1}
+		
+		Una parcela necesita 350 kg de fertilizante.
+		
+		Ya existen 110 kg almacenados.
+		
+		Cada saco contiene 20 kg.
+		
+		Plantee y resuelva la ecuación.
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Ejercicio 2}
+		
+		Una bomba de riego distribuye agua de forma uniforme.
+		
+		Cada sector consume:
+		
+		\[
+		\frac{x}{4} + 30 = 90
+		\]
+		
+		Determine \(x\).
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Ejercicio 3}
+		
+		Despejar \(x\):
+		
+		\[
+		C = px + 45
+		\]
+		
+		Interpretar el resultado en contexto agrícola.
+		
+	\end{frame}
+	
+	%================================================
+	\begin{frame}{Cierre}
+		
+		\begin{block}{Síntesis}
+			Hoy aprendimos a:
+			
+			\begin{itemize}
+				\item modelar situaciones reales
+				\item resolver ecuaciones enteras
+				\item resolver ecuaciones fraccionarias
+				\item trabajar ecuaciones literales
+				\item detectar inconsistencias y patrones
+			\end{itemize}
+			
+		\end{block}
+		
+		\begin{center}
+			\Large
+			La matemática no solo resuelve:\\
+			permite tomar mejores decisiones técnicas.
+		\end{center}
+		
+	\end{frame}
+	
+	%================================================
+	
+\end{document}

@@ -1,0 +1,763 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+% =====================================================
+% PAQUETES
+% =====================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+
+\usetikzlibrary{calc,positioning,shapes.geometric}
+
+% =====================================================
+% TEMA
+% =====================================================
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+% =====================================================
+% COLORES UST MODERNOS
+% =====================================================
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTTeal}{RGB}{0,153,117}
+\definecolor{USTGray}{RGB}{95,95,95}
+\definecolor{USTLight}{RGB}{245,247,250}
+\definecolor{USTSoft}{RGB}{232,239,247}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{USTAlert}{RGB}{180,50,47}
+\definecolor{USTGold}{RGB}{201,162,39}
+
+% =====================================================
+% CONFIGURACIÓN VISUAL
+% =====================================================
+\setbeamercolor{normal text}{fg=USTText,bg=white}
+\setbeamercolor{structure}{fg=USTBlue}
+\setbeamercolor{frametitle}{bg=USTBlue,fg=white}
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{subtitle}{fg=white}
+
+\setbeamercolor{block title}{bg=USTBlue,fg=white}
+\setbeamercolor{block body}{bg=USTLight,fg=black}
+
+\setbeamercolor{block title alerted}{bg=USTAlert,fg=white}
+\setbeamercolor{block body alerted}{bg=red!5,fg=black}
+
+\setbeamercolor{block title example}{bg=USTTeal,fg=white}
+\setbeamercolor{block body example}{bg=green!5,fg=black}
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{block title}{series=\bfseries}
+
+% =====================================================
+% FOOTLINE PERSONALIZADA
+% =====================================================
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.72\paperwidth,ht=2.8ex,dp=1ex,leftskip=1em]{author in head/foot}
+			\color{USTBlueDark}\small\textbf{Pensamiento Matemático} \hspace{0.5em} | \hspace{0.5em}
+			Unidad II – Operatoria Matemática Básica Aplicada a las Ciencias Sociales
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.28\paperwidth,ht=2.8ex,dp=1ex,rightskip=1em plus1fil]{date in head/foot}
+			\color{USTBlueDark}\small\insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+	\vskip0pt
+}
+
+% =====================================================
+% ENCABEZADO CON BARRA
+% =====================================================
+\setbeamertemplate{headline}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[USTBlue] (current page.north west) rectangle ([yshift=-0.18cm]current page.north east);
+		\fill[USTTeal] (current page.north west) rectangle ([xshift=3.2cm,yshift=-0.18cm]current page.north west);
+	\end{tikzpicture}
+	\vspace{0.15cm}
+}
+
+% =====================================================
+% COMANDOS PERSONALES
+% =====================================================
+\newcommand{\IdeaClave}[1]{
+	\begin{exampleblock}{Idea clave}
+		#1
+	\end{exampleblock}
+}
+
+\newcommand{\AlertaPedagogica}[1]{
+	\begin{alertblock}{Atención}
+		#1
+	\end{alertblock}
+}
+
+\newcommand{\ObjetivoClase}[1]{
+	\begin{block}{Objetivo de la clase}
+		#1
+	\end{block}
+}
+
+% =====================================================
+% DATOS
+% =====================================================
+\title{Pensamiento Matemático}
+\subtitle{Unidad II – Operatoria Matemática Básica Aplicada a las Ciencias Sociales}
+\author{Profesor Luis González Alcaino}
+\institute{Universidad Santo Tomás \\ Departamento Ciencias Básicas - Talca}
+\date{2026}
+
+% =====================================================
+% DOCUMENTO
+% =====================================================
+\begin{document}
+	
+	% =====================================================
+	% PORTADA
+	% =====================================================
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[USTBlue] (current page.south west) rectangle (current page.north east);
+			\fill[USTBlueDark] (current page.south west) rectangle ([xshift=3.2cm]current page.north west);
+			\fill[USTTeal] ([yshift=-1.2cm]current page.north west) rectangle ([yshift=-1.5cm]current page.north east);
+			\fill[white,opacity=0.08] ([xshift=9cm,yshift=-1cm]current page.north west) circle (1.7cm);
+			\fill[white,opacity=0.05] ([xshift=11.5cm,yshift=-4cm]current page.north west) circle (2.3cm);
+		\end{tikzpicture}
+		
+		\vspace{1.2cm}
+		
+		{\color{white}\bfseries\LARGE \inserttitle\par}
+		\vspace{0.3cm}
+		{\color{white}\Large \insertsubtitle\par}
+		\vspace{0.9cm}
+		
+		\begin{beamercolorbox}[wd=\textwidth,rounded=true,sep=0.8em]{block body}
+			\centering
+			\textbf{\insertauthor}\\
+			\insertinstitute\\
+			\insertdate
+		\end{beamercolorbox}
+		
+		\vfill
+		
+		{\color{white!85}\small Clase: Conjuntos Numéricos y Operatoria}
+	\end{frame}
+	
+	% =====================================================
+	% RUTA DE LA CLASE
+	% =====================================================
+	\begin{frame}{Ruta de la clase}
+		\tableofcontents
+	\end{frame}
+	
+	% =====================================================
+	\section{Resultados de Aprendizaje}
+	% =====================================================
+	
+	\begin{frame}{Resultados de Aprendizaje}
+		\begin{itemize}[<+->]
+			\item Aplica operatoria con números enteros y racionales en la resolución de ejercicios y situaciones contextualizadas.
+			\item Integra patrones y relaciones matemáticas al analizar propiedades, estructuras y resultados en distintas expresiones numéricas.
+			\item Detecta patrones, relaciones e inconsistencias en procedimientos y resultados, justificando sus conclusiones mediante razonamiento matemático.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{¿Qué aprenderemos hoy?}
+		\ObjetivoClase{
+			Resolver operaciones con números enteros y racionales, reconociendo propiedades, patrones, relaciones e inconsistencias en distintos procedimientos matemáticos vinculados al análisis cuantitativo en contextos de las ciencias sociales.
+		}
+		
+		\IdeaClave{
+			No solo importa obtener un resultado correcto: también es fundamental reconocer cómo se construye, qué patrón sigue y cuándo un procedimiento contiene un error.
+		}
+	\end{frame}
+	
+	% =====================================================
+	\section{Conjuntos Numéricos}
+	% =====================================================
+	
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Introducción}
+			Se estudiarán los conjuntos numéricos que conforman a los números reales, vinculándolos con ejemplos frecuentes en medición, conteo y análisis de datos en contextos psicológicos y sociales.
+		\end{block}
+		
+		\begin{itemize}[<+->]
+			\item Números naturales \(\mathbb{N}\)
+			\item Números enteros \(\mathbb{Z}\)
+			\item Números racionales \(\mathbb{Q}\)
+			\item Números irracionales \(\mathbb{I}\)
+			\item Números reales \(\mathbb{R}\)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Los números naturales \(\mathbb{N}\)}
+		\begin{block}{Definición}
+			También conocidos como números para contar o enteros positivos.
+			\[
+			\mathbb{N}=\{1,2,3,\dots\}
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Contexto}
+			En Psicología o Ciencias Sociales pueden utilizarse para contar:
+			\begin{itemize}
+				\item participantes de un estudio,
+				\item sesiones de intervención,
+				\item respuestas correctas en un test,
+				\item frecuencia de conductas observadas.
+			\end{itemize}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Los números enteros \(\mathbb{Z}\)}
+		\begin{block}{Definición}
+			Permiten representar cantidades positivas, negativas y el cero.
+			\[
+			\mathbb{Z}=\{\dots,-3,-2,-1,0,1,2,3,\dots\}
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Contexto}
+			Son útiles para representar:
+			\begin{itemize}
+				\item aumentos o disminuciones de puntajes,
+				\item variaciones en escalas de bienestar,
+				\item cambios en niveles de ansiedad o motivación.
+			\end{itemize}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Los números racionales \(\mathbb{Q}\)}
+		\begin{block}{Definición}
+			Los números racionales son aquellos que pueden escribirse como cociente de dos enteros:
+			\[
+			\mathbb{Q}=\left\{\frac{a}{b}: a,b\in\mathbb{Z},\ b\neq 0\right\}
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			\frac14=0.25,\qquad \frac53=1.666\dots,\qquad \frac{19}{12}=1.58333\dots
+			\]
+		\end{exampleblock}
+		
+		\begin{block}{Aplicación}
+			Aparecen en porcentajes, proporciones, promedios y razones entre variables observadas.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Los números irracionales \(\mathbb{I}\)}
+		\begin{block}{Definición}
+			Son números que no pueden expresarse como cociente de enteros y tienen desarrollo decimal infinito no periódico.
+			\[
+			\mathbb{I}=\{x:\ x\notin\mathbb{Q}\}
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			\sqrt{2}=1.414213\dots,\qquad \pi=3.141592\dots,\qquad e=2.718281\dots
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Los números reales \(\mathbb{R}\)}
+		\begin{block}{Definición}
+			El conjunto de los números reales está formado por la unión de los racionales y los irracionales:
+			\[
+			\mathbb{R}=\mathbb{Q}\cup\mathbb{I}
+			\]
+		\end{block}
+		
+		\IdeaClave{
+			Los números reales permiten representar medidas, escalas, puntajes, diferencias y comparaciones cuantitativas en una amplia variedad de contextos.
+		}
+	\end{frame}
+	
+	\begin{frame}{Recta numérica y comparación}
+		\begin{center}
+			\begin{tikzpicture}[scale=0.9]
+				\draw[->,thick] (-4,0)--(4.5,0);
+				\foreach \x in {-3,-2,-1,0,1,2,3,4}
+				{
+					\draw (\x,0.12)--(\x,-0.12);
+					\node[below] at (\x,-0.12) {\x};
+				}
+			\end{tikzpicture}
+		\end{center}
+		
+		\begin{block}{Comparación}
+			\begin{itemize}[<+->]
+				\item \(7<12\)
+				\item \(-3>-10\)
+				\item \(10\leq 15\)
+				\item \(8\geq 8\)
+			\end{itemize}
+		\end{block}
+		
+		\begin{exampleblock}{Interpretación}
+			Comparar números permite analizar diferencias entre puntajes, resultados observados o niveles en una escala.
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Ejercicio: clasificación en conjuntos numéricos}
+		\begin{block}{Instrucción}
+			Marque con \(\checkmark\) el o los conjuntos numéricos a los cuales pertenece cada número.
+		\end{block}
+		
+		\[
+		\begin{array}{c|ccccc}
+			\text{Número} & \mathbb{N} & \mathbb{Z} & \mathbb{Q} & \mathbb{I} & \mathbb{R} \\ \hline
+			-5 & & & & & \\
+			\sqrt{3} & & & & & \\
+			\frac{5}{8} & & & & & \\
+			\pi & & & & & \\
+			2 & & & & &
+		\end{array}
+		\]
+	\end{frame}
+	
+	% =====================================================
+	\section{Operatoria con Números Enteros}
+	% =====================================================
+	
+	\begin{frame}{Adición de números enteros}
+		\begin{block}{Reglas básicas}
+			\begin{enumerate}[<+->]
+				\item Si tienen el mismo signo, se suman los valores absolutos y se conserva el signo.
+				\item Si tienen distinto signo, se restan los valores absolutos y se conserva el signo del número con mayor valor absoluto.
+			\end{enumerate}
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			2+5=7,\qquad -4+(-7)=-11,\qquad 8+(-3)=5,\qquad -10+9=-1
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Observaciones sobre la adición}
+		\begin{itemize}[<+->]
+			\item \(a+(-b)=a-b\)
+			\item \(a-(-b)=a+b\)
+			\item \(a+b=b+a\) \hfill (conmutativa)
+			\item \(a+(b+c)=(a+b)+c\) \hfill (asociativa)
+			\item \(a+0=a\)
+			\item \(a+(-a)=0\)
+			\item \(-(-a)=a\)
+			\item \(-(a+b)=(-a)+(-b)\)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Ejercicios con enteros}
+		\begin{block}{Determine el valor de las siguientes expresiones}
+			\begin{multicols}{2}
+				\begin{enumerate}[a)]
+					\item \((-3)+(-8)\)
+					\item \((-5+3)+2\)
+					\item \(-10+5\)
+					\item \(0+(-5+2)\)
+					\item \((-32)+48+(-10)\)
+					\item \(-(-14)+(-18)\)
+					\item \(-(3+(-7))-7-3\)
+					\item \(-(-8+5)+(-8)\)
+				\end{enumerate}
+			\end{multicols}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Multiplicación de números enteros}
+		\begin{block}{Ley de signos}
+			\[
+			(+)\cdot(+)=+,\qquad (-)\cdot(-)=+,\qquad (+)\cdot(-)=-,\qquad (-)\cdot(+)=-
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			(-2)\cdot 7=-14,\qquad (-3)\cdot(-7)=21,\qquad 4\cdot(-5)=-20
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Propiedades de la multiplicación}
+		\begin{itemize}[<+->]
+			\item \(a\cdot b=b\cdot a\) \hfill (conmutativa)
+			\item \(a\cdot(b\cdot c)=(a\cdot b)\cdot c\) \hfill (asociativa)
+			\item \(a\cdot 1=a\)
+			\item \(a\cdot(b+c)=a\cdot b+a\cdot c\) \hfill (distributiva)
+			\item \(a\cdot 0=0\)
+			\item Si \(a\cdot b=0\), entonces \(a=0\) o \(b=0\)
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Ejercicios de multiplicación con enteros}
+		\begin{multicols}{2}
+			\begin{enumerate}[a)]
+				\item \((-5)\cdot 0\)
+				\item \(((-10)\cdot 4)\cdot 5\)
+				\item \(((-20)+40)\cdot(-2)\)
+				\item \(4\cdot(-5)\)
+				\item \(20\cdot((-8)-6)\)
+				\item \((-3)\cdot(-7)\)
+				\item \(3+2\cdot 5\)
+				\item \((-2)\cdot(-(-14)+(-5))\)
+				\item \((-7+3)\cdot(-3)\)
+				\item \(5\cdot4-5+6\cdot3-2+7\cdot3\)
+			\end{enumerate}
+		\end{multicols}
+	\end{frame}
+	
+	\begin{frame}{Jerarquía de operaciones}
+		\begin{block}{Orden de resolución}
+			\begin{enumerate}[<+->]
+				\item Resolver paréntesis.
+				\item Efectuar multiplicaciones y divisiones.
+				\item Realizar sumas y restas.
+				\item Si hay operaciones de igual prioridad, proceder de izquierda a derecha.
+			\end{enumerate}
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			2+[3-(5-2\cdot3)\cdot4]
+			\]
+			\[
+			(5\cdot3-2)-[4\cdot(5\cdot3)-1]
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% =====================================================
+	\section{Operatoria con Números Racionales}
+	% =====================================================
+	
+	\begin{frame}{Adición de números racionales}
+		\begin{block}{Reglas}
+			\begin{enumerate}[<+->]
+				\item Si tienen igual denominador:
+				\[
+				\frac{a}{b}+\frac{c}{b}=\frac{a+c}{b},\qquad b\neq0
+				\]
+				\item Si tienen distinto denominador:
+				\[
+				\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd},\qquad b\neq0,\ d\neq0
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ejemplos con racionales}
+		\[
+		\frac12-\frac52+\frac32=\frac{1-5+3}{2}=-\frac12
+		\]
+		
+		\vspace{0.3cm}
+		
+		\[
+		\frac13-\frac25=\frac{5-6}{15}=-\frac1{15}
+		\]
+		
+		\vspace{0.3cm}
+		
+		\[
+		\frac45+\frac83-\frac7{18}+\frac92=\frac{341}{45}
+		\]
+		
+		\vspace{0.3cm}
+		
+		\[
+		\frac14+\frac75-\frac38=\frac{51}{40}
+		\]
+	\end{frame}
+	
+	\begin{frame}{Observaciones sobre racionales}
+		\begin{itemize}[<+->]
+			\item \(\displaystyle \frac{-a}{b}=\frac{a}{-b}=-\frac{a}{b}\)
+			\item \(\displaystyle \frac{-a}{-b}=\frac{a}{b}\)
+			\item \(\displaystyle -\left(\frac{a}{b}\right)=-\frac{a}{b}\)
+			\item \(\displaystyle \frac{a}{1}=a\)
+			\item \(\displaystyle \frac{a}{a}=1,\ a\neq0\)
+			\item \(\displaystyle \frac{0}{a}=0,\ a\neq0\)
+			\item \(\displaystyle \frac{a}{0}\) no existe
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Multiplicación de racionales}
+		\begin{block}{Regla}
+			\[
+			\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd},\qquad b\neq0,\ d\neq0
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			\frac15\cdot\left(-\frac38\right)=-\frac3{40}
+			\]
+			\[
+			\frac3{-8}\cdot\frac57=-\frac{15}{56}
+			\]
+			\[
+			6\cdot\frac{5}{11}=\frac{30}{11}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Propiedades y equivalencia de fracciones}
+		\begin{itemize}[<+->]
+			\item \(\displaystyle \frac{a}{b}=\frac{c}{d}\iff a\cdot d=b\cdot c\)
+			\item Simplificar una fracción consiste en cancelar un factor común.
+			\item Amplificar una fracción consiste en multiplicar numerador y denominador por un mismo número.
+		\end{itemize}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			\frac{8}{12}=\frac{2\cdot4}{3\cdot4}=\frac23
+			\qquad\qquad
+			-\frac38=\frac{-3\cdot4}{8\cdot4}=-\frac{12}{32}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Ejercicios con multiplicación de racionales}
+		\begin{multicols}{2}
+			\begin{enumerate}[a)]
+				\item \(\frac39\cdot\left(-\frac43\right)\)
+				\item \(\left((-2)-\frac13\right)\cdot\frac23\)
+				\item \(\left(-\frac63\right)\cdot\left(-\frac47\right)\cdot\frac19\)
+				\item \(\frac27\cdot\frac12\cdot(-3)\)
+				\item \((-2)\cdot\frac6{-3}\cdot\frac{(-12)(-9)}4\)
+				\item \(\left(-\frac78\right)\cdot\left(\frac{-4}{-3}\right)\cdot\frac{2}{14}\cdot(-4)\)
+			\end{enumerate}
+		\end{multicols}
+	\end{frame}
+	
+	\begin{frame}{División de racionales}
+		\begin{block}{Regla}
+			Dividir por una fracción equivale a multiplicar por su inversa:
+			\[
+			\frac{a}{b}\div\frac{c}{d}=\frac{a}{b}\cdot\frac{d}{c}
+			\]
+		\end{block}
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			\frac35\div\frac29=\frac35\cdot\frac92=\frac{27}{10}
+			\]
+			\[
+			\frac12\div\left(-\frac23\right)=\frac12\cdot\frac3{-2}=-\frac34
+			\]
+			\[
+			7\div\frac{14}{5}=7\cdot\frac5{14}=\frac52
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Ejercicios de división de racionales}
+		\begin{multicols}{2}
+			\begin{enumerate}[a)]
+				\item \(-\frac85\div\frac47\)
+				\item \(\left(-\frac13\right)\div\left(\frac2{-3}\right)\)
+				\item \(\left(-\frac34\right)\div 6\)
+				\item \(\frac79\div\left(-\frac4{12}\right)\)
+				\item \(\left(\frac{(-2)\cdot 6}{-3}\right)\div\left(\frac{(-15)(-2)}4\right)\)
+				\item \(\left(\left(-\frac58\right)\cdot\left(\frac{-4}{-5}\right)\right)\div\left(\frac{12}{6}\right)\)
+			\end{enumerate}
+		\end{multicols}
+	\end{frame}
+	
+	% =====================================================
+	\section{Patrones, Relaciones e Inconsistencias}
+	% =====================================================
+	
+	\begin{frame}{Actividad: Reconociendo Patrones}
+		\begin{block}{Instrucción}
+			Analice las siguientes expresiones y determine qué patrón, propiedad o relación matemática se está utilizando.
+		\end{block}
+		
+		\begin{enumerate}[<+->]
+			\item \((-3)+(-8)=-11\)
+			\item \(8+(-3)=5\)
+			\item \((-25)+10=10+(-25)\)
+			\item \(((-12)+15)+(-3)=(-12)+(15-3)\)
+		\end{enumerate}
+		
+		\begin{alertblock}{Pregunta de análisis}
+			¿Qué tienen en común estas expresiones? ¿Qué propiedades permiten justificar cada paso?
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}{Actividad: Detectar Errores}
+		\begin{block}{Instrucción}
+			Analice los siguientes procedimientos. Determine si son correctos. Si existe un error, identifíquelo y corríjalo.
+		\end{block}
+		
+		\begin{enumerate}[<+->]
+			\item \(-4+(-7)=3\)
+			\item \(6+(-8)=6+8=14\)
+			\item \((-2)\cdot(-3)=-6\)
+			\item \(\frac12+\frac13=\frac25\)
+		\end{enumerate}
+		
+		\AlertaPedagogica{
+			Un resultado incorrecto puede originarse por una mala aplicación de signos, por ignorar la jerarquía de operaciones o por operar fracciones de forma incorrecta.
+		}
+	\end{frame}
+	
+	\begin{frame}{Relaciones matemáticas que debemos reconocer}
+		\begin{columns}[T]
+			\begin{column}{0.48\textwidth}
+				\begin{exampleblock}{Relaciones}
+					\begin{itemize}[<+->]
+						\item igualdad,
+						\item desigualdad,
+						\item equivalencia,
+						\item opuesto aditivo,
+						\item inverso multiplicativo.
+					\end{itemize}
+				\end{exampleblock}
+			\end{column}
+			
+			\begin{column}{0.48\textwidth}
+				\begin{block}{Patrones frecuentes}
+					\begin{itemize}[<+->]
+						\item repetición de reglas de signo,
+						\item conservación de propiedades,
+						\item uso sistemático del denominador común,
+						\item regularidad en transformaciones equivalentes.
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% =====================================================
+	\section{Aplicaciones}
+	% =====================================================
+	
+	\begin{frame}{Aplicación 1: Promedio de estrés}
+		\begin{block}{Situación}
+			Un psicólogo realiza un estudio sobre el estrés en 10 pacientes. Los niveles reportados son:
+			\[
+			4,\ 5,\ 6,\ 3,\ 8,\ 7,\ 5,\ 6,\ 9,\ 10
+			\]
+		\end{block}
+		
+		\begin{enumerate}[<+->]
+			\item Calcule la suma total de los puntajes.
+			\item Determine el promedio del índice de estrés.
+			\item Interprete el resultado.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Aplicación 2: Reducción promedio de ansiedad}
+		\begin{block}{Situación}
+			Se registran niveles de ansiedad antes y después de un tratamiento en 5 pacientes.
+			
+			\[
+			\text{Antes: } 8,\ 7,\ 9,\ 6,\ 10
+			\]
+			\[
+			\text{Después: } 5,\ 4,\ 6,\ 3,\ 7
+			\]
+		\end{block}
+		
+		\begin{enumerate}[<+->]
+			\item Determine la reducción en cada paciente.
+			\item Calcule la reducción promedio.
+			\item Analice si existe un patrón común en las variaciones observadas.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Aplicación 3: Puntaje Z}
+		\begin{block}{Situación}
+			Un paciente obtiene:
+			\[
+			X_A=85,\quad \mu_A=70,\quad \sigma_A=10
+			\]
+			\[
+			X_B=90,\quad \mu_B=75,\quad \sigma_B=15
+			\]
+			Se utiliza la fórmula:
+			\[
+			Z=\frac{X-\mu}{\sigma}
+			\]
+		\end{block}
+		
+		\begin{enumerate}[<+->]
+			\item Calcule el puntaje Z en la prueba A.
+			\item Calcule el puntaje Z en la prueba B.
+			\item Compare ambos resultados.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Aplicación integradora en contexto psicológico}
+		\begin{block}{Situación}
+			Durante una semana, un paciente presenta las siguientes variaciones en su nivel de bienestar:
+			\[
+			+5,\ -3,\ +2,\ -6,\ +4
+			\]
+		\end{block}
+		
+		\begin{enumerate}[<+->]
+			\item Determine el cambio total en el bienestar.
+			\item Identifique patrones en las variaciones.
+			\item Detecte si existe alguna inconsistencia al interpretar los resultados.
+			\item Explique qué conclusión podría extraerse desde el contexto psicológico.
+		\end{enumerate}
+	\end{frame}
+	
+	% =====================================================
+	\section{Cierre}
+	% =====================================================
+	
+	\begin{frame}{Síntesis de la clase}
+		\begin{block}{Hoy trabajamos}
+			\begin{itemize}[<+->]
+				\item Clasificación de los conjuntos numéricos.
+				\item Operatoria con números enteros y racionales.
+				\item Propiedades y jerarquía de operaciones.
+				\item Reconocimiento de patrones y relaciones.
+				\item Detección de errores e inconsistencias.
+				\item Aplicaciones en contextos psicológicos y sociales.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Verificación de los aprendizajes}
+		\begin{enumerate}[<+->]
+			\item ¿Puedo resolver correctamente operaciones con enteros y racionales?
+			\item ¿Reconozco patrones y propiedades en los procedimientos?
+			\item ¿Puedo detectar cuándo un resultado o una operación es inconsistente?
+			\item ¿Soy capaz de interpretar matemáticamente una situación contextualizada?
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[USTBlue] (current page.south west) rectangle (current page.north east);
+			\fill[USTTeal] ([yshift=-1.1cm]current page.north west) rectangle ([yshift=-1.45cm]current page.north east);
+		\end{tikzpicture}
+		
+		\vfill
+		\begin{center}
+			{\color{white}\bfseries\Huge Gracias}\\[0.4cm]
+			{\color{white!90}\Large Clase 7 – Conjuntos Numéricos y Operatoria}
+		\end{center}
+		\vfill
+	\end{frame}
+	
+\end{document}

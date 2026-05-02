@@ -1,0 +1,242 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{array}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\headheight}{45pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Encabezado con logo e información institucional
+\lhead{%
+	\makebox[0pt][l]{%
+		\begin{minipage}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{logoUst.png}
+		\end{minipage}
+	}%
+	\hspace{2.5cm}%
+	\begin{minipage}{0.8\textwidth}
+		\raggedright
+		\small
+		\textbf{Universidad Santo Tomás}\\
+		Departamento de Ciencias Básicas\\
+		Fundamentos de Matemática Básica
+	\end{minipage}
+}
+
+\rhead{}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\vspace*{1em}
+	
+	\begin{center}
+		{\Large \textbf{Guía 04 Ayudantía}}\\[0.3em]
+		{\small Operaciones algebraicas, productos notables y factorización}
+	\end{center}
+	
+	
+	% =========================
+	% EJERCICIOS
+	% =========================
+	
+	\begin{enumerate}
+		\item Simplifique las siguientes expresiones algebraicas:
+		\begin{enumerate}[label=\alph*)]
+			\item $120mn - 54mn + 100m - 30mn - 28m$
+			\item $35pq + 30 + 78pq - 60pq - 13$
+			\item $14 + [12xy - (3x^2y^2 - 4xy) + 8xy + 10]$
+			\item $-10t + [-(-2t + 3) + 12] - (14 + 2t + 11t)$
+			\item $x^2yz - (18xy^2z + 10xyz^2)$
+			\item $11a^2b - 32a^2b + 14ab^2 - 3a^2b$
+			\item $10x^2yz - 12x^2yz - 8yx^2z + 42yx^2z$
+			\item $54rt^2 - (12rt^2 - 5rt) + (21rt^2 - 2rt)$
+		\end{enumerate}
+		
+		\item Dados los siguientes costos:
+		
+		\begin{itemize}
+			\item Costo de producción: $A = 3x^2 + 5xy - 2xy^2$
+			\item Costo de fertilización: $B = 10xy + 7x^2 - 3y^2$
+			\item Costo de control de plagas: $C = 4y^2 - 8xy + 10$
+		\end{itemize}
+		
+		\textbf{Pregunta:} ¿Cuál es el costo total?
+		
+		\item \textbf{Crecimientos vegetales:}
+		
+		\[
+		A = 2x^3 - x^2 + 4x - 5
+		\]
+		\[
+		B = x^3 - 8x - 2
+		\]
+		\[
+		C = x^2 - 4x - 2
+		\]
+		
+		\textbf{Pregunta:} Calcule la expresión 
+		\[
+		4A - [2B + C - (3B + 2A)] + 10B
+		\]
+		
+		\item La cantidad de fertilización en un cultivo viene expresada por:
+		
+		\begin{itemize}
+			\item Base: $(2n + 15)$
+			\item Refuerzo: $(3n - 10)$
+		\end{itemize}
+		
+		\textbf{Pregunta:} ¿Cuál es la cantidad total aplicada?
+		
+		\newpage
+		
+		\vspace*{0.2em}
+				
+				
+				\item \textbf{Pesticidas:}
+				
+				Disponible:
+				\[
+				50a + 20b + 30
+				\]
+				
+				Aplicación:
+				\begin{itemize}
+					\item Parcela 1: $5a - 35b + 42$
+					\item Parcela 2: $32a + 10b - 22$
+				\end{itemize}
+				
+				\textbf{Pregunta:} ¿Cuánto queda?
+				\item Una ingeniera agrónoma realizó varias charlas técnicas para agricultores durante el primer semestre del año 2025, con el objetivo de mejorar la productividad y sostenibilidad de los cultivos. Los datos se presentan en la siguiente tabla:
+		
+		\begin{center}
+			\begin{tabular}{|>{\raggedright\arraybackslash}p{9cm}|c|}
+				\hline
+				\textbf{Tema} & \textbf{Número de asistentes} \\
+				\hline
+				Manejo de estrés hídrico en cultivos & $4xy - (x - 2y)^2$ \\
+				\hline
+				Uso eficiente de fertilizantes y nutrientes del suelo & $(4x + y)(4y + x)$ \\
+				\hline
+				Optimización del crecimiento vegetal y desarrollo radicular & $(x - 2y)(x + 2y) - (2x - y)^2$ \\
+				\hline
+			\end{tabular}
+		\end{center}
+		
+		Donde:
+		\begin{itemize}
+			\item $x$ representa el número base de agricultores por zona.
+			\item $y$ representa el factor de variación asociado a condiciones climáticas.
+		\end{itemize}
+		
+		\textbf{Actividades:}
+		\begin{enumerate}[label=\alph*)]
+			\item Simplifique cada una de las expresiones algebraicas.
+			\item Identifique el tipo de operación utilizada en cada caso (productos notables, reducción de términos, etc.).
+			\item Determine cuál de las charlas tuvo mayor número de asistentes en términos algebraicos.
+			\item Analice si existen inconsistencias o redundancias en las expresiones dadas.
+		\end{enumerate}
+		
+		\item \textbf{Nutrientes:}
+		
+		\begin{itemize}
+			\item Suelo: $45x^2 - 12xy + 30y^2$
+			\item Fertilizante: $-7x^2 + 24xy - 3y^2$
+			\item Abono: $30x^2 - 10xy + y^2$
+		\end{itemize}
+		
+		\textbf{Preguntas:}
+		\begin{itemize}
+			\item Con abono.
+			\item Sin abono.
+		\end{itemize}
+		
+		\newpage
+		
+		\vspace*{0.2em}
+		
+		\item Un ingeniero agrónomo está realizando un estudio sobre los costos asociados a tres tipos de análisis utilizados para evaluar la calidad y productividad de un cultivo.
+		
+		El costo total de estos análisis está modelado por la expresión:
+		\[
+		(9a + 7b)(a + 4b)
+		\]
+		
+		donde:
+		\begin{itemize}
+			\item $a$ representa el costo base asociado al análisis de suelo por hectárea.
+			\item $b$ representa el costo adicional debido a condiciones climáticas y manejo del cultivo.
+		\end{itemize}
+		
+		El primer análisis corresponde a la evaluación de nutrientes del suelo:
+		\[
+		(a + 2b)(2a - 3b)
+		\]
+		
+		El segundo análisis corresponde al estudio de la estructura y compactación del suelo:
+		\[
+		(2a - b)(3a + 14b)
+		\]
+		
+		\textbf{Actividades:}
+		\begin{enumerate}[label=\alph*)]
+			\item Desarrolle algebraicamente cada una de las expresiones.
+			\item Compare los costos individuales de cada análisis.
+			\item Verifique si la suma de los costos individuales coincide con el costo total.
+			\item Analice posibles inconsistencias en el modelo propuesto.
+		\end{enumerate}
+		
+		
+		\item Un agrónomo modela la producción total de un cultivo mediante:
+		\[
+		P(x,y) = (x+y)^2 + (x-y)^2 + 2xy
+		\]
+		
+		\begin{itemize}
+			\item Simplifique completamente.
+			\item Interprete el modelo productivo.
+			\item Detecte posibles redundancias.
+		\end{itemize}
+		
+		
+		
+		\item La cantidad de fertilización en un cultivo intensivo depende de varios factores. El modelo total de fertilización está dado por la combinación de una dosis base, un refuerzo y un ajuste por condiciones del suelo:
+		
+		\begin{itemize}
+			\item Base: $(2n + 15)$
+			\item Refuerzo: $(3n - 10)$
+			\item Ajuste por calidad del suelo: $(n + 5)$
+		\end{itemize}
+		
+		El modelo total de fertilización aplicado en una temporada es:
+		\[
+		(2n + 15)(3n - 10) + (n + 5)^2
+		\]
+		
+		\textbf{Actividades:}
+		\begin{enumerate}[label=\alph*)]
+			\item Desarrolle completamente la expresión algebraica.
+			\item Simplifique el resultado.
+			\item Interprete el significado de cada término del polinomio final en el contexto agrícola.
+			\item Determine el comportamiento del modelo cuando $n$ aumenta linealmente.
+			\item Analice si existe redundancia en el modelo (términos que representen el mismo fenómeno).
+		\end{enumerate}
+		
+		
+	\end{enumerate}
+	
+\end{document}

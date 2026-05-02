@@ -1,0 +1,466 @@
+ 
+ % !TEX program = pdflatex
+% !TEX option  = -synctex=1 -interaction=nonstopmode -output-directory=build
+
+% ==========================================================
+% PLANTILLA BEAMER PRO
+% Moderna, institucional y editable
+% Compatible con pdfLaTeX
+% ==========================================================
+
+\newif\ifhandout
+\handoutfalse          % <-- Presentación
+%\handouttrue          % <-- Handout imprimible
+
+\ifhandout
+\documentclass[10pt,handout,aspectratio=169]{beamer}
+\else
+\documentclass[11pt,aspectratio=169]{beamer}
+\fi
+
+% ==========================================================
+% PAQUETES
+% ==========================================================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage{fontawesome5}
+
+\pgfplotsset{compat=1.18}
+
+% ==========================================================
+% MODO HANDOUT
+% ==========================================================
+\ifhandout
+\setbeameroption{hide notes}
+\fi
+
+% ==========================================================
+% PALETA INSTITUCIONAL
+% ==========================================================
+% ---------- Opción UCM / Agronomía ----------
+\definecolor{UCMGreen}{RGB}{18,112,84}
+\definecolor{UCMGreenDark}{RGB}{10,74,56}
+\definecolor{UCMGreenSoft}{RGB}{232,244,239}
+\definecolor{UCMGold}{RGB}{180,145,76}
+\definecolor{Ink}{RGB}{35,43,52}
+\definecolor{SoftGray}{RGB}{245,247,250}
+
+% ---------- Opción UST ----------
+%\definecolor{UCMGreen}{RGB}{0,70,127}
+%\definecolor{UCMGreenDark}{RGB}{0,45,85}
+%\definecolor{UCMGreenSoft}{RGB}{232,240,248}
+%\definecolor{UCMGold}{RGB}{0,153,117}
+%\definecolor{Ink}{RGB}{35,43,52}
+%\definecolor{SoftGray}{RGB}{245,247,250}
+
+% ==========================================================
+% TEMA BASE
+% ==========================================================
+\usetheme{Madrid}
+\usecolortheme[named=UCMGreen]{structure}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+
+% ==========================================================
+% COLORES BEAMER
+% ==========================================================
+\setbeamercolor{normal text}{fg=Ink,bg=white}
+\setbeamercolor{structure}{fg=UCMGreen}
+\setbeamercolor{title}{fg=white,bg=UCMGreenDark}
+\setbeamercolor{subtitle}{fg=white}
+\setbeamercolor{frametitle}{fg=white,bg=UCMGreen}
+\setbeamercolor{framesubtitle}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{institute}{fg=white}
+
+\setbeamercolor{block title}{fg=white,bg=UCMGreen}
+\setbeamercolor{block body}{fg=Ink,bg=UCMGreenSoft}
+
+\setbeamercolor{block title alerted}{fg=white,bg=orange!80!black}
+\setbeamercolor{block body alerted}{fg=Ink,bg=orange!8}
+
+\setbeamercolor{block title example}{fg=white,bg=UCMGold!85!black}
+\setbeamercolor{block body example}{fg=Ink,bg=yellow!8}
+
+\setbeamercolor{section in toc}{fg=UCMGreen}
+\setbeamercolor{subsection in toc}{fg=Ink}
+
+% ==========================================================
+% FUENTES Y ESPACIADO
+% ==========================================================
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamerfont{section title}{series=\bfseries,size=\Huge}
+
+% ==========================================================
+% HIPERVÍNCULOS
+% ==========================================================
+\hypersetup{
+	colorlinks=true,
+	linkcolor=UCMGreenDark,
+	urlcolor=UCMGreenDark
+}
+
+% ==========================================================
+% COMANDOS PEDAGÓGICOS
+% ==========================================================
+\newcommand{\pp}{\pause}
+
+\newenvironment{stepitemize}
+{\begin{itemize}[<+->,leftmargin=*,itemsep=0.55em]}
+	{\end{itemize}}
+
+\newenvironment{stepenumerate}
+{\begin{enumerate}[<+->,leftmargin=*,itemsep=0.55em]}
+	{\end{enumerate}}
+
+\newcommand{\IdeaClave}[1]{
+	\begin{alertblock}{\faLightbulb\ Idea clave}
+		#1
+	\end{alertblock}
+}
+
+\newcommand{\Ejemplo}[1]{
+	\begin{exampleblock}{\faPen\ Ejemplo}
+		#1
+	\end{exampleblock}
+}
+
+\newcommand{\Actividad}[1]{
+	\begin{block}{\faUsers\ Actividad}
+		#1
+	\end{block}
+}
+
+\newcommand{\Definicion}[1]{
+	\begin{block}{\faBook\ Definición}
+		#1
+	\end{block}
+}
+
+\newcommand{\Objetivos}[1]{
+	\begin{block}{\faBullseye\ Objetivos de aprendizaje}
+		#1
+	\end{block}
+}
+
+\newcommand{\Resumen}[1]{
+	\begin{block}{\faClipboardCheck\ Síntesis}
+		#1
+	\end{block}
+}
+
+% ==========================================================
+% PORTADA
+% ==========================================================
+\newcommand{\PortadaInstitucional}{
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			% fondo
+			\fill[SoftGray] (current page.south west) rectangle (current page.north east);
+			
+			% banda superior
+			\fill[UCMGreenDark] (current page.north west) rectangle ([yshift=-2.1cm]current page.north east);
+			
+			% franja decorativa
+			\fill[UCMGold] ([yshift=-2.1cm]current page.north west) rectangle ([yshift=-2.28cm]current page.north east);
+			
+			% panel lateral decorativo
+			\fill[UCMGreen!12] (current page.south west) rectangle ([xshift=2.6cm]current page.north west);
+			
+			% círculos suaves
+			\fill[UCMGreen!18] ([xshift=1.3cm,yshift=-1.5cm]current page.north west) circle (0.9cm);
+			\fill[UCMGold!25] ([xshift=2.2cm,yshift=-3.8cm]current page.north west) circle (0.55cm);
+			\fill[UCMGreen!10] ([xshift=-1.2cm,yshift=1.2cm]current page.south east) circle (1.4cm);
+			
+			% iconos
+			\node[anchor=north west,text=white] at ([xshift=0.9cm,yshift=-0.7cm]current page.north west)
+			{\fontsize{18}{18}\selectfont \faSeedling\ \faLeaf\ \faChartLine};
+			
+			% “logo” textual provisional
+			\node[anchor=north east,text=white] at ([xshift=-0.8cm,yshift=-0.7cm]current page.north east)
+			{\small \textbf{FACULTAD / ESCUELA / CARRERA}};
+			
+			% título
+			\node[anchor=west,text=Ink] at ([xshift=3.2cm,yshift=-3.6cm]current page.north west) {
+				\begin{minipage}{0.72\paperwidth}
+					{\usebeamerfont{title}\color{UCMGreenDark}\inserttitle\par}
+					\vspace{0.3cm}
+					{\usebeamerfont{subtitle}\color{UCMGreen}\insertsubtitle\par}
+				\end{minipage}
+			};
+			
+			% datos
+			\node[anchor=west,text=Ink] at ([xshift=3.2cm,yshift=-6.1cm]current page.north west) {
+				\begin{minipage}{0.62\paperwidth}
+					{\normalsize \textbf{\insertauthor}}\par\vspace{0.15cm}
+					{\small \insertinstitute}\par\vspace{0.15cm}
+					{\small \insertdate}
+				\end{minipage}
+			};
+			
+			% caja inferior
+			\fill[white] ([xshift=3.2cm,yshift=1.1cm]current page.south west) rectangle ([xshift=-1.0cm,yshift=2.6cm]current page.south east);
+			\node[anchor=west,text=Ink] at ([xshift=3.5cm,yshift=1.85cm]current page.south west)
+			{\small \faGraduationCap\ Presentación académica moderna \quad \faChalkboardTeacher\ Clase universitaria \quad \faBookOpen\ Material editable};
+		\end{tikzpicture}
+	\end{frame}
+}
+
+% ==========================================================
+% SEPARADORES DE SECCIÓN
+% ==========================================================
+\AtBeginSection[]{
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[UCMGreenDark] (current page.south west) rectangle (current page.north east);
+			\fill[UCMGold] (current page.south west) rectangle ([yshift=0.35cm]current page.north east);
+			\node[text=white,align=center] at (current page.center){
+				{\usebeamerfont{section title}\insertsection\par}
+				\vspace{0.4cm}
+				{\Large \faLeaf\ \ \faChartBar\ \ \faSeedling}
+			};
+		\end{tikzpicture}
+	\end{frame}
+}
+
+% ==========================================================
+% ENCABEZADO Y PIE
+% ==========================================================
+\setbeamertemplate{headline}{}
+
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.28\paperwidth,ht=2.9ex,dp=1.1ex,leftskip=1em]{author in head/foot}
+			\color{white}\small \textbf{\insertshortauthor}
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.50\paperwidth,ht=2.9ex,dp=1.1ex,center]{title in head/foot}
+			\color{white}\small \insertshorttitle
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.22\paperwidth,ht=2.9ex,dp=1.1ex,rightskip=1em plus1fil]{date in head/foot}
+			\color{white}\small \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+}
+
+\setbeamercolor{author in head/foot}{bg=UCMGreenDark,fg=white}
+\setbeamercolor{title in head/foot}{bg=UCMGreen,fg=white}
+\setbeamercolor{date in head/foot}{bg=UCMGreenDark,fg=white}
+
+% ==========================================================
+% TOC
+% ==========================================================
+\begin{document}
+	
+	% ==========================================================
+	% DATOS EDITABLES
+	% ==========================================================
+	\title[Fundamentos de Matemática Básica]{Fundamentos de Matemática Básica}
+	\subtitle{Potencias, notación científica y detección de patrones}
+	\author[Luis González Alcaino]{Luis González Alcaino}
+	\institute[UCM]{Universidad Católica del Maule \\ Curicó \\ Ingeniería de Ejecución Agrícola}
+	\date{Año académico 2026}
+	
+	% ==========================================================
+	% PORTADA
+	% ==========================================================
+	\PortadaInstitucional
+	
+	% ==========================================================
+	% ÍNDICE
+	% ==========================================================
+	\begin{frame}{\faList\ Ruta de la clase}
+		\tableofcontents
+	\end{frame}
+	
+	% ==========================================================
+	\section{Inicio}
+	
+	\begin{frame}{\faBullseye\ Propósito de la clase}
+		\Objetivos{
+			\begin{itemize}
+				\item Aplicar el concepto de potencia y sus propiedades.
+				\item Transformar números a notación científica.
+				\item Resolver multiplicaciones y divisiones en notación científica.
+				\item Reconocer patrones, relaciones e inconsistencias en cálculos y resultados.
+			\end{itemize}
+		}
+	\end{frame}
+	
+	\begin{frame}{\faComments\ Activación de conocimientos previos}
+		\Actividad{
+			En parejas, discutan:
+			\begin{itemize}
+				\item ¿Dónde aparecen números muy grandes o muy pequeños en agronomía?
+				\item ¿Qué ventajas tiene escribirlos en forma abreviada?
+				\item ¿Qué errores son frecuentes al trabajar con potencias?
+			\end{itemize}
+		}
+	\end{frame}
+	
+	% ==========================================================
+	\section{Desarrollo conceptual}
+	
+	\begin{frame}{\faBook\ Potencia de un número real}
+		\Definicion{
+			Si $a$ es un número real y $n$ es un entero positivo, entonces:
+			\[
+			a^n = \underbrace{a\cdot a\cdot a\cdots a}_{n\text{ factores}}
+			\]
+			donde $a$ es la base y $n$ es el exponente.
+		}
+		\IdeaClave{
+			La potencia representa una multiplicación repetida de una misma base.
+		}
+	\end{frame}
+	
+	\begin{frame}{\faPen\ Propiedades de las potencias}
+		\begin{block}{Propiedades fundamentales}
+			\begin{align*}
+				a^m\cdot a^n &= a^{m+n} \\
+				\dfrac{a^m}{a^n} &= a^{m-n}, \quad a\neq 0 \\
+				(a^m)^n &= a^{mn} \\
+				(ab)^n &= a^n b^n \\
+				\left(\dfrac{a}{b}\right)^n &= \dfrac{a^n}{b^n}, \quad b\neq 0
+			\end{align*}
+		\end{block}
+		
+		\Ejemplo{
+			\[
+			2^3\cdot 2^5 = 2^{8}=256
+			\]
+		}
+	\end{frame}
+	
+	\begin{frame}{\faFlask\ Contexto agronómico}
+		\Ejemplo{
+			Una muestra de suelo contiene aproximadamente
+			\[
+			3.2\times 10^5
+			\]
+			microorganismos por gramo.
+			
+			Si se analizan $4\times 10^2$ gramos, entonces el total estimado es:
+			\[
+			(3.2\times 10^5)(4\times 10^2)=12.8\times 10^7=1.28\times 10^8
+			\]
+			microorganismos.
+		}
+		\IdeaClave{
+			En notación científica, se multiplican coeficientes por separado y se suman exponentes de base 10.
+		}
+	\end{frame}
+	
+	% ==========================================================
+	\section{Trabajo guiado}
+	
+	\begin{frame}{\faChalkboardTeacher\ Ejemplo guiado}
+		\Ejemplo{
+			Simplificar:
+			\[
+			\dfrac{(2x^3y^2)^2}{4xy}
+			\]
+		}
+		\pp
+		
+		\begin{block}{Paso 1}
+			\[
+			(2x^3y^2)^2 = 2^2x^6y^4 = 4x^6y^4
+			\]
+		\end{block}
+		
+		\pp
+		\begin{block}{Paso 2}
+			\[
+			\dfrac{4x^6y^4}{4xy}=x^5y^3
+			\]
+		\end{block}
+		
+		\pp
+		\IdeaClave{
+			Primero se aplican las propiedades de potencias; luego se simplifican coeficientes y exponentes.
+		}
+	\end{frame}
+	
+	\begin{frame}{\faUsers\ Actividad de aula}
+		\Actividad{
+			Resuelve en grupos:
+			\begin{enumerate}
+				\item $\left(3\times 10^4\right)\left(2\times 10^3\right)$
+				\item $\dfrac{6\times 10^8}{2\times 10^3}$
+				\item $(5a^2b)^3$
+				\item $\dfrac{x^7}{x^2}$
+			\end{enumerate}
+			
+			Luego comparen resultados e identifiquen:
+			\begin{itemize}
+				\item patrones;
+				\item posibles errores;
+				\item formas de verificar el resultado.
+			\end{itemize}
+		}
+	\end{frame}
+	
+	% ==========================================================
+	\section{Cierre}
+	
+	\begin{frame}{\faClipboardCheck\ Síntesis final}
+		\Resumen{
+			\begin{itemize}
+				\item Las potencias permiten representar multiplicaciones repetidas.
+				\item Sus propiedades simplifican expresiones algebraicas.
+				\item La notación científica facilita el trabajo con números extremos.
+				\item Detectar patrones ayuda a validar procedimientos y resultados.
+			\end{itemize}
+		}
+	\end{frame}
+	
+	\begin{frame}{\faQuestionCircle\ Ticket de salida}
+		\begin{block}{Responde individualmente}
+			\begin{enumerate}
+				\item ¿Qué propiedad de potencias te resultó más útil hoy?
+				\item Expresa $0.000045$ en notación científica.
+				\item ¿Qué error evitarías al multiplicar potencias de base 10?
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% ==========================================================
+	% DIAPOSITIVA FINAL
+	% ==========================================================
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[UCMGreenDark] (current page.south west) rectangle (current page.north east);
+			\node[text=white,align=center] at (current page.center){
+				{\Huge\bfseries Gracias}\par
+				\vspace{0.4cm}
+				{\Large \faSeedling\ \faLeaf\ \faChartLine}\par
+				\vspace{0.6cm}
+				{\normalsize Luis González Alcaino}
+			};
+		\end{tikzpicture}
+	\end{frame}
+	
+\end{document}

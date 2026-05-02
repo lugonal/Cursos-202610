@@ -1,0 +1,620 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{xcolor}
+
+\definecolor{USTGreen}{RGB}{27,94,32}
+\definecolor{USTLight}{RGB}{232,245,233}
+
+\setbeamercolor{structure}{fg=USTGreen}
+\setbeamercolor{frametitle}{fg=white,bg=USTGreen}
+\setbeamercolor{title}{fg=white,bg=USTGreen}
+\setbeamertemplate{navigation symbols}{}
+
+\title[Sistemas de ecuaciones lineales]{Sistemas de Ecuaciones Lineales con Dos Incógnitas}
+\subtitle{Clasificación, métodos algebraicos e interpretación}
+\author{Fundamentos de Matemática Básica}
+\institute{Universidad Santo Tomás}
+\date{}
+
+\begin{document}
+	
+	%------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Objetivo general}
+		Analizar y resolver sistemas de ecuaciones lineales con dos incógnitas mediante métodos algebraicos y geométricos, interpretando el significado de sus soluciones.
+		
+		\bigskip
+		
+		\begin{block}{Resultados de aprendizaje}
+			\begin{itemize}
+				\item Identificar sistemas compatibles determinados, compatibles indeterminados e incompatibles.
+				\item Resolver sistemas mediante sustitución, igualación y reducción.
+				\item Interpretar geométricamente la solución de un sistema.
+				\item Detectar patrones, relaciones e inconsistencias.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Definición}
+		Un sistema de ecuaciones lineales con dos incógnitas tiene la forma:
+		
+		\[
+		\begin{cases}
+			ax+by=c\\
+			dx+ey=f
+		\end{cases}
+		\]
+		
+		donde:
+		
+		\[
+		a,b,c,d,e,f\in\mathbb{R}
+		\]
+		
+		\bigskip
+		
+		Resolver el sistema significa encontrar los valores de \(x\) e \(y\) que satisfacen simultáneamente ambas ecuaciones.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Interpretación geométrica}
+		Cada ecuación lineal representa una recta en el plano cartesiano.
+		
+		\bigskip
+		
+		Por lo tanto, resolver un sistema equivale a estudiar la relación entre dos rectas.
+		
+		\bigskip
+		
+		\begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\textbf{Caso} & \textbf{Rectas} & \textbf{Soluciones} \\
+				\hline
+				Compatible determinado & Se cortan & Una solución \\
+				\hline
+				Compatible indeterminado & Coinciden & Infinitas soluciones \\
+				\hline
+				Incompatible & Paralelas & Sin solución \\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Sistema compatible determinado}
+		Tiene una única solución.
+		
+		\[
+		\begin{cases}
+			x+y=5\\
+			2x-y=4
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		Sumamos ambas ecuaciones:
+		
+		\[
+		(x+y)+(2x-y)=5+4
+		\]
+		
+		\[
+		3x=9
+		\]
+		
+		\[
+		x=3
+		\]
+		
+		Luego:
+		
+		\[
+		3+y=5
+		\]
+		
+		\[
+		y=2
+		\]
+		
+		\[
+		\boxed{(x,y)=(3,2)}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Sistema compatible indeterminado}
+		Tiene infinitas soluciones.
+		
+		\[
+		\begin{cases}
+			x+y=4\\
+			2x+2y=8
+		\end{cases}
+		\]
+		
+		La segunda ecuación es múltiplo de la primera:
+		
+		\[
+		2(x+y)=8
+		\]
+		
+		\[
+		x+y=4
+		\]
+		
+		\bigskip
+		
+		Ambas ecuaciones representan la misma recta.
+		
+		\[
+		\boxed{\text{Infinitas soluciones}}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Sistema incompatible}
+		No tiene solución.
+		
+		\[
+		\begin{cases}
+			x+y=3\\
+			x+y=7
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		La misma expresión \(x+y\) no puede ser igual a 3 y a 7 al mismo tiempo.
+		
+		\bigskip
+		
+		Esto genera una contradicción:
+		
+		\[
+		3=7
+		\]
+		
+		\[
+		\boxed{\text{Sistema incompatible}}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Método de sustitución}
+		Consiste en despejar una incógnita en una ecuación y reemplazarla en la otra.
+		
+		\bigskip
+		
+		Resolver:
+		
+		\[
+		\begin{cases}
+			x+y=10\\
+			x=y+2
+		\end{cases}
+		\]
+		
+		Sustituimos \(x=y+2\):
+		
+		\[
+		(y+2)+y=10
+		\]
+		
+		\[
+		2y+2=10
+		\]
+		
+		\[
+		2y=8
+		\]
+		
+		\[
+		y=4
+		\]
+		
+		\[
+		x=4+2=6
+		\]
+		
+		\[
+		\boxed{(x,y)=(6,4)}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Método de igualación}
+		Consiste en despejar la misma incógnita en ambas ecuaciones e igualar las expresiones.
+		
+		\bigskip
+		
+		Resolver:
+		
+		\[
+		\begin{cases}
+			x=8-y\\
+			x=2y+2
+		\end{cases}
+		\]
+		
+		Igualamos:
+		
+		\[
+		8-y=2y+2
+		\]
+		
+		\[
+		6=3y
+		\]
+		
+		\[
+		y=2
+		\]
+		
+		Luego:
+		
+		\[
+		x=8-2=6
+		\]
+		
+		\[
+		\boxed{(x,y)=(6,2)}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Método de reducción}
+		Consiste en eliminar una incógnita sumando o restando ecuaciones.
+		
+		\bigskip
+		
+		Resolver:
+		
+		\[
+		\begin{cases}
+			2x+y=11\\
+			x-y=1
+		\end{cases}
+		\]
+		
+		Sumamos:
+		
+		\[
+		(2x+y)+(x-y)=11+1
+		\]
+		
+		\[
+		3x=12
+		\]
+		
+		\[
+		x=4
+		\]
+		
+		Sustituimos:
+		
+		\[
+		4-y=1
+		\]
+		
+		\[
+		y=3
+		\]
+		
+		\[
+		\boxed{(x,y)=(4,3)}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 1}
+		Resuelva por sustitución:
+		
+		\[
+		\begin{cases}
+			x+y=18\\
+			x=2y
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\begin{block}{Preguntas}
+			\begin{itemize}
+				\item ¿Cuál es la solución del sistema?
+				\item ¿Qué tipo de sistema es?
+				\item ¿Cómo se verifica la solución?
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución ejercicio 1}
+		Sistema:
+		
+		\[
+		\begin{cases}
+			x+y=18\\
+			x=2y
+		\end{cases}
+		\]
+		
+		Sustituimos:
+		
+		\[
+		2y+y=18
+		\]
+		
+		\[
+		3y=18
+		\]
+		
+		\[
+		y=6
+		\]
+		
+		\[
+		x=2(6)=12
+		\]
+		
+		\[
+		\boxed{(x,y)=(12,6)}
+		\]
+		
+		Es un sistema compatible determinado.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 2}
+		Resuelva por igualación:
+		
+		\[
+		\begin{cases}
+			x=20-2y\\
+			x=y+5
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\begin{block}{Tarea}
+			Resolver, clasificar e interpretar geométricamente.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución ejercicio 2}
+		Igualamos:
+		
+		\[
+		20-2y=y+5
+		\]
+		
+		\[
+		15=3y
+		\]
+		
+		\[
+		y=5
+		\]
+		
+		Luego:
+		
+		\[
+		x=5+5=10
+		\]
+		
+		\[
+		\boxed{(x,y)=(10,5)}
+		\]
+		
+		El sistema es compatible determinado.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 3}
+		Resuelva por reducción:
+		
+		\[
+		\begin{cases}
+			3x+2y=24\\
+			x-2y=0
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\begin{block}{Tarea}
+			Resolver el sistema y verificar la solución.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución ejercicio 3}
+		Sumamos ambas ecuaciones:
+		
+		\[
+		(3x+2y)+(x-2y)=24+0
+		\]
+		
+		\[
+		4x=24
+		\]
+		
+		\[
+		x=6
+		\]
+		
+		Sustituimos:
+		
+		\[
+		6-2y=0
+		\]
+		
+		\[
+		2y=6
+		\]
+		
+		\[
+		y=3
+		\]
+		
+		\[
+		\boxed{(x,y)=(6,3)}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Patrones e inconsistencias}
+		Durante la resolución pueden aparecer patrones importantes:
+		
+		\bigskip
+		
+		\begin{block}{Contradicción}
+			Si aparece una igualdad falsa:
+			
+			\[
+			0=5
+			\]
+			
+			el sistema es incompatible.
+		\end{block}
+		
+		\begin{block}{Identidad}
+			Si aparece una igualdad verdadera:
+			
+			\[
+			0=0
+			\]
+			
+			el sistema es compatible indeterminado.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Actividad de clasificación}
+		Clasifique cada sistema:
+		
+		\[
+		A)
+		\begin{cases}
+			x+y=10\\
+			2x+2y=20
+		\end{cases}
+		\]
+		
+		\[
+		B)
+		\begin{cases}
+			x+y=10\\
+			x+y=15
+		\end{cases}
+		\]
+		
+		\[
+		C)
+		\begin{cases}
+			x+y=10\\
+			x-y=2
+		\end{cases}
+		\]
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución actividad de clasificación}
+		\[
+		A)
+		\begin{cases}
+			x+y=10\\
+			2x+2y=20
+		\end{cases}
+		\]
+		
+		Compatible indeterminado.
+		
+		\bigskip
+		
+		\[
+		B)
+		\begin{cases}
+			x+y=10\\
+			x+y=15
+		\end{cases}
+		\]
+		
+		Incompatible.
+		
+		\bigskip
+		
+		\[
+		C)
+		\begin{cases}
+			x+y=10\\
+			x-y=2
+		\end{cases}
+		\]
+		
+		Compatible determinado.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Cierre}
+		\begin{block}{Ideas clave}
+			\begin{itemize}
+				\item Un sistema lineal con dos incógnitas representa dos rectas.
+				\item Puede tener una solución, infinitas soluciones o ninguna solución.
+				\item Los métodos algebraicos principales son sustitución, igualación y reducción.
+				\item La solución debe verificarse algebraicamente y analizarse en contexto.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Tarea}
+		Resolver y clasificar los siguientes sistemas:
+		
+		\[
+		1)
+		\begin{cases}
+			2x+y=15\\
+			x-y=3
+		\end{cases}
+		\]
+		
+		\[
+		2)
+		\begin{cases}
+			x+y=8\\
+			3x+3y=24
+		\end{cases}
+		\]
+		
+		\[
+		3)
+		\begin{cases}
+			2x-y=5\\
+			4x-2y=12
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		Indicar si el sistema es compatible determinado, compatible indeterminado o incompatible.
+	\end{frame}
+	
+\end{document}

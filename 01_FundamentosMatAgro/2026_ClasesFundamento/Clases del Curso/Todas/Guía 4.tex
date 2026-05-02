@@ -1,0 +1,234 @@
+% !TEX program = pdflatex
+\documentclass[handout,aspectratio=169,11pt]{beamer}
+
+% =========================
+% PAQUETES
+% =========================
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{xcolor}
+
+% =========================
+% COLORES UST (PRO)
+% =========================
+\definecolor{USTBlue}{HTML}{003A8F}
+\definecolor{USTLight}{HTML}{E6ECF5}
+\definecolor{USTAccent}{HTML}{4CAF50} % verde agronomía
+
+\setbeamercolor{title}{fg=white,bg=USTBlue}
+\setbeamercolor{frametitle}{fg=white,bg=USTBlue}
+\setbeamercolor{structure}{fg=USTBlue}
+\setbeamercolor{block title}{bg=USTBlue, fg=white}
+\setbeamercolor{block body}{bg=USTLight}
+
+% =========================
+% PIE DE PÁGINA
+% =========================
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{
+		\begin{beamercolorbox}[wd=.7\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}
+			\hspace{0.3cm}MAT-016 | Expresiones Algebraicas
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.3\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}
+			\insertframenumber{} / \inserttotalframenumber \hspace{0.3cm}
+	\end{beamercolorbox}}
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+% =========================
+% PORTADA
+% =========================
+\title{Guía de Ejercicios 09}
+\subtitle{Expresiones Algebraicas en Agronomía}
+\author{Profesor Luis Tulio González Alcaino}
+\institute{Universidad Santo Tomás \\ Departamento de Ciencias Básicas}
+\date{Semestre I - 2026}
+
+% =========================
+\begin{document}
+	
+	% -----------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Objetivo de la guía}
+		\begin{itemize}
+			\item Reducir expresiones algebraicas
+			\item Identificar términos semejantes
+			\item Aplicar operaciones con polinomios
+			\item Resolver problemas en contexto agrícola
+		\end{itemize}
+	\end{frame}
+	
+	% ===================================
+	\section{Reducción de expresiones}
+	
+	% -----------------------------------
+	\begin{frame}{Actividad 1}
+		\small
+		Simplifique y determine el grado:
+		
+		\begin{enumerate}
+			\item $5ab^2 - 3ab + 15b^2a - 12ab + 7a^2b$
+			\item $18m^5n^3r - 7n^5m^3r + (3m^5n^3r - 12)$
+			\item $14 + [12xy - (3x^2y^2 - 4xy) + 8xy + 10]$
+			\item $-10t + [-( -2t + 3) + 12] - (14 + 2t + 11t)$
+		\end{enumerate}
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Actividad 2}
+		\small
+		Contexto agrícola:
+		
+		\begin{enumerate}
+			\item $x^2yz - (18xy^2z + 10xyz^2)$
+			\item $11a^2b - 32a^2b + 14ab^2 - 3a^2b$
+			\item $10x^2yz - 12x^2yz - 8yx^2z + 42yx^2z$
+			\item $120mn - 54mn + 100m - 30mn - 28m$
+		\end{enumerate}
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Actividad 3}
+		\small
+		\begin{enumerate}
+			\item $35pq + 30 + 78pq - 60pq - 13$
+			\item $54rt^2 - (12rt^2 - 5rt) + (21rt^2 - 2rt)$
+		\end{enumerate}
+	\end{frame}
+	
+	% ===================================
+	\section{Operaciones con polinomios}
+	
+	% -----------------------------------
+	\begin{frame}{Modelos costo agrícola}
+		\small
+		
+		\textbf{Costo Producción:} $A = 3x^2 - 5xy - 2xy^2$
+		
+		\textbf{Costo Fertilización:} $B = 10xy + 7x^2 - 3y^2$
+		
+		\textbf{Costo Plagas:} $C = -4y^2 - 8xy + 10$
+		
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Ejercicios}
+		\small
+		\begin{enumerate}
+			\item $A - C + 34$
+			\item $-A + B - D$
+			\item $C - (B + A)$
+			\item $-(A + D) - 7$
+			\item $2C - [4B - (3B - C) - 2D] - D$
+		\end{enumerate}
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Crecimiento vegetal}
+		\small
+		
+		$A = 2x^3 - x^2 + 4x - 5$
+		
+		$B = x^3 - 8x - 2$
+		
+		$C = x^2 - 4x - 2$
+		
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Ejercicios}
+		\small
+		\begin{enumerate}
+			\item $A - (B - C)$
+			\item $A - 2B$
+			\item $A - B + 3C$
+			\item $3(B - 2A)$
+			\item $4A - [2B + C - (3B - 2A)] - A$
+		\end{enumerate}
+	\end{frame}
+	
+	% ===================================
+	\section{Problemas aplicados}
+	
+	% -----------------------------------
+	\begin{frame}{Problema 1: Fertilización}
+		En un cultivo:
+		
+		\begin{itemize}
+			\item Base: $(2n + 15)$
+			\item Refuerzo: $(3n - 10)$
+		\end{itemize}
+		
+		\pause
+		
+		\textbf{Pregunta:}  
+		¿Cuál es la cantidad total aplicada?
+		
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Problema 2: Nutrientes}
+		\small
+		\begin{itemize}
+			\item Suelo: $45x^2 - 12xy + 30y^2$
+			\item Fertilizante: $-7x^2 + 24xy - 3y^2$
+			\item Abono: $30x^2 - 10xy + y^2$
+		\end{itemize}
+		
+		\pause
+		
+		\textbf{Preguntas:}
+		\begin{itemize}
+			\item Sin abono
+			\item Con abono
+		\end{itemize}
+		
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Problema 3: Pesticidas}
+		\small
+		Disponible:
+		\[
+		50a + 20b + 30
+		\]
+		
+		Aplicación:
+		
+		\begin{itemize}
+			\item Parcela 1: $5a - 35b + 42$
+			\item Parcela 2: $32a + 10b - 22$
+		\end{itemize}
+		
+		\pause
+		
+		\textbf{Pregunta:}  
+		¿Cuánto queda?
+		
+	\end{frame}
+	
+	% -----------------------------------
+	\begin{frame}{Cierre}
+		\begin{block}{Idea clave}
+			Reducir expresiones algebraicas permite modelar situaciones reales en la agricultura.
+		\end{block}
+		
+		\pause
+		
+		\begin{block}{Aplicación}
+			Fertilización, riego, crecimiento y costos pueden representarse algebraicamente.
+		\end{block}
+		
+	\end{frame}
+	
+	% =========================
+\end{document}

@@ -1,0 +1,446 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 65001
+%\newtheorem{definition}[definicion]{Definición}
+%\newtheorem{example}[ejemplo]{Ejemplo}
+
+
+\documentclass[9pt]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=65001}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Tuesday, May 16, 2023 20:45:46}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\newtheorem{definicion}{Definici\'{o}n}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{ejemplos}{Ejemplos}
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usetheme{Rochester}
+\usecolortheme[RGB={64,63,152}]{structure}
+\usefonttheme{professionalfonts}
+\input{tcilatex}
+\begin{document}
+
+\title[MAT-016]{Principios Matem\'{a}ticos}
+\subtitle{Unidad III. Ecuaciones de Primer y Segundo Grado y sus Aplicaciones\\
+Clase: Ecuaciones de primer grado}
+\author[lgonzalez@santotomas.cl]{Profesor Luis Tulio Gonz\'{a}lez Alcaino \\
+%EndAName
+Magister en Matem\'{a}tica}
+\institute[UST]{Universidad Santo Tom\'{a}s\\
+Departamento Ciencias B\'{a}sicas - Talca }
+\date{}
+\maketitle
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Contenidos de la clase}
+
+\begin{itemize}
+\item Ecuaciones de primer grado
+
+\item Ecuaciones con coeficiente entero
+
+\item Ecuaciones con coeficientes fraccionarios
+
+\item Ejercicios
+\end{itemize}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ecuaciones}
+
+\begin{definicion}
+Una ecuaci\'{o}n es una igualdad entre dos expresiones separadas por el
+signo igual, la cual presenta una o m\'{a}s variables, y que es verdadera
+solamente para algunos valores de estas variables.
+\end{definicion}
+
+\pause
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejemplos de ecuaciones}}}%
+%BeginExpansion
+\begin{block}{Ejemplos de ecuaciones}%
+%EndExpansion
+
+\begin{stepenumeratewithalert}
+\item $2x+5=3$ , ecuaci\'{o}n de primer grado, cuya soluci\'{o}n es $x=-1$,
+en efecto, si reemplazamos $x=-1$ en la ecuaci\'{o}n, se tiene
+
+$2\left( -1\right) +5=3$
+
+$-2+5=3$
+
+$3=3$
+
+Con lo cual se obtiene la igualdad.
+
+\item $\dfrac{2x}{5}+\dfrac{x}{10}=1$, ecuaci\'{o}n de primer grado con
+coeficientes fraccionarios, cuya soluci\'{o}n es $x=2$
+\end{stepenumeratewithalert}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ecuaciones}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Resolver ecuaciones}}}%
+%BeginExpansion
+\begin{block}{Resolver ecuaciones}%
+%EndExpansion
+
+\textbf{Resolver una ecuaci\'{o}n} significa encontrar todos los valores de
+sus variables para los cuales la ecuaci\'{o}n es verdadera, (se cumple la
+igualdad). Estos valores son llamados \textbf{soluciones de la ecuaci\'{o}n}
+y se dice que satisfacen la ecuaci\'{o}n. Cuando s\'{o}lo est\'{a} implicada
+una variable, \textbf{una soluci\'{o}n tambi\'{e}n es llamada ra\'{\i}z}. A
+una letra o variable que representa una cantidad desconocida en una ecuaci%
+\'{o}n se le denomina inc\'{o}gnita.
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ecuaciones}
+
+%TCIMACRO{%
+%\TeXButton{BeginBlok}{\begin{block}{Propiedades de igualdad de ecuaciones}}}%
+%BeginExpansion
+\begin{block}{Propiedades de igualdad de ecuaciones}%
+%EndExpansion
+
+Para resolver una ecuaci\'{o}n debemos tene presente las siguientes
+propiedades de la igualdad:
+
+\begin{stepitemizewithalert}
+\item Al sumar o restar la misma cantidad en ambos lados de una ecuaci\'{o}%
+n, la igualdad se mantiene.
+
+\pause
+
+\textbf{Ejemplo.} $x-3=5$ \ \ / $+3$
+
+$\qquad \qquad x-3+3=5+3$
+
+$\qquad \qquad x=8$
+
+\item Al multiplicar o dividir por una cantidad distinta de cero en ambos
+lados de una ecuaci\'{o}n, la igualdad se mantiene.
+
+\pause
+
+\textbf{Ejemplo.} $3x=12$/ $\div 3$
+
+$\qquad \qquad \dfrac{3x}{3}=\dfrac{12}{3}$
+
+$\qquad \qquad x=4$
+\end{stepitemizewithalert}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ecuaciones de primer grado en una variable (ecuaci\'{o}n
+lineal)}
+
+Para resolver una ecuaci\'{o}n de primer grado o lineal en una variable
+realizamos operaciones en ella hasta obtener una ecuaci\'{o}n equivalente
+cuya soluci\'{o}n es obvia. Esto significa una ecuaci\'{o}n en la que la
+variable o inc\'{o}gnita queda aislada en un lado de la ecuaci\'{o}n.\pause
+
+\begin{ejemplo}
+Resolver la ecuaci\'{o}n $5x-6=3x+4$
+
+\medskip \pause
+
+\textbf{Soluci\'{o}n:} Empezamos por dejar los t\'{e}rminos que implican a $%
+x $ en un lado y las constantes en el otro.
+
+$5x-6=3x+4$\pause
+
+$5x-3x=6+4$ (sumando $-3x$ y 6 a ambos miembros),\pause
+
+$2x=10$ (simplificando),\pause
+
+$x=\frac{10}{2}$ (dividiendo ambos miembros entre 2),\pause
+
+$x=5\Longrightarrow $ La soluci\'{o}n de la ecuaci\'{o}n es 5.
+\end{ejemplo}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\bigskip \QTR{frametitle}{Ejemplos de ecuaciones de primer grado con
+coeficientes enteros }
+
+Resolver las siguientes ecuaciones:
+
+\begin{stepenumerate}
+\item $3-2x=5x+17$
+
+\begin{stepitemize}
+\item $x=-2$
+\end{stepitemize}
+
+\item $2\left[ (3x+1)-2(x+4)\right] -(3x+5)=5+x$
+
+\begin{stepitemize}
+\item $x=-12$
+\end{stepitemize}
+
+\item $2(x-1)=3(2-3x)-5(x-2)$
+
+\begin{stepitemize}
+\item $x=\frac{9}{8}$
+\end{stepitemize}
+\end{stepenumerate}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ecuaciones de primer grado fraccionarias}
+
+Para resolver ecuaciones fraccionarias de primer grado, se sugiere utilizar
+la t\'{e}cnica de multiplicar por el m\'{\i}nimo com\'{u}n m\'{u}ltiplo de
+los denominadores para dejar todos los coeficientes enteros. Luego resolver
+una ecuaci\'{o}n resultante con coeficientes enteros.\pause
+
+\begin{ejemplo}
+Resolver $\dfrac{7x}{2}-\dfrac{9x}{4}$ $=\dfrac{2x-1}{4}+\dfrac{1}{2}$%
+\pause
+
+\textbf{Soluci\'{o}n:} Primero eliminamos las fracciones, multiplicando
+ambos lados de la ecuaci\'{o}n por m\'{\i}nimo com\'{u}n m\'{u}ltiplo de los
+denominadores, que es 4.
+
+\begin{stepitemize}
+\item $4\cdot \left( \dfrac{7x}{2}\right) -4\cdot \dfrac{9x}{4}=4\cdot
+\left( \dfrac{2x-1}{4}\right) +4\cdot \left( \dfrac{1}{2}\right) $
+
+\item $14x-9x=2x-1+2$
+
+\item $5x=2x+1$
+
+\item $5x-2x=1$
+
+\item $3x=1$
+
+\item $x=\dfrac{1}{3}\Longrightarrow $ \ La soluci\'{o}n o ra\'{\i}z de la
+ecuaci\'{o}n es $x=\dfrac{1}{3}$
+\end{stepitemize}
+\end{ejemplo}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ecuaciones de primer grado fraccionarias}
+
+\begin{ejemplo}
+Resolver $\dfrac{x-1}{3}+\dfrac{x}{2}$ $=\dfrac{x+3}{6}-2$
+
+\textbf{Soluci\'{o}n: }Eliminamos las fracciones, multiplicando ambos lados
+de la ecuaci\'{o}n por m\'{\i}nimo com\'{u}n m\'{u}ltiplo de los
+denominadores, que es $6$.
+
+\begin{stepitemize}
+\item $6\cdot \left( \dfrac{x-1}{3}\right) +6\cdot \left( \dfrac{x}{2}%
+\right) $ $=6\cdot \left( \dfrac{x+3}{6}\right) -6\cdot 2$
+
+\item $2(x-1)+3x$ $=x+3-12$
+
+\item $2x-2+3x=x-9$
+
+\item $5x-2=x-9$
+
+\item $5x-x=-9+2$
+
+\item $4x=-7$
+
+\item $x=-\dfrac{7}{4}$ $\ \Longrightarrow $ $\ $La soluci\'{o}n de la ecuaci%
+\'{o}n es $x=-\dfrac{7}{4}$
+\end{stepitemize}
+\end{ejemplo}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ejemplos de ecuaciones de primer fraccionarias}
+
+Resolver las siguientes ecuaciones:
+
+\begin{stepenumerate}
+\item $\dfrac{x}{2}+\dfrac{2x}{5}=\dfrac{6x}{4}-\dfrac{5x-1}{10}$
+
+\begin{stepitemize}
+\item $x=-1$
+\end{stepitemize}
+
+\item $\dfrac{x-1}{2}-\dfrac{x+2}{4}=\dfrac{x+3}{6}$
+
+\begin{stepitemize}
+\item $x=18$
+\end{stepitemize}
+\end{stepenumerate}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ejercicios}
+
+\bigskip
+
+Resolver para $x$ las siguientes ecuaciones:
+
+\begin{enumerate}
+\item $7x-3(2-3x)=4(2x+3)$
+
+\item $\dfrac{x-3}{4}-\dfrac{x}{3}=\dfrac{x-1}{3}-\dfrac{x}{2}$
+
+\item $\dfrac{5}{4}x+\dfrac{2}{5}x+\dfrac{3}{5}=\dfrac{1}{2}x+\dfrac{13}{10}%
+x $
+
+\item $4-(x+3)(x-1)=7-(x-2)^{2}$
+
+\item $\dfrac{3-x}{4}+\dfrac{2x-1}{5}+1=\dfrac{x+1}{3}+\dfrac{x+3}{2}+\dfrac{%
+2}{5}$
+
+\item Si $4(3x+3)=5(6+2x)$, entonces el valor de $x$ es:
+
+\item \textquestiondown Cu\'{a}l debe ser el valor de x para que la expresi%
+\'{o}n \textquotedblleft\ $-2x$ \textquotedblright\ sea igual a la expresi%
+\'{o}n \textquotedblleft\ $x-(8+x)$ \textquotedblright ?
+
+\item \textquestiondown\ Cu\'{a}l es el valor de la inc\'{o}gnita $x$ para
+que se cumpla que: \textquotedblleft\ $\frac{2}{3}x$ menos 3 sea igual a $2x$
+m\'{a}s 1 \textquotedblright ?
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Soluciones de los ejercicios}
+
+\begin{enumerate}
+\item $\frac{9}{4}$
+
+\item $5$
+
+\item $4$
+
+\item $\frac{2}{3}$
+
+\item $-1$
+
+\item $9$
+
+\item $4$
+
+\item $-3$
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\end{document}

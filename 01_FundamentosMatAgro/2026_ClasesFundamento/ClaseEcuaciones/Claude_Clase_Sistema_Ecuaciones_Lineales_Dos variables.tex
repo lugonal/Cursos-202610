@@ -1,0 +1,642 @@
+% ============================================================
+%  CLASE: Sistemas de ecuaciones lineales con dos incógnitas
+%  Álgebra Lineal — Nivel universitario
+%  Compilar con: pdflatex sistemas_lineales.tex
+% ============================================================
+
+\documentclass[11pt, aspectratio=169]{beamer}
+
+% ---------- Tema y colores ----------
+\usetheme{Madrid}
+\usecolortheme{whale}
+
+\definecolor{azuluni}{RGB}{0, 61, 124}
+\definecolor{azulclaro}{RGB}{0, 120, 215}
+\definecolor{grisclaro}{RGB}{245, 245, 248}
+\definecolor{verdeSol}{RGB}{0, 140, 90}
+\definecolor{rojoSol}{RGB}{180, 30, 30}
+\definecolor{naranja}{RGB}{210, 120, 0}
+
+\setbeamercolor{palette primary}{bg=azuluni, fg=white}
+\setbeamercolor{palette secondary}{bg=azulclaro, fg=white}
+\setbeamercolor{palette tertiary}{bg=azuluni!80, fg=white}
+\setbeamercolor{palette quaternary}{bg=azuluni, fg=white}
+\setbeamercolor{structure}{fg=azuluni}
+\setbeamercolor{block title}{bg=azuluni, fg=white}
+\setbeamercolor{block body}{bg=grisclaro, fg=black}
+\setbeamercolor{block title alerted}{bg=rojoSol, fg=white}
+\setbeamercolor{block body alerted}{bg=rojoSol!10, fg=black}
+\setbeamercolor{block title example}{bg=verdeSol, fg=white}
+\setbeamercolor{block body example}{bg=verdeSol!10, fg=black}
+\setbeamercolor{frametitle}{bg=azuluni, fg=white}
+\setbeamercolor{title}{bg=azuluni, fg=white}
+
+% ---------- Fuentes ----------
+\usefonttheme{professionalfonts}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% ---------- Paquetes matemáticos ----------
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{intersections, arrows.meta, calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ---------- Otros paquetes ----------
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, skins, breakable}
+
+% ---------- Navegación ----------
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.35\paperwidth, ht=2.4ex, dp=1ex, center]{palette primary}
+			\usebeamerfont{author in head/foot}\insertshortauthor
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.45\paperwidth, ht=2.4ex, dp=1ex, center]{palette secondary}
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.2\paperwidth, ht=2.4ex, dp=1ex, right]{palette primary}
+			\usebeamerfont{date in head/foot}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{1.5ex}
+		\end{beamercolorbox}
+	}
+}
+
+% ---------- Metadatos ----------
+\title[Sistemas Lineales 2×2]{Sistemas de Ecuaciones Lineales\\con Dos Incógnitas}
+\subtitle{Álgebra Lineal — Unidad 2}
+\author[Dept. Matemáticas]{Departamento de Matemáticas}
+\institute{Universidad}
+\date{\today}
+
+% ---------- Comandos útiles ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\sys}[4]{%
+	\left\{\begin{array}{rcrcr}
+		#1x & + & #2y & = & #3 \\[4pt]
+		#4
+	\end{array}\right.
+}
+\newcommand{\mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\deter}[4]{\begin{vmatrix} #1 & #2 \\ #3 & #4 \end{vmatrix}}
+
+% ===========================================================
+\begin{document}
+	% ===========================================================
+	
+	% ---- Portada -----------------------------------------------
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+	
+	% ---- Índice ------------------------------------------------
+	\begin{frame}{Contenidos}
+		\tableofcontents
+	\end{frame}
+	
+	% ===========================================================
+	\section{Definición y forma general}
+	% ===========================================================
+	
+	\begin{frame}{Definición}
+		\begin{block}{Sistema de dos ecuaciones lineales con dos incógnitas}
+			Un \textbf{sistema lineal} $2\times 2$ es un conjunto de dos ecuaciones de la forma:
+			\[
+			\left\{
+			\begin{array}{rcrcr}
+				a_1 x & + & b_1 y & = & c_1 \\[6pt]
+				a_2 x & + & b_2 y & = & c_2
+			\end{array}
+			\right.
+			\qquad a_i,\, b_i,\, c_i \in \R
+			\]
+		\end{block}
+		
+		\vspace{0.4em}
+		\begin{columns}[T]
+			\column{0.48\textwidth}
+			\textbf{Terminología:}
+			\begin{itemize}
+				\item $a_1, b_1, a_2, b_2$: \alert{coeficientes}
+				\item $c_1, c_2$: \alert{términos independientes}
+				\item $x, y$: \alert{incógnitas}
+			\end{itemize}
+			\column{0.48\textwidth}
+			\textbf{Interpretación geométrica:}
+			\begin{itemize}
+				\item Cada ecuación define una \textbf{recta} en $\R^2$
+				\item La solución corresponde a la(s) \textbf{intersección(es)}
+			\end{itemize}
+		\end{columns}
+	\end{frame}
+	
+	% ---- Forma matricial ---------------------------------------
+	\begin{frame}{Forma matricial}
+		El sistema se escribe de forma compacta como $A\mathbf{x} = \mathbf{b}$:
+		\[
+		\underbrace{\begin{pmatrix} a_1 & b_1 \\ a_2 & b_2 \end{pmatrix}}_{A}
+		\underbrace{\begin{pmatrix} x \\ y \end{pmatrix}}_{\mathbf{x}}
+		=
+		\underbrace{\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}}_{\mathbf{b}}
+		\]
+		
+		\vspace{0.5em}
+		\begin{block}{Matriz aumentada}
+			\[
+			[A \mid \mathbf{b}] =
+			\left(\begin{array}{cc|c}
+				a_1 & b_1 & c_1 \\
+				a_2 & b_2 & c_2
+			\end{array}\right)
+			\]
+		\end{block}
+		
+		\vspace{0.3em}
+		La \textbf{solución} del sistema es el vector $\mathbf{x} \in \R^2$ que satisface
+		simultáneamente ambas ecuaciones.
+	\end{frame}
+	
+	% ===========================================================
+	\section{Clasificación de sistemas}
+	% ===========================================================
+	
+	\begin{frame}{Clasificación: el determinante}
+		Sea $D = \det(A) = a_1 b_2 - a_2 b_1$.
+		
+		\vspace{0.8em}
+		\begin{columns}[T]
+			\column{0.32\textwidth}
+			\begin{exampleblock}{$D \neq 0$}
+				\centering\textbf{Compatible\\determinado}\\[4pt]
+				Solución \textbf{única}\\[4pt]
+				Las rectas se\\cortan en un punto
+			\end{exampleblock}
+			
+			\column{0.32\textwidth}
+			\begin{block}{$D = 0$, consistente}
+				\centering\textbf{Compatible\\indeterminado}\\[4pt]
+				\textbf{Infinitas} soluciones\\[4pt]
+				Las rectas son\\coincidentes
+			\end{block}
+			
+			\column{0.32\textwidth}
+			\begin{alertblock}{$D = 0$, inconsistente}
+				\centering\textbf{Incompatible}\\[4pt]
+				\textbf{Sin solución}\\[4pt]
+				Las rectas son\\paralelas
+			\end{alertblock}
+		\end{columns}
+	\end{frame}
+	
+	% ---- Visualización geométrica ------------------------------
+	\begin{frame}{Visualización geométrica}
+		\begin{columns}[c]
+			\column{0.33\textwidth}
+			\centering\small\textbf{Solución única}
+			\begin{tikzpicture}[scale=0.75]
+				\begin{axis}[
+					xmin=-2, xmax=4, ymin=-2, ymax=4,
+					axis lines=center, xlabel={$x$}, ylabel={$y$},
+					tick style={draw=none}, ticklabel style={font=\tiny},
+					width=4.5cm, height=4.5cm, xtick={-1,0,...,3}, ytick={-1,0,...,3}
+					]
+					\addplot[azulclaro, thick, domain=-2:4] {-x+3};
+					\addplot[naranja, thick, domain=-2:4] {x-1};
+					\addplot[only marks, mark=*, mark size=2pt, verdeSol] coordinates {(2,1)};
+				\end{axis}
+			\end{tikzpicture}
+			
+			\column{0.33\textwidth}
+			\centering\small\textbf{Infinitas soluciones}
+			\begin{tikzpicture}[scale=0.75]
+				\begin{axis}[
+					xmin=-2, xmax=4, ymin=-2, ymax=4,
+					axis lines=center, xlabel={$x$}, ylabel={$y$},
+					tick style={draw=none}, ticklabel style={font=\tiny},
+					width=4.5cm, height=4.5cm, xtick={-1,0,...,3}, ytick={-1,0,...,3}
+					]
+					\addplot[azulclaro, very thick, domain=-2:4] {x};
+					\addplot[naranja, thick, dashed, domain=-2:4] {x};
+				\end{axis}
+			\end{tikzpicture}
+			
+			\column{0.33\textwidth}
+			\centering\small\textbf{Sin solución}
+			\begin{tikzpicture}[scale=0.75]
+				\begin{axis}[
+					xmin=-2, xmax=4, ymin=-2, ymax=4,
+					axis lines=center, xlabel={$x$}, ylabel={$y$},
+					tick style={draw=none}, ticklabel style={font=\tiny},
+					width=4.5cm, height=4.5cm, xtick={-1,0,...,3}, ytick={-1,0,...,3}
+					]
+					\addplot[azulclaro, thick, domain=-2:4] {x+1};
+					\addplot[naranja, thick, domain=-2:4] {x-1};
+				\end{axis}
+			\end{tikzpicture}
+		\end{columns}
+	\end{frame}
+	
+	% ===========================================================
+	\section{Métodos de resolución}
+	% ===========================================================
+	
+	\begin{frame}{Métodos de resolución}
+		\begin{block}{Los cuatro métodos principales}
+			\begin{enumerate}
+				\item \textbf{Método de sustitución} — despejar y reemplazar
+				\item \textbf{Método de eliminación} (Gauss) — operar filas para cancelar incógnitas
+				\item \textbf{Regla de Cramer} — usando determinantes $2\times2$
+				\item \textbf{Método matricial} — inversa de $A$ o eliminación de Gauss-Jordan
+			\end{enumerate}
+		\end{block}
+		
+		\vspace{0.5em}
+		Usaremos el siguiente sistema como ejemplo en todos los métodos:
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			2x & + &  y & = & 7 \\[4pt]
+			x & - & 3y & = & -4
+		\end{array}
+		\right.
+		\]
+	\end{frame}
+	
+	% ---- Sustitución -------------------------------------------
+	\subsection{Sustitución}
+	
+	\begin{frame}{Método de sustitución}
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			2x & + &  y & = & 7 \\[4pt]
+			x & - & 3y & = & -4
+		\end{array}
+		\right.
+		\]
+		
+		\begin{enumerate}
+			\item<1-> \textbf{Despejar} $y$ en la primera ecuación:
+			\[ y = 7 - 2x \]
+			
+			\item<2-> \textbf{Sustituir} en la segunda:
+			\[ x - 3(7 - 2x) = -4 \;\Rightarrow\; x - 21 + 6x = -4
+			\;\Rightarrow\; 7x = 17 \]
+			
+			\item<3-> \textbf{Resolver} para $x$:
+			\[ \alert{x = \tfrac{17}{7}} \]
+			
+			\item<4-> \textbf{Retrosustituir}:
+			\[ y = 7 - 2 \cdot \tfrac{17}{7} = \tfrac{49-34}{7} = \alert{\tfrac{15}{7}} \]
+			
+			\item<5-> \textbf{Verificar}: $2\cdot\tfrac{17}{7} + \tfrac{15}{7} = \tfrac{49}{7} = 7$ \checkmark
+		\end{enumerate}
+	\end{frame}
+	
+	% ---- Eliminación -------------------------------------------
+	\subsection{Eliminación gaussiana}
+	
+	\begin{frame}{Método de eliminación de Gauss}
+		\textbf{Ejemplo más limpio:}
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			3x & + & 2y & = & 12 \\[4pt]
+			x & - & 2y & = &  4
+		\end{array}
+		\right.
+		\]
+		
+		\begin{enumerate}
+			\item<1-> Los coeficientes de $y$ son $+2$ y $-2$: se eliminan sumando.
+			
+			\item<2-> \textbf{Sumar} ambas ecuaciones:
+			\[ (3x + x) + (2y - 2y) = 12 + 4 \;\Rightarrow\; 4x = 16 \;\Rightarrow\; \alert{x = 4} \]
+			
+			\item<3-> \textbf{Sustituir} en cualquier ecuación:
+			\[ 4 - 2y = 4 \;\Rightarrow\; \alert{y = 0} \]
+			
+			\item<4-> \textbf{Solución}: $(x, y) = (4, 0)$
+		\end{enumerate}
+		
+		\vspace{0.4em}
+		\uncover<4->{%
+			\begin{alertblock}{Nota}
+				Si los coeficientes no se cancelan directamente, multiplicar previamente
+				una (o ambas) ecuaciones por un escalar adecuado.
+		\end{alertblock}}
+	\end{frame}
+	
+	% ---- Cramer ------------------------------------------------
+	\subsection{Regla de Cramer}
+	
+	\begin{frame}{Regla de Cramer}
+		\begin{block}{Teorema (Cramer, 1750)}
+			Si $D = \det(A) \neq 0$, la única solución del sistema es:
+			\[
+			x = \frac{D_x}{D}, \qquad y = \frac{D_y}{D}
+			\]
+			donde:
+			\[
+			D = \deter{a_1}{b_1}{a_2}{b_2}, \quad
+			D_x = \deter{c_1}{b_1}{c_2}{b_2}, \quad
+			D_y = \deter{a_1}{c_1}{a_2}{c_2}
+			\]
+		\end{block}
+		
+		\pause
+		\textbf{Aplicación al sistema de ejemplo:}
+		\begin{align*}
+			D   &= \deter{2}{1}{1}{-3} = (2)(-3)-(1)(1) = -7 \\[4pt]
+			D_x &= \deter{7}{1}{-4}{-3} = (7)(-3)-(1)(-4) = -17 \\[4pt]
+			D_y &= \deter{2}{7}{1}{-4} = (2)(-4)-(7)(1) = -15
+		\end{align*}
+		\pause
+		\[
+		x = \frac{-17}{-7} = \alert{\tfrac{17}{7}}, \qquad
+		y = \frac{-15}{-7} = \alert{\tfrac{15}{7}}
+		\]
+	\end{frame}
+	
+	% ---- Matricial ---------------------------------------------
+	\subsection{Método matricial}
+	
+	\begin{frame}{Método matricial — eliminación de Gauss-Jordan}
+		Escribir la \textbf{matriz aumentada} y reducir a forma escalonada reducida:
+		\[
+		\left(\begin{array}{cc|c}
+			2 &  1 &  7 \\
+			1 & -3 & -4
+		\end{array}\right)
+		\xrightarrow{F_1 \leftrightarrow F_2}
+		\left(\begin{array}{cc|c}
+			1 & -3 & -4 \\
+			2 &  1 &  7
+		\end{array}\right)
+		\]
+		
+		\pause
+		\[
+		\xrightarrow{F_2 \leftarrow F_2 - 2F_1}
+		\left(\begin{array}{cc|c}
+			1 & -3 & -4 \\
+			0 &  7 & 15
+		\end{array}\right)
+		\xrightarrow{F_2 \leftarrow F_2/7}
+		\left(\begin{array}{cc|c}
+			1 & -3 & -4 \\
+			0 &  1 & 15/7
+		\end{array}\right)
+		\]
+		
+		\pause
+		\[
+		\xrightarrow{F_1 \leftarrow F_1 + 3F_2}
+		\left(\begin{array}{cc|c}
+			1 & 0 & 17/7 \\
+			0 & 1 & 15/7
+		\end{array}\right)
+		\Rightarrow
+		\alert{x = \tfrac{17}{7},\quad y = \tfrac{15}{7}}
+		\]
+	\end{frame}
+	
+	% ---- Inversa -----------------------------------------------
+	\begin{frame}{Método matricial — inversa de $A$}
+		Si $\det(A) \neq 0$, la solución es $\mathbf{x} = A^{-1}\mathbf{b}$.
+		
+		\begin{block}{Inversa de una matriz $2\times2$}
+			\[
+			A = \mat{a & b \\ c & d}
+			\;\Rightarrow\;
+			A^{-1} = \frac{1}{ad-bc}\mat{d & -b \\ -c & a}
+			\]
+		\end{block}
+		
+		\pause
+		\textbf{Ejemplo:}
+		\[
+		A = \mat{2 & 1 \\ 1 & -3}, \quad \det(A) = -7
+		\]
+		\[
+		A^{-1} = \frac{1}{-7}\mat{-3 & -1 \\ -1 & 2}
+		= \mat{3/7 & 1/7 \\ 1/7 & -2/7}
+		\]
+		\pause
+		\[
+		\mathbf{x} = A^{-1}\mathbf{b}
+		= \mat{3/7 & 1/7 \\ 1/7 & -2/7}\mat{7 \\ -4}
+		= \mat{17/7 \\ 15/7}
+		\Rightarrow \alert{x = \tfrac{17}{7},\; y = \tfrac{15}{7}}
+		\]
+	\end{frame}
+	
+	% ===========================================================
+	\section{Ejemplos resueltos}
+	% ===========================================================
+	
+	\begin{frame}{Ejemplo 1 — Sistema incompatible}
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			2x & - & y  & = & 3 \\[4pt]
+			4x & - & 2y & = & 8
+		\end{array}
+		\right.
+		\]
+		
+		\begin{enumerate}
+			\item Calcular el determinante:
+			\[ D = \deter{2}{-1}{4}{-2} = (-4)-(-4) = 0 \]
+			\item<2-> Como $D = 0$, verificar consistencia. Multiplicando la primera por 2:
+			\[ 4x - 2y = 6 \neq 8 \]
+			\item<3-> Contradicción: \alert{el sistema es incompatible} (sin solución).
+			
+			\item<4-> \textbf{Geométricamente}: las rectas $2x-y=3$ y $4x-2y=8$
+			son \textbf{paralelas} (misma pendiente, distinta ordenada al origen).
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Ejemplo 2 — Sistema compatible indeterminado}
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			x  & + & 2y & = & 4 \\[4pt]
+			3x & + & 6y & = & 12
+		\end{array}
+		\right.
+		\]
+		
+		\begin{enumerate}
+			\item<1-> $D = 1\cdot6 - 3\cdot2 = 0$ \;→\; sistema singular.
+			\item<2-> La segunda ecuación es $3$ veces la primera: \textbf{son equivalentes}.
+			\item<3-> La solución es el conjunto:
+			\[
+			\left\{(x,y) \in \R^2 : x = 4 - 2t,\; y = t,\; t \in \R \right\}
+			\]
+			\item<4-> \textbf{Infinitas soluciones} parametrizadas por $t$.
+		\end{enumerate}
+		
+		\vspace{0.4em}
+		\uncover<4->{%
+			\begin{exampleblock}{Observación}
+				En sistemas $2\times2$ con $D=0$, la relación entre los vectores de
+				coeficientes $\mathbf{a}_1 = (a_1, b_1)$ y $\mathbf{a}_2 = (a_2, b_2)$
+				es de \textbf{dependencia lineal}.
+		\end{exampleblock}}
+	\end{frame}
+	
+	% ===========================================================
+	\section{Aplicaciones}
+	% ===========================================================
+	
+	\begin{frame}{Aplicación — Mezcla de soluciones}
+		\begin{exampleblock}{Problema}
+			Un químico mezcla una solución al $30\%$ y otra al $70\%$ de ácido para
+			obtener $100\,$mL al $50\%$.
+			¿Cuántos mL de cada solución debe usar?
+		\end{exampleblock}
+		
+		\pause
+		\textbf{Definición de variables:} $x$ = mL de la solución al 30\%,
+		$y$ = mL de la solución al 70\%.
+		
+		\pause
+		\textbf{Planteamiento:}
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			x  & + &  y  & = & 100 \\[4pt]
+			0.30x & + & 0.70y & = & 50
+		\end{array}
+		\right.
+		\]
+		
+		\pause
+		\textbf{Solución} (eliminación):
+		\begin{align*}
+			0.40y &= 50 - 0.30\cdot 100 = 20 \;\Rightarrow\; \alert{y = 50}\\
+			x     &= 100 - 50 = \alert{50}
+		\end{align*}
+		Se usan $50\,$mL de cada solución.
+	\end{frame}
+	
+	\begin{frame}{Aplicación — Análisis económico}
+		\begin{exampleblock}{Problema}
+			La oferta y la demanda de un bien están dadas por:
+			\[
+			Q^s = 3P - 6, \qquad Q^d = -P + 18
+			\]
+			Encontrar el precio $P^*$ y la cantidad $Q^*$ de equilibrio.
+		\end{exampleblock}
+		
+		\pause
+		En equilibrio: $Q^s = Q^d$
+		
+		\[
+		\left\{
+		\begin{array}{l}
+			Q - 3P = -6 \\[4pt]
+			Q + P = 18
+		\end{array}
+		\right.
+		\]
+		
+		\pause
+		Restando la primera de la segunda:
+		\[
+		4P = 24 \;\Rightarrow\; \alert{P^* = 6}
+		\qquad\Rightarrow\qquad
+		\alert{Q^* = 12}
+		\]
+	\end{frame}
+	
+	% ===========================================================
+	\section{Resumen y conclusiones}
+	% ===========================================================
+	
+	\begin{frame}{Cuadro comparativo de métodos}
+		\begin{table}
+			\centering
+			\renewcommand{\arraystretch}{1.4}
+			\begin{tabular}{lll}
+				\toprule
+				\textbf{Método} & \textbf{Ventaja} & \textbf{Limitación} \\
+				\midrule
+				Sustitución & Intuitivo, manual & Lento con coeficientes grandes \\
+				Eliminación & Sistemático & Requiere manipulación de filas \\
+				Cramer       & Fórmula explícita & Solo cuando $D \neq 0$ \\
+				Matricial    & Generalizable a $n\times n$ & Requiere álgebra matricial \\
+				\bottomrule
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	\begin{frame}{Resumen}
+		\begin{block}{Ideas clave de la unidad}
+			\begin{enumerate}
+				\item Un sistema $2\times2$ puede tener \textbf{0, 1 o infinitas} soluciones.
+				\item La \textbf{clasificación} depende de $D = a_1b_2 - a_2b_1$.
+				\item Todos los métodos son equivalentes; la elección depende del contexto.
+				\item La \textbf{forma matricial} $A\mathbf{x}=\mathbf{b}$ generaliza a dimensiones mayores.
+				\item La \textbf{eliminación de Gauss-Jordan} es la base del álgebra lineal computacional.
+			\end{enumerate}
+		\end{block}
+		
+		\vspace{0.5em}
+		\begin{exampleblock}{Próxima clase}
+			Sistemas $3\times3$ — eliminación de Gauss, determinantes $3\times3$
+			y regla de Sarrus.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ---- Ejercicios propuestos ----------------------------------
+	\begin{frame}{Ejercicios propuestos}
+		Resolver cada sistema e indicar su clasificación:
+		
+		\begin{columns}[T]
+			\column{0.48\textwidth}
+			\begin{enumerate}
+				\item $\displaystyle\left\{\begin{array}{l} x + y = 5 \\ x - y = 1 \end{array}\right.$
+				
+				\vspace{0.8em}
+				\item $\displaystyle\left\{\begin{array}{l} 2x + 3y = 6 \\ 4x + 6y = 12 \end{array}\right.$
+				
+				\vspace{0.8em}
+				\item $\displaystyle\left\{\begin{array}{l} 3x - y = 7 \\ 6x - 2y = 5 \end{array}\right.$
+			\end{enumerate}
+			
+			\column{0.48\textwidth}
+			\begin{enumerate}
+				\setcounter{enumi}{3}
+				\item $\displaystyle\left\{\begin{array}{l} \tfrac{1}{2}x + y = 3 \\ x - 2y = 0 \end{array}\right.$
+				
+				\vspace{0.8em}
+				\item Plantear y resolver: dos números cuya suma es 20 y cuya diferencia es 4.
+				
+				\vspace{0.8em}
+				\item Usar la regla de Cramer para el sistema $5x + 2y = 11$, $3x - y = 4$.
+			\end{enumerate}
+		\end{columns}
+	\end{frame}
+	
+	% ---- Fin ---------------------------------------------------
+	\begin{frame}[plain]
+		\begin{center}
+			{\Large\color{azuluni}\textbf{¡Gracias!}}\\[1em]
+			{\normalsize Preguntas y discusión}\\[2em]
+			\textit{``La matemática es el lenguaje en que el libro de la naturaleza está escrito.''}\\[0.3em]
+			{\small — Galileo Galilei}
+		\end{center}
+	\end{frame}
+	
+\end{document}

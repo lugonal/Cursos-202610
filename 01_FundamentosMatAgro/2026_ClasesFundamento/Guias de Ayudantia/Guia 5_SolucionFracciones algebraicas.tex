@@ -1,0 +1,531 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{array}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\headheight}{45pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Encabezado con logo e información institucional
+\lhead{%
+	\makebox[0pt][l]{%
+		\begin{minipage}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{logoUst.png}
+		\end{minipage}
+	}%
+	\hspace{2.5cm}%
+	\begin{minipage}{0.8\textwidth}
+		\raggedright
+		\small
+		\textbf{Universidad Santo Tomás}\\
+		Departamento de Ciencias Básicas\\
+		Fundamentos de Matemática Básica
+	\end{minipage}
+}
+\rhead{}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\vspace*{0.5em}
+	
+	\begin{center}
+		{\Large \textbf{Guía 05 Ayudantía}}\\[0.3em]
+		{\small Soluciones}
+	\end{center}
+	
+	\vspace{0.2cm}
+	
+	%%%%%%%%%%%%%%
+	
+\begin{enumerate}
+	
+	\item \textbf{Modelo de fertilización}
+	
+	La dosis ajustada de fertilizante está dada por:
+	\[
+	\frac{x^2+7x+12}{x+3}
+	\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Simplifique la expresión.
+		
+		Factorizamos el numerador:
+		\[
+		x^2+7x+12=(x+3)(x+4)
+		\]
+		
+		Entonces:
+		\[
+		\frac{x^2+7x+12}{x+3}
+		=
+		\frac{(x+3)(x+4)}{x+3}
+		=
+		x+4
+		\]
+		
+		\item Determine las restricciones.
+		
+		La restricción se obtiene del denominador original:
+		\[
+		x+3\neq 0
+		\]
+		por lo tanto,
+		\[
+		\boxed{x\neq -3}
+		\]
+		\end{enumerate}
+	
+	\vspace{0.4cm}
+	
+	% =========================================================
+	\item \textbf{Eficiencia del sistema}
+	
+	\[
+	\frac{x^2-16}{x^2-8x+16}
+	\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Simplifique completamente.
+		
+		Factorizamos numerador y denominador:
+		\[
+		x^2-16=(x-4)(x+4)
+		\]
+		\[
+		x^2-8x+16=(x-4)^2
+		\]
+		
+		Luego:
+		\[
+		\frac{x^2-16}{x^2-8x+16}
+		=
+		\frac{(x-4)(x+4)}{(x-4)^2}
+		=
+		\frac{x+4}{x-4}
+		\]
+		
+		\item Determine la restricción.
+		
+		Del denominador original:
+		\[
+		(x-4)^2\neq 0
+		\]
+		por lo tanto,$\boxed{x\neq 4}$
+		\end{enumerate}
+	
+	\newpage	
+	
+	\vspace*{0.5em}
+	
+	% =========================================================
+	\item \textbf{Costo agrícola}
+	
+		\[
+		\frac{x^2-4}{x}\div\frac{x-2}{x+1}
+		\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Resuelva.
+		
+		Dividir por una fracción equivale a multiplicar por su recíproco:
+		\[
+		\frac{x^2-4}{x}\div\frac{x-2}{x+1}
+		=
+		\frac{x^2-4}{x}\cdot\frac{x+1}{x-2}
+		\]
+		
+		\item Simplifique.
+		
+		Factorizamos:
+		\[
+		x^2-4=(x-2)(x+2)
+		\]
+		
+		Sustituyendo:
+		\[
+		\frac{(x-2)(x+2)}{x}\cdot\frac{x+1}{x-2}
+		=
+		\frac{(x+2)(x+1)}{x}
+		\]
+		
+		Por lo tanto,
+		\[
+		\boxed{\frac{(x+2)(x+1)}{x}}
+		\]
+		
+		\item Determine todas las restricciones.
+		
+		Las restricciones provienen de:
+		\[
+		x\neq 0
+		\qquad\text{y}\qquad
+		x+1\neq 0 \Rightarrow x\neq -1
+		\]
+		
+		Además, al dividir por
+		\[
+		\frac{x-2}{x+1},
+		\]
+		esta fracción no puede ser cero, por lo que:
+		\[
+		x-2\neq 0 \Rightarrow x\neq 2
+		\]
+		
+		Entonces:
+		\[
+		\boxed{x\neq 0,\,-1,\,2}
+		\]
+		\end{enumerate}
+	
+	\vspace{0.4cm}
+	
+	% =========================================================
+	\item \textbf{Productividad relativa}
+	
+		\[
+		\frac{x+2}{x-3}-\frac{3x}{x+1}
+		\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Reduzca a una sola fracción.
+		
+		El denominador común es:
+		\[
+		(x-3)(x+1)
+		\]
+		
+		Entonces:
+		\[
+		\frac{x+2}{x-3}-\frac{3x}{x+1}
+		=
+		\frac{(x+2)(x+1)-3x(x-3)}{(x-3)(x+1)}
+		\]
+		
+		\newpage	
+		
+		\vspace*{0.5em}
+		
+		Desarrollamos:
+		\[
+		(x+2)(x+1)=x^2+3x+2
+		\]
+		\[
+		3x(x-3)=3x^2-9x
+		\]
+		
+		Luego:
+		\[
+		\frac{x^2+3x+2-(3x^2-9x)}{(x-3)(x+1)}
+		=
+		\frac{x^2+3x+2-3x^2+9x}{(x-3)(x+1)}
+		\]
+		\[
+		=
+		\frac{-2x^2+12x+2}{(x-3)(x+1)}
+		\]
+		
+		Por lo tanto:
+		\[
+		\boxed{\frac{-2x^2+12x+2}{(x-3)(x+1)}}
+		\]
+		
+		\item Determine restricciones.
+		
+		Los valores que anulan los denominadores son:
+		\[
+		x-3\neq 0 \Rightarrow x\neq 3
+		\]
+		\[
+		x+1\neq 0 \Rightarrow x\neq -1
+		\]
+		
+		Así,
+		\[
+		\boxed{x\neq 3,\,-1}
+		\]
+		
+		\end{enumerate}
+	
+	% =========================================================
+	\item \textbf{Modelo de mezcla de nutrientes}
+	
+		\[
+		\frac{x^2+5x+6}{x+2}\cdot\frac{x-2}{x+3}
+		\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Simplifique completamente.
+		
+		Factorizamos:
+		\[
+		x^2+5x+6=(x+2)(x+3)
+		\]
+		
+		Sustituyendo:
+		\[
+		\frac{(x+2)(x+3)}{x+2}\cdot\frac{x-2}{x+3}
+		\]
+		
+		Simplificamos factores comunes:
+		\[
+		= x-2
+		\]
+		
+		Por lo tanto,
+		\[
+		\boxed{x-2}
+		\]
+		
+		\item Determine restricciones.
+		
+		Las restricciones provienen de los denominadores originales:
+		\[
+		x+2\neq 0 \Rightarrow x\neq -2
+		\]
+		\[
+		x+3\neq 0 \Rightarrow x\neq -3
+		\]
+		
+		Entonces:
+		\[
+		\boxed{x\neq -2,\,-3}
+		\]
+		
+		\end{enumerate}
+	
+	\newpage	
+	
+	\vspace*{0.5em}
+	
+	% =========================================================
+	\item \textbf{Comparación de sistemas de riego}
+	
+		\[
+		\frac{2}{x}+\frac{5}{x-3}-\frac{1}{x+1}
+		\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Exprese como una sola fracción.
+		
+		El denominador común es:
+		\[
+		x(x-3)(x+1)
+		\]
+		
+		Entonces:
+		\[
+		\frac{2}{x}+\frac{5}{x-3}-\frac{1}{x+1}
+		=
+		\frac{2(x-3)(x+1)+5x(x+1)-x(x-3)}{x(x-3)(x+1)}
+		\]
+		
+		Desarrollamos:
+		\[
+		2(x-3)(x+1)=2(x^2-2x-3)=2x^2-4x-6
+		\]
+		\[
+		5x(x+1)=5x^2+5x
+		\]
+		\[
+		x(x-3)=x^2-3x
+		\]
+		
+		Luego:
+		\[
+		\frac{2x^2-4x-6+5x^2+5x-(x^2-3x)}{x(x-3)(x+1)}
+		\]
+		\[
+		=
+		\frac{2x^2-4x-6+5x^2+5x-x^2+3x}{x(x-3)(x+1)}
+		\]
+		\[
+		=
+		\frac{6x^2+4x-6}{x(x-3)(x+1)}
+		\]
+		
+		Por lo tanto:
+		\[
+		\boxed{\frac{6x^2+4x-6}{x(x-3)(x+1)}}
+		\]
+		
+		\item Determine restricciones.
+		
+		Los denominadores no pueden anularse:
+		\[
+		x\neq 0,\qquad x\neq 3,\qquad x\neq -1
+		\]
+		
+		Entonces:
+		\[
+		\boxed{x\neq 0,\,3,\,-1}
+		\]
+		
+		\item Analice estabilidad del modelo.
+		
+		El modelo no es estable en los valores
+		\[
+		x=0,\quad x=3,\quad x=-1,
+		\]
+		porque en esos puntos los denominadores se anulan y la expresión no existe. Por ello, el modelo presenta discontinuidades y no puede evaluarse en esos valores.
+		\end{enumerate}
+	
+	\newpage	
+	
+	\vspace*{0.5em}
+	
+	% =========================================================
+	\item \textbf{Modelo de eficiencia agrícola}
+	
+		\[
+		\frac{x^2-9}{x^2-4x+4}\cdot\frac{x-2}{x+3}+\frac{2}{x-2}
+		\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Simplifique completamente.
+		
+		Factorizamos:
+		\[
+		x^2-9=(x-3)(x+3)
+		\]
+		\[
+		x^2-4x+4=(x-2)^2
+		\]
+		
+		Sustituimos:
+		\[
+		\frac{(x-3)(x+3)}{(x-2)^2}\cdot\frac{x-2}{x+3}+\frac{2}{x-2}
+		\]
+		
+		Simplificando:
+		\[
+		=
+		\frac{x-3}{x-2}+\frac{2}{x-2}
+		\]
+		
+		Como tienen el mismo denominador:
+		\[
+		=
+		\frac{x-3+2}{x-2}
+		=
+		\frac{x-1}{x-2}
+		\]
+		
+		Por lo tanto:
+		\[
+		\boxed{\frac{x-1}{x-2}}
+		\]
+		
+		\item Determine restricciones.
+		
+		De los denominadores originales:
+		\[
+		(x-2)^2\neq 0 \Rightarrow x\neq 2
+		\]
+		\[
+		x+3\neq 0 \Rightarrow x\neq -3
+		\]
+		Además, en el término adicional:
+		\[
+		x-2\neq 0 \Rightarrow x\neq 2
+		\]
+		
+		Entonces:
+		\[
+		\boxed{x\neq 2,\,-3}
+		\]
+		
+		\item Interprete el término adicional.
+		
+		El término
+		\[
+		\frac{2}{x-2}
+		\]
+		actúa como un ajuste adicional del modelo principal. Su efecto es más significativo cuando \(x\) está cercano a \(2\), aunque precisamente ese valor no pertenece al dominio.
+		\end{enumerate}
+	
+\newpage	
+
+\vspace*{0.5em}
+	
+	% =========================================================
+	\item \textbf{Costo medio de producción}
+	
+		\[
+		\frac{x^2+6x+8}{x+2}\div\frac{x+4}{x-1}
+		\]
+	
+		\begin{enumerate}[label=\alph*)]
+		\item Resuelva completamente.
+		
+		Dividimos multiplicando por el recíproco:
+		\[
+		\frac{x^2+6x+8}{x+2}\div\frac{x+4}{x-1}
+		=
+		\frac{x^2+6x+8}{x+2}\cdot\frac{x-1}{x+4}
+		\]
+		
+		\item Simplifique.
+		
+		Factorizamos:
+		\[
+		x^2+6x+8=(x+2)(x+4)
+		\]
+		
+		Sustituyendo:
+		\[
+		\frac{(x+2)(x+4)}{x+2}\cdot\frac{x-1}{x+4}
+		=
+		x-1
+		\]
+		
+		Entonces:
+		\[
+		\boxed{x-1}
+		\]
+		
+		\item Determine restricciones.
+		
+		Del denominador original:
+		\[
+		x+2\neq 0 \Rightarrow x\neq -2
+		\]
+		\[
+		x-1\neq 0 \Rightarrow x\neq 1
+		\]
+		
+		Además, al dividir por
+		\[
+		\frac{x+4}{x-1},
+		\]
+		esa fracción no puede ser cero:
+		\[
+		x+4\neq 0 \Rightarrow x\neq -4
+		\]
+		
+		Por lo tanto:
+		\[
+		\boxed{x\neq -2,\,1,\,-4}
+		\]
+		\end{enumerate}
+	
+	\vspace{0.4cm}
+	
+	% =========================================================
+
+\end{enumerate}
+
+\end{document}

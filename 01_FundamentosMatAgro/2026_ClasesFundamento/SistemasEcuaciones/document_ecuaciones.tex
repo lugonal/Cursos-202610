@@ -1,0 +1,754 @@
+% ============================================================
+%  CLASE: Sistemas de ecuaciones lineales con dos incógnitas
+%  Aplicaciones en Agronomía — Nivel universitario
+%  Compilar con: pdflatex sistemas_lineales_agronomia.tex
+% ============================================================
+
+\documentclass[11pt, aspectratio=169]{beamer}
+
+% ---------- Tema y colores agronomía ----------
+\usetheme{Madrid}
+
+\definecolor{verdecampo}{RGB}{34, 100, 34}
+\definecolor{verdeagro}{RGB}{74, 145, 50}
+\definecolor{tierracolor}{RGB}{139, 90, 43}
+\definecolor{celesteagua}{RGB}{30, 130, 190}
+\definecolor{amarillotrigo}{RGB}{210, 170, 30}
+\definecolor{grisclaro}{RGB}{245, 246, 242}
+\definecolor{rojoalerta}{RGB}{175, 35, 35}
+
+\setbeamercolor{palette primary}{bg=verdecampo, fg=white}
+\setbeamercolor{palette secondary}{bg=verdeagro, fg=white}
+\setbeamercolor{palette tertiary}{bg=verdecampo!80, fg=white}
+\setbeamercolor{palette quaternary}{bg=verdecampo, fg=white}
+\setbeamercolor{structure}{fg=verdecampo}
+\setbeamercolor{block title}{bg=verdecampo, fg=white}
+\setbeamercolor{block body}{bg=grisclaro, fg=black}
+\setbeamercolor{block title alerted}{bg=rojoalerta, fg=white}
+\setbeamercolor{block body alerted}{bg=rojoalerta!10, fg=black}
+\setbeamercolor{block title example}{bg=verdeagro, fg=white}
+\setbeamercolor{block body example}{bg=verdeagro!10, fg=black}
+\setbeamercolor{frametitle}{bg=verdecampo, fg=white}
+\setbeamercolor{title}{bg=verdecampo, fg=white}
+
+% ---------- Fuentes ----------
+\usefonttheme{professionalfonts}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% ---------- Paquetes matemáticos ----------
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{intersections, arrows.meta, calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ---------- Otros paquetes ----------
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, skins, breakable}
+\usepackage{siunitx}
+
+% ---------- Navegación ----------
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.35\paperwidth, ht=2.4ex, dp=1ex, center]{palette primary}
+			\usebeamerfont{author in head/foot}\insertshortauthor
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.45\paperwidth, ht=2.4ex, dp=1ex, center]{palette secondary}
+			\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.2\paperwidth, ht=2.4ex, dp=1ex, right]{palette primary}
+			\usebeamerfont{date in head/foot}
+			\insertframenumber{} / \inserttotalframenumber\hspace*{1.5ex}
+		\end{beamercolorbox}
+	}
+}
+
+% ---------- Metadatos ----------
+\title[Sistemas Lineales — Agronomía]{Sistemas de Ecuaciones Lineales\\con Dos Incógnitas}
+\subtitle{Matemáticas Aplicadas a la Agronomía — Unidad 2}
+\author[Dept. Ciencias Básicas]{Departamento de Ciencias Básicas}
+\institute{Facultad de Agronomía}
+\date{\today}
+
+% ---------- Comandos útiles ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\deter}[4]{\begin{vmatrix} #1 & #2 \\ #3 & #4 \end{vmatrix}}
+\newcommand{\unidad}[1]{\,\text{#1}}
+
+% ===========================================================
+\begin{document}
+	% ===========================================================
+	
+	% ---- Portada -----------------------------------------------
+	\begin{frame}[plain]
+		\titlepage
+	\end{frame}
+	
+	% ---- Índice ------------------------------------------------
+	\begin{frame}{Contenidos}
+		\tableofcontents
+	\end{frame}
+	
+	% ===========================================================
+	\section{Motivación agronómica}
+	% ===========================================================
+	
+	\begin{frame}{¿Por qué sistemas de ecuaciones en agronomía?}
+		\begin{columns}[T]
+			\column{0.55\textwidth}
+			En la práctica agrícola, es frecuente tener \textbf{dos condiciones simultáneas}
+			que determinan una situación óptima:
+			\begin{itemize}
+				\item Dosis de \textbf{fertilizantes} con restricciones de N y P
+				\item \textbf{Mezcla de plaguicidas} con concentración objetivo
+				\item Balance \textbf{hídrico} en sistemas de riego
+				\item Asignación de \textbf{superficie} entre cultivos
+				\item Composición de \textbf{sustratos} y enmiendas
+			\end{itemize}
+			\column{0.42\textwidth}
+			\begin{exampleblock}{Pregunta motivadora}
+				Un agricultor dispone de dos fertilizantes:
+				\begin{itemize}
+					\item Fertilizante A: 20\% N, 10\% P
+					\item Fertilizante B: 5\% N, 15\% P
+				\end{itemize}
+				¿Cuántos kg de cada uno aplicar para suministrar exactamente
+				\textbf{30 kg/ha de N} y \textbf{20 kg/ha de P}?
+			\end{exampleblock}
+		\end{columns}
+	\end{frame}
+	
+	% ===========================================================
+	\section{Definición y forma general}
+	% ===========================================================
+	
+	\begin{frame}{Definición general}
+		\begin{block}{Sistema lineal $2\times2$}
+			Dados los parámetros agronómicos $(a_i, b_i, c_i \in \R)$,
+			un sistema lineal con dos incógnitas $x$ e $y$ tiene la forma:
+			\[
+			\left\{
+			\begin{array}{rcrcr}
+				a_1 x & + & b_1 y & = & c_1 \\[6pt]
+				a_2 x & + & b_2 y & = & c_2
+			\end{array}
+			\right.
+			\]
+		\end{block}
+		
+		\vspace{0.3em}
+		\begin{columns}[T]
+			\column{0.48\textwidth}
+			\textbf{En contexto agronómico:}
+			\begin{itemize}
+				\item $x, y$: cantidades a determinar\\
+				(dosis, volúmenes, superficies\ldots)
+				\item $a_i, b_i$: coeficientes técnicos\\
+				(concentraciones, rendimientos\ldots)
+				\item $c_i$: requisitos del cultivo\\
+				(demanda nutricional, restricciones\ldots)
+			\end{itemize}
+			\column{0.48\textwidth}
+			\textbf{Interpretación geométrica:}
+			\begin{itemize}
+				\item Cada ecuación es una \textbf{restricción lineal}
+				representada como una recta
+				\item La solución es la \textbf{combinación factible}
+				que cumple todas las restricciones simultáneamente
+			\end{itemize}
+		\end{columns}
+	\end{frame}
+	
+	% ---- Forma matricial ---------------------------------------
+	\begin{frame}{Forma matricial}
+		El sistema se escribe como $A\mathbf{x} = \mathbf{b}$:
+		\[
+		\underbrace{\begin{pmatrix} a_1 & b_1 \\ a_2 & b_2 \end{pmatrix}}_{A\;(\text{coeficientes técnicos})}
+		\underbrace{\begin{pmatrix} x \\ y \end{pmatrix}}_{\mathbf{x}\;(\text{incógnitas})}
+		=
+		\underbrace{\begin{pmatrix} c_1 \\ c_2 \end{pmatrix}}_{\mathbf{b}\;(\text{requerimientos})}
+		\]
+		
+		\vspace{0.3em}
+		\begin{block}{Matriz aumentada — herramienta de cálculo}
+			\[
+			[A \mid \mathbf{b}] =
+			\left(\begin{array}{cc|c}
+				a_1 & b_1 & c_1 \\
+				a_2 & b_2 & c_2
+			\end{array}\right)
+			\]
+		\end{block}
+		
+		\vspace{0.2em}
+		\begin{exampleblock}{Ejemplo nutricional}
+			\[
+			\left(\begin{array}{cc|c}
+				0.20 & 0.05 & 30 \\
+				0.10 & 0.15 & 20
+			\end{array}\right)
+			\leftarrow
+			\begin{array}{l}
+				\text{requerimiento de N (kg/ha)}\\
+				\text{requerimiento de P (kg/ha)}
+			\end{array}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ===========================================================
+	\section{Clasificación de sistemas}
+	% ===========================================================
+	
+	\begin{frame}{Clasificación: el determinante}
+		Sea $D = \det(A) = a_1 b_2 - a_2 b_1$.
+		
+		\vspace{0.5em}
+		\begin{columns}[T]
+			\column{0.32\textwidth}
+			\begin{exampleblock}{$D \neq 0$}
+				\centering\textbf{Compatible\\determinado}\\[4pt]
+				\textbf{Solución única}\\[4pt]
+				Existe exactamente\\una combinación de\\insumos que cumple\\los requerimientos
+			\end{exampleblock}
+			
+			\column{0.32\textwidth}
+			\begin{block}{$D = 0$, consistente}
+				\centering\textbf{Compatible\\indeterminado}\\[4pt]
+				\textbf{Infinitas soluciones}\\[4pt]
+				Las restricciones\\son redundantes:\\múltiples mezclas\\son equivalentes
+			\end{block}
+			
+			\column{0.32\textwidth}
+			\begin{alertblock}{$D = 0$, inconsistente}
+				\centering\textbf{Incompatible}\\[4pt]
+				\textbf{Sin solución}\\[4pt]
+				Los insumos\\disponibles no pueden\\satisfacer todos los\\requerimientos
+			\end{alertblock}
+		\end{columns}
+	\end{frame}
+	
+	% ---- Visualización geométrica ------------------------------
+	\begin{frame}{Visualización geométrica — restricciones de cultivo}
+		\begin{columns}[c]
+			\column{0.33\textwidth}
+			\centering\small\textbf{Mezcla única posible}
+			\begin{tikzpicture}[scale=0.75]
+				\begin{axis}[
+					xmin=0, xmax=5, ymin=0, ymax=5,
+					axis lines=left,
+					xlabel={\small $x$ (kg fert.\ A)},
+					ylabel={\small $y$ (kg fert.\ B)},
+					tick style={draw=none}, ticklabel style={font=\tiny},
+					width=4.8cm, height=4.8cm,
+					xlabel style={font=\tiny}, ylabel style={font=\tiny}
+					]
+					\addplot[celesteagua, thick, domain=0:5] {(3-0.2*x)/0.05};
+					\addplot[amarillotrigo, thick, domain=0:5] {(2-0.1*x)/0.15};
+					\addplot[only marks, mark=*, mark size=2.5pt, verdecampo]
+					coordinates {(100/14, 100/14)};
+				\end{axis}
+			\end{tikzpicture}
+			
+			\column{0.33\textwidth}
+			\centering\small\textbf{Restricciones redundantes}
+			\begin{tikzpicture}[scale=0.75]
+				\begin{axis}[
+					xmin=0, xmax=5, ymin=0, ymax=5,
+					axis lines=left,
+					xlabel={\small $x$}, ylabel={\small $y$},
+					tick style={draw=none}, ticklabel style={font=\tiny},
+					width=4.8cm, height=4.8cm,
+					xlabel style={font=\tiny}, ylabel style={font=\tiny}
+					]
+					\addplot[celesteagua, very thick, domain=0:5] {4-x};
+					\addplot[amarillotrigo, thick, dashed, domain=0:5] {4-x};
+				\end{axis}
+			\end{tikzpicture}
+			
+			\column{0.33\textwidth}
+			\centering\small\textbf{Requerimientos imposibles}
+			\begin{tikzpicture}[scale=0.75]
+				\begin{axis}[
+					xmin=0, xmax=5, ymin=0, ymax=5,
+					axis lines=left,
+					xlabel={\small $x$}, ylabel={\small $y$},
+					tick style={draw=none}, ticklabel style={font=\tiny},
+					width=4.8cm, height=4.8cm,
+					xlabel style={font=\tiny}, ylabel style={font=\tiny}
+					]
+					\addplot[celesteagua, thick, domain=0:5] {3-x};
+					\addplot[amarillotrigo, thick, domain=0:5] {5-x};
+				\end{axis}
+			\end{tikzpicture}
+		\end{columns}
+		
+		\vspace{0.3em}
+		\centering{\small\color{verdecampo}
+			Azul: restricción de N \quad | \quad Amarillo: restricción de P}
+	\end{frame}
+	
+	% ===========================================================
+	\section{Métodos de resolución}
+	% ===========================================================
+	
+	\begin{frame}{Métodos de resolución}
+		\begin{block}{Cuatro métodos equivalentes}
+			\begin{enumerate}
+				\item \textbf{Sustitución} — despejar una variable y reemplazar
+				\item \textbf{Eliminación gaussiana} — operar ecuaciones para cancelar una incógnita
+				\item \textbf{Regla de Cramer} — fórmula explícita mediante determinantes
+				\item \textbf{Método matricial} — inversa de $A$ o Gauss-Jordan
+			\end{enumerate}
+		\end{block}
+		
+		\vspace{0.5em}
+		\begin{exampleblock}{Sistema de referencia — Fertilización nitrogenada y fosfatada}
+			Un técnico agrícola necesita aportar \textbf{30 kg/ha de N} y \textbf{20 kg/ha de P}
+			combinando:
+			\[
+			\left\{
+			\begin{array}{lcl}
+				0.20\,x + 0.05\,y & = & 30 \quad \text{(N, kg/ha)} \\[4pt]
+				0.10\,x + 0.15\,y & = & 20 \quad \text{(P, kg/ha)}
+			\end{array}
+			\right.
+			\]
+			donde $x$ = kg/ha de fertilizante A, \; $y$ = kg/ha de fertilizante B.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ---- Sustitución -------------------------------------------
+	\subsection{Sustitución}
+	
+	\begin{frame}{Método de sustitución — Fertilización N-P}
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			0.20\,x & + & 0.05\,y & = & 30 \\[4pt]
+			0.10\,x & + & 0.15\,y & = & 20
+		\end{array}
+		\right.
+		\]
+		
+		\begin{enumerate}
+			\item<1-> Despejar $x$ de la primera ecuación:
+			\[ x = \frac{30 - 0.05\,y}{0.20} = 150 - 0.25\,y \]
+			
+			\item<2-> Sustituir en la segunda:
+			\[ 0.10(150 - 0.25\,y) + 0.15\,y = 20
+			\;\Rightarrow\; 15 - 0.025\,y + 0.15\,y = 20 \]
+			\[ 0.125\,y = 5 \;\Rightarrow\; \alert{y = 40 \unidad{kg/ha}} \]
+			
+			\item<3-> Retrosustituir:
+			\[ x = 150 - 0.25 \times 40 = \alert{140 \unidad{kg/ha}} \]
+			
+			\item<4-> \textbf{Verificar}: $0.20(140) + 0.05(40) = 28 + 2 = 30$ ✓ \quad
+			$0.10(140) + 0.15(40) = 14 + 6 = 20$ ✓
+			
+			\item<5-> \textbf{Interpretación}: aplicar \alert{140 kg/ha} del fertilizante A
+			y \alert{40 kg/ha} del fertilizante B.
+		\end{enumerate}
+	\end{frame}
+	
+	% ---- Eliminación -------------------------------------------
+	\subsection{Eliminación gaussiana}
+	
+	\begin{frame}{Método de eliminación — Balance hídrico}
+		\begin{exampleblock}{Contexto}
+			Un sistema de riego combina agua de pozo ($x$, m$^3$/h)
+			y agua superficial ($y$, m$^3$/h). La conductividad eléctrica (CE)
+			y la demanda total deben cumplir:
+			\[
+			\left\{
+			\begin{array}{rcrcr}
+				x  & + &  y  & = & 80 \quad \text{(caudal total, m}^3\text{/h)} \\[4pt]
+				0.8\,x & + & 1.6\,y & = & 96 \quad \text{(CE ponderada, dS/m $\times$ m}^3\text{/h)}
+			\end{array}
+			\right.
+			\]
+		\end{exampleblock}
+		
+		\begin{enumerate}
+			\item<2-> Multiplicar la primera ecuación por $0.8$:
+			\[ 0.8\,x + 0.8\,y = 64 \]
+			
+			\item<3-> Restar de la segunda ecuación:
+			\[ (0.8\,x + 1.6\,y) - (0.8\,x + 0.8\,y) = 96 - 64 \]
+			\[ 0.8\,y = 32 \;\Rightarrow\; \alert{y = 40 \unidad{m}^3\text{/h}} \]
+			
+			\item<4-> Sustituir: $x = 80 - 40 = \alert{40 \unidad{m}^3\text{/h}}$
+			
+			\item<5-> \textbf{Interpretación}: mezclar a partes iguales para obtener
+			CE $= 96/80 = 1.2$ dS/m.
+		\end{enumerate}
+	\end{frame}
+	
+	% ---- Cramer ------------------------------------------------
+	\subsection{Regla de Cramer}
+	
+	\begin{frame}{Regla de Cramer}
+		\begin{block}{Teorema}
+			Si $D = \det(A) \neq 0$, la solución única del sistema es:
+			\[
+			x = \frac{D_x}{D}, \qquad y = \frac{D_y}{D}
+			\]
+			\[
+			D = \deter{a_1}{b_1}{a_2}{b_2}, \quad
+			D_x = \deter{c_1}{b_1}{c_2}{b_2}, \quad
+			D_y = \deter{a_1}{c_1}{a_2}{c_2}
+			\]
+		\end{block}
+		
+		\pause
+		\textbf{Aplicación — problema de fertilización:}
+		\begin{align*}
+			D   &= \deter{0.20}{0.05}{0.10}{0.15}
+			= (0.20)(0.15)-(0.05)(0.10) = 0.030 - 0.005 = 0.025 \\[4pt]
+			D_x &= \deter{30}{0.05}{20}{0.15}
+			= (30)(0.15)-(0.05)(20) = 4.5 - 1.0 = 3.5 \\[4pt]
+			D_y &= \deter{0.20}{30}{0.10}{20}
+			= (0.20)(20)-(30)(0.10) = 4.0 - 3.0 = 1.0
+		\end{align*}
+		\pause
+		\[
+		x = \frac{3.5}{0.025} = \alert{140 \unidad{kg/ha}}, \qquad
+		y = \frac{1.0}{0.025} = \alert{40 \unidad{kg/ha}}
+		\]
+	\end{frame}
+	
+	% ---- Matricial ---------------------------------------------
+	\subsection{Método matricial}
+	
+	\begin{frame}{Método matricial — eliminación de Gauss-Jordan}
+		Escribir la \textbf{matriz aumentada} y reducir a forma escalonada reducida:
+		\[
+		\left(\begin{array}{cc|c}
+			0.20 & 0.05 & 30 \\
+			0.10 & 0.15 & 20
+		\end{array}\right)
+		\xrightarrow{F_1 \leftarrow 5F_1;\; F_2 \leftarrow 10F_2}
+		\left(\begin{array}{cc|c}
+			1 & 0.25 & 150 \\
+			1 & 1.5  & 200
+		\end{array}\right)
+		\]
+		
+		\pause
+		\[
+		\xrightarrow{F_2 \leftarrow F_2 - F_1}
+		\left(\begin{array}{cc|c}
+			1 & 0.25 & 150 \\
+			0 & 1.25 & 50
+		\end{array}\right)
+		\xrightarrow{F_2 \leftarrow F_2 / 1.25}
+		\left(\begin{array}{cc|c}
+			1 & 0.25 & 150 \\
+			0 & 1    & 40
+		\end{array}\right)
+		\]
+		
+		\pause
+		\[
+		\xrightarrow{F_1 \leftarrow F_1 - 0.25\,F_2}
+		\left(\begin{array}{cc|c}
+			1 & 0 & 140 \\
+			0 & 1 & 40
+		\end{array}\right)
+		\Rightarrow
+		\alert{x = 140 \unidad{kg/ha}, \quad y = 40 \unidad{kg/ha}}
+		\]
+	\end{frame}
+	
+	% ===========================================================
+	\section{Ejemplos resueltos}
+	% ===========================================================
+	
+	\begin{frame}{Ejemplo 1 — Mezcla de plaguicidas}
+		\begin{exampleblock}{Problema}
+			Un técnico necesita preparar \textbf{200 L} de solución fungicida
+			al \textbf{0.8\%} de ingrediente activo (i.a.).
+			Dispone de dos concentrados:
+			\begin{itemize}
+				\item Producto X: 2\% i.a. \quad
+				\item Producto Y: 0.5\% i.a.
+			\end{itemize}
+			¿Cuántos litros de cada uno se deben mezclar?
+		\end{exampleblock}
+		
+		\pause
+		\textbf{Variables:} $x$ = L del producto X, \; $y$ = L del producto Y.
+		
+		\pause
+		\textbf{Sistema:}
+		\[
+		\left\{
+		\begin{array}{rcrcrl}
+			x & + & y & = & 200 & \quad\text{(volumen total)}\\[4pt]
+			0.02\,x & + & 0.005\,y & = & 0.008 \times 200 = 1.6 & \quad\text{(masa i.a.)}
+		\end{array}
+		\right.
+		\]
+		
+		\pause
+		\textbf{Solución} (eliminación: $F_2 \leftarrow F_2 - 0.005\,F_1$):
+		\[
+		0.015\,x = 1.6 - 1.0 = 0.6
+		\;\Rightarrow\; \alert{x = 40\,\text{L}}, \quad \alert{y = 160\,\text{L}}
+		\]
+	\end{frame}
+	
+	\begin{frame}{Ejemplo 2 — Asignación de superficie entre cultivos}
+		\begin{exampleblock}{Problema}
+			Un agricultor dispone de \textbf{50 ha} para sembrar trigo y maíz.
+			Su presupuesto es de \textbf{\$75\,000}.
+			El costo de producción es \$1\,200/ha para trigo y \$1\,800/ha para maíz.
+			¿Cuántas hectáreas dedicar a cada cultivo?
+		\end{exampleblock}
+		
+		\pause
+		\textbf{Variables:} $t$ = ha de trigo, \; $m$ = ha de maíz.
+		
+		\[
+		\left\{
+		\begin{array}{rcrcr}
+			t & + & m & = & 50 \\[4pt]
+			1200\,t & + & 1800\,m & = & 75000
+		\end{array}
+		\right.
+		\]
+		
+		\pause
+		\textbf{Cramer:}
+		\[
+		D = \deter{1}{1}{1200}{1800} = 600, \quad
+		D_t = \deter{50}{1}{75000}{1800} = -\!15000, \quad
+		D_m = \deter{1}{50}{1200}{75000} = 15000
+		\]
+		\pause
+		\[
+		t = \frac{-15000}{600}= \alert{25\,\text{ha de trigo}}, \qquad
+		m = \frac{15000}{600} = \alert{25\,\text{ha de maíz}}
+		\]
+	\end{frame}
+	
+	\begin{frame}{Ejemplo 3 — Sistema incompatible en nutrición vegetal}
+		\begin{exampleblock}{Contexto}
+			Se pretende cubrir \textbf{40 kg/ha de N} y \textbf{20 kg/ha de P} con dos
+			fertilizantes que tienen la misma relación N:P = 2:1.
+			\[
+			\left\{
+			\begin{array}{rcrcr}
+				0.20\,x & + & 0.10\,y & = & 40\\[4pt]
+				0.10\,x & + & 0.05\,y & = & 20
+			\end{array}
+			\right.
+			\]
+		\end{exampleblock}
+		
+		\begin{enumerate}
+			\item<2-> $D = \deter{0.20}{0.10}{0.10}{0.05} = 0.010 - 0.010 = 0$
+			\item<3-> La segunda ecuación es exactamente la mitad de la primera:
+			son \textbf{linealmente dependientes}.
+			\item<4-> Las dos ecuaciones representan la \textbf{misma restricción},
+			por lo que el sistema es \textbf{compatible indeterminado}:
+			existe infinidad de combinaciones $x, y \geq 0$ que satisfacen ambas.
+			\item<5->
+			\begin{alertblock}{Interpretación agronómica}
+				Si dos fertilizantes tienen la misma proporción de nutrientes,
+				no se puede fijar simultáneamente la dosis de N \textit{y} la de P
+				con una sola restricción adicional. Se necesita un tercer criterio
+				(p.ej., costo o disponibilidad).
+			\end{alertblock}
+		\end{enumerate}
+	\end{frame}
+	
+	% ===========================================================
+	\section{Aplicaciones adicionales}
+	% ===========================================================
+	
+	\begin{frame}{Aplicación — Rotación de cultivos y rentabilidad}
+		\begin{exampleblock}{Problema}
+			Una explotación de \textbf{120 ha} puede destinar su superficie a papa o cebolla.
+			La ganancia esperada es \$3\,500/ha en papa y \$2\,000/ha en cebolla.
+			Para optimizar el uso de mano de obra, la ganancia total debe ser \$\mathbf{330\,000}$.
+			¿Cuántas hectáreas asignar a cada cultivo?
+		\end{exampleblock}
+		
+		\pause
+		\[
+		\left\{
+		\begin{array}{rcrcrl}
+			p & + & c & = & 120 & \quad \text{(ha totales)} \\[4pt]
+			3500\,p & + & 2000\,c & = & 330000 & \quad \text{(ganancia objetivo)}
+		\end{array}
+		\right.
+		\]
+		
+		\pause
+		Sustitución: $p = 120 - c$ en la segunda:
+		\[
+		3500(120-c) + 2000\,c = 330000
+		\;\Rightarrow\; 420000 - 1500\,c = 330000
+		\;\Rightarrow\; \alert{c = 60\,\text{ha}}
+		\]
+		\pause
+		\[
+		p = 120 - 60 = \alert{60\,\text{ha}}
+		\]
+		
+		\vspace{0.2em}
+		\textbf{Verificación}: $3500(60) + 2000(60) = 210000 + 120000 = 330000$ ✓
+	\end{frame}
+	
+	\begin{frame}{Aplicación — Preparación de sustratos}
+		\begin{exampleblock}{Problema}
+			Un viverista prepara \textbf{1\,000 L} de sustrato mezclando:
+			\begin{itemize}
+				\item Turba: densidad aparente $0.12\,\text{g/cm}^3$, pH 3.8
+				\item Perlita: densidad aparente $0.08\,\text{g/cm}^3$, pH 7.0
+			\end{itemize}
+			El sustrato final debe pesar \textbf{100 kg} y tener pH \textbf{5.0} (ponderado por volumen).
+		\end{exampleblock}
+		
+		\pause
+		\textbf{Variables:} $t$ = L de turba, \; $p$ = L de perlita.
+		\[
+		\left\{
+		\begin{array}{rcrcrl}
+			t & + & p & = & 1000 & \quad\text{(volumen, L)} \\[4pt]
+			0.12\,t & + & 0.08\,p & = & 100 & \quad\text{(masa, kg)}
+		\end{array}
+		\right.
+		\]
+		
+		\pause
+		Eliminación ($F_2 \leftarrow F_2 - 0.08\,F_1$):
+		\[
+		0.04\,t = 100 - 80 = 20
+		\;\Rightarrow\; \alert{t = 500\,\text{L}}, \quad \alert{p = 500\,\text{L}}
+		\]
+		
+		\pause
+		Verificación del pH: $0.5 \times 3.8 + 0.5 \times 7.0 = 1.9 + 3.5 = 5.4$ \\
+		\begin{alertblock}{Nota práctica}
+			El pH ponderado resultante (5.4) difiere del objetivo (5.0).
+			La restricción de pH requeriría una tercera variable (enmienda).
+		\end{alertblock}
+	\end{frame}
+	
+	% ===========================================================
+	\section{Resumen y conclusiones}
+	% ===========================================================
+	
+	\begin{frame}{Cuadro comparativo de métodos}
+		\begin{table}
+			\centering
+			\renewcommand{\arraystretch}{1.4}
+			\begin{tabular}{llll}
+				\toprule
+				\textbf{Método} & \textbf{Ventaja} & \textbf{Limitación}
+				& \textbf{Uso típico} \\
+				\midrule
+				Sustitución  & Intuitivo       & Tedioso con decimales
+				& Mezclas simples \\
+				Eliminación  & Sistemático     & Requiere cuidado con fracciones
+				& Balance hídrico \\
+				Cramer        & Fórmula directa & Solo si $D \neq 0$
+				& Fertilización \\
+				Matricial    & Generalizable   & Requiere álgebra matricial
+				& Software técnico \\
+				\bottomrule
+			\end{tabular}
+		\end{table}
+	\end{frame}
+	
+	\begin{frame}{Resumen}
+		\begin{block}{Ideas clave}
+			\begin{enumerate}
+				\item Muchos problemas agronómicos implican \textbf{dos condiciones simultáneas}
+				que se modelan con sistemas $2\times2$.
+				\item El determinante $D$ indica si el problema tiene solución única,
+				infinitas o ninguna --- lo cual tiene \textbf{significado físico real}.
+				\item Todos los métodos son algebraicamente equivalentes;
+				se elige según la \textbf{complejidad numérica} del problema.
+				\item La \textbf{verificación} es indispensable: en agronomía,
+				un error de cálculo puede arruinar una cosecha o generar un impacto ambiental negativo.
+				\item La forma matricial $A\mathbf{x}=\mathbf{b}$ permite escalar a
+				\textbf{$n$ nutrientes y $n$ fuentes} (sistemas $n\times n$).
+			\end{enumerate}
+		\end{block}
+		
+		\vspace{0.3em}
+		\begin{exampleblock}{Próxima clase}
+			Sistemas $3\times3$ aplicados a nutrición vegetal con tres macronutrientes
+			(N, P, K) y tres fuentes de fertilizante.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ---- Ejercicios propuestos ----------------------------------
+	\begin{frame}{Ejercicios propuestos}
+		\small
+		\begin{columns}[T]
+			\column{0.50\textwidth}
+			\begin{enumerate}
+				\item \textbf{Fertirriego}: una solución nutritiva requiere
+				$8\,\text{meq/L}$ de Ca$^{2+}$ y $4\,\text{meq/L}$ de Mg$^{2+}$.
+				Usando nitrato de calcio (15-0-0 + 19\% Ca) y sulfato de magnesio
+				(0\% N + 10\% Mg), plantear y resolver el sistema.
+				
+				\vspace{0.6em}
+				\item \textbf{Siembra mixta}: un campo de 80 ha se siembra con soja
+				y girasol. El agua disponible es 12\,000 m$^3$ y la demanda
+				hídrica es 180 m$^3$/ha para soja y 120 m$^3$/ha para girasol.
+				¿Cuántas hectáreas de cada cultivo?
+			\end{enumerate}
+			
+			\column{0.48\textwidth}
+			\begin{enumerate}
+				\setcounter{enumi}{2}
+				\item \textbf{Compostaje}: se mezclan dos residuos para obtener
+				500 kg de compost con relación C:N = 25.
+				Residuo A: C:N = 30, Residuo B: C:N = 20.
+				Plantear el sistema y clasificarlo.
+				
+				\vspace{0.6em}
+				\item \textbf{Clasificación}: determinar si el siguiente sistema
+				de restricciones hídricas tiene solución y justificar
+				agronómicamente:
+				\[
+				\left\{\begin{array}{l}
+					2x + 4y = 800 \\
+					x + 2y = 500
+				\end{array}\right.
+				\]
+			\end{enumerate}
+		\end{columns}
+	\end{frame}
+	
+	% ---- Fin ---------------------------------------------------
+	\begin{frame}[plain]
+		\begin{center}
+			{\Large\color{verdecampo}\textbf{¡Gracias!}}\\[1em]
+			{\normalsize Preguntas y discusión}\\[2em]
+			\textit{``La agricultura es la profesión más antigua y más noble del mundo;
+				las matemáticas, su lenguaje oculto.''}\\[1.5em]
+			\begin{tikzpicture}
+				\fill[verdecampo!30, rounded corners=4pt] (0,0) rectangle (9,0.25);
+				\fill[verdeagro!50, rounded corners=4pt] (0,0) rectangle (6,0.25);
+				\fill[amarillotrigo!80, rounded corners=4pt] (0,0) rectangle (3,0.25);
+			\end{tikzpicture}
+		\end{center}
+	\end{frame}
+	
+\end{document}

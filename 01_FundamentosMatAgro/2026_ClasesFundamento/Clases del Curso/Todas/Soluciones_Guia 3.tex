@@ -1,0 +1,636 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\geometry{letterpaper, margin=2cm}
+\setlength{\headheight}{45pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Encabezado con logo e información institucional
+\lhead{%
+	\makebox[0pt][l]{%
+		\begin{minipage}{0.15\textwidth}
+			\includegraphics[width=\linewidth]{logoUst.png}
+		\end{minipage}
+	}%
+	\hspace{2.5cm}%
+	\begin{minipage}{0.8\textwidth}
+		\raggedright
+		\small
+		\textbf{Universidad Santo Tomás}\\
+		Departamento de Ciencias Básicas\\
+		Fundamentos Matemáticos
+	\end{minipage}
+}
+
+\begin{document}
+	
+	\vspace*{1em}
+	
+	\begin{center}
+		{\Large \textbf{Guía 03 Resuelta}}\\[0.3em]
+		{\small Unidades de medida - Expresiones algebraicas}
+	\end{center}
+	
+	% =========================
+	% SOLUCIONES I
+	% =========================
+	\section*{I. Conversiones de unidades}
+	
+	\begin{enumerate}[itemsep=0.4cm]
+		\item $5000\ \text{mL}$ a litros
+		
+		\[
+		1000\ \text{mL} = 1\ \text{L}
+		\qquad\Rightarrow\qquad
+		5000\ \text{mL} = 5\ \text{L}
+		\]
+		
+		\textbf{Respuesta:} $5\ \text{L}$
+		
+		\item $3.5\ \text{kg}$ a gramos
+		
+		\[
+		1\ \text{kg} = 1000\ \text{g}
+		\qquad\Rightarrow\qquad
+		3.5\ \text{kg} = 3500\ \text{g}
+		\]
+		
+		\textbf{Respuesta:} $3500\ \text{g}$
+		
+		\item $750\ \text{g}$ a kilogramos
+		
+		\[
+		1000\ \text{g} = 1\ \text{kg}
+		\qquad\Rightarrow\qquad
+		750\ \text{g} = 0.75\ \text{kg}
+		\]
+		
+		\textbf{Respuesta:} $0.75\ \text{kg}$
+		
+		\item $2.5\ \text{L}$ a mililitros
+		
+		\[
+		1\ \text{L} = 1000\ \text{mL}
+		\qquad\Rightarrow\qquad
+		2.5\ \text{L} = 2500\ \text{mL}
+		\]
+		
+		\textbf{Respuesta:} $2500\ \text{mL}$
+		
+		\item $4500\ \text{m}$ a kilómetros
+		
+		\[
+		1000\ \text{m} = 1\ \text{km}
+		\qquad\Rightarrow\qquad
+		4500\ \text{m} = 4.5\ \text{km}
+		\]
+		
+		\textbf{Respuesta:} $4.5\ \text{km}$
+		
+		\item $2.4\ \text{km}$ a metros
+		
+		\[
+		1\ \text{km} = 1000\ \text{m}
+		\qquad\Rightarrow\qquad
+		2.4\ \text{km} = 2400\ \text{m}
+		\]
+		
+		\textbf{Respuesta:} $2400\ \text{m}$
+		
+		\newpage
+		
+		\vspace*{1em}
+		
+		\item $180\ \text{min}$ a horas
+		
+		\[
+		60\ \text{min} = 1\ \text{h}
+		\qquad\Rightarrow\qquad
+		180\ \text{min} = 3\ \text{h}
+		\]
+		
+		\textbf{Respuesta:} $3\ \text{h}$
+		
+		\item $2.5\ \text{h}$ a minutos
+		
+		\[
+		1\ \text{h} = 60\ \text{min}
+		\qquad\Rightarrow\qquad
+		2.5\ \text{h} = 150\ \text{min}
+		\]
+		
+		\textbf{Respuesta:} $150\ \text{min}$
+		
+		\item $3500\ \text{cm}$ a metros
+		
+		\[
+		100\ \text{cm} = 1\ \text{m}
+		\qquad\Rightarrow\qquad
+		3500\ \text{cm} = 35\ \text{m}
+		\]
+		
+		\textbf{Respuesta:} $35\ \text{m}$
+		
+		\item $2500\ \text{kg}$ a toneladas
+		
+		\[
+		1000\ \text{kg} = 1\ \text{t}
+		\qquad\Rightarrow\qquad
+		2500\ \text{kg} = 2.5\ \text{t}
+		\]
+		
+		\textbf{Respuesta:} $2.5\ \text{t}$
+		
+		\item $900\ \text{mL}$ a litros
+		
+		\[
+		1000\ \text{mL} = 1\ \text{L}
+		\qquad\Rightarrow\qquad
+		900\ \text{mL} = 0.9\ \text{L}
+		\]
+		
+		\textbf{Respuesta:} $0.9\ \text{L}$
+		
+		\item $80000\ \text{cm}^2$ a metros cuadrados
+		
+		\[
+		1\ \text{m}^2 = 10000\ \text{cm}^2
+		\qquad\Rightarrow\qquad
+		80000\ \text{cm}^2 = 8\ \text{m}^2
+		\]
+		
+		\textbf{Respuesta:} $8\ \text{m}^2$
+		
+		\item $3\ \text{ha}$ a metros cuadrados
+		
+		\[
+		1\ \text{ha} = 10000\ \text{m}^2
+		\qquad\Rightarrow\qquad
+		3\ \text{ha} = 30000\ \text{m}^2
+		\]
+		
+		\textbf{Respuesta:} $30000\ \text{m}^2$
+		
+		\newpage
+		
+		\vspace*{1em}		
+		
+		\item $15000\ \text{m}^2$ a hectáreas
+		
+		\[
+		10000\ \text{m}^2 = 1\ \text{ha}
+		\qquad\Rightarrow\qquad
+		15000\ \text{m}^2 = 1.5\ \text{ha}
+		\]
+		
+		\textbf{Respuesta:} $1.5\ \text{ha}$
+		
+		\item $2\ \text{m}^3$ a litros
+		
+		\[
+		1\ \text{m}^3 = 1000\ \text{L}
+		\qquad\Rightarrow\qquad
+		2\ \text{m}^3 = 2000\ \text{L}
+		\]
+		
+		\textbf{Respuesta:} $2000\ \text{L}$
+		
+		\item $5000\ \text{L}$ a metros cúbicos
+		
+		\[
+		1000\ \text{L} = 1\ \text{m}^3
+		\qquad\Rightarrow\qquad
+		5000\ \text{L} = 5\ \text{m}^3
+		\]
+		
+		\textbf{Respuesta:} $5\ \text{m}^3$
+	\end{enumerate}
+	
+	% =========================
+	% SOLUCIONES III
+	% =========================
+	\section*{III. Problemas contextualizados}
+	
+	\begin{enumerate}[itemsep=0.6cm]
+		\item Un sistema de riego entrega $1200\ \text{mL/min}$ de agua.  
+		¿A cuántos litros por hora equivale esta tasa de riego?
+		
+		\[
+		1200\ \text{mL/min} = 1.2\ \text{L/min}
+		\]
+		
+		Como una hora tiene $60$ minutos:
+		
+		\[
+		1.2 \times 60 = 72\ \text{L/h}
+		\]
+		
+		\textbf{Respuesta:} $72\ \text{L/h}$
+		
+		\item Un estanque agrícola tiene forma de prisma rectangular de:
+		\begin{itemize}
+			\item Largo: $4\ \text{m}$
+			\item Ancho: $2\ \text{m}$
+			\item Profundidad: $1.5\ \text{m}$
+		\end{itemize}
+		
+		Volumen: $V = 4 \cdot 2 \cdot 1.5 = 12\ \text{m}^3$
+		
+		Conversión a litros:
+		
+		\[
+		12\ \text{m}^3 = 12000\ \text{L}
+		\]
+		
+		\textbf{Respuesta:} $12000\ \text{L}$
+		
+		\newpage
+		
+		\vspace*{1em}		
+		
+		
+		\item En una plantación se utilizan:
+		\begin{itemize}
+			\item 3 sacos de fertilizante de $25\ \text{kg}$ cada uno
+			\item 5 sacos de compost de $18\ \text{kg}$ cada uno
+		\end{itemize}
+		
+		Masa total:
+		
+		\[
+		3(25) + 5(18) = 75 + 90 = 165\ \text{kg}
+		\]
+		
+		En toneladas:
+		
+		\[
+		165\ \text{kg} = 0.165\ \text{t}
+		\]
+		
+		\textbf{Respuesta:} $0.165\ \text{t}$
+		
+		\item Un tractor recorre $15\ \text{km}$ en $30\ \text{min}$.
+		
+		\begin{itemize}
+			\item Velocidad en km/h:
+			
+			\[
+			30\ \text{min} = 0.5\ \text{h}
+			\]
+			
+			\[
+			v = \frac{15}{0.5} = 30\ \text{km/h}
+			\]
+			
+			\item Velocidad en m/s:
+			
+			\[
+			30\ \text{km/h} = \frac{30000\ \text{m}}{3600\ \text{s}} = 8.33\ \text{m/s}
+			\]
+		\end{itemize}
+		
+		\textbf{Respuesta:} $30\ \text{km/h}$ y aproximadamente $8.33\ \text{m/s}$
+		
+		\item Un cultivo requiere $2.5\ \text{L}$ de agua por planta al día.  
+		Si hay 350 plantas:
+		
+		\begin{itemize}
+			\item Litros diarios:
+			
+			\[
+			2.5 \cdot 350 = 875\ \text{L}
+			\]
+			
+			\item En metros cúbicos:
+			
+			\[
+			875\ \text{L} = 0.875\ \text{m}^3
+			\]
+		\end{itemize}
+		
+		\textbf{Respuesta:} $875\ \text{L}$ diarios, equivalentes a $0.875\ \text{m}^3$
+	\end{enumerate}
+	
+		\newpage
+	
+	\vspace*{1em}		
+	
+	
+	% =========================
+	% SOLUCIONES IV
+	% =========================
+	\section*{IV. Expresiones algebraicas}
+	
+	\begin{enumerate}
+		\item Simplifique las siguientes expresiones algebraicas:
+		
+		\begin{enumerate}[itemsep=0.5cm]
+			\item 
+			\[
+			120mn - 54mn + 100m - 30mn - 28m
+			\]
+			Agrupando términos semejantes:
+			\[
+			(120 - 54 - 30)mn + (100 - 28)m = 36mn + 72m
+			\]
+			\textbf{Respuesta:} \(\boxed{36mn + 72m}\)
+			
+			\item 
+			\[
+			35pq + 30 + 78pq - 60pq - 13
+			\]
+			\[
+			(35 + 78 - 60)pq + (30 - 13) = 53pq + 17
+			\]
+			\textbf{Respuesta:} \(\boxed{53pq + 17}\)
+			
+			\item 
+			\[
+			14 + [12xy - (3x^2y^2 - 4xy) + 8xy + 10]
+			\]
+			Quitando paréntesis:
+			\[
+			14 + 12xy - 3x^2y^2 + 4xy + 8xy + 10
+			\]
+			\[
+			-3x^2y^2 + (12+4+8)xy + (14+10)
+			\]
+			\[
+			-3x^2y^2 + 24xy + 24
+			\]
+			\textbf{Respuesta:} \(\boxed{-3x^2y^2 + 24xy + 24}\)
+			
+			\item 
+			\[
+			-10t + [ -(-2t + 3) + 12] - (14 + 2t + 11t)
+			\]
+			Primero:
+			\[
+			-(-2t+3)=2t-3
+			\]
+			Entonces:
+			\[
+			-10t + (2t - 3 + 12) - (14 + 13t)
+			\]
+			\[
+			-10t + (2t + 9) - 14 - 13t
+			\]
+			\[
+			(-10t+2t-13t) + (9-14) = -21t - 5
+			\]
+			\textbf{Respuesta:} \(\boxed{-21t - 5}\)
+			
+			\newpage
+			
+			\vspace*{1em}		
+			
+			
+			\item 
+			\[
+			x^2yz - (18xy^2z + 10xyz^2)
+			\]
+			\[
+			x^2yz - 18xy^2z - 10xyz^2
+			\]
+			No hay términos semejantes.
+			
+			\textbf{Respuesta:} \(\boxed{x^2yz - 18xy^2z - 10xyz^2}\)
+			
+			\item 
+			\[
+			11a^2b - 32a^2b + 14ab^2 - 3a^2b
+			\]
+			\[
+			(11 - 32 - 3)a^2b + 14ab^2 = -24a^2b + 14ab^2
+			\]
+			\textbf{Respuesta:} \(\boxed{-24a^2b + 14ab^2}\)
+			
+			\item 
+			\[
+			10x^2yz - 12x^2yz - 8yx^2z + 42yx^2z
+			\]
+			Observamos que \(yx^2z = x^2yz\). Entonces:
+			\[
+			10x^2yz - 12x^2yz - 8x^2yz + 42x^2yz
+			\]
+			\[
+			(10 - 12 - 8 + 42)x^2yz = 32x^2yz
+			\]
+			\textbf{Respuesta:} \(\boxed{32x^2yz}\)
+			
+			\item 
+			\[
+			54rt^2 - (12rt^2 - 5rt) + (21rt^2 - 2rt)
+			\]
+			\[
+			54rt^2 - 12rt^2 + 5rt + 21rt^2 - 2rt
+			\]
+			\[
+			(54 - 12 + 21)rt^2 + (5 - 2)rt = 63rt^2 + 3rt
+			\]
+			\textbf{Respuesta:} \(\boxed{63rt^2 + 3rt}\)
+		\end{enumerate}
+	\end{enumerate}
+	
+		\newpage
+	
+	\vspace*{1em}		
+	
+	
+	% =========================
+	% SOLUCIONES V
+	% =========================
+	\section*{V. Problemas aplicados}
+	
+	\begin{enumerate}[itemsep=0.7cm]
+		
+		\item \textbf{Costo total}
+		
+		\[
+		A = 3x^2 + 5xy - 2xy^2
+		\]
+		\[
+		B = 10xy + 7x^2 - 3y^2
+		\]
+		\[
+		C = 4y^2 - 8xy + 10
+		\]
+		
+		Entonces:
+		\[
+		A+B+C
+		\]
+		\[
+		=(3x^2 + 5xy - 2xy^2) + (10xy + 7x^2 - 3y^2) + (4y^2 - 8xy + 10)
+		\]
+		
+		Agrupando:
+		\[
+		(3x^2+7x^2) + (5xy+10xy-8xy) -2xy^2 + (-3y^2+4y^2) + 10
+		\]
+		\[
+		10x^2 + 7xy - 2xy^2 + y^2 + 10
+		\]
+		
+		\textbf{Respuesta:} \(\boxed{10x^2 + 7xy - 2xy^2 + y^2 + 10}\)
+		
+		\item \textbf{Crecimientos vegetales}
+		
+		\[
+		A = 2x^3 - x^2 + 4x - 5
+		\]
+		\[
+		B = x^3 - 8x - 2
+		\]
+		\[
+		C = x^2 - 4x - 2
+		\]
+		
+		Calcular:
+		\[
+		4A - [2B + C - (3B + 2A)] + 10B
+		\]
+		
+		Primero simplificamos el corchete:
+		\[
+		2B + C - (3B + 2A)=2B+C-3B-2A = -B + C - 2A
+		\]
+		
+		Entonces:
+		\[
+		4A -[-B + C - 2A] + 10B = 4A + B - C + 2A + 10B
+		\]
+		\[
+		= 6A + 11B - C
+		\]
+		
+		Ahora:
+		\[
+		6A = 12x^3 - 6x^2 + 24x - 30
+		\]
+		\[
+		11B = 11x^3 - 88x - 22
+		\]
+		\[
+		-C = -x^2 + 4x + 2
+		\]
+		
+			\newpage
+		
+		\vspace*{1em}		
+				
+		Sumando:
+		\[
+		(12x^3+11x^3) + (-6x^2-x^2) + (24x-88x+4x) + (-30-22+2)
+		\]
+		\[
+		23x^3 - 7x^2 - 60x - 50
+		\]
+		
+		\textbf{Respuesta:} \(\boxed{23x^3 - 7x^2 - 60x - 50}\)
+		
+		\item \textbf{Fertilización en un cultivo}
+		
+		Base:
+		\[
+		2n + 15
+		\]
+		
+		Refuerzo:
+		\[
+		3n - 10
+		\]
+		
+		Cantidad total:
+		\[
+		(2n+15)+(3n-10)=5n+5
+		\]
+		
+		\textbf{Respuesta:} \(\boxed{5n+5}\)
+		
+		\item \textbf{Nutrientes}
+		
+		\[
+		S = 45x^2 - 12xy + 30y^2
+		\]
+		\[
+		F = -7x^2 + 24xy - 3y^2
+		\]
+		\[
+		A = 30x^2 - 10xy + y^2
+		\]
+		
+		\textbf{Con abono:}
+		\[
+		S+F+A
+		\]
+		\[
+		=(45-7+30)x^2 + (-12+24-10)xy + (30-3+1)y^2
+		\]
+		\[
+		68x^2 + 2xy + 28y^2
+		\]
+		
+		\textbf{Sin abono:}
+		\[
+		S+F
+		\]
+		\[
+		=(45-7)x^2 + (-12+24)xy + (30-3)y^2
+		\]
+		\[
+		38x^2 + 12xy + 27y^2
+		\]
+		
+		\textbf{Respuesta con abono:} \(\boxed{68x^2 + 2xy + 28y^2}\)
+		
+		\textbf{Respuesta sin abono:} \(\boxed{38x^2 + 12xy + 27y^2}\)
+		
+			\newpage
+		
+		\vspace*{1em}		
+				
+		\item \textbf{Pesticidas}
+		
+		Disponible:
+		\[
+		50a + 20b + 30
+		\]
+		
+		Aplicación total:
+		\[
+		(5a - 35b + 42) + (32a + 10b - 22)
+		\]
+		\[
+		= 37a - 25b + 20
+		\]
+		
+		Entonces lo que queda es:
+		\[
+		(50a + 20b + 30) - (37a - 25b + 20)
+		\]
+		\[
+		= 50a + 20b + 30 - 37a + 25b - 20
+		\]
+		\[
+		= 13a + 45b + 10
+		\]
+		
+		\textbf{Respuesta:} \(\boxed{13a + 45b + 10}\)
+		
+	\end{enumerate}
+	
+\end{document}

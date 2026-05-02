@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+	
+	\section*{Problema 1: Pensamiento Matemático - Psicología}
+	
+	Dadas las proposiciones:
+	
+	
+	\[
+	\begin{aligned}
+		p &: \text{La memoria a corto plazo tiene capacidad ilimitada.} \\
+		q &: \text{La memoria sensorial tiene una duración de varios minutos.} \\
+		r &: \text{La memoria a largo plazo es de duración prolongada.} \\
+		s &: \text{El individuo utiliza la información para tomar decisiones.}
+	\end{aligned}
+	\]
+	
+	
+	
+	\subsection*{a) Traducción al lenguaje usual}
+	
+	La proposición compuesta es:
+	
+	
+	\[
+	(p \to q) \land (\sim r \to s)
+	\]
+	
+	
+	
+	Traducción:  
+	\textit{“Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial dura varios minutos, y si la memoria a largo plazo no es prolongada, entonces el individuo utiliza la información para tomar decisiones.”}
+	
+	\subsection*{b) Valor de verdad}
+	
+	La proposición es:
+	
+	
+	\[
+	[(p \land \sim q) \lor r] \to s
+	\]
+	
+	
+	
+	\textbf{Análisis lógico:}
+	
+	
+	\[
+	\begin{aligned}
+		p &= \text{Falso} \\
+		q &= \text{Falso} \\
+		r &= \text{Verdadero} \\
+		s &= \text{Verdadero}
+	\end{aligned}
+	\]
+	
+	
+	
+	Evaluación paso a paso:
+	
+	
+	\[
+	\sim q = \text{Verdadero}
+	\]
+	
+	
+	
+	
+	\[
+	p \land \sim q = \text{Falso} \land \text{Verdadero} = \text{Falso}
+	\]
+	
+	
+	
+	
+	\[
+	(p \land \sim q) \lor r = \text{Falso} \lor \text{Verdadero} = \text{Verdadero}
+	\]
+	
+	
+	
+	
+	\[
+	[(p \land \sim q) \lor r] \to s = \text{Verdadero} \to \text{Verdadero} = \text{Verdadero}
+	\]
+	
+	
+	
+	\subsection*{Conclusión}
+	El valor de verdad de la proposición compuesta es:
+	
+	
+	\[
+	\boxed{\text{Verdadero}}
+	\]
+	
+	
+	
+\end{document}

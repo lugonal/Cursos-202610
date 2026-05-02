@@ -1,0 +1,249 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{cancel}
+
+\title{Evaluación 1 -- Parte II}
+\subtitle{Versión exacta lista para grabar}
+\author{Fundamentos de Matemática Básica}
+\date{Contexto agronómico aplicado}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\begin{frame}{Objetivo y forma de trabajo}
+		\begin{itemize}
+			\item Resolver paso a paso cada modelo algebraico.
+			\item Simplificar expresiones, productos y fracciones racionales.
+			\item Establecer restricciones cuando corresponda.
+			\item Interpretar cada resultado en lenguaje técnico agrícola.
+		\end{itemize}
+		
+		\textbf{Estructura del video}
+		
+		Problema 1: asistencia a capacitaciones \quad
+		Problema 2: costo de análisis \quad
+		Problema 3: riego tecnificado \quad
+		Problema 4: eficiencia global
+	\end{frame}
+	
+	\begin{frame}{Problema 1: expresión total de asistentes}
+		Modelos dados:
+		\[
+		\begin{array}{l}
+		\text{Manejo Integrado de plagas: }	M(x,y)=4xy-(x-2y)^2 \\
+		\text{Riego tecnificado: }	R(x,y)=(4x+y)(4y+x) \\
+		\text{Fertilidad del suelo: }	F(x,y)=(x-2y)(x+2y)-(2x-y)^2
+		\end{array}
+		\]
+		
+		Desarrollo:
+		\[
+		\begin{array}{lcl}
+			M(x,y)&=&4xy-(x^2-4xy+4y^2) \\
+		          &=&4xy-x^2+4xy-4y^2 \\
+		          &=&8xy-x^2-4y^2=-x^2+8xy-4y^2 \\
+				  &	&	    \\    
+			R(x,y)&=&(4x+y)(4y+x) \\
+			      &=&16xy+4x^2+4y^2+xy \\
+			      &=&17xy+4x^2+4y^2 = 4x^2+17xy+4y^2 \\
+			      & &	\\	
+			F(x,y)&=&(x-2y)(x+2y)-(2x-y)^2 \\
+				  &=&x^2-4y^2-(4x^2-4xy+y^2) \\
+				  &=&x^2-4y^2-4x^2+4xy-y^2 \\
+				  &=&-3x^2+4xy-5y^2
+			\end{array} 
+		\]
+		
+	\end{frame}
+	
+	\begin{frame}{Problema 1: suma e interpretación}
+		Sumamos las tres capacitaciones:
+		\[
+		\begin{array}{l}
+			T(x,y)=(-x^2+8xy-4y^2)+(4x^2+17xy+4y^2)+(-3x^2+4xy-5y^2)\\
+			T(x,y)=(-x^2+4x^2-3x^2)+(8xy+17xy+4xy)+(-4y^2+4y^2-5y^2)\\
+			T(x,y)=29xy-5y^2
+		\end{array}
+		\]
+		
+		\textbf{Respuesta 1(a) Suma total de asistentes:} $T(x,y)=29xy-5y^2$
+		
+		\medskip
+		
+		\textbf{Respuesta 1(b) Interpretación técnica:}
+		
+		La participación total de asistentes aumenta fuertemente con la interacción entre el tamaño del predio y la tecnificación, representada por \(29xy\), pero existe un efecto de ajuste negativo asociado al término \(-5y^2\).
+	\end{frame}
+	
+	\begin{frame}{Problema 2: costo del análisis de materia orgánica}
+		Costo total contratado:
+		\[
+		C_{Total}=C_T=(9a+7b)(a+4b)
+		\]
+		
+		Costos conocidos:
+		\[
+		C_{Macro}=C_M=(a+2b)(2a-3b)
+		\]
+		\[
+		C_{micro}=C_m=(2a-b)(3a+14b)
+		\]
+		
+		\textbf{Respuesta 2(a) Modelo buscado:}
+		\[
+		C_{Materia\; organica}=C_{Mo}=C_T-C_M-C_m
+		\]
+		
+		Expandimos:
+		\[
+		\begin{array}{lcl}
+		C_T=(9a+7b)(a+4b)=9a^2+43ab+28b^2\\
+		C_M=(a+2b)(2a-3b)=2a^2+ab-6b^2\\
+		Cm=(2a-b)(3a+14b)=6a^2+25ab-14b^2\\
+		\end{array}
+		\]
+				
+	\end{frame}
+	
+	\begin{frame}{Problema 2: simplificación e interpretación}
+		\[
+		\begin{array}{lcl}
+			C_{Mo}&=&(9a^2+43ab+28b^2)-(2a^2+ab-6b^2)-(6a^2+25ab-14b^2)\\
+     			  &=&9a^2+43ab+28b^2-2a^2-ab+6b^2-6a^2-25ab+14b^2\\
+		          &=&a^2+17ab+48b^2
+		\end{array}
+		\]
+		
+		\textbf{Respuesta 2(b) La expresión simplificada es:}
+		\[
+		C_{\text{Materia Organica}}= a^2+17ab+48b^2
+		\]
+		
+		
+		\textbf{Respuesta 2(c) Interpretación técnica}
+		
+		El costo del análisis de materia orgánica aumenta con la profundidad de muestreo y, sobre todo, con el número de muestras. Esto afecta la planificación del diagnóstico del suelo antes de la siembra.
+	\end{frame}
+	
+	\begin{frame}{Problema 3: mejora total acumulada del cultivo}
+		Modelos dados:
+		\[
+		R(x)=\frac{x^2-25}{x^2+5x}
+		\]
+		\[
+		T(x)=\frac{(5x)^2+x}{x-5}
+		\]
+		
+		Factorizamos y simplificamos:
+		\[
+		R(x)=\frac{(x-5){\cancel{(x+5)}}}{x\cancel{(x+5)}}=\frac{x-5}{x}
+		\]
+		\[
+		T(x)=\frac{25x^2+x}{x-5}
+		=\frac{x(25x+1)}{x-5}
+		\]
+		
+		\textbf{Respuesta 3(a). Mejora total acumulada:}
+		\[
+		M(x)=R(x)\cdot T(x)
+		=\frac{\cancel{x-5}}{\cancel{x}}\cdot \frac{\cancel{x}(25x+1)}{\cancel{x-5}}
+		=25x+1
+		\]
+		
+		\textbf{Respuesta 3(b) Mejora total acumulada simplificada = $25x+1$}
+	\end{frame}
+	
+	\begin{frame}{Problema 3: restricciones e interpretación}
+		\textbf{Respuesta 3(c). Restricciones algebraicas del modelo original:}
+		\[
+		x\neq -5,\qquad x\neq 0,\qquad x\neq 5
+		\]
+		
+		\textbf{Respuesta 3(d). Interpretación técnica}
+		
+		\(x=0\) no es válido porque anula un denominador y, además, implicaría nulo tiempo de operación.
+		
+		\(x=5\) y \(x=-5\) tampoco son válidos porque generan divisiones por cero en el modelo original.
+		
+		En la práctica agrícola, además, el tiempo debe ser positivo, por lo que se trabaja con:
+		\[
+		x>0,\qquad x\neq 5
+		\]
+	\end{frame}
+	
+	\begin{frame}{Problema 4: simplificación de cada factor}
+		
+		Modelo global:
+		\[	E=F\cdot R\cdot C	\]
+		
+		\[
+		\begin{array}{l}
+			F=\frac{x^2-9x+18}{x^2-36} \\
+			R=\frac{x^2+6x}{4x-12} \\
+			C=\frac{x^2+x}{x+1}
+		\end{array}
+		\]
+		
+		\textbf{Respuesta 4(a) Simplificamos cada factor:}
+		\[
+		\begin{array}{lcl}
+		F&=&\frac{x^2-9x+18}{x^2-36}=\frac{(x-3)\cancel{(x-6)}}{\cancel{(x-6)}(x+6)}=\frac{x-3}{x+6}\\
+	     & & \\
+	    R&=&\frac{x^2+6x}{4x-12}=\frac{x(x+6)}{4(x-3)}\\
+	     & & \\
+	    C&=&\frac{x^2+x}{x+1}=\frac{x\cancel{(x+1)}}{\cancel{x+1}}=x
+		\end{array}
+		\]
+		
+	\end{frame}
+	
+	\begin{frame}{Problema 4: eficiencia global y restricciones}
+		
+		\[
+		E=\frac{\cancel{x-3}}{\cancel{x+6}}\cdot \frac{x\cancel{(x+6)}}{4\cancel{(x-3)}}\cdot x
+		\]
+		
+		\textbf{Respuesta 4(b). Eficiencia global simplificada:}
+		
+		\[
+		E=\frac{x^2}{4}
+		\]
+		
+		\textbf{Respuesta 4(c). Restricciones del modelo original:}
+		
+		\[
+		x\neq -6,\qquad x\neq 6,\qquad x\neq 3,\qquad x\neq -1
+		\]
+		
+		\textbf{Respuesta 4(e). Interpretación técnica:}
+		
+		Como
+		\[
+		E=\frac{x^2}{4}
+		\]
+		mejorar el nivel de manejo agronómico incrementa la eficiencia global de forma cuadrática. Es decir, pequeños avances en manejo pueden traducirse en mejoras productivas importantes.
+	\end{frame}
+	
+	\begin{frame}{Cierre del video}
+		\begin{itemize}
+			\item Se resolvieron expresiones algebraicas contextualizadas en agronomía.
+			\item Se simplificaron productos y fracciones racionales.
+			\item Se determinaron restricciones y se interpretaron resultados en contexto real.
+		\end{itemize}
+		
+		\textbf{Idea final}
+		
+		La matemática permite modelar decisiones agrícolas: capacitación, análisis de suelo, eficiencia de riego y rendimiento del sistema productivo.
+	\end{frame}
+	
+\end{document}

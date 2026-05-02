@@ -1,0 +1,723 @@
+\documentclass[handout,10pt]{beamer}
+
+\usetheme{CambridgeUS}
+\usecolortheme[RGB={0,88,127}]{structure}
+\usefonttheme{professionalfonts}
+
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathpazo}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\setbeamertemplate{navigation symbols}{}
+
+\newtheorem{definicion}{Definición}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{ejemplos}{Ejemplos}
+
+\title[MAT-016]{Razonamiento Lógico Matemático}
+\subtitle{Unidad II: Álgebra en los Números Reales\\
+	Clase 7: Conjuntos Numéricos y Operatoria}
+\author[]{Profesor Luis Tulio González Alcaino\\
+	Magíster en Matemática}
+\institute{Universidad Santo Tomás\\
+	Departamento Ciencias Básicas - Talca}
+\date{Semestre I - 2026}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Contenidos de la clase}
+		\begin{enumerate}
+			\item Conjuntos Numéricos
+			\item Operatoria
+		\end{enumerate}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Resultado de Aprendizaje}
+		\begin{enumerate}
+			\item Resolver operatoria en los distintos conjuntos numéricos.
+		\end{enumerate}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			Se iniciará definiendo los conjuntos de números que conforman a los números reales.
+			
+			\begin{enumerate}
+				\item \textbf{Los Números Naturales} $\mathbb{N}$
+				
+				También conocidos como números para contar o enteros positivos.
+				\[
+				\mathbb{N}=\left\{1,2,3,\ldots\right\}
+				\]
+				
+				\pause
+				
+				\item \textbf{Los Números Enteros} $\mathbb{Z}$
+				
+				Son los números que incluyen enteros negativos, el cero y enteros positivos:
+				\[
+				\mathbb{Z}=\left\{\ldots,-3,-2,-1,0,1,2,3,\ldots\right\}
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\begin{enumerate}
+				\item[3.] \textbf{Los Números Racionales} $\mathbb{Q}$
+				
+				Los números racionales son los números reales que se pueden expresar como razón de dos números enteros. Se denota el conjunto de los números racionales por $\mathbb{Q}$, y se escribe
+				\[
+				\mathbb{Q}=
+				\left\{
+				\frac{a}{b}:\text{ donde } a \text{ y } b \text{ son números enteros con } b\neq 0
+				\right\}
+				\]
+				\[
+				\left\{
+				\ldots,-\frac{3}{2},\ldots,-\frac{5}{4},\ldots,-1,\ldots,-\frac{1}{2},\ldots,0,\ldots,\frac{1}{2},\ldots,\frac{8}{5},\ldots
+				\right\}
+				\]
+				
+				Por otro lado, su desarrollo decimal es finito o infinito periódico o semiperiódico.
+				
+				\textbf{Ejemplos:}
+				\[
+				\frac{1}{4}=0.25
+				\qquad
+				\frac{5}{3}=1.666\ldots = 1.\overline{6}
+				\qquad
+				\frac{19}{12}=1.58333\ldots = 1.58\overline{3}
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\begin{enumerate}
+				\item[4.] \textbf{Los Números Irracionales}
+				
+				Son los números que no pueden expresarse como un cociente de enteros y su desarrollo decimal es infinito no periódico.
+				
+				\[
+				\mathbb{I}=
+				\left\{
+				x:\text{ donde } x \text{ no es un número racional}
+				\right\}
+				\]
+				\[
+				\left\{
+				\ldots,-\pi,\ldots,-\sqrt{3},\ldots,\sqrt{2},\ldots,e,\ldots
+				\right\}
+				\]
+				
+				\textbf{Ejemplos:}
+				\[
+				\sqrt{2}=1.414213562\ldots
+				\qquad
+				\pi=3.141592654\ldots
+				\qquad
+				e=2.718281828\ldots
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\begin{enumerate}
+				\item[5.] \textbf{Los Números Reales} $\mathbb{R}$
+				
+				La unión del conjunto de los números racionales y de los números irracionales se conoce como el conjunto de los números reales, es decir,
+				\[
+				\mathbb{R}=\mathbb{Q}\cup\mathbb{I}
+				\]
+			\end{enumerate}
+			
+			Una manera bastante práctica de representar el conjunto de números reales es en una recta a la que se denomina recta numérica, como la que aparece en la siguiente figura:
+		\end{block}
+		
+		\begin{center}
+			\begin{tikzpicture}[x=1.2cm,y=1cm,>=Latex]
+				\draw[thick,-{Latex[length=3mm]}] (-3.6,0) -- (3.6,0);
+				\foreach \x/\lab in {-3/-3,-2/-2,-1/-1,0/0,1/1,2/2,3/3}{
+					\draw[thick] (\x,0.12) -- (\x,-0.12);
+					\node[below] at (\x,-0.12) {\lab};
+				}
+			\end{tikzpicture}
+		\end{center}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\textbf{Recta numérica}
+			
+			\begin{center}
+				\begin{tikzpicture}[x=1.2cm,y=1cm,>=Latex]
+					\draw[thick,-{Latex[length=3mm]}] (-4,0) -- (4,0);
+					\foreach \x/\lab in {-3/-3,-2/-2,-1/-1,0/0,1/1,2/2,3/3}{
+						\draw[thick] (\x,0.12) -- (\x,-0.12);
+						\node[below] at (\x,-0.12) {\lab};
+					}
+				\end{tikzpicture}
+			\end{center}
+			
+			Mediante las ideas de igualdad y desigualdad pueden compararse 2 números reales cualquiera. Se utilizan símbolos para representar estas ideas:
+		\end{block}
+		
+		\pause
+		\textbf{Ejemplos}
+		\begin{itemize}
+			\item Para decir que 7 es menor que 12, escribimos $7<12$.
+			\pause
+			\item También para decir que $-3$ es mayor que $-10$, escribimos $-3>-10$.
+			\pause
+			\item Podemos tener claro el significado de los símbolos menor que $<$ y mayor que $>$, si recordamos que éstos siempre apuntan hacia el número más pequeño: $-5<1$, así como $15>6$.
+			\pause
+			\item Hay otros dos símbolos $\leq$ y $\geq$, que también representan la idea de desigualdad. El símbolo $\leq$ significa “es menor o igual que”, por lo que $10\leq 15$ significa que 10 es menor o igual a 15.
+		\end{itemize}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Ejercicio}
+			Complete el siguiente cuadro: Marca con ``$\surd$'' el (o los) conjunto(s) numérico(s) al(los) cual(es) pertenece cada número.
+			
+			\[
+			\begin{array}{|c|c|c|c|c|c|}
+				\hline
+				\text{Número} & \mathbb{N} & \mathbb{Z} & \mathbb{Q} & \mathbb{I} & \mathbb{R} \\ \hline
+				-5 &  &  &  &  &  \\ \hline
+				\sqrt{3} &  &  &  &  &  \\ \hline
+				\frac{5}{8} &  &  &  &  &  \\ \hline
+				\frac{\pi}{2} &  &  &  &  &  \\ \hline
+				1,2 &  &  &  &  &  \\ \hline
+			\end{array}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Adición}
+			Para sumar números enteros, debemos tener en cuenta que:
+			
+			\begin{enumerate}
+				\item ``Si son del mismo signo (positivos o negativos), se suman los números (sin considerar el signo) y se conserva el signo de los números (positivo o negativo)''
+				
+				\textbf{Ejemplos:}
+				\begin{enumerate}
+					\item $2+5=7$
+					\item $-4+(-7)=-11$
+					\pause
+				\end{enumerate}
+				
+				\item ``Si son de distinto signo (positivos o negativos o viceversa), se restan los números y se conserva el signo del número mayor sin considerar el signo''
+				
+				\textbf{Ejemplos:}
+				\begin{enumerate}
+					\item $8+(-3)=5$
+					\item $-10+9=-1$
+				\end{enumerate}
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Observaciones}
+			\begin{enumerate}
+				\item La expresión ``$a+(-b)$'' se escribe como ``$a-b$''.
+				
+				\textbf{Ejemplo.} $6+(-8)=6-8=-2$
+				\pause
+				
+				\item La expresión ``$a-(-b)$'' se escribe como ``$a+b$''.
+				
+				\textbf{Ejemplo.} $12-(-4)=12+4=16$
+				\pause
+				
+				\item La expresión ``$a+b$'' es equivalente con ``$b+a$'', es decir $a+b=b+a$ (propiedad conmutativa).
+				
+				\textbf{Ejemplo.} $(-25)+10=10+(-25)=10-25=-15$
+				\pause
+				
+				\item La expresión ``$a+(b+c)$'' es equivalente con ``$(a+b)+c$'', es decir
+				$a+(b+c)=(a+b)+c$ (propiedad asociativa).
+				
+				\textbf{Ejemplo.}
+				\[
+				((-12)+15)+(-3)=(-12)+(15+(-3))=(-12)+(15-3)=-12+12=0
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Observaciones}
+			\begin{enumerate}
+				\item $a+0=a$.
+				
+				\textbf{Ejemplo.} $7+0=7$
+				\pause
+				
+				\item $a+(-a)=(-a)+a=0$.
+				
+				\textbf{Ejemplo.} $12+(-12)=0$
+				\pause
+				
+				\item $-(-a)=a$.
+				
+				\textbf{Ejemplo.} $-(-9)=9$
+				\pause
+				
+				\item $-(a+b)=(-a)+(-b)$
+				\pause
+				
+				\item \textbf{Ejemplo.} $-(4+8)=(-4)+(-8)=-12$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{}
+			\textbf{Ejercicios}
+			
+			\begin{enumerate}
+				\item Determine el valor de las siguientes sumas:
+				
+				\begin{tabular}{llll}
+					a) $(-3)+(-8)=$\pause &  & b) $(-5+3)+2=$\pause &  \\
+					c) $-10+5=$\pause &  & d) $0+(-5+2)=$\pause &  \\
+					e) $(-32)+48+(-10)=$\pause &  & f) $-(-14)+(-18)=$\pause &  \\
+					g) $-(3+(-7))-7-3=$\pause &  & h) $-(-8+5)+(-8)=$ & 
+				\end{tabular}
+				
+				\item Completar los espacios en blanco en cada una de las siguientes expresiones de modo que resulte una expresión verdadera.
+				
+				\begin{enumerate}
+					\item $3+(-3)+6=4+\underline{\hspace{2cm}}$
+					\pause
+					\item $(-5)+(-(-5))+(-(-(-5)))=\underline{\hspace{2cm}}$
+					\pause
+					\item $9=9+\underline{\hspace{2cm}}$
+					\pause
+					\item $-8+6+\underline{\hspace{2cm}}=-8$
+				\end{enumerate}
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Multiplicación}
+			Para multiplicar números enteros, debemos tener en cuenta la ``ley de los signos'', que dice lo siguiente:
+			\pause
+			
+			\begin{itemize}
+				\item Al multiplicar dos números enteros de igual signo, el resultado es un número positivo $(+)$.
+				\pause
+				\item Al multiplicar dos números enteros de distinto signo, el resultado es un número negativo $(-)$.
+				\pause
+			\end{itemize}
+			
+			Esto se puede resumir en la siguiente tabla:
+			\pause
+			
+			\[
+			\text{\large Ley de los Signos}
+			\qquad
+			\begin{array}{ccc}
+				+\cdot + & = & + \\
+				-\cdot - & = & + \\
+				+\cdot - & = & - \\
+				-\cdot + & = & -
+			\end{array}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Observaciones}
+			\begin{enumerate}
+				\item $a\cdot b=b\cdot a$ (conmutatividad).
+				
+				\textbf{Ejemplo.} $(-2)\cdot 7=7\cdot (-2)=-14$
+				\pause
+				
+				\item $a\cdot (b\cdot c)=(a\cdot b)\cdot c$ (asociatividad).
+				
+				\textbf{Ejemplo.} $4\cdot(12\cdot(-3))=(4\cdot12)\cdot(-3)$
+				\pause
+				
+				\item $a\cdot1=a$ (neutro multiplicativo).
+				
+				\textbf{Ejemplo.} $83\cdot1=83$
+				\pause
+				
+				\item $a\cdot(b+c)=a\cdot b+a\cdot c$ (distributividad).
+				
+				\textbf{Ejemplo.} $(-4)\cdot(5+7)=(-4)\cdot5+(-4)\cdot7=-48$
+				\pause
+				
+				\item $a\cdot0=0$.
+				
+				\textbf{Ejemplo.} $(-120)\cdot0=0$
+				\pause
+				
+				\item Si $a\cdot b=0$, entonces $a=0$ o $b=0$, o bien ambos son iguales a cero.
+				
+				\textbf{Ejemplo.}
+				\[
+				(x-1)\cdot(x+5)=0 \Longrightarrow (x-1)=0 \text{ o bien } (x+5)=0
+				\]
+				de donde $x=1$ o bien $x=-5$.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Ejercicios}
+			Multiplicar:
+			
+			\begin{tabular}{lll}
+				a) $(-5)\cdot0=$\pause &  & f) $(-3)\cdot(-7)=$\pause \\
+				b) $((-10)\cdot4)\cdot5=$\pause &  & g) $3+2\cdot5=$\pause \\
+				c) $((-20)+40)\cdot(-2)=$\pause &  & h) $(-2)\cdot(-(-14)+(-5))=$\pause \\
+				d) $4\cdot(-5)=$\pause &  & i) $(-7+3)\cdot(-3)=$\pause \\
+				e) $20\cdot((-8)-6)=$\pause &  & j) $5\cdot4-5+6\cdot3-2+7\cdot3=$
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Jerarquía o Prioridad de las Operaciones}
+			Cuando se evalúa una expresión que contiene más de un símbolo de operación, se procede en el orden que describiremos a continuación.
+			\pause
+			
+			Diremos que los procedimientos u operaciones que aparecen primero son los que tienen mayor jerarquía o prioridad que aquellos que aparecen después.
+			\pause
+			
+			\begin{enumerate}
+				\item Efectuar las operaciones dentro de los paréntesis.
+				\pause
+				\item Realizar las multiplicaciones y divisiones.
+				\pause
+				\item Realizar las sumas y restas.
+				\pause
+				\item Cuando haya dos o más operaciones de igual jerarquía, se procede de izquierda a derecha.
+				\pause
+			\end{enumerate}
+			
+			\textbf{Ejemplos}
+			\begin{enumerate}
+				\item $2+[3-(5-2\cdot3)\cdot4]=\pause 9$
+				\pause
+				\item $(5\cdot3-2)-[4\cdot(5\cdot3)-1]=\pause -46$
+				\pause
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Operatoria en los Números Racionales}
+		\begin{block}{Adición}
+			Para sumar números racionales debemos tener en cuenta que:
+			\pause
+			
+			\begin{enumerate}
+				\item Si tienen denominador común, se suman los numeradores y se conserva el denominador:
+				\[
+				\frac{a}{b}+\frac{c}{b}=\frac{a+c}{b},
+				\qquad b\neq0
+				\]
+				\pause
+				
+				\item Si tienen distinto denominador:
+				\[
+				\frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d},
+				\qquad b\neq0 \text{ y } d\neq0
+				\]
+				\pause
+				
+				\item Mínimo común denominador:
+				\[
+				\frac{3}{5}-\frac{8}{3}+\frac{6}{12}
+				=
+				\frac{12\cdot3-20\cdot8+5\cdot6}{60}
+				\pause
+				=
+				\frac{36-160+30}{60}
+				=
+				-\frac{94}{60}
+				=
+				-\frac{47}{30}
+				\]
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Ejemplos}
+			\begin{enumerate}
+				\item $\dfrac{1}{2}-\dfrac{5}{2}+\dfrac{3}{2}
+				=
+				\dfrac{1-5+3}{2}
+				\pause
+				=
+				-\dfrac{1}{2}$
+				\pause
+				
+				\item $\dfrac{1}{3}-\dfrac{2}{5}
+				=
+				\dfrac{1\cdot5-3\cdot2}{3\cdot5}
+				=
+				\dfrac{5-6}{15}
+				\pause
+				=
+				-\dfrac{1}{15}$
+				\pause
+				
+				\item $\dfrac{4}{5}+\dfrac{8}{3}-\dfrac{7}{18}+\dfrac{9}{2}
+				=
+				\dfrac{18\cdot4+30\cdot8-5\cdot7+45\cdot9}{90}
+				\pause
+				=
+				\dfrac{682}{90}
+				=
+				\dfrac{341}{45}$
+				\pause
+				
+				\item $\dfrac{1}{4}+\dfrac{7}{5}-\dfrac{3}{8}
+				\pause
+				=
+				\dfrac{51}{40}$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Observaciones}
+			\begin{enumerate}
+				\item $\dfrac{-a}{b}=\dfrac{a}{-b}=-\dfrac{a}{b}$
+				\pause
+				\item $\dfrac{-a}{-b}=\dfrac{a}{b}$
+				\pause
+				\item $-\left(\dfrac{a}{b}\right)=-\dfrac{a}{b}$
+				\pause
+				\item $\dfrac{a}{1}=a$
+				\pause
+				\item $\dfrac{a}{a}=1$, con $a\neq0$
+				\pause
+				\item $\dfrac{0}{a}=0$, con $a\neq0$
+				\pause
+				\item $\dfrac{a}{0}$ no existe
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Multiplicación}
+			Para multiplicar dos números racionales se multiplica numerador por numerador y denominador por denominador, esto es:
+			\pause
+			
+			\[
+			\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d},
+			\qquad b\neq0,\ d\neq0
+			\]
+			\pause
+			
+			\textbf{Ejemplos.}
+			\begin{enumerate}
+				\item $\dfrac{1}{5}\cdot\dfrac{-3}{8}
+				=
+				\dfrac{1\cdot(-3)}{5\cdot8}
+				\pause
+				=
+				\dfrac{-3}{40}
+				=
+				-\dfrac{3}{40}$
+				\pause
+				
+				\item $\dfrac{3}{-8}\cdot\dfrac{5}{7}
+				=
+				\dfrac{3\cdot5}{(-8)\cdot7}
+				\pause
+				=
+				\dfrac{15}{-56}
+				=
+				-\dfrac{15}{56}$
+				\pause
+				
+				\item $6\cdot\dfrac{5}{11}
+				=
+				\dfrac{6}{1}\cdot\dfrac{5}{11}
+				=
+				\dfrac{6\cdot5}{1\cdot11}
+				\pause
+				=
+				\dfrac{30}{11}$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Propiedades}
+			\begin{enumerate}
+				\item Dos fracciones son iguales si, y sólo si, el producto de sus extremos es igual al producto de sus medios, es decir
+				\[
+				\frac{a}{b}=\frac{c}{d}\Longleftrightarrow a\cdot d=b\cdot c
+				\]
+				
+				\textbf{Ejemplo.} $\dfrac{6}{10}=\dfrac{9}{15}$, ya que $6\cdot15=10\cdot9=90$.
+				
+				\item Simplificar una fracción consiste en cancelar un factor común del numerador y del denominador.
+				
+				\textbf{Ejemplo.}
+				\[
+				\dfrac{8}{12}=\dfrac{2\cdot4}{3\cdot4}=\dfrac{2}{3}
+				\]
+				simplificando por el factor común 4.
+				
+				\item Amplificar una fracción consiste en multiplicar el numerador y denominador por un mismo número.
+				
+				\textbf{Ejemplo.}
+				\[
+				\dfrac{-3}{8}=\dfrac{-3\cdot4}{8\cdot4}=\dfrac{-12}{24}
+				\]
+				amplificando por 4.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Ejercicios}
+			Multiplique los siguientes números racionales:
+			
+			\bigskip
+			\begin{tabular}{lll}
+				a) $\dfrac{3}{9}\cdot\left(\dfrac{-4}{3}\right)=\pause -\dfrac{4}{9}$ &
+				&
+				d) $\dfrac{2}{7}\cdot\dfrac{1}{2}\cdot(-3)=\pause -\dfrac{3}{7}$ \\[0.25cm]
+				
+				b) $\left(\dfrac{(-2)-1}{3}\right)\cdot\dfrac{2}{3}=\pause -\dfrac{2}{3}$ &
+				&
+				e) $\dfrac{(-2)\cdot6}{-3}\cdot\dfrac{(-12)(-9)}{4}=\pause 108$ \\[0.25cm]
+				
+				c) $\left(\dfrac{-6}{3}\right)\cdot\left(\dfrac{-4}{7}\right)\cdot\dfrac{1}{9}
+				=\pause \dfrac{8}{63}$ &
+				&
+				f) $\left(\dfrac{-7}{8}\right)\cdot\left(\dfrac{-4}{-3}\right)\cdot\left(\dfrac{2}{14}\right)\cdot(-4)
+				=\pause \dfrac{2}{3}$
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{División}
+			Para dividir dos números racionales se multiplica la primera fracción por la segunda invertida.
+			
+			\[
+			\frac{a}{b}\div\frac{c}{d}=\frac{a}{b}\cdot\frac{d}{c}
+			\]
+			
+			\textbf{Ejemplos.}
+			\begin{enumerate}
+				\item $\dfrac{3}{5}\div\dfrac{2}{9}
+				=
+				\dfrac{3}{5}\cdot\dfrac{9}{2}
+				\pause
+				=
+				\dfrac{27}{10}$
+				\pause
+				
+				\item $\dfrac{1}{2}\div\left(\dfrac{-2}{3}\right)
+				=
+				\dfrac{1}{2}\cdot\left(\dfrac{3}{-2}\right)
+				\pause
+				=
+				-\dfrac{3}{4}$
+				\pause
+				
+				\item $7\div\dfrac{14}{5}
+				=
+				\dfrac{7}{1}\cdot\dfrac{5}{14}
+				\pause
+				=
+				\dfrac{5}{2}$
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Conjuntos Numéricos}
+		\begin{block}{Ejercicios}
+			Divida las siguientes expresiones, simplificando lo más posible
+			
+			\begin{tabular}{lll}
+				a) $\dfrac{-8}{5}\div\dfrac{4}{7}=$\pause & &
+				d) $\dfrac{7}{9}\div\dfrac{-4}{12}=$\pause \\[0.2cm]
+				
+				b) $\left(\dfrac{-1}{3}\right)\div\left(\dfrac{2}{-3}\right)=$\pause & &
+				e) $\left(\dfrac{(-2)\cdot6}{-3}\right)\div\left(\dfrac{(-15)(-2)}{4}\right)=$\pause \\[0.2cm]
+				
+				c) $\left(\dfrac{-3}{4}\right)\div6=$\pause & &
+				f) $\left(\left(\dfrac{-5}{8}\right)\cdot\left(\dfrac{-4}{-5}\right)\right)\div\left(\dfrac{12}{6}\right)=$
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicios}
+		\begin{block}{Ejemplos}
+			Calcular las siguientes expresiones:
+			
+			\begin{multicols}{2}
+				\begin{enumerate}
+					\item $(-5+(-7))=$
+					\item $(3+(-4)-8+12)=$
+					\item $\dfrac{12(-40)(-12)}{-5(-3)-3(-3)}=$
+					\item $\dfrac{(-3)(8)(-2)}{(-4)(-6)-2(-12)}=$
+					\item $\dfrac{-2}{9}+\dfrac{4}{7}-\dfrac{1}{2}=$
+					\item $\dfrac{\frac{2}{3}+\frac{1}{2}}{\frac{2}{2}}=$
+					\item $\dfrac{\frac{1}{8}+\dfrac{1-\dfrac{1}{2}}{2}}{\frac{1}{12}}=$
+					\item $4+\dfrac{3}{5}-\dfrac{7}{2}-\dfrac{4}{12}-\dfrac{1}{6}=$
+					\item $\dfrac{(-5)\left(\frac{4}{7}\right)}{(-2)\left(\frac{-3}{5}\right)}=$
+				\end{enumerate}
+			\end{multicols}
+		\end{block}
+	\end{frame}
+	
+\end{document}

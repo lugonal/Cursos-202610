@@ -1,0 +1,455 @@
+% !TEX program = pdflatex
+% ==========================================================
+% CLASE BEAMER MASTER+
+% Fundamentos de Matemática Básica - Agronomía
+% Clase 2: Notación Científica
+% Universidad Santo Tomás - Talca
+% ==========================================================
+
+\newif\ifhandout
+%\handoutfalse
+\handouttrue
+
+\ifhandout
+\documentclass[aspectratio=169,10pt,handout]{beamer}
+\else
+\documentclass[aspectratio=169,10pt]{beamer}
+\fi
+
+% ----------------------------------------------------------
+% PAQUETES
+% ----------------------------------------------------------
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+
+% ----------------------------------------------------------
+% COLORES
+% ----------------------------------------------------------
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTTeal}{RGB}{0,153,117}
+\definecolor{USTGray}{RGB}{110,110,110}
+\definecolor{USTLightBlue}{RGB}{230,240,248}
+\definecolor{USTLightTeal}{RGB}{225,245,238}
+
+% ----------------------------------------------------------
+% TEMA
+% ----------------------------------------------------------
+\usetheme{Madrid}
+\usecolortheme[named=USTBlue]{structure}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{frametitle}{bg=USTBlue,fg=white}
+\setbeamercolor{block title}{bg=USTLightBlue,fg=USTBlue}
+\setbeamercolor{block title example}{bg=USTLightTeal,fg=USTBlue}
+
+% ----------------------------------------------------------
+% COMANDOS
+% ----------------------------------------------------------
+\newcommand{\pp}{\pause}
+\newcommand{\idea}[1]{\textcolor{USTBlue}{\textbf{#1}}}
+
+% ----------------------------------------------------------
+% DATOS
+% ----------------------------------------------------------
+\title{Fundamentos de Matemática Básica}
+\subtitle{Unidad 1: Operaciones algebraicas en los reales\\Clase 4: Notación Científica}
+\author{Prof. Luis González Alcaino}
+\date{Universidad Santo Tomás — Agronomía}
+
+% ==========================================================
+\begin{document}
+	
+	% ----------------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Meta de la clase}
+		
+		\begin{block}{Objetivo}
+			Utilizar la notación científica para representar números muy grandes o muy pequeños y aplicar operaciones básicas usando potencias de 10.
+		\end{block}
+		
+		\pp
+		
+		\begin{block}{Lo que veremos}
+			\begin{enumerate}
+				\item ¿Por qué usar notación científica?
+				\item Cómo escribir números en notación científica
+				\item Cómo volver al número original
+				\item Multiplicación y división
+				\item Aplicaciones en Agronomía
+			\end{enumerate}
+			
+		\end{block}
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{¿Por qué usar notación científica?}
+		
+		\begin{block}{Problema}
+			En ciencias aparecen números muy grandes o muy pequeños.
+		\end{block}
+		
+		\pp
+		
+		Ejemplo:
+		
+		\[
+		0.00000045
+		\]
+		
+		\pp
+		
+		\[
+		450000000
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Idea clave}
+			La notación científica permite escribir estos números de forma clara y compacta.
+		\end{exampleblock}
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Forma de la notación científica}
+		
+		\begin{block}{Definición}
+			
+			Un número en notación científica se escribe como:
+			
+			\[
+			a \times 10^n
+			\]
+			
+			donde:
+			
+			\begin{itemize}
+				\item \(1 \le a < 10\)
+				\item \(n\) es un número entero
+			\end{itemize}
+			
+		\end{block}
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			
+			\[
+			3.5 \times 10^4
+			\]
+			
+		\end{exampleblock}
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Ejemplo: número grande}
+		
+		Escribir:
+		
+		\[
+		450000
+		\]
+		
+		en notación científica.
+		
+		\pp
+		
+		Paso 1:
+		
+		\[
+		4.5
+		\]
+		
+		\pp
+		
+		Paso 2:
+		
+		Contar los lugares desplazados
+		
+		\[
+		450000 = 4.5 \times 10^5
+		\]
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Ejemplo: número pequeño}
+		
+		Convertir
+		
+		\[
+		0.00045
+		\]
+		
+		\pp
+		
+		\[
+		0.00045 = 4.5 \times 10^{-4}
+		\]
+		
+		\pp
+		
+		\begin{block}{Regla}
+			
+			\begin{itemize}
+				
+				\item mover decimal a la derecha → exponente negativo
+				
+				\item mover decimal a la izquierda → exponente positivo
+				
+			\end{itemize}
+			
+		\end{block}
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Volver al número original}
+		
+		\[
+		3.2 \times 10^4
+		\]
+		
+		\pp
+		
+		\[
+		32000
+		\]
+		
+		\pp
+		
+		\[
+		5.6 \times 10^{-3}
+		\]
+		
+		\pp
+		
+		\[
+		0.0056
+		\]
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Multiplicación}
+		
+		\[
+		(3 \times 10^4)(2 \times 10^3)
+		\]
+		
+		\pp
+		
+		Multiplicar coeficientes
+		
+		\[
+		3 \times 2 = 6
+		\]
+		
+		\pp
+		
+		Sumar exponentes
+		
+		\[
+		10^4 \times 10^3 = 10^7
+		\]
+		
+		\pp
+		
+		Resultado
+		
+		\[
+		6 \times 10^7
+		\]
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{División}
+		
+		\[
+		\frac{6\times10^8}{2\times10^3}
+		\]
+		
+		\pp
+		
+		Dividir coeficientes
+		
+		\[
+		6/2 = 3
+		\]
+		
+		\pp
+		
+		Restar exponentes
+		
+		\[
+		10^8 / 10^3 = 10^5
+		\]
+		
+		\pp
+		
+		Resultado
+		
+		\[
+		3\times10^5
+		\]
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Aplicación Agronómica}
+		
+		\begin{block}{Ejemplo}
+			
+			Un fertilizante contiene:
+			
+			\[
+			4\times10^{-3}
+			\]
+			
+			gramos de micronutriente por gramo de producto.
+			
+		\end{block}
+		
+		\pp
+		
+		Si se aplican:
+		
+		\[
+		10^3
+		\]
+		
+		gramos de fertilizante.
+		
+		\pp
+		
+		\[
+		(4\times10^{-3})(10^3)
+		\]
+		
+		\pp
+		
+		Resultado:
+		
+		\[
+		4
+		\]
+		
+		gramos de micronutriente.
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Ejercicios}
+		
+		\begin{enumerate}
+			
+			\item Escribir en notación científica
+			
+			\[
+			560000
+			\]
+			
+			\item Escribir en notación científica
+			
+			\[
+			0.00032
+			\]
+			
+			\item Multiplicar
+			
+			\[
+			(2\times10^3)(4\times10^2)
+			\]
+			
+			\item Dividir
+			
+			\[
+			\frac{8\times10^6}{2\times10^3}
+			\]
+			
+		\end{enumerate}
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Respuestas}
+		
+		\begin{multicols}{2}
+			
+			\begin{enumerate}
+				
+				\item \(5.6\times10^5\)
+				
+				\item \(3.2\times10^{-4}\)
+				
+				\item \(8\times10^5\)
+				
+				\item \(4\times10^3\)
+				
+			\end{enumerate}
+			
+		\end{multicols}
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{Ticket de salida}
+		
+		\begin{block}{Responde antes de terminar la clase}
+			
+			\begin{enumerate}
+				
+				\item Convertir
+				
+				\[
+				0.000078
+				\]
+				
+				\item Calcular
+				
+				\[
+				(3\times10^2)(5\times10^3)
+				\]
+				
+				\item ¿Por qué la notación científica es útil en ciencias?
+				
+			\end{enumerate}
+			
+		\end{block}
+		
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}
+		
+		\centering
+		
+		{\Huge\color{USTTeal}\faSeedling}
+		
+		\vspace{0.3cm}
+		
+		{\Large Notación científica}
+		
+		\vspace{0.3cm}
+		
+		{\small Matemática para comprender fenómenos reales}
+		
+	\end{frame}
+	
+\end{document}

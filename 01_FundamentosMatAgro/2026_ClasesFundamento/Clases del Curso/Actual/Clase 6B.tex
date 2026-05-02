@@ -1,0 +1,390 @@
+% =========================
+\section{Motivación}
+% =========================
+\begin{frame}{Motivación}
+	
+	\begin{block}{Situación inicial}
+		En un cultivo experimental:
+		
+		\begin{itemize}
+			\item Se aplica \(4x^2\) litros de agua (efecto acumulado de riego).
+			\pause
+			\item Se pierde \(5xy^3\) litros por exceso de fertilizante.
+			\pause
+			\item Se generan \(3x^3y\) litros equivalentes por crecimiento vegetal.
+			\pause
+			\item Se descuenta \(2x\) litros por evaporación base.
+		\end{itemize}
+	\end{block}
+	
+	\pause
+	
+	\textbf{Modelo algebraico:}
+	
+	\[
+	4x^2 - 5xy^3 + 3x^3y - 2x
+	\]
+	
+	\pause
+	
+	\IdeaClave{Los modelos reales pueden incluir múltiples variables y exponentes mayores a 1.}
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Ejemplo más desafiante}
+	
+	\Agronomia{
+		En una plantación intensiva:
+		
+		\begin{itemize}
+			\item Producción hídrica: \(6x^2y\)
+			\pause
+			\item Pérdida por saturación: \( -3x^2y \)
+			\pause
+			\item Crecimiento adicional: \( 2x^3y^2 \)
+			\pause
+			\item Reducción base: \( -x^2 \)
+		\end{itemize}
+	}
+	
+	\pause
+	
+	\textbf{Expresión:}
+	\[
+	6x^2y - 3x^2y + 2x^3y^2 - x^2
+	\]
+	
+	\pause
+	
+	\textbf{Simplificación parcial (solo semejantes):}
+	\[
+	6x^2y - 3x^2y = 3x^2y
+	\]
+	
+	\pause
+	
+	\[
+	3x^2y + 2x^3y^2 - x^2
+	\]
+	
+	\pause
+	
+	\IdeaClave{Solo se simplifican términos con exactamente la misma parte literal.}
+	
+\end{frame}
+
+% =========================
+\section{Términos algebraicos avanzados}
+% =========================
+\begin{frame}{Términos algebraicos multivariables}
+	
+	\begin{block}{Definición extendida}
+		Un término algebraico puede incluir:
+		
+		\begin{itemize}
+			\item múltiples variables
+			\pause
+			\item exponentes mayores que 1
+			\pause
+			\item interacciones entre variables
+		\end{itemize}
+	\end{block}
+	
+	\pause
+	
+	\[
+	3x^2y^3
+	\]
+	
+	\pause
+	
+	\Agronomia{
+		Representa un efecto combinado entre riego (\(x\)) y fertilización (\(y\)) de alta intensidad.
+	}
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Ejemplos en agronomía}
+	
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			
+			\begin{block}{Ejemplo 1}
+				\[
+				5x^2
+				\]
+				\pause
+				Crecimiento del cultivo en función del riego.
+			\end{block}
+			
+			\pause
+			
+			\begin{block}{Ejemplo 2}
+				\[
+				-3xy^3
+				\]
+				\pause
+				Pérdida por sobrefertilización.
+			\end{block}
+			
+		\end{column}
+		
+		\begin{column}{0.48\textwidth}
+			
+			\begin{exampleblock}{Ejemplo complejo}
+				\[
+				4x^3y^2
+				\]
+				\pause
+				
+				\begin{itemize}
+					\item Coeficiente: 4
+					\pause
+					\item Variables: \(x,y\)
+					\pause
+					\item Exponentes: 3 y 2
+				\end{itemize}
+				
+			\end{exampleblock}
+			
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+
+% =========================
+\section{Expresiones algebraicas}
+% =========================
+\begin{frame}{Expresión algebraica multivariable}
+	
+	\begin{block}{Definición}
+		Es la combinación de términos con varias variables y distintos exponentes.
+	\end{block}
+	
+	\pause
+	
+	\[
+	4x^2 - 5xy^3 + 3x^3y - 2x
+	\]
+	
+	\pause
+	
+	\Agronomia{
+		Modelo de rendimiento considerando interacción agua-fertilizante.
+	}
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Ejemplo resuelto}
+	
+	\Agronomia{
+		En un cultivo de maíz:
+		
+		\begin{itemize}
+			\item Aporte hídrico: \(5x^2\)
+			\pause
+			\item Pérdida: \( -2x^2 \)
+			\pause
+			\item Interacción con fertilizante: \( 3xy^2 \)
+			\pause
+			\item Ajuste técnico: \( +4xy^2 \)
+		\end{itemize}
+	}
+	
+	\pause
+	
+	\textbf{Expresión:}
+	\[
+	5x^2 -2x^2 + 3xy^2 + 4xy^2
+	\]
+	
+	\pause
+	
+	\[
+	3x^2 + 7xy^2
+	\]
+	
+	\pause
+	
+	\IdeaClave{Se agrupan términos semejantes respetando variables y exponentes.}
+	
+\end{frame}
+
+% =========================
+\section{Términos semejantes}
+% =========================
+\begin{frame}{Términos semejantes avanzados}
+	
+	\begin{block}{Definición}
+		Son semejantes si tienen:
+		
+		\begin{itemize}
+			\item mismas variables
+			\pause
+			\item mismos exponentes
+		\end{itemize}
+	\end{block}
+	
+	\pause
+	
+	\[
+	2x^2y^3 + 5x^2y^3 = 7x^2y^3
+	\]
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Ejemplo analizado}
+	
+	\[
+	4x^2,\quad -3x^2,\quad 5xy,\quad 2xy^2
+	\]
+	
+	\pause
+	
+	\begin{itemize}
+		\item \(4x^2\) y \(-3x^2\) son semejantes
+		\pause
+		\item \(5xy\) y \(2xy^2\) NO son semejantes
+	\end{itemize}
+	
+	\pause
+	
+	\[
+	4x^2 - 3x^2 = x^2
+	\]
+	
+	\pause
+	
+	\IdeaClave{Cambiar un exponente cambia completamente el tipo de término.}
+	
+\end{frame}
+
+% =========================
+\section{Actividades}
+% =========================
+\begin{frame}{Actividad 1}
+	
+	\textbf{Simplifique:}
+	
+	\[
+	3x^2y^3 - 5x^2y^3 + 2x^3y - x^3y
+	\]
+	
+	\pause
+	
+	\[
+	-2x^2y^3 + x^3y
+	\]
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Actividad 2}
+	
+	\textbf{Simplifique:}
+	
+	\[
+	6xy^2 + 4xy^2 - 3xy^2 + 2x^2y
+	\]
+	
+	\pause
+	
+	\[
+	7xy^2 + 2x^2y
+	\]
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Actividad 3}
+	
+	\textbf{Evaluar si } \(x=2, y=1\):
+	
+	\[
+	4x^2 - 5xy^3 + 3x^3y - 2x
+	\]
+	
+	\pause
+	
+	\[
+	4(4) - 5(2)(1) + 3(8)(1) - 4
+	\]
+	
+	\pause
+	
+	\[
+	16 -10 +24 -4 = 26
+	\]
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Actividad 4 (análisis)}
+	
+	\Agronomia{
+		Un técnico afirma que:
+		\[
+		4x^2y + 3xy^2 = 7x^2y^2
+		\]
+	}
+	
+	\pause
+	
+	\textbf{¿Es correcto?}
+	
+	\pause
+	
+	No.
+	
+	\pause
+	
+	\textbf{Razón:}
+	
+	\begin{itemize}
+		\item Cambian exponentes
+		\item Cambia estructura de variables
+	\end{itemize}
+	
+	\pause
+	
+	\IdeaClave{No se pueden combinar términos no semejantes.}
+	
+\end{frame}
+
+% =========================
+\section{Patrones}
+% =========================
+\begin{frame}{Detección de patrones}
+	
+	\[
+	x^2,\ 2x^2,\ 4x^2,\ 8x^2
+	\]
+	
+	\pause
+	
+	\begin{itemize}
+		\item Crece multiplicando por 2
+		\pause
+		\item Mantiene misma estructura algebraica
+	\end{itemize}
+	
+\end{frame}
+
+% =========================
+\begin{frame}{Inconsistencia}
+	
+	\[
+	x^2,\ 2x^2,\ 5x^2,\ 8x^2
+	\]
+	
+	\pause
+	
+	\begin{itemize}
+		\item El término \(5x^2\) rompe el patrón
+	\end{itemize}
+	
+\end{frame}

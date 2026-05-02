@@ -1,0 +1,191 @@
+\documentclass[11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\title{Problema 4: Perfiles Clínicos}
+\subtitle{Operaciones de Conjuntos}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%--- FRAME 1: Enunciado ---
+	\begin{frame}{Descripción del Problema}
+		Se estudia un grupo de \textbf{20 personas} para identificar perfiles clínicos.
+		\[
+		U = \{1, 2, 3, \ldots, 20\}
+		\]
+		\begin{itemize}
+			\item \textbf{Ansiedad elevada} $(A)$: altos niveles de activación emocional.
+			\item \textbf{Dificultades sociales} $(S)$: problemas en habilidades e interacción.
+			\item \textbf{Estrés crónico} $(E)$: sobrecarga sostenida o fatiga emocional.
+		\end{itemize}
+	\end{frame}
+	
+	%--- FRAME 2: Conjuntos ---
+	\begin{frame}{Conjuntos Dados}
+		\begin{block}{Conjuntos por extensión}
+			\begin{align*}
+				A &= \{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\} \\[6pt]
+				S &= \{5, 7, 9, 11, 13\} \\[6pt]
+				E &= \{3, 6, 9, 12, 15, 18\}
+			\end{align*}
+		\end{block}
+		\begin{alertblock}{Observación clave}
+			$A \cap S = \emptyset$ \quad (ningún elemento de $S$ pertenece a $A$)
+		\end{alertblock}
+	\end{frame}
+	
+	%--- FRAME 3: Parte a) - enunciado ---
+	\begin{frame}{Parte a) — Conjunto por Comprensión}
+		\begin{block}{Se pide determinar por comprensión:}
+			\[
+			(A - E) \cup (S \cap E)
+			\]
+		\end{block}
+		\bigskip
+		Resolvemos cada operación por separado:
+		\begin{enumerate}
+			\item Calcular $A - E$
+			\item Calcular $S \cap E$
+			\item Unir ambos resultados
+		\end{enumerate}
+	\end{frame}
+	
+	%--- FRAME 4: Parte a) - desarrollo ---
+	\begin{frame}{Parte a) — Desarrollo}
+		\textbf{Paso 1:} $A - E$ (elementos de $A$ que \textbf{no} están en $E$)
+		\[
+		A - E = \{2, 4, \cancel{6}, 8, 10, \cancel{12}, 14, 16, \cancel{18}, 20\} = \{2, 4, 8, 10, 14, 16, 20\}
+		\]
+		
+		\medskip
+		\textbf{Paso 2:} $S \cap E$ (elementos en $S$ \textbf{y} en $E$)
+		\[
+		S \cap E = \{5, 7, \mathbf{9}, 11, 13\} \cap \{3, 6, \mathbf{9}, 12, 15, 18\} = \{9\}
+		\]
+		
+		\medskip
+		\textbf{Paso 3:} Unión
+		\[
+		(A - E) \cup (S \cap E) = \{2, 4, 8, 9, 10, 14, 16, 20\}
+		\]
+	\end{frame}
+	
+	%--- FRAME 5: Parte a) - resultado y comprensión ---
+	\begin{frame}{Parte a) — Resultado}
+		\begin{exampleblock}{Resultado}
+			\[
+			(A - E) \cup (S \cap E) = \{2,\, 4,\, 8,\, 9,\, 10,\, 14,\, 16,\, 20\}
+			\]
+		\end{exampleblock}
+		
+		\bigskip
+		\textbf{Descripción por comprensión:}
+		
+		\medskip
+		Conjunto de personas que \textbf{presentan ansiedad elevada pero no estrés crónico},
+		o que \textbf{tienen simultáneamente dificultades sociales y estrés crónico}.
+	\end{frame}
+	
+	%--- FRAME 6: Parte b) - enunciado ---
+	\begin{frame}{Parte b) — Conjunto por Extensión}
+		\begin{block}{Se pide escribir por extensión y determinar la cardinalidad de:}
+			\[
+			(A - S)^c \cap A^c - E
+			\]
+		\end{block}
+		
+		\bigskip
+		Aplicando precedencia estándar de operaciones:
+		\[
+		\bigl[(A - S)^c \cap A^c\bigr] - E
+		\]
+		
+		\medskip
+		Resolvemos paso a paso:
+		\begin{enumerate}
+			\item Calcular $A - S$
+			\item Calcular $(A-S)^c$
+			\item Intersectar con $A^c$
+			\item Restar $E$
+		\end{enumerate}
+	\end{frame}
+	
+	%--- FRAME 7: Parte b) - desarrollo 1 ---
+	\begin{frame}{Parte b) — Desarrollo (1/2)}
+		\textbf{Paso 1:} $A - S$
+		
+		Como $A \cap S = \emptyset$, entonces:
+		\[
+		A - S = A = \{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\}
+		\]
+		
+		\medskip
+		\textbf{Paso 2:} $(A - S)^c = A^c$
+		\[
+		A^c = U - A = \{1, 3, 5, 7, 9, 11, 13, 15, 17, 19\}
+		\]
+		
+		\medskip
+		\textbf{Paso 3:} $(A-S)^c \cap A^c = A^c \cap A^c$
+		\[
+		A^c \cap A^c = A^c = \{1, 3, 5, 7, 9, 11, 13, 15, 17, 19\}
+		\]
+	\end{frame}
+	
+	%--- FRAME 8: Parte b) - desarrollo 2 ---
+	\begin{frame}{Parte b) — Desarrollo (2/2)}
+		\textbf{Paso 4:} $A^c - E$ (elementos de $A^c$ que \textbf{no} están en $E$)
+		
+		\begin{align*}
+			A^c &= \{1, \cancel{3}, 5, 7, \cancel{9}, 11, 13, \cancel{15}, 17, 19\} \\
+			E   &= \{3, 6, 9, 12, 15, 18\}
+		\end{align*}
+		
+		\[
+		A^c - E = \{1, 5, 7, 11, 13, 17, 19\}
+		\]
+	\end{frame}
+	
+	%--- FRAME 9: Parte b) - resultado ---
+	\begin{frame}{Parte b) — Resultado}
+		\begin{exampleblock}{Resultado por extensión}
+			\[
+			(A-S)^c \cap A^c - E = \{1,\, 5,\, 7,\, 11,\, 13,\, 17,\, 19\}
+			\]
+		\end{exampleblock}
+		
+		\begin{block}{Cardinalidad}
+			\[
+			\bigl|(A-S)^c \cap A^c - E\bigr| = \mathbf{7}
+			\]
+		\end{block}
+	\end{frame}
+	
+	%--- FRAME 10: Resumen ---
+	\begin{frame}{Resumen de Resultados}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.8}
+			\begin{tabular}{|c|l|c|}
+				\hline
+				\textbf{Parte} & \textbf{Conjunto} & \textbf{Cardinalidad} \\
+				\hline
+				a) & $\{2, 4, 8, 9, 10, 14, 16, 20\}$ & $8$ \\
+				\hline
+				b) & $\{1, 5, 7, 11, 13, 17, 19\}$ & $7$ \\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{frame}
+	
+\end{document}

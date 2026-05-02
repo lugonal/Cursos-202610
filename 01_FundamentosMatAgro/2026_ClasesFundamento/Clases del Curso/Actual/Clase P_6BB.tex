@@ -1,0 +1,911 @@
+% !TEX program = pdflatex
+\documentclass[handout,aspectratio=169,12pt]{beamer}
+
+% =========================
+% PAQUETES
+% =========================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{array}
+
+% =========================
+% TEMA Y COLORES
+% =========================
+\usetheme{Madrid}
+\usecolortheme{default}
+\usefonttheme[onlymath]{serif}
+
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTGreen}{RGB}{27,94,32}
+\definecolor{USTBrown}{RGB}{93,64,55}
+\definecolor{USTSoft}{RGB}{248,249,250}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{USTAccent}{RGB}{21,101,192}
+
+\setbeamercolor{title}{fg=white,bg=USTBlue}
+\setbeamercolor{frametitle}{fg=white,bg=USTBlue}
+\setbeamercolor{structure}{fg=USTBlue}
+\setbeamercolor{normal text}{fg=USTText,bg=white}
+\setbeamercolor{block title}{fg=white,bg=USTGreen}
+\setbeamercolor{block body}{fg=black,bg=USTSoft}
+\setbeamercolor{block title example}{fg=white,bg=USTAccent}
+\setbeamercolor{block body example}{fg=black,bg=blue!4}
+\setbeamercolor{block title alerted}{fg=white,bg=USTBrown}
+\setbeamercolor{block body alerted}{fg=black,bg=brown!8}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.77\paperwidth,ht=2.6ex,dp=1ex,leftskip=0.4cm]{author in head/foot}%
+			\color{white}\ifx\insertshorttitle\empty\else\insertshorttitle\fi
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.23\paperwidth,ht=2.6ex,dp=1ex,rightskip=0.35cm plus1fil]{date in head/foot}%
+			\color{white}\insertframenumber/\inserttotalframenumber
+	\end{beamercolorbox}}%
+}
+\setbeamercolor{author in head/foot}{bg=USTBlueDark,fg=white}
+\setbeamercolor{date in head/foot}{bg=USTBlueDark,fg=white}
+
+% =========================
+% DATOS
+% =========================
+\title[Fundamentos de Matemática Básica]{Fundamentos de Matemática Básica}
+\subtitle{Unidad I \\ Clase 6: Expresiones Algebraicas}
+\author{Profesor Luis Tulio González Alcaino \\ \small Magíster en Matemática}
+\institute{Universidad Santo Tomás \\ Departamento Ciencias Básicas -- Talca}
+\date{Semestre I -- 2026}
+
+% =========================
+% COMANDOS
+% =========================
+\newcommand{\IdeaClave}[1]{
+	\begin{alertblock}{Idea clave}
+		#1
+	\end{alertblock}
+}
+
+\newcommand{\Agronomia}[1]{
+	\begin{exampleblock}{Contexto agronómico}
+		#1
+	\end{exampleblock}
+}
+
+% =========================
+% DOCUMENTO
+% =========================
+\begin{document}
+	
+	% ---------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ruta de la clase}
+		\begin{block}{¿Qué aprenderemos hoy?}
+			\begin{itemize}[<+->]
+				\item Comprender términos algebraicos
+				\item Reconocer expresiones algebraicas
+				\item Identificar términos semejantes en expresiones algebraicas
+				\item Simplificar expresiones algebraicas
+				\item Detectar patrones e inconsistencias en expresiones algebraicas
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		
+		\begin{exampleblock}{¿Dónde lo aplicamos?}
+			\begin{itemize}[<+->]
+				\item Modelos de riego y fertilización
+				\item Interacción entre variables agronómicas
+				\item Análisis de comportamiento de cultivos
+				\item Interpretación de datos experimentales
+			\end{itemize}
+		\end{exampleblock}
+	\end{frame}
+	
+	% =========================
+	\section{Motivación}
+	% =========================
+	\begin{frame}{Motivación}
+		\begin{block}{Situación inicial}
+			En un cultivo experimental:
+			\begin{itemize}
+				\item Se aplica \(4x^2\) litros de agua por acumulación de riego.
+				\pause
+				\item Se pierde \(5xy^3\) litros por una interacción desfavorable entre agua y fertilizante.
+				\pause
+				\item Se genera un efecto positivo modelado por \(3x^3y\).
+				\pause
+				\item Se descuenta \(2x\) litros por evaporación base.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\textbf{Modelo algebraico:}
+		\[
+		4x^2 - 5xy^3 + 3x^3y - 2x
+		\]
+		
+		\pause
+		\IdeaClave{En agronomía, un modelo puede incluir varias variables para representar interacciones más complejas.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto más desafiante}
+		\Agronomia{
+			En una parcela de ensayo:
+			\begin{itemize}
+				\item el aporte hídrico intensivo se modela por \(6x^2y\),
+				\pause
+				\item la pérdida por saturación se modela por \(-3x^2y\),
+				\pause
+				\item el crecimiento adicional por manejo técnico se representa por \(2x^3y^2\),
+				\pause
+				\item y existe una reducción base de \(x^2\).
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Modelo algebraico:} \qquad $6x^2y - 3x^2y + 2x^3y^2 - x^2$
+		
+		\pause
+		\medskip \textbf{Simplificamos:} \qquad $3x^2y + 2x^3y^2 - x^2$
+		
+		\pause
+		\IdeaClave{Solo se pueden sumar o restar directamente los términos que tienen exactamente las mismas variables con los mismos exponentes.}
+	\end{frame}
+	
+	% =========================
+	\section{Término algebraico}
+	% =========================
+	\begin{frame}{¿Qué es un término algebraico?}
+		\begin{block}{Definición}
+			Un \textbf{término algebraico} es una expresión formada por:
+			\begin{itemize}
+				\item un número, llamado \textbf{coeficiente},
+				\pause
+				\item una o más \textbf{variables},
+				\pause
+				\item exponentes asociados a las variables.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\Agronomia{
+			El término \(3x^2y^3\) puede representar una interacción entre riego y fertilización en un cultivo intensivo.
+		}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplos de términos algebraicos en agronomía}
+		\begin{columns}[T]
+			\begin{column}{0.48\textwidth}
+				\begin{block}{Ejemplo 1}
+					\[
+					5x^2
+					\]
+					\pause
+					Representa un efecto cuadrático del riego.
+				\end{block}
+				
+				\pause
+				\begin{block}{Ejemplo 2}
+					\[
+					-3xy^3
+					\]
+					\pause
+					Representa una pérdida asociada a una interacción entre dos variables.
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.48\textwidth}
+				\begin{exampleblock}{Ejemplo 3}
+					\[
+					4x^3y^2
+					\]
+					\pause
+					\begin{itemize}
+						\item Coeficiente: \(4\)
+						\pause
+						\item Variables: \(x\) y \(y\)
+						\pause
+						\item Exponentes: \(3\) y \(2\)
+					\end{itemize}
+				\end{exampleblock}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% =========================
+	\section{Partes de un término algebraico}
+	% =========================
+	\begin{frame}{Partes de un término algebraico}
+		Consideremos el término:
+		\[
+		7x^2y^4
+		\]
+		
+		\pause
+		\begin{itemize}
+			\item \textbf{Coeficiente:} \(7\)
+			\pause
+			\item \textbf{Variables:} \(x\) e \(y\)
+			\pause
+			\item \textbf{Exponente de \(x\):} \(2\)
+			\pause
+			\item \textbf{Exponente de \(y\):} \(4\)
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{Cada variable puede tener su propio exponente dentro del mismo término.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto: identificar partes} 
+		\Agronomia{
+			En un modelo de producción aparece el término: \qquad $12m^3n^2$
+			
+			\smallskip
+			
+			donde \(m\) representa la dosis de materia orgánica y \(n\) el número de sectores tratados.
+		}
+		
+		\pause
+		\textbf{Identifiquemos sus partes:}
+		\begin{itemize}
+			\item Coeficiente: \(12\)
+			\pause
+			\item Variables: \(m\) y \(n\)
+			\pause
+			\item Exponente de \(m\): \(3\)
+			\pause
+			\item Exponente de \(n\): \(2\)
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{Un término multivariable permite representar relaciones más realistas entre distintos factores agronómicos.}
+	\end{frame}
+	
+	% =========================
+	\section{Expresión algebraica}
+	% =========================
+	\begin{frame}{Expresión algebraica}
+		\begin{block}{Definición}
+			Una \textbf{expresión algebraica} es una combinación de términos algebraicos mediante operaciones.
+		\end{block}
+		
+		\pause
+		\[
+		4x^2 - 5xy^3 + 3x^3y - 2x
+		\]
+		
+		\pause
+		\Agronomia{
+			Esta expresión puede modelar un balance de rendimiento donde intervienen agua, fertilización e intensidad de manejo.
+		}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto de expresión algebraica}
+		\Agronomia{
+			En un cultivo de maíz:
+			\begin{itemize}
+				\item el aporte por riego se modela por \(5x^2\),
+				\pause
+				\item una pérdida técnica se representa por \(-2x^2\),
+				\pause
+				\item la interacción agua-fertilizante se modela por \(3xy^2\),
+				\pause
+				\item y una corrección adicional aporta \(4xy^2\).
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Expresión:} \qquad $5x^2 - 2x^2 + 3xy^2 + 4xy^2$
+		\medskip
+		\pause
+		
+		\medskip
+		
+		\textbf{Agrupando términos semejantes:} \quad $(5x^2 - 2x^2) + (3xy^2 + 4xy^2)=3x^2 + 7xy^2$
+		
+		\pause
+		\IdeaClave{La expresión simplificada es \(3x^2 + 7xy^2\).}
+	\end{frame}
+	
+	% =========================
+	\section{Términos semejantes}
+	% =========================
+	\begin{frame}{Términos semejantes}
+		\begin{block}{Definición}
+			Dos o más términos son \textbf{semejantes} si tienen exactamente:
+			\begin{itemize}
+				\item las mismas variables,
+				\pause
+				\item con los mismos exponentes.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\[
+		2x^2y^3 + 5x^2y^3 = 7x^2y^3
+		\]
+		
+		\pause
+		\Agronomia{
+			Ambos términos representan el mismo tipo de interacción entre variables, por eso pueden combinarse.
+		}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto: reconocer términos semejantes}
+		\Agronomia{
+			Analicemos los términos:
+			\[
+			4x^2y,\quad -3x^2y,\quad 5xy^2,\quad 2x^2,\quad 7
+			\]
+		}
+		
+		\pause
+		\textbf{Observación:}
+		\begin{itemize}
+			\item \(4x^2y\) y \(-3x^2y\) son semejantes.
+			\pause
+			\item \(5xy^2\) no es semejante a \(4x^2y\).
+			\pause
+			\item \(2x^2\) no es semejante a \(4x^2y\) porque falta una variable.
+			\pause
+			\item \(7\) es un término constante.
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{No basta con tener algunas letras iguales: deben coincidir todas las variables y todos los exponentes.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{¿Cuándo no son términos semejantes?}
+		\[
+		2x^2,\quad 3x^3,\quad 4xy^2,\quad 5x^2y,\quad 6
+		\]
+		
+		\pause
+		\begin{itemize}
+			\item \(2x^2\) y \(3x^3\) no son semejantes porque cambia el exponente.
+			\pause
+			\item \(4xy^2\) y \(5x^2y\) no son semejantes porque cambia la parte literal.
+			\pause
+			\item \(6\) es un término constante.
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{Para ser semejantes, la parte literal debe ser idéntica y las variables deben estar elevadas al mismo exponente, solo puede cambiar el coeficiente numérico.}
+	\end{frame}
+	
+	% =========================
+	\section{Actividades}
+	% =========================
+	\begin{frame}{Actividad 1}
+		\textbf{Simplifique:}
+		\[
+		3x^2y^3 - 5x^2y^3 + 2x^3y - x^3y
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		-2x^2y^3 + x^3y
+		\]
+		
+		\pause
+		\Agronomia{Interpretación: quedan dos efectos distintos, uno negativo y otro positivo, que no pueden fusionarse entre sí.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 1 ampliada}
+		\Agronomia{
+			En un modelo de rendimiento agrícola se registran:
+			\[
+			4x^2y^2 + 3x^2y^2 - 2xy^3 + 5xy^3 - x^2
+			\]
+		}
+		
+		\pause
+		\textbf{Agrupamos términos semejantes:}
+		\[
+		(4x^2y^2 + 3x^2y^2)+(-2xy^3 + 5xy^3)- x^2
+		\]
+		
+		\pause
+		\[
+		7x^2y^2 + 3xy^3 - x^2
+		\]
+		
+		\pause
+		\IdeaClave{La expresión simplificada es \(7x^2y^2 + 3xy^3 - x^2\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 2}
+		\textbf{Simplifique:}
+		\[
+		6xy^2 + 4xy^2 - 3xy^2 + 2x^2y
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		7xy^2 + 2x^2y
+		\]
+		
+		\pause
+		\Agronomia{Se combinan solo los términos del mismo tipo.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 2 ampliada}
+		\Agronomia{
+			En un invernadero se modela el efecto combinado de temperatura y fertilización mediante:
+			\[
+			8x^3y - 2x^3y + 5x^2y^2 - x^2y^2 + 4xy
+			\]
+		}
+		
+		\pause
+		\textbf{Simplificación:}
+		\[
+		8x^3y - 2x^3y = 6x^3y
+		\]
+		
+		\pause
+		\[
+		5x^2y^2 - x^2y^2 = 4x^2y^2
+		\]
+		
+		\pause
+		\[
+		6x^3y + 4x^2y^2 + 4xy
+		\]
+		
+		\pause
+		\IdeaClave{La expresión simplificada es \(6x^3y + 4x^2y^2 + 4xy\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 3 evaluación}
+		Si \(x=2\) e \(y=1\), ¿cuál es el valor de la expresión?
+		\[
+		4x^2 - 5xy^3 + 3x^3y - 2x
+		\]
+		
+		\pause
+		\[
+		4(2^2) - 5(2)(1^3) + 3(2^3)(1) - 2(2)
+		\]
+		
+		\pause
+		\[
+		4(4) - 10 + 3(8) - 4
+		\]
+		
+		\pause
+		\[
+		16 - 10 + 24 - 4 = 26
+		\]
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 3 ampliada}
+		\Agronomia{
+			Si \(x=1\) e \(y=2\), determine el valor de:
+			\[
+			2x^2y^2 + 3xy^3 - x^2y
+			\]
+		}
+		
+		\pause
+		\textbf{Sustituyendo:}
+		\[
+		2(1^2)(2^2) + 3(1)(2^3) - (1^2)(2)
+		\]
+		
+		\pause
+		\[
+		2(4) + 3(8) - 2
+		\]
+		
+		\pause
+		\[
+		8 + 24 - 2 = 30
+		\]
+		
+		\pause
+		\IdeaClave{El valor de la expresión es \(30\).}
+	\end{frame}
+	
+	% =========================
+	\section{Modelación}
+	% =========================
+	\begin{frame}{Actividad de modelación}
+		\begin{block}{Problema}
+			En un cultivo experimental:
+			\begin{itemize}
+				\item el efecto del riego se modela por \(3x^2y\),
+				\pause
+				\item una corrección técnica añade \(2x^2y\),
+				\pause
+				\item una pérdida reduce \(x^2y\),
+				\pause
+				\item y además aparece un efecto adicional de \(4xy^2\).
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\[
+		3x^2y + 2x^2y - x^2y + 4xy^2=5x^2y - x^2y + 4xy^2=4x^2y + 4xy^2
+		\]
+		
+		\pause
+		\IdeaClave{El modelo simplificado es \(4x^2y + 4xy^2\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad de modelación ampliada}
+		\Agronomia{
+			En una plantación:
+			\begin{itemize}
+				\item el rendimiento por riego intensivo se modela por \(5x^3y\),
+				\pause
+				\item el refuerzo nutricional aporta \(2x^3y\),
+				\pause
+				\item la pérdida por manejo deficiente se modela por \(-3x^3y\),
+				\pause
+				\item y un segundo efecto independiente se modela por \(6x^2y^2\).
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Modelo:}
+		\[
+		5x^3y + 2x^3y - 3x^3y + 6x^2y^2
+		\]
+		
+		\pause
+		\[
+		7x^3y - 3x^3y + 6x^2y^2 =4x^3y + 6x^2y^2
+		\]
+		
+		\pause
+		La expresión final es \(4x^3y + 6x^2y^2\).
+		\end{frame}
+	
+	% =========================
+	\section{Ejercicios}
+	% =========================
+	\begin{frame}{Ejercicios}
+		\begin{enumerate}[<+->]
+			\item Simplifique: \(8x^2y + 2x^2y - 5x^2y\)
+			\item Simplifique: \(3xy^2 + 4xy^2 - 2x^3y\)
+			\item Evalúe \(2x^2y + 1\) si \(x=2\), \(y=3\)
+			\item Detecte patrón: \(x^2,\ 2x^2,\ 4x^2,\ 8x^2\)
+			\item Detecte inconsistencia: \(3xy,\ 6xy,\ 9xy,\ 13xy,\ 15xy\)
+		\end{enumerate}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejercicios resueltos y ampliados}
+		\small
+		\begin{enumerate}
+			\item \textbf{Simplifique:} \(8x^2y + 2x^2y - 5x^2y\)
+			
+			\pause
+			\[
+			10x^2y - 5x^2y = 5x^2y
+			\]
+			
+			\pause
+			\item \textbf{Simplifique:} \(3xy^2 + 4xy^2 - 2x^3y\)
+			
+			\pause
+			\[
+			7xy^2 - 2x^3y
+			\]
+			
+			\pause
+			\item \textbf{Evalúe:} \(2x^2y + 1\), si \(x=2\), \(y=3\)
+			
+			\pause
+			\[
+			2(2^2)(3) + 1 = 2(4)(3) + 1 = 24 + 1 = 25
+			\]
+			
+			\pause
+			\item \textbf{Patrón:} \(x^2,\ 2x^2,\ 4x^2,\ 8x^2\). \pause Cada término se obtiene multiplicando por \(2\).
+			
+			\pause
+			\item \textbf{Inconsistencia:} \(3xy,\ 6xy,\ 9xy,\ 13xy,\ 15xy\). \pause
+			El término \(13xy\) rompe el patrón de aumento de \(3xy\) en \(3xy\).
+		\end{enumerate}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejercicios en agronomía}
+		\small
+		\begin{enumerate}
+			\item Simplifique:
+			\[
+			5x^2y + 3x^2y - 2x^2y + x^3
+			\]
+			
+			\pause
+			\[
+			5x^2y + 3x^2y - 2x^2y + x^3=6x^2y + x^3
+			\]
+			
+			\pause
+			\item Simplifique:
+			\[
+			4ab^2 + 6ab^2 - 3ab^2 + 2a^2b
+			\]
+			
+			\[
+			4ab^2 + 6ab^2 - 3ab^2 + 2a^2b=7ab^2 + 2a^2b
+			\]
+			
+			\pause
+			\item Evalúe:
+			\[
+			2x^2y + 4 \quad \text{si } x=2,\ y=3
+			\]
+			
+			\pause
+			\[
+			2(2^2)(3) + 4 = 2(4)(3) + 4 = 24 + 4 = 28
+			\]
+						
+		\end{enumerate}
+	\end{frame}
+	
+	% =========================
+	\section{Patrones e inconsistencias}
+	% =========================
+	\begin{frame}{Detección de patrones}
+		Observa la secuencia:
+		\[
+		2x^2y,\ 4x^2y,\ 6x^2y,\ 8x^2y
+		\]
+		
+		\pause
+		\textbf{¿Qué patrón identificas?}
+		\begin{itemize}
+			\item Aumenta de \(2x^2y\) en \(2x^2y\).
+			\pause
+			\item Existe una relación lineal en los coeficientes.
+			\pause
+			\item Todos los términos conservan la misma parte literal.
+		\end{itemize}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Patrón agronómico}
+		\Agronomia{
+			Un registro de productividad muestra:
+			\[
+			3xy^2,\ 6xy^2,\ 9xy^2,\ 12xy^2,\ 15xy^2
+			\]
+		}
+		
+		\pause
+		\textbf{Análisis:}
+		\begin{itemize}
+			\item Cada término aumenta en \(3xy^2\).
+			\pause
+			\item La parte literal se mantiene constante.
+			\pause
+			\item El patrón está en los coeficientes.
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{Detectar patrones ayuda a interpretar regularidades en datos agronómicos.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Detección de inconsistencias}
+		Datos de riego y fertilización:
+		\[
+		2x^2,\ 4x^2,\ 7x^2,\ 8x^2
+		\]
+		
+		\pause
+		\textbf{¿Qué ocurre aquí?}
+		\begin{itemize}
+			\item El término \(7x^2\) rompe el patrón esperado.
+			\pause
+			\item Puede existir un error de registro.
+			\pause
+			\item También podría indicar una condición particular no informada.
+		\end{itemize}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Inconsistencia agronómica}
+		\Agronomia{
+			Un técnico registra las dosis:
+			\[
+			5x^2y,\ 10x^2y,\ 15x^2y,\ 19x^2y,\ 25x^2y
+			\]
+		}
+		
+		\pause
+		\textbf{Patrón esperado:}
+		\[
+		5x^2y,\ 10x^2y,\ 15x^2y,\ 20x^2y,\ 25x^2y
+		\]
+		
+		\pause
+		\textbf{Conclusión:}
+		\begin{itemize}
+			\item El término inconsistente es \(19x^2y\).
+			\pause
+			\item Rompe el patrón de aumento en \(5x^2y\).
+			\pause
+			\item Puede deberse a un error de transcripción o de medición.
+		\end{itemize}
+	\end{frame}
+	
+	% =========================
+	\section{Análisis}
+	% =========================
+	\begin{frame}{Actividad de análisis}
+		Situación:
+		\[
+		3x^2y + 2x^2y + 5x^2y
+		\]
+		
+		\pause
+		\textbf{Pregunta:} ¿Es correcto decir que esto es igual a \(10x^2y\)?
+		
+		\pause
+		\textbf{Respuesta:} Sí.
+		
+		\pause
+		Porque todos los términos son semejantes: tienen las mismas variables con los mismos exponentes.
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad de análisis ampliada}
+		\Agronomia{
+			Un técnico propone que
+			\[
+			4x^2y + 3xy^2 - 2x^2y
+			\]
+			se puede simplificar como
+			\[
+			5x^2y^2.
+			\]
+		}
+		
+		\pause
+		\textbf{¿Es correcto?}\pause No.
+		
+		\pause
+		\textbf{Razón:}
+		\begin{itemize}
+			\item \(4x^2y\) y \(-2x^2y\) sí son semejantes.
+			\pause
+			\item \(3xy^2\) no es semejante a \(x^2y\), porque cambia la parte literal.
+		\end{itemize}
+		
+		\pause
+		\textbf{Simplificación correcta:} $	4x^2y + 3xy^2 - 2x^2y = 2x^2y + 3xy^2$
+		
+		\pause
+		\IdeaClave{No se pueden combinar términos con distinta estructura algebraica.}
+	\end{frame}
+	
+	% =========================
+	\section{Aplicación integrada}
+	% =========================
+	\begin{frame}{Aplicación agronómica integrada}
+		\begin{block}{Situación}
+			En un cultivo experimental:
+			\begin{itemize}
+				\item se registra un efecto \(2x^2y\) por riego,
+				\pause
+				\item un segundo efecto \(3x^2y\) por manejo técnico,
+				\pause
+				\item y una pérdida \(x^2y\) por drenaje.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\textbf{Expresión algebraica:}
+		\[
+		2x^2y + 3x^2y - x^2y
+		\]
+		
+		\pause
+		\textbf{Simplificación:}
+		\[
+		4x^2y
+		\]
+		
+		\pause
+		\IdeaClave{El balance neto del sistema es \(4x^2y\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Aplicación integrada ampliada}
+		\small
+		\Agronomia{
+			En una unidad productiva:
+			\begin{itemize}
+				\item se aplica un efecto de \(3x^3y\) en la mañana,
+				\pause
+				\item \(2x^3y\) en la tarde,
+				\pause
+				\item se pierde \(x^3y\) por drenaje,
+				\pause
+				\item aparece una interacción adicional \(2x^2y^2\),
+				\pause
+				\item y existe una pérdida fija de \(5\).
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Expresión:} \quad $3x^3y + 2x^3y - x^3y + 2x^2y^2 - 5$\pause
+		$= 4x^3y + 2x^2y^2 - 5$
+		
+		\pause
+		\IdeaClave{El balance final del sistema es \(4x^3y + 2x^2y^2 - 5\).}
+	\end{frame}
+	
+	% =========================
+	\section{Síntesis}
+	% =========================
+	\begin{frame}{Síntesis}
+		\begin{itemize}[<+->]
+			\item Un término algebraico puede incluir varias variables y exponentes mayores que 1.
+			\item Una expresión algebraica combina uno o más términos.
+			\item Los términos semejantes deben tener la misma parte literal.
+			\item Se simplifican solo los términos semejantes.
+			\item Detectar patrones e inconsistencias permite interpretar mejor información agronómica.
+		\end{itemize}
+	\end{frame}
+	
+	% =========================
+	\section{Cierre}
+	% =========================
+	\begin{frame}{Cierre}
+		\textbf{Hoy aprendimos:}
+		\begin{itemize}[<+->]
+			\item Qué es un término algebraico.
+			\item Cómo reconocer expresiones algebraicas.
+			\item Cómo identificar términos semejantes.
+			\item Cómo simplificar expresiones algebraicas.
+			\item Cómo detectar patrones e inconsistencias en contextos agronómicos.
+		\end{itemize}
+		
+		\pause
+		\begin{block}{Aplicación real}
+			El álgebra permite modelar fenómenos más realistas en sistemas agrícolas.
+		\end{block}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Fin de la clase}
+		\centering
+		\Huge ¿Preguntas?
+	\end{frame}
+	
+\end{document}

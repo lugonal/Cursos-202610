@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1cm}
+
+\begin{document}
+
+\section*{Problema 4}
+	
+	Dados los conjuntos dentro del universo $U = \{1, 2, 3, \dots, 20\}$:
+	\begin{itemize}
+		\item $A = \{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\}$ (Ansiedad elevada)
+		\item $S = \{5, 7, 9, 11, 13\}$ (Dificultades sociales)
+		\item $E = \{3, 6, 9, 12, 15, 18\}$ (Estrés crónico)
+	\end{itemize}
+	
+	\hrule
+	\vspace{0.4cm}
+	
+	\subsection*{a) Determinar por comprensión: $(A - E) \cup (S \cap E)$}
+	
+	\textbf{Análisis por extensión:}
+	\begin{itemize}
+		\item Diferencia $(A - E)$: Elementos que están en $A$ pero no en $E$.
+		\[ A - E = \{2, 4, 8, 10, 14, 16, 20\} \]
+		\item Intersección $(S \cap E)$: Elementos comunes entre $S$ y $E$.
+		\[ S \cap E = \{9\} \]
+		\item Unión final: $\{2, 4, 8, 9, 10, 14, 16, 20\}$
+	\end{itemize}
+	
+	\textbf{Resultado por comprensión:}
+	Este conjunto agrupa a las personas que tienen ansiedad elevada pero no estrés crónico, o bien, a quienes presentan tanto dificultades sociales como estrés crónico.
+	\[ (A - E) \cup (S \cap E) = \{ x \in U \mid (x \in A \land x \notin E) \lor (x \in S \land x \in E) \} \]
+	
+	\vspace{0.4cm}
+	\hrule
+	\vspace{0.4cm}
+	
+	\subsection*{b) Determinar por extensión y cardinalidad: $(A - S)^c \cap A^c - E$}
+	
+	\textbf{Procedimiento paso a paso:}
+	\begin{enumerate}
+		\item \textbf{Cálculo de $(A - S)$:} Como $A$ contiene pares y $S$ impares específicos, $A \cap S = \emptyset$. Entonces, $A - S = A$.
+		\[ (A - S) = \{2, 4, 6, 8, 10, 12, 14, 16, 18, 20\} \]
+		
+		\item \textbf{Cálculo del complemento $(A - S)^c$:} Elementos de $U$ que no están en $A$.
+		\[ (A - S)^c = \{1, 3, 5, 7, 9, 11, 13, 15, 17, 19\} \]
+		
+		\item \textbf{Intersección con $A^c$:} Dado que $(A - S)^c = A^c$:
+		\[ (A - S)^c \cap A^c = \{1, 3, 5, 7, 9, 11, 13, 15, 17, 19\} \]
+		
+		\item \textbf{Diferencia con el conjunto $E$:} Restamos los elementos $\{3, 9, 15\}$.
+		\[ \text{Resultado por extensión} = \{1, 5, 7, 11, 13, 17, 19\} \]
+	\end{enumerate}
+	
+	\textbf{Resultados finales:}
+	\begin{itemize}
+		\item \textbf{Por extensión:} $\{1, 5, 7, 11, 13, 17, 19\}$
+		\item \textbf{Cardinalidad:} $n((A - S)^c \cap A^c - E) = 7$
+	\end{itemize}
+	
+\end{document}

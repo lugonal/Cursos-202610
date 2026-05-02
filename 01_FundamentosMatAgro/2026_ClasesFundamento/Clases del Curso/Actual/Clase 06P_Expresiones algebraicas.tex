@@ -1,0 +1,970 @@
+% !TEX program = pdflatex
+\documentclass[handout,aspectratio=169,12pt]{beamer}
+
+% =========================
+% PAQUETES
+% =========================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{array}
+
+% =========================
+% TEMA Y COLORES
+% =========================
+\usetheme{Madrid}
+\usecolortheme{default}
+\usefonttheme[onlymath]{serif}
+
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTGreen}{RGB}{27,94,32}
+\definecolor{USTBrown}{RGB}{93,64,55}
+\definecolor{USTSoft}{RGB}{248,249,250}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{USTAccent}{RGB}{21,101,192}
+
+\setbeamercolor{title}{fg=white,bg=USTBlue}
+\setbeamercolor{frametitle}{fg=white,bg=USTBlue}
+\setbeamercolor{structure}{fg=USTBlue}
+\setbeamercolor{normal text}{fg=USTText,bg=white}
+\setbeamercolor{block title}{fg=white,bg=USTGreen}
+\setbeamercolor{block body}{fg=black,bg=USTSoft}
+\setbeamercolor{block title example}{fg=white,bg=USTAccent}
+\setbeamercolor{block body example}{fg=black,bg=blue!4}
+\setbeamercolor{block title alerted}{fg=white,bg=USTBrown}
+\setbeamercolor{block body alerted}{fg=black,bg=brown!8}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{footline}{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.77\paperwidth,ht=2.6ex,dp=1ex,leftskip=0.4cm]{author in head/foot}%
+			\color{white}\ifx\insertshorttitle\empty\else\insertshorttitle\fi
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.23\paperwidth,ht=2.6ex,dp=1ex,rightskip=0.35cm plus1fil]{date in head/foot}%
+			\color{white}\insertframenumber/\inserttotalframenumber
+	\end{beamercolorbox}}%
+}
+\setbeamercolor{author in head/foot}{bg=USTBlueDark,fg=white}
+\setbeamercolor{date in head/foot}{bg=USTBlueDark,fg=white}
+
+% =========================
+% DATOS
+% =========================
+\title[Fundamentos de Matemática Básica]{Fundamentos de Matemática Básica}
+\subtitle{Unidad I \\ Clase 6: Expresiones Algebraicas}
+\author{Profesor Luis Tulio González Alcaino \\ \small Magíster en Matemática}
+\institute{Universidad Santo Tomás \\ Departamento Ciencias Básicas -- Talca}
+\date{Semestre I -- 2026}
+
+% =========================
+% COMANDOS
+% =========================
+\newcommand{\IdeaClave}[1]{
+	\begin{alertblock}{Idea clave}
+		#1
+	\end{alertblock}
+}
+
+\newcommand{\Agronomia}[1]{
+	\begin{exampleblock}{Contexto agronómico}
+		#1
+	\end{exampleblock}
+}
+
+% =========================
+% DOCUMENTO
+% =========================
+\begin{document}
+	
+	% ---------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% ---------------------------------
+\begin{frame}{Ruta de la clase}
+	
+	\begin{block}{¿Qué aprenderemos hoy?}
+		\begin{itemize}[<+->]
+			\item Comprender qué es un término algebraico
+			\item Identificar expresiones algebraicas
+			\item Reconocer términos semejantes
+			\item Simplificar expresiones
+		\end{itemize}
+	\end{block}
+	
+	\pause
+	
+	\begin{exampleblock}{¿Dónde lo aplicamos?}
+		\begin{itemize}[<+->]
+			\item Modelación de riego
+			\item Fertilización
+			\item Análisis de datos agrícolas
+		\end{itemize}
+	\end{exampleblock}
+	
+\end{frame}
+
+	\section{Motivación}
+	% ---------------------------------
+	\begin{frame}{Motivación}
+		\begin{block}{Situación inicial}
+			En un cultivo de lechugas:
+			\begin{itemize}
+				\item Se aplican \(2x\) litros de agua por planta en condiciones normales.
+				\pause
+				\item Se agregan \(3x\) litros en días calurosos.
+				\pause
+				\item Se pierde \(x\) litro por evaporación.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\textbf{Pregunta:} ¿Cuál es el aporte real de agua por planta?
+		
+		\pause
+		$
+		2x+3x-x
+		$
+		
+		\pause
+		$
+		5x-x=4x
+		$
+		
+		\pause
+		\IdeaClave{El aporte real de agua por planta es \(4x\) litros.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto más desafiante}
+		\Agronomia{
+			En una parcela experimental de tomates:
+			\begin{itemize}
+				\item en la mañana se aplican \(4x\) litros de solución nutritiva,
+				\pause
+				\item al mediodía se agregan \(3x\) litros,
+				\pause
+				\item por escurrimiento se pierden \(2x\) litros,
+				\pause
+				\item y por corrección técnica se añaden \(x\) litros extra.
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Modelo algebraico: } $4x+3x-2x+x$
+		
+		\medskip
+		
+		\pause
+		
+		\textbf{Simplificación:}
+	
+	\medskip 
+	
+	\qquad $4x+3x+x-2x=8x-2x=6x$
+		
+		\pause
+		\IdeaClave{El aporte neto total es \(6x\) litros de solución nutritiva.}
+	\end{frame}
+	
+	\section{Término algebraico}
+	% ---------------------------------
+	\begin{frame}{¿Qué es un término algebraico?}
+		\begin{block}{Definición}
+			Un \textbf{término algebraico} es una expresión formada por:
+			\begin{itemize}
+				\item un número, llamado \textbf{coeficiente},
+				\pause
+				\item una o más \textbf{variables},
+				\pause
+				\item un \textbf{exponente}, si corresponde.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\Agronomia{
+			El término \(5x\) puede representar 5 litros de fertilizante por cada hectárea \(x\).
+		}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplos de términos algebraicos en agronomía}
+		\begin{columns}[T]
+			\begin{column}{0.48\textwidth}
+				\begin{block}{Ejemplo 1}
+					\[
+					7x
+					\]
+					\pause
+					Representa 7 kg de semilla por lote \(x\).
+				\end{block}
+				
+				\pause
+				\begin{block}{Ejemplo 2}
+					\[
+					3y^2
+					\]
+					\pause
+					Puede representar una cantidad que depende del cuadrado de la superficie sembrada.
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.48\textwidth}
+				\begin{exampleblock}{Ejemplo 3resuelto más complejo}
+					\[
+					-4ab^2
+					\]
+					\pause
+					\begin{itemize}
+						\item Coeficiente: \(-4\)
+						\pause
+						\item Variables: \(a\) y \(b\)
+						\pause
+						\item Exponentes: \(a^1\), \(b^2\)
+					\end{itemize}
+				\end{exampleblock}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\section{Partes de un término algebraico}
+	% ---------------------------------
+	\begin{frame}{Partes de un término algebraico}
+		Consideremos el término:
+		\[
+		7x^2
+		\]
+		
+		\pause
+		\begin{itemize}
+			\item \textbf{Coeficiente:} \(7\)
+			\pause
+			\item \textbf{Variable:} \(x\)
+			\pause
+			\item \textbf{Exponente:} \(2\)
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{Si una variable no muestra exponente, se entiende que su exponente es \(1\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto: identificar partes}
+		\Agronomia{
+			En un registro de producción aparece el término:\quad $12m^3n$
+			
+			\smallskip 
+			
+			donde \(m\) representa la dosis de materia orgánica y \(n\) el número de sectores tratados.
+		}
+		
+		\pause
+		\textbf{Identifiquemos sus partes:}
+		\begin{itemize}
+			\item Coeficiente: \(12\)
+			\pause
+			\item Variables: \(m\) y \(n\)
+			\pause
+			\item Exponente de \(m\): \(3\)
+			\pause
+			\item Exponente de \(n\): \(1\)
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{Un mismo término puede tener más de una variable, y cada una puede tener distinto exponente.}
+	\end{frame}
+	
+	\section{Expresión algebraica}
+	% ---------------------------------
+	\begin{frame}{Expresión algebraica}
+		\begin{block}{Definición}
+			Una \textbf{expresión algebraica} es una combinación de términos algebraicos mediante operaciones.
+		\end{block}
+		
+		\pause
+		\[
+		2x + 3x - 4
+		\]
+		
+		\pause
+		\Agronomia{
+			\begin{itemize}
+				\item Agua base: \(2x\)
+				\pause
+				\item Agua adicional: \(3x\)
+				\pause
+				\item Pérdida fija por evaporación: \(4\)
+			\end{itemize}
+		}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto de expresión algebraica}
+		\Agronomia{
+			En un cultivo de frutillas:
+			\begin{itemize}
+				\item se aplican \(5x\) litros de riego por goteo,
+				\pause
+				\item se agregan \(2x\) litros por refuerzo,
+				\pause
+				\item se descuentan \(3\) litros por pérdida fija,
+				\pause
+				\item y se suman \(x\) litros en una corrección final.
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Expresión:}\quad $5x+2x-3+x$
+		
+		\pause
+		\textbf{Agrupando términos semejantes:}\quad $5x+2x+x-3=8x-3$
+		
+		\pause
+		\IdeaClave{La expresión simplificada es \(8x-3\).}
+	\end{frame}
+	
+	\section{Términos semejantes}
+	% ---------------------------------
+	\begin{frame}{Términos semejantes}
+		\begin{block}{Definición}
+			Dos o más términos son \textbf{semejantes} si tienen la misma variable elevada al mismo exponente.
+		\end{block}
+		
+		\pause
+		\[
+		2x+3x=5x
+		\]
+		
+		\pause
+		\Agronomia{
+			Fertilizante aplicado en la mañana: \(2x\) \\
+			Fertilizante aplicado en la tarde: \(3x\) \\
+			Total: \(5x\)
+		}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejemplo resuelto: reconocer términos semejantes}
+		\Agronomia{
+			Analicemos los términos de una expresión asociada al manejo de un invernadero:
+			\[
+			4x^2,\quad -3x^2,\quad 5x,\quad 2y,\quad 7
+			\]
+		}
+		
+		\pause
+		\textbf{Observación:}
+		\begin{itemize}
+			\item \(4x^2\) y \(-3x^2\) son semejantes.
+			\pause
+			\item \(5x\) no es semejante a \(4x^2\) porque cambia el exponente.
+			\pause
+			\item \(2y\) no es semejante a \(5x\) porque cambia la variable.
+			\pause
+			\item \(7\) es un término constante.
+		\end{itemize}
+		
+		\pause
+		\textbf{Si simplificamos solo los semejantes:}\quad $4x^2-3x^2=x^2$
+		
+		\pause
+		\IdeaClave{Solo se suman o restan directamente los términos semejantes.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{¿Cuándo no son términos semejantes?}
+		\[
+		2x,\quad 3x^2,\quad 4y,\quad 5
+		\]
+		
+		\pause
+		\begin{itemize}
+			\item \(2x\) y \(3x^2\) no son semejantes porque cambia el exponente.
+			\pause
+			\item \(2x\) y \(4y\) no son semejantes porque cambia la variable.
+			\pause
+			\item \(5\) es un término constante.
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{No basta con que “se parezcan”; deben tener exactamente la misma parte literal y el mismo exponente.}
+	\end{frame}
+	
+	\section{Actividades}
+	% ---------------------------------
+	\begin{frame}{Actividad 1}
+		\textbf{Simplifique:}
+		\[
+		4x+6x
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		10x
+		\]
+		
+		\pause
+		\Agronomia{Interpretación: total de nutrientes aplicados en un cultivo.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 1 ampliada}
+		\Agronomia{
+			En un huerto se aplican \(4x\) kg de compost en una zona y \(6x\) kg en otra zona equivalente. Además, luego se incorporan \(2x\) kg extra por corrección nutricional.
+		}
+		
+		\pause
+		\textbf{Expresión:}
+		\[
+		4x+6x+2x
+		\]
+		
+		\pause
+		\[
+		10x+2x=12x
+		\]
+		
+		\pause
+		\IdeaClave{La cantidad total de compost aplicada es \(12x\) kg.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 2}
+		\textbf{Simplifique:}
+		\[
+		7x-2x+3
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		5x+3
+		\]
+		
+		\pause
+		\Agronomia{Interpretación: crecimiento neto más un factor constante.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 2 ampliada}
+		\Agronomia{
+			Una plantación tiene una ganancia de \(9x\) plantas por trasplante, una pérdida de \(4x\) por estrés hídrico y un aumento fijo de 6 plantas provenientes de reposición manual.
+		}
+		
+		\pause
+		\textbf{Modelo algebraico:}
+		\[
+		9x-4x+6
+		\]
+		
+		\pause
+		\[
+		5x+6
+		\]
+		
+		\pause
+		\IdeaClave{La expresión simplificada es \(5x+6\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 3}
+		\textbf{Simplifique:}
+		\[
+		8x+5x-2x
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		11x
+		\]
+		
+		\pause
+		\Agronomia{Interpretación: cantidad total de agua o fertilizante aplicada a una zona de cultivo.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 3 ampliada}
+		\Agronomia{
+			En un ensayo agronómico se registran tres aplicaciones de bioestimulante:
+			\[
+			8x,\quad 5x,\quad -2x,\quad +3x
+			\]
+			donde el último término corresponde a un refuerzo extraordinario.
+		}
+		
+		\pause
+		\textbf{Simplificación:}
+		\[
+		\begin{array}{c}
+		  8x+5x-2x+3x \\
+		  13x-2x+3x \\
+		  11x+3x=14x
+		\end{array}
+		\]
+		\IdeaClave{El total neto aplicado es \(14x\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 4 evaluación}
+		Si \(x=5\), ¿cuál es el valor de la expresión?
+		\[
+		3x+2
+		\]
+		
+		\pause
+		\[
+		3(5)+2
+		\]
+		
+		\pause
+		\[
+		15+2=17
+		\]
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad 4 ampliada}
+		\Agronomia{
+			Si \(x=4\), determine el valor de la expresión que modela el consumo de agua en un microtúnel:
+			\[
+			2x+3x+7
+			\]
+		}
+		
+		\pause
+		\textbf{Sustituyendo \(x=4\):}
+		\[
+		2(4)+3(4)+7
+		\]
+		
+		\pause
+		\[
+		8+12+7 = 27
+		\]
+		
+		\pause
+		\IdeaClave{El valor de la expresión es \(27\).}
+	\end{frame}
+	
+	\section{Modelación}
+	% ---------------------------------
+	\begin{frame}{Actividad de modelación}
+		\begin{block}{Problema}
+			Un cultivo tiene:
+			\begin{itemize}
+				\item \(4x\) plantas iniciales,
+				\pause
+				\item se agregan \(2x\),
+				\pause
+				\item se pierden \(x\).
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\[
+		4x+2x-x
+		\]
+		
+		\pause
+		\[
+		6x-x=5x
+		\]
+		
+		\pause
+		\IdeaClave{El total final se modela por \(5x\).}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad de modelación ampliada}
+		\Agronomia{
+			En un vivero:
+			\begin{itemize}
+				\item se preparan \(6x\) bandejas de almácigo,
+				\pause
+				\item se suman \(3x\) bandejas nuevas,
+				\pause
+				\item se descartan \(2x\) por baja germinación,
+				\pause
+				\item y luego se recuperan \(x\) bandejas mediante resiembra.
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Modelo:}
+		\[
+		\begin{array}{c}
+		6x+3x-2x+x \\
+		6x+3x+x-2x = 8x \\
+		\end{array}
+		\]
+		\pause
+		\IdeaClave{La cantidad final de bandejas operativas es \(8x\).}
+	\end{frame}
+	
+	\section{Ejercicios}
+	% ---------------------------------
+	\begin{frame}{Ejercicios}
+		\begin{enumerate}[<+->]
+			\item Simplifique: \(8x+2x-5x\)
+			\item Simplifique: \(3xy+4xy\)
+			\item Evalúe \(5x+1\) si \(x=3\)
+			\item Detecte patrón: \(x,3x,9x,27x\)
+			\item Detecte inconsistencia: \(2x,4x,6x,11x\)
+		\end{enumerate}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejercicios resueltos y ampliados}
+		\small
+		\begin{enumerate}
+			\item \textbf{Simplifique:} \(8x+2x-5x\)
+			
+			\pause
+			\[
+			10x-5x=5x
+			\]
+			
+			\pause
+			\item \textbf{Simplifique:} \(3xy+4xy\)
+			
+			\pause
+			\[
+			3xy+4xy=7xy
+			\]
+			
+			\pause
+			\item \textbf{Evalúe:} \(5x+1\), si \(x=3\)
+			
+			\pause
+			\[
+			5(3)+1=15+1=16
+			\]
+			
+			\pause
+			\item \textbf{Patrón:} \(x,3x,9x,27x\). \pause Cada término se obtiene multiplicando por \(3\).
+			
+			\pause
+			\item \textbf{Inconsistencia:} \(2x,4x,6x,11x\). \pause
+			El término \(11x\) rompe el patrón de aumento de \(2x\) en \(2x\).
+		\end{enumerate}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Ejercicios en agronomía}
+		\small
+		\begin{enumerate}
+			\item Simplifique:
+			\[
+			5x+3x-2x+x
+			\]
+			
+			\pause
+			\[
+			5x+3x=8x,\quad 8x-2x=6x,\quad 6x+x=7x
+			\]
+			
+			\pause
+			\item Simplifique:
+			\[
+			4ab+6ab-3ab
+			\]
+			
+			\pause
+			\[
+			4ab+6ab=10ab,\quad 10ab-3ab=7ab
+			\]
+			
+			\pause
+			\item Evalúe:
+			\[
+			2x+4 \quad \text{si } x=6
+			\]
+			
+			\pause
+			\[
+			2(6)+4=12+4=16
+			\]
+			
+			\pause
+			\item Detecte patrón:
+			\[
+			2x,4x,8x,16x
+			\]
+			
+			\pause
+			Cada término se obtiene multiplicando por \(2\).
+			
+			\pause
+			\item Detecte inconsistencia:
+			\[
+			3x,6x,9x,13x,15x
+			\]
+			
+			\pause
+			La inconsistencia es \(13x\), porque el patrón esperado aumenta de \(3x\) en \(3x\).
+		\end{enumerate}
+	\end{frame}
+	
+	\section{Patrones e inconsistencias}
+	% ---------------------------------
+	\begin{frame}{Detección de patrones}
+		Observa la secuencia:
+		\[
+		2x,\ 4x,\ 6x,\ 8x
+		\]
+		
+		\pause
+		\textbf{¿Qué patrón identificas?}
+		\begin{itemize}
+			\item Aumenta de \(2x\) en \(2x\).
+			\pause
+			\item Existe una relación lineal.
+			\pause
+			\item Todos los términos son múltiplos de \(2x\).
+		\end{itemize}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Patrón agronómico}
+		\Agronomia{
+			Un registro de dosis de fertilizante por semana muestra:
+			\[
+			3x,\ 6x,\ 9x,\ 12x,\ 15x
+			\]
+		}
+		
+		\pause
+		\textbf{Análisis:}
+		\begin{itemize}
+			\item Cada término aumenta en \(3x\).
+			\pause
+			\item La secuencia es lineal.
+			\pause
+			\item Todos los términos son múltiplos de \(3x\).
+		\end{itemize}
+		
+		\pause
+		\IdeaClave{Detectar patrones permite anticipar comportamientos y validar registros.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Detección de inconsistencias}
+		Datos de riego:
+		\[
+		2x,\ 4x,\ 7x,\ 8x
+		\]
+		
+		\pause
+		\textbf{¿Qué ocurre aquí?}
+		\begin{itemize}
+			\item El término \(7x\) rompe el patrón esperado.
+			\pause
+			\item Podría existir un error de medición o de registro.
+			\pause
+			\item También podría indicar una condición particular no informada.
+		\end{itemize}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Inconsistencia agronómica}
+		\Agronomia{
+			Un técnico registra el volumen de riego aplicado en cinco sectores:
+			\[
+			5x,\ 10x,\ 15x,\ 19x,\ 25x
+			\]
+		}
+		
+		\pause
+		\textbf{Patrón esperado:}
+		\[
+		5x,\ 10x,\ 15x,\ 20x,\ 25x
+		\]
+		
+		\pause
+		\textbf{Conclusión:}
+		\begin{itemize}
+			\item El término inconsistente es \(19x\).
+			\pause
+			\item Rompe el patrón de aumento regular en \(5x\).
+			\pause
+			\item Puede deberse a un error de transcripción o a una aplicación irregular.
+		\end{itemize}
+	\end{frame}
+	
+	\section{Análisis}
+	% ---------------------------------
+	\begin{frame}{Actividad de análisis}
+		Situación:
+		\[
+		3x+2x+5x
+		\]
+		
+		\pause
+		\textbf{Pregunta:} ¿Es correcto decir que esto es igual a \(10x\)?
+		
+		\pause
+		\textbf{Respuesta:} Sí.
+		
+		\pause
+		Porque todos los términos son semejantes: tienen la misma variable \(x\) y el mismo exponente.
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Actividad de análisis ampliada}
+		\Agronomia{
+			Un técnico propone que
+			\[
+			4x^2+3x^2-2x
+			\]
+			se puede simplificar como
+			\[
+			5x^2.
+			\]
+		}
+		
+		\pause
+		\textbf{¿Es correcto?}
+		
+		\pause
+		No.
+		
+		\pause
+		\textbf{Razón:}
+		\begin{itemize}
+			\item \(4x^2\) y \(3x^2\) sí son semejantes.
+			\pause
+			\item \(-2x\) no es semejante a \(x^2\), porque cambia el exponente.
+		\end{itemize}
+		
+		\pause
+		\textbf{Simplificación correcta:}
+		\[
+		4x^2+3x^2-2x=7x^2-2x
+		\]
+		
+		\pause
+		\IdeaClave{No se pueden mezclar términos con distinta parte literal.}
+	\end{frame}
+	
+	\section{Aplicación integrada}
+	% ---------------------------------
+	\begin{frame}{Aplicación agronómica integrada}
+		\begin{block}{Situación}
+			En un cultivo experimental:
+			\begin{itemize}
+				\item se aplican \(2x\) litros de solución nutritiva en la mañana,
+				\pause
+				\item se aplican \(3x\) litros en la tarde,
+				\pause
+				\item se pierden \(x\) litros por filtración.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\textbf{Expresión algebraica:}
+		\[
+		2x+3x-x
+		\]
+		
+		\pause
+		\textbf{Simplificación:}
+		\[
+		4x
+		\]
+		
+		\pause
+		\IdeaClave{El aporte neto total al cultivo es de \(4x\) litros.}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Aplicación integrada ampliada}
+		\small
+		\Agronomia{
+			En una unidad productiva de pimientos:
+			\begin{itemize}
+				\item se aplican \(3x\) litros de fertilizante líquido en la mañana,
+				\pause
+				\item \(2x\) litros en la tarde,
+				\pause
+				\item se pierden \(x\) litros por drenaje,
+				\pause
+				\item se recuperan \(2x\) litros equivalentes mediante ajuste de fertirriego,
+				\pause
+				\item y existe una pérdida fija de 5 litros por mantenimiento.
+			\end{itemize}
+		}
+		
+		\pause
+		\textbf{Expresión:}
+		\[
+		3x+2x-x+2x-5
+		\]
+		
+		\pause
+		\[
+		5x-x+2x-5
+		\]
+		
+		\pause
+		\[
+		4x+2x-5
+		\]
+		
+		\pause
+		\[
+		6x-5
+		\]
+		
+		\pause
+		\IdeaClave{El balance final del sistema es \(6x-5\).}
+	\end{frame}
+	
+	\section{Síntesis}
+	% ---------------------------------
+	\begin{frame}{Síntesis}
+		\begin{itemize}[<+->]
+			\item Un término algebraico incluye coeficiente, variable y exponente.
+			\item Una expresión algebraica combina uno o más términos.
+			\item Los términos semejantes se pueden sumar o restar directamente.
+			\item Detectar patrones ayuda a interpretar datos de cultivo.
+			\item Detectar inconsistencias permite prevenir errores en registros y decisiones agronómicas.
+		\end{itemize}
+	\end{frame}
+	
+	\section{Cierre}
+	% ---------------------------------
+	\begin{frame}{Cierre}
+		\textbf{Hoy aprendimos:}
+		\begin{itemize}[<+->]
+			\item Qué es un término algebraico.
+			\item Qué es una expresión algebraica.
+			\item Cómo identificar términos semejantes.
+			\item Cómo simplificar expresiones algebraicas.
+			\item Cómo detectar patrones e inconsistencias.
+		\end{itemize}
+		
+		\pause
+		\begin{block}{Aplicación real}
+			El álgebra permite modelar y optimizar recursos en sistemas agrícolas.
+		\end{block}
+	\end{frame}
+	
+	% ---------------------------------
+	\begin{frame}{Fin de la clase}
+		\centering
+		\Huge ¿Preguntas?
+	\end{frame}
+	
+\end{document}

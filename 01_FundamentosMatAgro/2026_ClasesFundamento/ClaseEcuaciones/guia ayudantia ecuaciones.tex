@@ -1,0 +1,334 @@
+\documentclass[12pt]{article}
+
+%================================================
+% PAQUETES
+%================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{siunitx}
+
+\geometry{margin=2.5cm}
+
+\sisetup{
+	output-decimal-marker={,}
+}
+
+%================================================
+% ENCABEZADO
+%================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Fundamentos de Matemática Básica}
+\fancyhead[R]{Guía de Ejercicios}
+\fancyfoot[C]{\thepage}
+
+%================================================
+% DATOS
+%================================================
+
+\title{\textbf{Guía de Ejercicios de Nivel Superior}\\
+	Modelación Matemática y Ecuaciones de Primer Grado\\
+	Contextualizada a Agronomía e Ingeniería Agrícola}
+
+\author{Prof. Luis Tulio González Alcaino}
+\date{Universidad Santo Tomás \\ Departamento de Ciencias Básicas \\ 2026}
+
+%================================================
+% DOCUMENTO
+%================================================
+
+\begin{document}
+	
+	\maketitle
+	
+	\vspace{-1em}
+	
+	\begin{tcolorbox}[colback=green!5,colframe=black]
+		\textbf{Objetivo de la guía:}
+		
+		Aplicar ecuaciones de primer grado enteras, fraccionarias y literales
+		en situaciones reales de Agronomía e Ingeniería Agrícola,
+		desarrollando capacidad de modelación, análisis crítico,
+		detección de patrones e identificación de inconsistencias.
+	\end{tcolorbox}
+	
+	%================================================
+	\section*{I. Modelación Matemática}
+	
+	\begin{enumerate}[label=\textbf{\arabic*.}]
+		
+		\item Un predio agrícola necesita aplicar fertilizante nitrogenado
+		a razón de 180 kg por hectárea.
+		
+		Si el terreno posee \(x\) hectáreas y ya existen 240 kg almacenados,
+		la cantidad total necesaria debe ser 1320 kg.
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Plantee la ecuación.
+			\item Determine la cantidad de hectáreas del terreno.
+			\item Interprete el resultado.
+		\end{enumerate}
+		
+		%------------------------------------------------
+		
+		\item Una empresa agrícola vende cajas de tomates.
+		
+		Cada caja contiene 25 kg y se desea completar
+		una carga total de 3.500 kg.
+		
+		Si ya se han cargado 1.250 kg:
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Modele mediante una ecuación.
+			\item Determine cuántas cajas faltan.
+			\item Analice si el resultado requiere redondeo.
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	%================================================
+	\section*{II. Ecuaciones Enteras}
+	
+	\begin{enumerate}[label=\textbf{\arabic*.}, start=3]
+		
+		\item Resolver:
+		
+		\[
+		18x + 240 = 960
+		\]
+		
+		Interpretar \(x\) como número de surcos de cultivo.
+		
+		%------------------------------------------------
+		
+		\item Resolver:
+		
+		\[
+		45x - 120 = 780
+		\]
+		
+		Interpretar \(x\) como cantidad de sacos de semilla.
+		
+		%------------------------------------------------
+		
+		\item Resolver:
+		
+		\[
+		12(x+5)=180
+		\]
+		
+		Interpretar \(x\) como número de sectores de riego.
+		
+	\end{enumerate}
+	
+	%================================================
+	\section*{III. Ecuaciones Fraccionarias}
+	
+	\begin{enumerate}[label=\textbf{\arabic*.}, start=6]
+		
+		\item Resolver:
+		
+		\[
+		\frac{x}{4} + 35 = 95
+		\]
+		
+		Interpretar \(x\) como litros de agua distribuidos.
+		
+		%------------------------------------------------
+		
+		\item Resolver:
+		
+		\[
+		\frac{2x}{5} - 18 = 42
+		\]
+		
+		Interpretar \(x\) como rendimiento en kg por parcela.
+		
+		%------------------------------------------------
+		
+		\item Resolver:
+		
+		\[
+		\frac{x+30}{3}=70
+		\]
+		
+		Interpretar \(x\) como producción de plantas injertadas.
+		
+	\end{enumerate}
+	
+	%================================================
+	\section*{IV. Ecuaciones Literales}
+	
+	\begin{enumerate}[label=\textbf{\arabic*.}, start=9]
+		
+		\item Despejar \(x\):
+		
+		\[
+		P = 15x + 120
+		\]
+		
+		Interpretar \(x\) como superficie cultivada.
+		
+		%------------------------------------------------
+		
+		\item Despejar \(r\):
+		
+		\[
+		C = rx + 350
+		\]
+		
+		Interpretar \(r\) como costo por hectárea.
+		
+		%------------------------------------------------
+		
+		\item Despejar \(q\):
+		
+		\[
+		T = \frac{q}{4} + 25
+		\]
+		
+		Interpretar \(q\) como cantidad total de fertilizante.
+		
+	\end{enumerate}
+	
+	%================================================
+	\section*{V. Problemas Contextualizados}
+	
+	\begin{enumerate}[label=\textbf{\arabic*.}, start=12]
+		
+		\item Un sistema de riego tecnificado entrega agua a una plantación.
+		
+		Cada planta requiere 2,8 litros diarios.
+		El estanque principal contiene 980 litros,
+		pero 140 litros deben reservarse para limpieza.
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Modele la situación con una ecuación fraccionaria.
+			\item Determine cuántas plantas pueden regarse.
+			\item Analice si el resultado es razonable.
+		\end{enumerate}
+		
+		%------------------------------------------------
+		
+		\item La producción total de un invernadero se modela mediante:
+		
+		\[
+		P = ax + 500
+		\]
+		
+		donde:
+		
+		\begin{itemize}
+			\item \(P\): producción total
+			\item \(a\): rendimiento por hectárea
+			\item \(x\): hectáreas cultivadas
+		\end{itemize}
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Despeje \(x\).
+			\item Si \(P=3200\) y \(a=45\), determine \(x\).
+			\item Interprete el resultado.
+		\end{enumerate}
+		
+		%------------------------------------------------
+		
+		\item Un agricultor compra fertilizante a crédito.
+		
+		Debe pagar una deuda total de \$1.200.000.
+		
+		Ya ha abonado \$350.000 y pagará
+		el resto en cuotas iguales de \$85.000.
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Plantee la ecuación.
+			\item Determine el número de cuotas.
+			\item Evalúe si existe consistencia práctica.
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	%================================================
+	\section*{VI. Patrones e Inconsistencias}
+	
+	\begin{enumerate}[label=\textbf{\arabic*.}, start=15]
+		
+		\item Observe las siguientes ecuaciones:
+		
+		\[
+		10x + 100 = 200
+		\]
+		
+		\[
+		20x + 100 = 300
+		\]
+		
+		\[
+		30x + 100 = 400
+		\]
+		
+		\[
+		40x + 100 = 500
+		\]
+		
+		\begin{enumerate}[label=\alph*)]
+			\item Resuelva cada ecuación.
+			\item Detecte el patrón presente.
+			\item Explique la regularidad matemática observada.
+		\end{enumerate}
+		
+		%------------------------------------------------
+		
+		\item Un estudiante obtiene:
+		
+		\[
+		15x + 60 = 0
+		\]
+		
+		y concluye que:
+		
+		\[
+		x = -4
+		\]
+		
+		siendo \(x\) el número de sacos de fertilizante.
+		
+		\begin{enumerate}[label=\alph*)]
+			\item ¿El resultado algebraico es correcto?
+			\item ¿El resultado contextual es válido?
+			\item Explique la inconsistencia detectada.
+		\end{enumerate}
+		
+		%------------------------------------------------
+		
+		\item Analice la siguiente afirmación:
+		
+		``Si una ecuación tiene solución negativa,
+		entonces siempre está mal resuelta.''
+		
+		\begin{enumerate}[label=\alph*)]
+			\item ¿Es verdadera o falsa?
+			\item Justifique con un ejemplo agrícola.
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	%================================================
+	
+	\begin{center}
+		\Large
+		\textbf{Fin de la guía}
+	\end{center}
+	
+\end{document}

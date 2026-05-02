@@ -1,0 +1,674 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{multicol}
+
+\title{Sistemas de Ecuaciones Lineales en Agronomía}
+\subtitle{Métodos algebraicos y análisis de soluciones}
+\author{Matemática Aplicada}
+\date{}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	%------------------------------------------------
+	\begin{frame}{Objetivo de la clase}
+		Analizar y resolver situaciones agronómicas mediante sistemas de ecuaciones lineales con dos incógnitas.
+		
+		\bigskip
+		
+		Al finalizar la clase, el estudiante será capaz de:
+		
+		\begin{itemize}
+			\item Identificar sistemas independientes, dependientes e inconsistentes.
+			\item Resolver sistemas mediante sustitución, igualación y reducción.
+			\item Interpretar soluciones en contextos agronómicos.
+			\item Detectar patrones, relaciones e inconsistencias.
+		\end{itemize}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Situación inicial: mezcla de fertilizantes}
+		Un productor necesita preparar una mezcla de fertilizantes para un cultivo de tomates.
+		
+		\bigskip
+		
+		\begin{itemize}
+			\item Fertilizante A: aporta nitrógeno y fósforo.
+			\item Fertilizante B: aporta nutrientes en distinta proporción.
+			\item Se busca cumplir una dosis exacta para evitar déficit o exceso.
+		\end{itemize}
+		
+		\bigskip
+		
+		\textbf{Pregunta:}  
+		¿Cómo determinar cuántos kilogramos de cada fertilizante usar?
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Sistema de ecuaciones lineales}
+		Un sistema con dos incógnitas se expresa como:
+		
+		\[
+		\begin{cases}
+			ax + by = c \\
+			dx + ey = f
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		En agronomía:
+		
+		\begin{itemize}
+			\item $x$: cantidad del insumo A.
+			\item $y$: cantidad del insumo B.
+			\item Las ecuaciones representan restricciones de producción, costos, nutrientes o superficie.
+		\end{itemize}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Tipos de sistemas}
+		\begin{block}{Sistema independiente}
+			Tiene una única solución.  
+			Las rectas se intersectan en un punto.
+		\end{block}
+		
+		\begin{block}{Sistema dependiente}
+			Tiene infinitas soluciones.  
+			Las ecuaciones representan la misma recta.
+		\end{block}
+		
+		\begin{block}{Sistema inconsistente}
+			No tiene solución.  
+			Las rectas son paralelas.
+		\end{block}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 1: sistema independiente}
+		Un agrónomo mezcla dos fertilizantes.
+		
+		\begin{itemize}
+			\item $x$: kg de fertilizante A.
+			\item $y$: kg de fertilizante B.
+		\end{itemize}
+		
+		\[
+		\begin{cases}
+			x + y = 10 \\
+			2x + y = 14
+		\end{cases}
+		\]
+		
+		Restando la primera ecuación de la segunda:
+		
+		\[
+		x = 4
+		\]
+		
+		Luego:
+		
+		\[
+		4 + y = 10
+		\]
+		
+		\[
+		y = 6
+		\]
+		
+		\bigskip
+		
+		\textbf{Interpretación:} se deben usar 4 kg de A y 6 kg de B.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 2: sistema dependiente}
+		Una finca registra las siguientes condiciones de mezcla:
+		
+		\[
+		\begin{cases}
+			x + y = 8 \\
+			2x + 2y = 16
+		\end{cases}
+		\]
+		
+		La segunda ecuación es el doble de la primera:
+		
+		\[
+		2(x+y)=16
+		\]
+		
+		\[
+		x+y=8
+		\]
+		
+		\bigskip
+		
+		\textbf{Interpretación:} existen infinitas combinaciones posibles de insumos que cumplen la condición.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejemplo 3: sistema inconsistente}
+		Un técnico registra las siguientes restricciones:
+		
+		\[
+		\begin{cases}
+			x + y = 5 \\
+			x + y = 9
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		Esto indica que la misma suma debería ser 5 y 9 al mismo tiempo.
+		
+		\bigskip
+		
+		\textbf{Interpretación:} los datos son contradictorios. No existe una combinación posible.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Método de sustitución}
+		\textbf{Problema:}  
+		En una parcela se siembran maíz y trigo.
+		
+		\begin{itemize}
+			\item $x$: kg de semilla de maíz.
+			\item $y$: kg de semilla de trigo.
+		\end{itemize}
+		
+		Se sembraron 50 kg en total. Además, se usaron 10 kg más de maíz que de trigo.
+		
+		\[
+		\begin{cases}
+			x + y = 50 \\
+			x = y + 10
+		\end{cases}
+		\]
+		
+		Sustituyendo:
+		
+		\[
+		(y+10)+y=50
+		\]
+		
+		\[
+		2y=40
+		\]
+		
+		\[
+		y=20
+		\]
+		
+		\[
+		x=30
+		\]
+		
+		\textbf{Respuesta:} 30 kg de maíz y 20 kg de trigo.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 1: sustitución}
+		En un vivero se producen plantas de tomate y lechuga.
+		
+		\begin{itemize}
+			\item $x$: bandejas de tomate.
+			\item $y$: bandejas de lechuga.
+		\end{itemize}
+		
+		En total se produjeron 80 bandejas.  
+		La cantidad de bandejas de tomate fue 20 más que la de lechuga.
+		
+		\[
+		\begin{cases}
+			x + y = 80 \\
+			x = y + 20
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\textbf{Tarea:} resolver por sustitución e interpretar el resultado.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución ejercicio 1}
+		\[
+		x = y + 20
+		\]
+		
+		Sustituimos:
+		
+		\[
+		(y+20)+y=80
+		\]
+		
+		\[
+		2y=60
+		\]
+		
+		\[
+		y=30
+		\]
+		
+		\[
+		x=50
+		\]
+		
+		\bigskip
+		
+		\textbf{Interpretación:} se produjeron 50 bandejas de tomate y 30 de lechuga.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Método de igualación}
+		\textbf{Problema:}  
+		Dos expresiones permiten estimar la cantidad de agua disponible para riego.
+		
+		\[
+		\begin{cases}
+			x = 30 - y \\
+			x = 2y + 6
+		\end{cases}
+		\]
+		
+		Igualamos:
+		
+		\[
+		30-y=2y+6
+		\]
+		
+		\[
+		24=3y
+		\]
+		
+		\[
+		y=8
+		\]
+		
+		\[
+		x=22
+		\]
+		
+		\bigskip
+		
+		\textbf{Interpretación:} el punto común del modelo es $x=22$, $y=8$.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 2: igualación}
+		En una explotación agrícola se comparan dos modelos de costos.
+		
+		\[
+		\begin{cases}
+			x = 100 - 2y \\
+			x = 3y + 20
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\textbf{Tarea:}
+		
+		\begin{itemize}
+			\item Resolver por igualación.
+			\item Determinar si el sistema es independiente.
+			\item Interpretar el resultado en términos de costos y producción.
+		\end{itemize}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución ejercicio 2}
+		Igualamos:
+		
+		\[
+		100-2y=3y+20
+		\]
+		
+		\[
+		80=5y
+		\]
+		
+		\[
+		y=16
+		\]
+		
+		Sustituimos:
+		
+		\[
+		x=3(16)+20
+		\]
+		
+		\[
+		x=68
+		\]
+		
+		\bigskip
+		
+		\textbf{Solución:}
+		
+		\[
+		(x,y)=(68,16)
+		\]
+		
+		\textbf{Tipo de sistema:} independiente.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Método de reducción}
+		\textbf{Problema:}  
+		Una muestra de suelo requiere dos nutrientes:
+		
+		\[
+		\begin{cases}
+			2x + y = 11 \\
+			x - y = 1
+		\end{cases}
+		\]
+		
+		Sumamos ambas ecuaciones:
+		
+		\[
+		3x=12
+		\]
+		
+		\[
+		x=4
+		\]
+		
+		Sustituimos:
+		
+		\[
+		4-y=1
+		\]
+		
+		\[
+		y=3
+		\]
+		
+		\bigskip
+		
+		\textbf{Interpretación:} se requieren 4 unidades del primer nutriente y 3 del segundo.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 3: reducción}
+		Para fertilizar una hectárea se combinan dos productos.
+		
+		\begin{itemize}
+			\item $x$: litros del producto A.
+			\item $y$: litros del producto B.
+		\end{itemize}
+		
+		El técnico obtiene el sistema:
+		
+		\[
+		\begin{cases}
+			3x + 2y = 24 \\
+			x - 2y = 0
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\textbf{Tarea:} resolver por reducción e interpretar la solución.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución ejercicio 3}
+		Sistema:
+		
+		\[
+		\begin{cases}
+			3x + 2y = 24 \\
+			x - 2y = 0
+		\end{cases}
+		\]
+		
+		Sumamos:
+		
+		\[
+		4x=24
+		\]
+		
+		\[
+		x=6
+		\]
+		
+		Sustituimos:
+		
+		\[
+		6-2y=0
+		\]
+		
+		\[
+		2y=6
+		\]
+		
+		\[
+		y=3
+		\]
+		
+		\bigskip
+		
+		\textbf{Respuesta:} 6 litros del producto A y 3 litros del producto B.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Actividad integradora}
+		Una finca cosecha papa y cebolla.
+		
+		\begin{itemize}
+			\item $x$: sacos de papa.
+			\item $y$: sacos de cebolla.
+		\end{itemize}
+		
+		En total se cosecharon 120 sacos.
+		
+		Cada saco de papa genera \$8.000 y cada saco de cebolla genera \$12.000.
+		
+		La ganancia total fue de \$1.200.000.
+		
+		\[
+		\begin{cases}
+			x+y=120 \\
+			8000x+12000y=1200000
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\textbf{Resolver e interpretar.}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución actividad integradora}
+		Dividimos la segunda ecuación por 4000:
+		
+		\[
+		2x+3y=300
+		\]
+		
+		Sistema equivalente:
+		
+		\[
+		\begin{cases}
+			x+y=120 \\
+			2x+3y=300
+		\end{cases}
+		\]
+		
+		Multiplicamos la primera por 2:
+		
+		\[
+		2x+2y=240
+		\]
+		
+		Restamos:
+		
+		\[
+		y=60
+		\]
+		
+		\[
+		x=60
+		\]
+		
+		\bigskip
+		
+		\textbf{Interpretación:} se cosecharon 60 sacos de papa y 60 de cebolla.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Análisis de patrones e inconsistencias}
+		Al resolver sistemas, debemos observar:
+		
+		\begin{itemize}
+			\item Si aparece una única solución: sistema independiente.
+			\item Si una ecuación es múltiplo de otra: sistema dependiente.
+			\item Si aparece una contradicción como $0=5$: sistema inconsistente.
+			\item Si el resultado no tiene sentido en el contexto, debe revisarse el modelo.
+		\end{itemize}
+		
+		\bigskip
+		
+		\textbf{Ejemplo de inconsistencia contextual:}
+		
+		\[
+		x=-4
+		\]
+		
+		No puede representar una cantidad negativa de fertilizante o sacos cosechados.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Ejercicio 4: detectar el tipo de sistema}
+		Clasifica cada sistema según corresponda:
+		
+		\[
+		A)
+		\begin{cases}
+			x+y=10 \\
+			2x+2y=20
+		\end{cases}
+		\]
+		
+		\[
+		B)
+		\begin{cases}
+			x+y=10 \\
+			x+y=15
+		\end{cases}
+		\]
+		
+		\[
+		C)
+		\begin{cases}
+			x+y=10 \\
+			x-y=2
+		\end{cases}
+		\]
+		
+		\bigskip
+		
+		\textbf{Opciones:} independiente, dependiente o inconsistente.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Solución ejercicio 4}
+		\[
+		A)
+		\begin{cases}
+			x+y=10 \\
+			2x+2y=20
+		\end{cases}
+		\]
+		
+		Sistema dependiente.
+		
+		\bigskip
+		
+		\[
+		B)
+		\begin{cases}
+			x+y=10 \\
+			x+y=15
+		\end{cases}
+		\]
+		
+		Sistema inconsistente.
+		
+		\bigskip
+		
+		\[
+		C)
+		\begin{cases}
+			x+y=10 \\
+			x-y=2
+		\end{cases}
+		\]
+		
+		Sistema independiente.
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Cierre de la clase}
+		\textbf{Preguntas de reflexión:}
+		
+		\begin{itemize}
+			\item ¿Qué método fue más eficiente en cada situación?
+			\item ¿Cómo se interpreta una solución en agronomía?
+			\item ¿Qué riesgos existen si se trabaja con datos inconsistentes?
+			\item ¿Por qué no siempre una solución algebraica es válida en el contexto real?
+		\end{itemize}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Evaluación formativa}
+		\begin{center}
+			\begin{tabular}{|p{6cm}|c|c|}
+				\hline
+				\textbf{Criterio} & \textbf{Logrado} & \textbf{Por mejorar} \\
+				\hline
+				Identifica el tipo de sistema & & \\
+				\hline
+				Resuelve por sustitución & & \\
+				\hline
+				Resuelve por igualación & & \\
+				\hline
+				Resuelve por reducción & & \\
+				\hline
+				Interpreta resultados agronómicos & & \\
+				\hline
+				Detecta inconsistencias & & \\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{frame}
+	
+	%------------------------------------------------
+	\begin{frame}{Tarea}
+		Plantea un problema agronómico real que pueda resolverse mediante un sistema de ecuaciones lineales.
+		
+		\bigskip
+		
+		Debe incluir:
+		
+		\begin{itemize}
+			\item Contexto agrícola.
+			\item Definición de variables.
+			\item Sistema de ecuaciones.
+			\item Resolución algebraica.
+			\item Interpretación del resultado.
+			\item Clasificación del sistema.
+		\end{itemize}
+	\end{frame}
+	
+\end{document}

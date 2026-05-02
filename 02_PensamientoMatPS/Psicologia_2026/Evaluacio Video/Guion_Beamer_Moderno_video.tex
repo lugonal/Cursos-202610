@@ -1,0 +1,204 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+% =========================================================
+% PAQUETES SEGUROS
+% =========================================================
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+
+% =========================================================
+% TEMA SIMPLE Y ESTABLE
+% =========================================================
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+
+% =========================================================
+% COLORES UST
+% =========================================================
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTGray}{RGB}{80,80,80}
+
+\setbeamercolor{frametitle}{bg=USTBlue,fg=white}
+\setbeamercolor{title}{bg=USTBlue,fg=white}
+\setbeamercolor{structure}{fg=USTBlue}
+
+% =========================================================
+% COMANDOS
+% =========================================================
+\newcommand{\guion}[1]{
+	\begin{block}{Guion}
+		#1
+	\end{block}
+}
+
+\newcommand{\resultado}[1]{
+	\begin{alertblock}{Resultado}
+		#1
+	\end{alertblock}
+}
+
+% =========================================================
+% DATOS
+% =========================================================
+\title{Guion Video Evaluación Unidad 1}
+\subtitle{Pensamiento Matemático -- Psicología}
+\author{Luis Tulio González}
+\date{}
+
+% =========================================================
+\begin{document}
+	
+	% ---------------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Estructura del video}
+		\begin{enumerate}
+			\item Presentación
+			\item Problema 1
+			\item Problema 2
+			\item Problema 3
+			\item Problema 4
+			\item Cierre
+		\end{enumerate}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 1}
+	% =========================================================
+	
+	\begin{frame}{Problema 1}
+		\[
+		(p \to q)\land(\sim r \to s)
+		\]
+		
+		\guion{
+			Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial dura varios minutos, y si la memoria a largo plazo no es prolongada, entonces el individuo usa la información para tomar decisiones.
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 1(b)}
+		\[
+		[(p\land \sim q)\lor r]\to s
+		\]
+		
+		Valores:
+		\[
+		p=F,\quad q=F,\quad r=V,\quad s=V
+		\]
+		
+		\[
+		[(F\land V)\lor V]\to V
+		\]
+		
+		\[
+		V \to V = V
+		\]
+		
+		\resultado{La proposición es verdadera}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 2}
+	% =========================================================
+	
+	\begin{frame}{Problema 2(a)}
+		\[
+		\sim p \to (q\lor \sim r)
+		\]
+		
+		\guion{
+			Si una persona no sigue las estrategias terapéuticas, entonces presenta dificultades emocionales o no mejora su bienestar.
+		}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 2(b)}
+		\[
+		\sim p \to (q\lor \sim r)
+		\]
+		
+		\guion{
+			La tabla de verdad muestra valores verdaderos y falsos.
+		}
+		
+		\resultado{Es una contingencia}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 3}
+	% =========================================================
+	
+	\begin{frame}{Problema 3}
+		\[
+		A=\{P1,P3,P6,P7,P9,P15,P17,P18\}
+		\]
+		
+		\[
+		|A|=8
+		\]
+		
+		\resultado{Participan en exactamente dos intervenciones}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 3(c)}
+		\[
+		\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}
+		\]
+		
+		\guion{
+			Personas que están solo en H o en R y C simultáneamente.
+		}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 4}
+	% =========================================================
+	
+	\begin{frame}{Problema 4(a)}
+		\[
+		(A-E)\cup(S\cap E)
+		\]
+		
+		\[
+		= \{2,4,8,9,10,14,16,20\}
+		\]
+		
+		\resultado{Resultado correcto}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Problema 4(b)}
+		\[
+		(A-S)^c\cap A^c - E
+		\]
+		
+		\[
+		= \{1,5,7,11,13,17,19\}
+		\]
+		
+		\[
+		|A|=7
+		\]
+		
+		\resultado{Cardinalidad correcta}
+	\end{frame}
+	
+	% =========================================================
+	\section{Cierre}
+	% =========================================================
+	
+	\begin{frame}{Cierre}
+		\guion{
+			En esta evaluación se trabajó lógica proposicional, tablas de verdad, diagramas de Venn y operaciones con conjuntos. Cada resultado fue justificado paso a paso.
+		}
+	\end{frame}
+	
+\end{document}

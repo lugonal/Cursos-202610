@@ -1,0 +1,1472 @@
+%2multibyte Version: 5.50.0.2960 CodePage: 65001
+%\newtheorem{definition}[definicion]{Definición}
+%\newtheorem{example}[ejemplo]{Ejemplo}
+
+
+\documentclass[10pt]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{Codepage=65001}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Sunday, March 30, 2025 23:55:44}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\newtheorem{definicion}{Definici\'{o}n}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{ejemplos}{Ejemplos}
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usetheme{CambridgeUS}
+\usecolortheme[RGB={0,88,127}]{structure}
+\usefonttheme{professionalfonts}
+\input{tcilatex}
+\begin{document}
+
+\title[MAT-016]{Razonamiento L\'{o}gico Matem\'{a}tico}
+\subtitle{Unidad II: \'{A}lgebra en los N\'{u}meros Reales\\
+Clase 7: Conjuntos Num\'{e}ricos y Operatoria}
+\author[]{Profesor Luis Tulio Gonz\'{a}lez Alcaino \\
+%EndAName
+Magister en Matem\'{a}tica}
+\institute{Universidad Santo Tom\'{a}s\\
+Departamento Ciencias B\'{a}sicas - Talca }
+\date{Semestre I \ - 2023}
+\maketitle
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Contenidos de la clase}
+
+\begin{enumerate}
+\item Conjuntos Num\'{e}ricos
+
+\item Operatoria
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Resultado de Aprendizaje}
+
+\begin{enumerate}
+\item Resolver operatoria en los distintos conjuntos num\'{e}ricos
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}}}%
+%BeginExpansion
+\begin{block}%
+%EndExpansion
+
+Se iniciar\'{a} definiendo los conjuntos de n\'{u}meros que conforman a los n%
+\'{u}meros reales.
+
+\begin{enumerate}
+\item \textbf{Los N\'{u}meros Naturales} $\mathbb{N}$
+
+Tambi\'{e}n conocidos como n\'{u}meros para contar o enteros positivos.%
+\begin{equation*}
+\mathbb{N=}\left\{ 1,2,3,\ldots \right\}
+\end{equation*}%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item \textbf{Los N\'{u}meros Enteros} $\mathbb{Z}$
+
+Son los n\'{u}meros reales que se denotan por $\mathbb{Z}$, y se escribe%
+\begin{equation*}
+\mathbb{Z=}\left\{ \ldots ,-3,-2,-1,0,1,2,3,\ldots \right\}
+\end{equation*}
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{}}}%
+%BeginExpansion
+\begin{block}{}%
+%EndExpansion
+
+\begin{enumerate}
+\item[3.] \textbf{Los N\'{u}meros Racionales }$\mathbb{Q}$
+
+Los n\'{u}meros racionales son los n\'{u}meros reales que se pueden expresar
+como raz\'{o}n de dos n\'{u}meros enteros. Se denota el conjunto de los n%
+\'{u}meros racionales por $\mathbb{Q}$, y se escribe%
+\begin{eqnarray*}
+\mathbb{Q} &\mathbb{=}&\left\{ \dfrac{a}{b}:\text{donde }a\text{ y }b\text{
+son n\'{u}meros enteros con }b\neq 0\right\} \\
+&&\left\{ \ldots ,-\frac{3}{2},\ldots ,-\frac{5}{4},\ldots ,-1,\ldots ,-%
+\frac{1}{2},\ldots ,0,\ldots ,\frac{1}{2}\ldots ,\frac{8}{5},\ldots \right\}
+\end{eqnarray*}
+
+Por otro lado, su desarrollo decimal es finito o infinito peri\'{o}dico o
+semiperi\'{o}dico
+
+\textbf{Ejemplos:}
+\end{enumerate}
+
+$\dfrac{1}{4}=\allowbreak 0.25\qquad \qquad \dfrac{5}{3}$ : $1.\allowbreak
+666\ldots =1.\overline{\allowbreak 6}\qquad \qquad \dfrac{19}{12}%
+=1.58333\ldots =1.58\overline{3}$
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{}}}%
+%BeginExpansion
+\begin{block}{}%
+%EndExpansion
+
+\begin{enumerate}
+\item[4.] \textbf{Los N\'{u}meros Irracionales }
+
+Son los n\'{u}meros que no pueden expresarse como un cociente de enteros y
+su desarrollo decimal es infinito no peri\'{o}dico.
+
+\begin{eqnarray*}
+\mathbb{I} &\mathbb{=}&\left\{ x:\text{donde }x\text{ no es un n\'{u}meros
+racional}\right\} \\
+&&\left\{ \ldots ,-\pi ,\ldots ,-\sqrt{3},\ldots ,\sqrt{2},\ldots ,e,\ldots
+\right\}
+\end{eqnarray*}
+
+\textbf{Ejemplos:}
+
+$\sqrt{2}=\allowbreak 1.414213562\ldots \qquad \pi =3.141592654\ldots \qquad
+e=2.7182818228\ldots $
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{}}}%
+%BeginExpansion
+\begin{block}{}%
+%EndExpansion
+
+\begin{enumerate}
+\item[5.] \textbf{Los N\'{u}meros Reales} $\mathbb{R}$
+
+La uni\'{o}n del conjunto de los n\'{u}meros racionales y de los n\'{u}meros
+irracionales se conoce como el conjunto de los n\'{u}meros reales, es decir, 
+$\mathbb{R=Q\cup I}$
+\end{enumerate}
+
+Una manera bastante pr\'{a}ctica es representar el conjunto de n\'{u}meros
+reales es en una recta a la que se denomina recta num\'{e}rica como la que
+aparece en la siguiente figura
+
+\FRAME{ftbpF}{3.7429in}{0.3649in}{0pt}{}{}{Figure}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "T";width 3.7429in;height 0.3649in;depth
+0pt;original-width 8.412in;original-height 0.7948in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'RSJ20W03.bmp';tempfile-properties "XPR";}}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{}}}%
+%BeginExpansion
+\begin{block}{}%
+%EndExpansion
+
+\textbf{Recta num\'{e}rica}
+
+\FRAME{ftbpF}{3.7429in}{0.3649in}{0pt}{}{}{Figure}{\special{language
+"Scientific Word";type "GRAPHIC";maintain-aspect-ratio TRUE;display
+"USEDEF";valid_file "T";width 3.7429in;height 0.3649in;depth
+0pt;original-width 8.412in;original-height 0.7948in;cropleft "0";croptop
+"1";cropright "1";cropbottom "0";tempfilename
+'RSJ1NG02.bmp';tempfile-properties "XPR";}}
+
+Mediante las ideas de igualdad y desigualdad pueden compararse 2 n\'{u}meros
+reales cualquiera. Se utilizan s\'{\i}mbolos para representar estas ideas:
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\textbf{Ejemplos}
+
+\begin{itemize}
+\item Para decir que 7 es menor que 12 , escribimos $7<12$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Tambi\'{e}n para decir que $-3$ es mayor que $-10$, escribimos $-3>-10$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Podemos tener claro el significado de los s\'{\i}mbolos menor que $<$
+\ y mayor que $>$ , si recordamos que \'{e}stos siempre apuntan hacia el n%
+\'{u}mero m\'{a}s peque\~{n}o: $-5<1,$as\'{\i} como $15>6$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Hay otros dos s\'{\i}mbolos $\leq $ y $\geq $ , que tambi\'{e}n
+representan la idea de desigualdad. El s\'{\i}mbolo $\leq $ significa
+\textquotedblleft es menor o igual que\textquotedblright , por lo que $%
+10\leq 15$ significa que 10 es menor o igual a 15.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejercicio}}}%
+%BeginExpansion
+\begin{block}{Ejercicio}%
+%EndExpansion
+
+Complete el siguiente cuadro: Marca con \textquotedblleft $\surd $%
+\textquotedblright\ el (o los) conjunto(s) num\'{e}rico(s) al(los) cual(es)
+pertenece cada n\'{u}mero.
+
+\begin{equation*}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+N\'{u}mero & $\mathbb{N}$ & $\mathbb{Z}$ & $\mathbb{Q}$ & $\mathbb{I}$ & $%
+\mathbb{R}$ \\ \hline
+$-5$ &  &  &  &  &  \\ \hline
+$\sqrt{3}$ &  &  &  &  &  \\ \hline
+$\frac{5}{8}$ &  &  &  &  &  \\ \hline
+$\frac{\pi }{2}$ &  &  &  &  &  \\ \hline
+$1,2$ &  &  &  &  &  \\ \hline
+\end{tabular}%
+\end{equation*}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Adici\'{o}n}}}%
+%BeginExpansion
+\begin{block}{Adici\'{o}n}%
+%EndExpansion
+
+Para sumar N\'{u}meros Enteros, debemos tener en cuenta que:
+
+\begin{enumerate}
+\item \textquotedblleft Si son del mismo signo (positivos o negativos), se
+suman los n\'{u}meros (sin considerar el signo) y se conseva el signo de los
+n\'{u}meros (positivo o negativo)\textquotedblright
+
+\textbf{Ejemplos:}
+
+\begin{enumerate}
+\item $2+5=7$
+
+\item $-4+(-7)=-11$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\end{enumerate}
+
+\item \textquotedblleft Si son de distinto signo (positivos o negativos o
+viceversa), se restan los n\'{u}meros y se conseva el signo (positivo o
+negativo) del n\'{u}mero mayor sin considerar el signo\textquotedblright
+
+\textbf{Ejemplos:}
+
+\begin{enumerate}
+\item $8+(-3)=5$
+
+\item $-10+9=-1$
+\end{enumerate}
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Observaciones}}}%
+%BeginExpansion
+\begin{block}{Observaciones}%
+%EndExpansion
+
+\begin{enumerate}
+\item La expresi\'{o}n \textquotedblleft $a+(-b)$\textquotedblright\ se
+escribe como \textquotedblleft $a-b$\textquotedblright
+
+\textbf{Ejemplo.} $6+(-8)=6-8=-2$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item La expresi\'{o}n \textquotedblleft $a-(-b)$\textquotedblright\ se
+escribe como \textquotedblleft $a+b$\textquotedblright
+
+\textbf{Ejemplo. }\ $12-(-4)=12+4=16$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item La expresi\'{o}n \textquotedblleft $a+b$\textquotedblright\ es
+equivalente con \textquotedblleft $b+a$\textquotedblright $,$ es decir $%
+a+b=b+a$. (propiedad conmutativa).
+
+\textbf{Ejemplo.} $(-25)+10=10+(-25)=10-25=-15$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item La expresi\'{o}n \textquotedblleft $a+(b+c)$\textquotedblright\ es
+equivalente con \textquotedblleft $(a+b)+c$\textquotedblright $,$ es decir $%
+a+(b+c)=(a+b)+c$. (propiedad asociativa).
+
+\textbf{Ejemplo.}
+
+$((-12)+15)+(-3)=\allowbreak (-12)+(15+(-3))=(-12)+(15-3)=-12+12=0$
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Observaciones}}}%
+%BeginExpansion
+\begin{block}{Observaciones}%
+%EndExpansion
+
+\begin{enumerate}
+\item $a+0=a$.
+
+\textbf{Ejemplo. }$7+0=7$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $a+(-a)=(-a)+a=0$.
+
+\textbf{Ejemplo. }$12+(-12)=0$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $-(-a)=a$.%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\textbf{Ejemplo. }$-(-9)=9$
+
+\item $-(a+b)=(-a)+(-b)$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item \textbf{Ejemplo. }$-(4+8)=(-4)+(-8)=\allowbreak -12$
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{}}}%
+%BeginExpansion
+\begin{block}{}%
+%EndExpansion
+
+\textbf{Ejercicios}
+
+\begin{enumerate}
+\item Determine el valor de las siguientes sumas:
+
+\begin{tabular}{llll}
+a) $(-3)+(-8)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & b) $(-5+3)+2=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  \\ 
+c) $-10+5=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & d) $0+(-5+2)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  \\ 
+e) $(-32)+48+(-10)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & f) $-(-14)+(-18)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  \\ 
+g) $-(3+(-7))-7-3=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & h) $-(-8+5)+(-8)=$ & 
+\end{tabular}
+
+\item Completar los espacios en blanco en cada una de las siguientes
+expresiones de modo que resulte una expresi\'{o}n verdadera.
+
+\begin{enumerate}
+\item $3+(-3)+6=4+\ \ \ \ \underline{\text{ \ \ \ \ \ \ \ \ \ \ \ }}\ \ \ \
+\ \ \ \ $%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $(-5)+(-(-5))+(-(-(-5)))=\underline{\ \ \ \ \ \ \ \ \ \ \ }$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $9=9+\underline{\ \ \ \ \ \ \ \ \ \ \ }$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $-8+6+\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ }=-8$
+\end{enumerate}
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Multiplicaci\'{o}n}}}%
+%BeginExpansion
+\begin{block}{Multiplicaci\'{o}n}%
+%EndExpansion
+
+Para multiplicar n\'{u}meros enteros, debemos tener en cuenta la
+\textquotedblleft ley de los signos\textquotedblright , que dice lo
+siguiente:%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\begin{itemize}
+\item Al multiplicar dos n\'{u}meros enteros de igual signo, el resultado es
+un n\'{u}mero positivo $(+)$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Al multiplicar dos n\'{u}meros enteros de distinto signo, el resultado
+es un n\'{u}mero negativo $(-)$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\end{itemize}
+
+Esto se puede resumir en la siguiente tabla:%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\begin{eqnarray*}
+&&\text{{\large Ley de los Signos}} \\
+&&%
+\begin{tabular}{ccc}
+$+\cdot +$ & $=$ & $+$ \\ 
+$-\cdot -$ & $=$ & $+$ \\ 
+$+\cdot -$ & $=$ & $-$ \\ 
+$-\cdot +$ & $=$ & $-$%
+\end{tabular}%
+\end{eqnarray*}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Observaciones}}}%
+%BeginExpansion
+\begin{block}{Observaciones}%
+%EndExpansion
+\textbf{\ }
+
+\begin{enumerate}
+\item $a\cdot b=b\cdot a$ (conmutatividad)
+
+\textbf{Ejemplo. }$\mathbf{(-2)\cdot 7=7\cdot (-2)}=\allowbreak -14$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $a\cdot \left( b\cdot c\right) =\left( a\cdot b\right) \cdot c$
+(asociatividad)
+
+\textbf{Ejemplo. }$4\cdot \left( 12\cdot (-3\right) )=(4\cdot 12\cdot (-3)$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $a\cdot 1=a$ (neutro multiplicativo). \textbf{Ejemplo }$83\cdot 1=83$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $a\cdot (b+c)=a\cdot b+a\cdot c$ (distributividad)
+
+\textbf{Ejemplo. }$(-4)\cdot (5+7)=(-4)\cdot 5+(-4)\cdot 7=\allowbreak -48$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $a\cdot 0=0.$ \textbf{Ejemplo }$(-120)\cdot 0=\allowbreak 0$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $a\cdot b=0$, entonces $a=0$ o $b=0$, o bien ambos son iguales a cero
+
+\textbf{Ejemplo.}
+
+$(x-1)\cdot (x+5)=0\Longrightarrow (x-1)=0$ \ o bien \ \textbf{\ }$(x+5)=0$
+
+de donde $x=1$ \ o bien \ \ \ $x=-5.$
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejercicios}}}%
+%BeginExpansion
+\begin{block}{Ejercicios}%
+%EndExpansion
+
+Multiplicar:
+
+\begin{tabular}{lll}
+a) $(-5)\cdot 0=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & f) $(-3)\cdot (-7)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+\\ 
+b) $((-10)\cdot 4)\cdot 5=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & g) $3+2\cdot 5=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+\\ 
+c) $((-20)+40)\cdot (-2)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & h) $(-2)\cdot (-(-14)+(-5))=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+\\ 
+d) $4\cdot (-5)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & i) $(-7+3)\cdot (-3)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+\\ 
+e) $20\cdot ((-8)-6)=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & j) $5\cdot 4-5+6\cdot 3-2+7\cdot 3=$%
+\end{tabular}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{%
+%\TeXButton{BeginBlok}{\begin{block}{Jerarquía o Prioridad de las Operaciones}}}%
+%BeginExpansion
+\begin{block}{Jerarquía o Prioridad de las Operaciones}%
+%EndExpansion
+
+Cuando se eval\'{u}a una expresi\'{o}n que contiene m\'{a}s de un s\'{\i}%
+mbolo de operaci\'{o}n, se procede en el orden que describiremos a continuaci%
+\'{o}n.%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+Diremos que los procedimientos u operaciones que aparecen primero son los
+que tienen mayor jerarqu\'{\i}a o prioridad, que aquellos que aparecen despu%
+\'{e}s.%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\begin{enumerate}
+\item Efectuar las operaciones dentro de los par\'{e}ntesis.%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Realizar las multiplicaciones y divisiones.%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Realizar las sumas y restas.%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Cuando haya dos o m\'{a}s operaciones de igual jerarqu\'{\i}a, se
+procede de izquierda a derecha.%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\end{enumerate}
+
+\textbf{Ejemplos}
+
+\begin{enumerate}
+\item $2+[3-(5-2\cdot 3)\cdot 4]=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\allowbreak 9$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $(5\cdot 3-2)-[4\cdot (5\cdot 3)-1]=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\allowbreak -46=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Operatoria en los N\'{u}meros Racionales}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Adici\'{o}n}}}%
+%BeginExpansion
+\begin{block}{Adici\'{o}n}%
+%EndExpansion
+
+Para sumar n\'{u}meros racionales debemos tener en cuenta que:%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\begin{enumerate}
+\item Si tienen denominadores com\'{u}n, se suman los numeradores y se
+conserva el denominador:%
+\begin{equation*}
+\frac{a}{b}+\frac{c}{b}=\frac{a+c}{b}\text{ , \ }b\neq 0
+\end{equation*}%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item Si tienen distinto denominador:%
+\begin{equation*}
+\frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}\text{ , \ }b\neq 0%
+\text{ y \ }d\neq 0
+\end{equation*}%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item M\'{\i}nimo com\'{u}n denominador:
+
+$\dfrac{3}{5}-\dfrac{8}{3}+\dfrac{6}{12}=\dfrac{12\cdot 3-20\cdot 8+5\cdot 6%
+}{60}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+=\dfrac{36-160+30}{60}=\allowbreak \dfrac{-94}{60}=\allowbreak -\dfrac{47}{30%
+}$
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejemplos}}}%
+%BeginExpansion
+\begin{block}{Ejemplos}%
+%EndExpansion
+
+\begin{enumerate}
+\item $\dfrac{1}{2}-\dfrac{5}{2}+\dfrac{3}{2}=\dfrac{1-5+3}{2}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+-\dfrac{1}{2}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{1}{3}-\dfrac{2}{5}=\dfrac{1\cdot 5-3\cdot 2}{3\cdot 5}=\dfrac{%
+5-6}{15}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\allowbreak -\dfrac{1}{15}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{4}{5}+\dfrac{8}{3}-\dfrac{7}{18}+\dfrac{9}{2}=\dfrac{18\cdot
+4+30\cdot 8-5\cdot 7+45\cdot 9}{90}\allowbreak =\dfrac{682}{90}=\dfrac{341}{%
+45}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{1}{4}+\dfrac{7}{5}-\dfrac{3}{8}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\dfrac{51}{40}$
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Observaciones}}}%
+%BeginExpansion
+\begin{block}{Observaciones}%
+%EndExpansion
+
+\begin{enumerate}
+\item $\dfrac{-a}{b}=\dfrac{a}{-b}=-\dfrac{a}{b}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{-a}{-b}=\dfrac{a}{b}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $-\left( \dfrac{a}{b}\right) =-\dfrac{a}{b}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{a}{1}=a$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{a}{a}=1$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{0}{a}=0$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{a}{0}$ NO EXISTE
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Multiplicaci\'{o}n}}}%
+%BeginExpansion
+\begin{block}{Multiplicaci\'{o}n}%
+%EndExpansion
+
+Para multiplicar dos n\'{u}meros racionales se multiplica numerador por
+numerador y denominador con denominador, esto es:%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\begin{equation*}
+\frac{a}{b}\cdot \frac{c}{d}=\frac{a\cdot c}{b\cdot d}\text{ , \ }b\neq 0%
+\text{, }d\neq 0
+\end{equation*}%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\textbf{Ejemplos.}
+
+\begin{enumerate}
+\item $\dfrac{1}{5}\cdot \dfrac{(-3)}{8}=\dfrac{1\cdot (-3)}{5\cdot 8}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\dfrac{-3}{40}=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+$-\dfrac{3}{40}$
+
+\item $\dfrac{3}{\left( -8\right) }\cdot \dfrac{5}{7}=\allowbreak =\dfrac{%
+3\cdot 5}{\left( -8\right) \cdot 7}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\dfrac{15}{-56}=-\dfrac{15}{56}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $6\cdot \dfrac{5}{11}=\dfrac{6}{1}\cdot \dfrac{5}{11}=\dfrac{6\cdot 5}{%
+1\cdot 11}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\allowbreak \dfrac{30}{11}$
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Propiedades}}}%
+%BeginExpansion
+\begin{block}{Propiedades}%
+%EndExpansion
+
+\begin{enumerate}
+\item Dos fracciones son iguales si, y s\'{o}lo si,el producto de sus
+extremos es igual al producto de sus medios, es decir%
+\begin{equation*}
+\frac{a}{b}=\frac{c}{d}\Longleftrightarrow a\cdot d=b\cdot d
+\end{equation*}
+
+\textbf{Ejemplo}. $\dfrac{6}{10}=\dfrac{9}{15},$ ya que $6\cdot 15=10\cdot
+9=90$
+
+\item Simplificar una fracci\'{o}n consiste en cancelar un factor com\'{u}n
+del numerador y del denominador.
+
+\textbf{Ejemplo.} $\ \dfrac{8}{12}=\dfrac{2\cdot 4}{3\cdot 4}=\dfrac{2}{3}$,
+simplicando por el factor com\'{u}n 4.
+
+\item Amplificar una fracci\'{o}n consiste en multiplicar el numerador y
+denominador por un mismo n\'{u}mero.
+
+\textbf{Ejemplo.} $\ \dfrac{-3}{8}=\dfrac{-3\cdot 4}{8\cdot 4}=\dfrac{-12}{24%
+}$, amplificando por 4.
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejercicios}}}%
+%BeginExpansion
+\begin{block}{Ejercicios}%
+%EndExpansion
+
+Multiplique los siguientes n\'{u}meros racionales,\bigskip
+
+\begin{tabular}{lll}
+a) $\dfrac{3}{9}\cdot \left( \dfrac{-4}{3}\right) =\allowbreak $%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+$-\dfrac{4}{9}$ &  & d) $\dfrac{2}{7}\cdot \dfrac{1}{2}\cdot (-3)=$ 
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+$-\frac{3}{7}$ \\ 
+b) $\left( \dfrac{(-2)-1}{3}\right) \cdot \dfrac{2}{3}=$ 
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+$-\dfrac{2}{3}$ &  & e) $\dfrac{(-2)\cdot 6}{-3}\cdot \dfrac{(-12)(-9)}{4}=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+$108$ \\ 
+c) $\left( \dfrac{-6}{3}\right) \cdot \left( \dfrac{-4}{7}\right) \cdot 
+\dfrac{1}{9}=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+$\dfrac{8}{63}$ &  & f) $\left( \dfrac{-7}{8}\right) \cdot \left( \dfrac{-4}{%
+-3}\right) \cdot \left( \dfrac{2}{14}\right) \cdot (-4)=$ 
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+$\frac{2}{3}$%
+\end{tabular}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Divisi\'{o}n}}}%
+%BeginExpansion
+\begin{block}{Divisi\'{o}n}%
+%EndExpansion
+
+Para dividir dos n\'{u}meros racionales se multiplica la primera fracci\'{o}%
+n por la segunda invertida.
+
+\begin{equation*}
+\frac{a}{b}\div \frac{c}{d}=\frac{a}{b}\cdot \frac{d}{c}
+\end{equation*}
+
+\textbf{Ejemplos.}
+
+\begin{enumerate}
+\item $\dfrac{3}{5}\div \dfrac{2}{9}=\dfrac{3}{5}\cdot \dfrac{9}{2}%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+=\allowbreak \dfrac{27}{10}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $\dfrac{1}{2}\div \left( \dfrac{-2}{3}\right) =\dfrac{1}{2}\cdot
+\left( \dfrac{3}{-2}\right) =%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+-\dfrac{3}{4}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+
+\item $7\div \dfrac{14}{5}=\dfrac{7}{1}\cdot \dfrac{5}{14}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\allowbreak \dfrac{5}{2}$%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\end{enumerate}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Conjuntos Num\'{e}ricos}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejercicios}}}%
+%BeginExpansion
+\begin{block}{Ejercicios}%
+%EndExpansion
+
+Divida las siguientes expresiones, simplificando lo m\'{a}s posible
+
+\begin{tabular}{lll}
+a) $\dfrac{-8}{5}\div \dfrac{4}{7}=$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & d) $\dfrac{7}{9}\div \dfrac{-4}{12}=%
+%TCIMACRO{\TeXButton{Pausa}{\pause}}%
+%BeginExpansion
+\pause%
+%EndExpansion
+\allowbreak $ \\ 
+b) $\left( \dfrac{-1}{3}\right) \div \left( \dfrac{2}{-3}\right) =$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & e) $\left( \dfrac{(-2)\cdot 6}{-3}\right) \div \left( \dfrac{(-15)(-2)}{%
+4}\right) =$%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+\\ 
+c) $\left( \dfrac{-3}{4}\right) \div 6=\allowbreak $%
+%TCIMACRO{\TeXButton{Pausa}{\pause} }%
+%BeginExpansion
+\pause
+%EndExpansion
+&  & f) $\left( \left( \dfrac{-5}{8}\right) \cdot \left( \dfrac{-4}{-5}%
+\right) \right) \div \left( \dfrac{12}{6}\right) =$%
+\end{tabular}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\QTR{frametitle}{Ejercicios}
+
+%TCIMACRO{\TeXButton{BeginBlok}{\begin{block}{Ejemplos}}}%
+%BeginExpansion
+\begin{block}{Ejemplos}%
+%EndExpansion
+
+Calcular las siguientes expresiones:
+
+\begin{multicols}{2}
+
+\begin{enumerate}
+
+\item $(-5+(-7))=\allowbreak $
+
+\item $(3+(-4)-8+12)=\allowbreak \allowbreak $
+
+\item $\dfrac{12(-40)(-12)}{-5(-3)-3(-3)}=\allowbreak $
+
+\item $\dfrac{(-3)(8)(-2)}{(-4)(-6)-2(-12)}=\allowbreak $
+
+\item $\dfrac{-2}{9}+\dfrac{4}{7}-\dfrac{1}{2}=\allowbreak $
+
+\item $\dfrac{\frac{2}{3}+\frac{1}{2}}{\frac{2}{2}}=\allowbreak \allowbreak $
+
+\item $\dfrac{\frac{1}{8}+\dfrac{1-\dfrac{1}{2}}{2}}{\frac{1}{12}}%
+=\allowbreak $
+
+\item $4+\dfrac{3}{5}-\dfrac{7}{2}-\dfrac{4}{12}-\dfrac{1}{6}=\allowbreak $
+
+\item $\dfrac{(-5)\left( \frac{4}{7}\right) }{(-2)\left( \frac{-3}{5}\right) 
+}=\allowbreak $
+
+\end{enumerate}
+
+\end{multicols}
+
+%TCIMACRO{\TeXButton{EndBlok}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+
+\end{document}

@@ -1,0 +1,401 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\geometry{margin=2.5cm}
+
+\begin{document}
+	
+	\begin{center}
+		{\Large \textbf{Guía 06 Ayudantía --- Ecuaciones}} \\[4pt]
+		{\large Soluciones} \\[2pt]
+		Universidad Santo Tomás --- Fundamentos de Matemática Básica
+	\end{center}
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 1}
+	%=============================================================
+	
+	\textbf{Ecuación:}
+	\[
+	0{,}85(12x + 150) - 60 = 900
+	\]
+	
+	\textbf{Desarrollo:}
+	\begin{align*}
+		0{,}85(12x + 150) - 60 &= 900 \\
+		10{,}2x + 127{,}5 - 60 &= 900 \\
+		10{,}2x + 67{,}5       &= 900 \\
+		10{,}2x                &= 832{,}5 \\
+		x                      &= \frac{832{,}5}{10{,}2}
+	\end{align*}
+	\[
+	\boxed{x \approx 81{,}62 \text{ hectáreas}}
+	\]
+	
+	\textbf{Interpretación:} Se deben fertilizar aproximadamente $81{,}62$ hectáreas
+	para que el cultivo reciba exactamente 900 kg de nitrógeno efectivo, descontadas
+	las pérdidas por lixiviación del 15\%.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 2}
+	%=============================================================
+	
+	\textbf{Ecuación:}
+	\[
+	\frac{3}{4}(20x + 200) - (5x + 80) = 600
+	\]
+	
+	\textbf{Desarrollo:}
+	\begin{align*}
+		\frac{3}{4}(20x + 200) - (5x + 80) &= 600 \\
+		15x + 150 - 5x - 80                &= 600 \\
+		10x + 70                           &= 600 \\
+		10x                                &= 530
+	\end{align*}
+	\[
+	\boxed{x = 53 \text{ horas de riego}}
+	\]
+	
+	\textbf{Análisis de eficiencia:} El sistema requiere 53 horas de riego continuo,
+	lo cual es elevado. Esto puede indicar baja eficiencia si se compara con métodos
+	tecnificados (goteo o aspersión). Se recomienda revisar el caudal y la
+	distribución del sistema.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 3}
+	%=============================================================
+	
+	\textbf{Ecuación:}
+	\[
+	\frac{5x + 40}{3} - \frac{2x - 10}{4} = 100
+	\]
+	
+	\subsection*{a) Eliminación de denominadores}
+	
+	El $\text{mcm}(3,4) = 12$. Multiplicando ambos lados por $12$:
+	\[
+	4(5x + 40) - 3(2x - 10) = 1200
+	\]
+	
+	\subsection*{b) Resolución}
+	
+	\begin{align*}
+		20x + 160 - 6x + 30 &= 1200 \\
+		14x + 190           &= 1200 \\
+		14x                 &= 1010
+	\end{align*}
+	\[
+	\boxed{x = \frac{1010}{14} \approx 72{,}14 \text{ mg/L}}
+	\]
+	
+	\subsection*{c) Interpretación}
+	
+	La concentración base es aproximadamente $72{,}14$ mg/L. Este valor es la
+	concentración mínima necesaria para que, al combinar las dos soluciones según
+	el modelo, se alcance una concentración efectiva de 100 mg/L en el sistema.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 4}
+	%=============================================================
+	
+	\textbf{Ecuación:}
+	\[
+	15x + 200 = 8x + 500
+	\]
+	
+	\subsection*{a) Punto de equilibrio}
+	
+	\begin{align*}
+		15x - 8x &= 500 - 200 \\
+		7x       &= 300
+	\end{align*}
+	\[
+	\boxed{x = \frac{300}{7} \approx 42{,}86 \text{ toneladas}}
+	\]
+	
+	\subsection*{b) Interpretación económica}
+	
+	Para menos de $42{,}86$ toneladas los costos superan los ingresos (pérdida);
+	para más, los ingresos superan los costos (ganancia). Es el umbral mínimo de
+	producción para que la actividad sea rentable.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 5}
+	%=============================================================
+	
+	\textbf{Ecuación:} $V = axt - bx + c$. \textbf{Despejar $x$:}
+	
+	\begin{align*}
+		V - c     &= axt - bx \\
+		V - c     &= x(at - b)
+	\end{align*}
+	\[
+	\boxed{x = \frac{V - c}{at - b}, \quad at \neq b}
+	\]
+	
+	\textbf{Interpretación:} $x$ es la cantidad necesaria para obtener un volumen
+	efectivo $V$, dado un volumen inicial $c$, tasa de aplicación $a$, tiempo $t$
+	y pérdidas por infiltración $b$.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 6}
+	%=============================================================
+	
+	\textbf{Ecuación:} $2(5x + 50) - 3x = 10x + 100$. \quad
+	\textbf{Conclusión del estudiante:} $x = -10$.
+	
+	\subsection*{a) Verificación}
+	
+	Sustituimos $x = -10$:
+	\begin{align*}
+		\text{Lado izquierdo:} &\quad 2(5(-10)+50)-3(-10) = 2(0)+30 = 30 \\
+		\text{Lado derecho:}   &\quad 10(-10)+100 = 0
+	\end{align*}
+	Como $30 \neq 0$, el resultado $x = -10$ \textbf{es incorrecto}.
+	
+	\subsection*{b) Resolución correcta}
+	
+	\begin{align*}
+		10x + 100 - 3x &= 10x + 100 \\
+		7x + 100       &= 10x + 100 \\
+		-3x            &= 0
+	\end{align*}
+	\[
+	\boxed{x = 0}
+	\]
+	
+	\subsection*{c) Análisis de sentido físico}
+	
+	$x = 0$ indica que no se requiere insumo adicional. En agronomía puede
+	interpretarse como que el campo ya posee la dosis óptima sin necesidad de
+	intervención extra.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 7}
+	%=============================================================
+	
+	\textbf{Ecuación:}
+	\[
+	\frac{2(3x + 60)}{5} + \frac{x - 20}{2} = 150
+	\]
+	
+	\subsection*{a) Resolución}
+	
+	El $\text{mcm}(5,2) = 10$. Multiplicando por $10$:
+	\begin{align*}
+		4(3x + 60) + 5(x - 20) &= 1500 \\
+		12x + 240 + 5x - 100   &= 1500 \\
+		17x + 140              &= 1500 \\
+		17x                    &= 1360
+	\end{align*}
+	\[
+	\boxed{x = 80}
+	\]
+	
+	\subsection*{b) Interpretación como dosis de fertilizante}
+	
+	Una concentración base de $x = 80$ unidades permite que el modelo alcance
+	la dosis total de 150 unidades requerida por el cultivo.
+	
+	\subsection*{c) Coherencia del modelo}
+	
+	El valor $x = 80 > 0$ es físicamente coherente y razonable dentro de los
+	rangos típicos de dosificación agronómica.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 8}
+	%=============================================================
+	
+	\textbf{Ecuación:}
+	\[
+	0{,}9(10x + 300) - 0{,}2(5x + 100) = 1000
+	\]
+	
+	\subsection*{a) Determinación de $x$}
+	
+	\begin{align*}
+		9x + 270 - x - 20 &= 1000 \\
+		8x + 250          &= 1000 \\
+		8x                &= 750
+	\end{align*}
+	\[
+	\boxed{x = \frac{750}{8} = 93{,}75}
+	\]
+	
+	\subsection*{b) Interpretación en consumo energético}
+	
+	$x = 93{,}75$ representa las horas de operación o potencia requerida para
+	entregar 1000 unidades de energía útil, con eficiencia del 90\% en la
+	componente principal y pérdidas del 20\% en la secundaria.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 9}
+	%=============================================================
+	
+	\textbf{Ecuación:}
+	\[
+	\frac{3(4x + 120)}{2} - \frac{2(5x - 50)}{3} = 500
+	\]
+	
+	\subsection*{a) Resolución}
+	
+	El $\text{mcm}(2,3) = 6$. Multiplicando por $6$:
+	\begin{align*}
+		9(4x + 120) - 4(5x - 50) &= 3000 \\
+		36x + 1080 - 20x + 200   &= 3000 \\
+		16x + 1280               &= 3000 \\
+		16x                      &= 1720
+	\end{align*}
+	\[
+	\boxed{x = 107{,}5}
+	\]
+	
+	\subsection*{b) Interpretación en contexto productivo}
+	
+	$x = 107{,}5$ representa la cantidad de insumo que debe aplicarse para que
+	el sistema productivo alcance las 500 unidades objetivo.
+	
+	\subsection*{c) Posibles errores de modelación}
+	
+	\begin{itemize}
+		\item Los coeficientes deben calibrarse con datos reales del predio; errores
+		en la estimación de pérdidas o rendimientos sesgan el resultado.
+		\item Si $x$ representa una dosis, debe cotejarse con los rangos agronómicos
+		recomendados para el cultivo específico.
+		\item La ecuación asume linealidad, lo que puede ser una simplificación
+		excesiva en sistemas con comportamiento no lineal.
+	\end{itemize}
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 10}
+	%=============================================================
+	
+	\textbf{Datos:} Sea $x$ el pago del día 1. Entonces:
+	
+	\begin{itemize}
+		\item Día 1: $x$
+		\item Día 2: $\dfrac{5}{4}x$
+		\item Día 3: $\left(\dfrac{5}{4}\right)^{2}x = \dfrac{25}{16}x$
+	\end{itemize}
+	
+	\textbf{Ecuación:}
+	\[
+	x + \frac{5}{4}x + \frac{25}{16}x = 219\,600
+	\]
+	
+	Multiplicando por $16$:
+	\begin{align*}
+		16x + 20x + 25x &= 3\,513\,600 \\
+		61x             &= 3\,513\,600
+	\end{align*}
+	\[
+	\boxed{x = \$57\,600}
+	\]
+	
+	\textbf{Pagos por día:}
+	\[
+	\text{Día 1: } \$57\,600 \qquad
+	\text{Día 2: } \$72\,000 \qquad
+	\text{Día 3: } \$90\,000
+	\]
+	
+	\textbf{Verificación:} $57\,600 + 72\,000 + 90\,000 = \$219\,600$ \checkmark
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 11}
+	%=============================================================
+	
+	\textbf{Datos:} muestra de $450$ plantas, $36$ infectadas; zona total: $200\,000$ plantas.
+	
+	\textbf{Proporción de infección:}
+	\[
+	p = \frac{36}{450} = 0{,}08 = 8\%
+	\]
+	
+	\textbf{Estimación:}
+	\[
+	N_{\text{inf}} = 0{,}08 \times 200\,000
+	\]
+	\[
+	\boxed{N_{\text{inf}} = 16\,000 \text{ plantas infectadas}}
+	\]
+	
+	\textbf{Interpretación:} El 8\% del cultivo podría estar infectado, lo que
+	amerita una intervención fitosanitaria inmediata para evitar la propagación.
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Problema 12}
+	%=============================================================
+	
+	\textbf{Datos:} Total $= 88$ profesionales; Grupo A $=$ Grupo B $+ 20$.
+	
+	Sea $B$ = profesionales en Grupo B:
+	\begin{align*}
+		(B + 20) + B &= 88 \\
+		2B + 20      &= 88 \\
+		2B           &= 68 \\
+		B            &= 34
+	\end{align*}
+	\[
+	\boxed{\text{Grupo A} = 34 + 20 = 54 \text{ profesionales}}
+	\]
+	
+	\textbf{Verificación:} $54 + 34 = 88$ \checkmark
+	
+	\bigskip
+	
+	%=============================================================
+	\section*{Resumen de Resultados}
+	%=============================================================
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{1.8}
+		\begin{tabular}{clc}
+			\toprule
+			\textbf{N\textsuperscript{o}} & \textbf{Resultado principal} & \textbf{Valor} \\
+			\midrule
+			1  & Hectáreas a fertilizar         & $x \approx 81{,}62$ ha \\
+			2  & Horas de riego                 & $x = 53$ h \\
+			3  & Concentración base             & $x \approx 72{,}14$ mg/L \\
+			4  & Punto de equilibrio            & $x \approx 42{,}86$ ton \\
+			5  & Despeje de $x$                 & $x = \dfrac{V-c}{at-b}$ \\[4pt]
+			6  & Corrección del estudiante      & $x = 0$ \\
+			7  & Dosis de fertilizante          & $x = 80$ \\
+			8  & Consumo energético             & $x = 93{,}75$ \\
+			9  & Insumo productivo              & $x = 107{,}5$ \\
+			10 & Pago día 1                     & $\$57\,600$ \\
+			11 & Plantas infectadas estimadas   & $16\,000$ plantas \\
+			12 & Profesionales Grupo A          & $54$ profesionales \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+\end{document}

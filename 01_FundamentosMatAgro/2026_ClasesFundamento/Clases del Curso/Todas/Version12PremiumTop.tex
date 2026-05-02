@@ -1,0 +1,773 @@
+% !TEX program = pdflatex
+% ==========================================================
+% CLASE BEAMER TOP
+% Fundamentos de Matemática Básica - Agronomía
+% Tema: Potencias
+% Universidad Santo Tomás - Talca
+% ==========================================================
+
+\newif\ifhandout
+%\handoutfalse
+\handouttrue
+
+\ifhandout
+\documentclass[aspectratio=169,10pt,handout]{beamer}
+\else
+\documentclass[aspectratio=169,10pt]{beamer}
+\fi
+
+% ----------------------------------------------------------
+% PAQUETES
+% ----------------------------------------------------------
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc}
+\usepackage{fontawesome5}
+
+% ----------------------------------------------------------
+% COLORES
+% ----------------------------------------------------------
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTTeal}{RGB}{0,153,117}
+\definecolor{USTGray}{RGB}{120,120,120}
+\definecolor{USTSoft}{RGB}{248,249,250}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{USTGold}{RGB}{196,154,70}
+\definecolor{USTLightBlue}{RGB}{227,239,248}
+\definecolor{USTLightTeal}{RGB}{226,245,240}
+\definecolor{USTRedSoft}{RGB}{252,235,235}
+\definecolor{USTLine}{RGB}{220,226,232}
+
+% ----------------------------------------------------------
+% TEMA
+% ----------------------------------------------------------
+\usetheme{Madrid}
+\usecolortheme[named=USTBlue]{structure}
+\setbeamertemplate{navigation symbols}{}
+
+% ----------------------------------------------------------
+% AJUSTES VISUALES
+% ----------------------------------------------------------
+\setlist[itemize]{itemsep=0.45em}
+\setlist[enumerate]{itemsep=0.45em}
+
+\setbeamercolor{normal text}{fg=USTText,bg=white}
+\setbeamercolor{title}{fg=USTBlueDark}
+\setbeamercolor{subtitle}{fg=USTTeal}
+\setbeamercolor{frametitle}{fg=white,bg=USTBlueDark}
+
+\setbeamercolor{block title}{bg=USTLightBlue,fg=USTBlueDark}
+\setbeamercolor{block body}{bg=USTSoft,fg=black}
+
+\setbeamercolor{block title example}{bg=USTLightTeal,fg=USTBlueDark}
+\setbeamercolor{block body example}{bg=USTSoft,fg=black}
+
+\setbeamercolor{block title alerted}{bg=USTRedSoft,fg=black}
+\setbeamercolor{block body alerted}{bg=red!2,fg=black}
+
+% ----------------------------------------------------------
+% FRAMETITLE
+% ----------------------------------------------------------
+\setbeamertemplate{frametitle}{
+	\vspace*{-0.03cm}
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.92cm,dp=0.18cm,leftskip=0.45cm,rightskip=0.25cm]{frametitle}
+		{\large\bfseries \insertframetitle}
+	\end{beamercolorbox}
+}
+
+% ----------------------------------------------------------
+% PIE DE PÁGINA
+% ----------------------------------------------------------
+\setbeamercolor{author in head/foot}{bg=USTSoft,fg=USTGray}
+\setbeamercolor{date in head/foot}{bg=USTSoft,fg=USTGray}
+\setbeamercolor{title in head/foot}{bg=USTSoft,fg=USTGray}
+
+\setbeamertemplate{footline}{%
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.82\paperwidth,ht=2.8ex,dp=1ex,leftskip=0.4cm]{author in head/foot}%
+			\scriptsize
+			\textbf{Fundamentos de Matemática Básica}
+			\quad|\quad
+			Agronomía
+			\quad|\quad
+			Universidad Santo Tomás Talca
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.18\paperwidth,ht=2.8ex,dp=1ex,rightskip=0.35cm plus1fil]{date in head/foot}%
+			\scriptsize \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}%
+	}%
+}
+
+% ----------------------------------------------------------
+% COMANDOS
+% ----------------------------------------------------------
+\newcommand{\destacar}[1]{\textcolor{USTBlueDark}{\textbf{#1}}}
+\newcommand{\alerta}[1]{\textcolor{red!70!black}{\textbf{#1}}}
+\newcommand{\pp}{\pause}
+
+\newcommand{\iconoInicio}{\faPlayCircle}
+\newcommand{\iconoDesarrollo}{\faBrain}
+\newcommand{\iconoPractica}{\faPenSquare}
+\newcommand{\iconoAgro}{\faSeedling}
+\newcommand{\iconoCierre}{\faCheckCircle}
+\newcommand{\iconoIdea}{\faLightbulb}
+\newcommand{\iconoError}{\faExclamationTriangle}
+\newcommand{\iconoTiempo}{\faClock}
+\newcommand{\iconoMeta}{\faBullseye}
+
+\newenvironment{metaBox}
+{\begin{block}{\iconoMeta\ \ Meta de aprendizaje}}
+	{\end{block}}
+
+\newenvironment{ideaBox}
+{\begin{exampleblock}{\iconoIdea\ \ Idea clave}}
+	{\end{exampleblock}}
+
+% ----------------------------------------------------------
+% PORTADA TOP
+% ----------------------------------------------------------
+\newcommand{\PortadaProfesionalUST}{%
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			
+			\fill[white] (current page.south west) rectangle (current page.north east);
+			\fill[USTBlueDark] (current page.north west) rectangle ([yshift=-1.45cm]current page.north east);
+			\fill[USTTeal] ([yshift=-1.45cm]current page.north west) rectangle ([yshift=-1.62cm]current page.north east);
+			\fill[USTSoft] (current page.south west) rectangle ([xshift=2.25cm]current page.north west);
+			
+			\fill[USTBlue!7] ([xshift=1.10cm,yshift=-2.0cm]current page.north west) circle (0.78cm);
+			\fill[USTTeal!10] ([xshift=1.70cm,yshift=-4.2cm]current page.north west) circle (0.45cm);
+			\fill[USTGold!14] ([xshift=-1.2cm,yshift=1cm]current page.south east) circle (1.08cm);
+			
+			\fill[black!7,rounded corners=8pt]
+			([xshift=-5.1cm,yshift=-3.15cm]current page.center) rectangle
+			([xshift=5.0cm,yshift=2.75cm]current page.center);
+			
+			\fill[white,rounded corners=8pt]
+			([xshift=-5.25cm,yshift=-3.00cm]current page.center) rectangle
+			([xshift=4.85cm,yshift=2.90cm]current page.center);
+			
+			\fill[USTTeal] ([xshift=-5.25cm,yshift=-3.00cm]current page.center) rectangle
+			([xshift=-4.95cm,yshift=2.90cm]current page.center);
+			
+			\node[anchor=north east,text=white]
+			at ([xshift=-0.7cm,yshift=-0.52cm]current page.north east)
+			{\small\bfseries Universidad Santo Tomás \quad Ciencias Básicas Talca};
+			
+			\node[align=center] at ([xshift=0.10cm,yshift=-0.05cm]current page.center){%
+				\begin{minipage}{0.68\paperwidth}
+					\centering
+					
+					{\Large\bfseries\color{USTText}\insertauthor\par}
+					
+					\vspace{0.75cm}
+					
+					{\fontsize{24}{28}\selectfont\bfseries\color{USTBlueDark}\inserttitle\par}
+					
+					\vspace{0.28cm}
+					
+					{\large\bfseries\color{USTTeal}\insertsubtitle\par}
+					
+					\vspace{0.58cm}
+					
+					{\normalsize\color{USTGray}\faSeedling\ Agronomía \quad \faUniversity\ Universidad Santo Tomás\par}
+					
+					\vspace{0.65cm}
+					
+					{\small\color{USTGray}\insertdate\par}
+				\end{minipage}
+			};
+			
+			\draw[USTGray!35,line width=0.35pt]
+			([xshift=0.9cm,yshift=0.72cm]current page.south west) --
+			([xshift=-0.9cm,yshift=0.72cm]current page.south east);
+			
+			\node[anchor=south,text=USTGray]
+			at ([yshift=0.2cm]current page.south)
+			{\scriptsize
+				\textbf{Fundamentos de Matemática Básica}
+				\;|\;
+				Clase TOP
+				\;|\;
+				Potencias};
+		\end{tikzpicture}
+	\end{frame}
+}
+
+% ----------------------------------------------------------
+% FRAME DE SECCIÓN
+% ----------------------------------------------------------
+\newcommand{\SectionFrame}[3]{%
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[USTBlueDark] (current page.south west) rectangle (current page.north east);
+			\fill[USTTeal] (current page.south west) rectangle ([yshift=0.23cm]current page.north east);
+			\fill[white,opacity=0.08] ([xshift=-1cm,yshift=1cm]current page.south east) circle (1.8cm);
+			\fill[white,opacity=0.06] ([xshift=1.3cm,yshift=-0.8cm]current page.north west) circle (1.25cm);
+			
+			\node[anchor=center,text=white] at ([yshift=0.9cm]current page.center)
+			{{\fontsize{34}{36}\selectfont #1}};
+			
+			\node[anchor=center,text=white] at (current page.center)
+			{{\LARGE\bfseries #2}};
+			
+			\node[anchor=center,text=white!90] at ([yshift=-1.0cm]current page.center)
+			{{\large #3}};
+		\end{tikzpicture}
+	\end{frame}
+}
+
+% ----------------------------------------------------------
+% DATOS
+% ----------------------------------------------------------
+\title{Fundamentos de Matemática Básica}
+\subtitle{Clase 2: Potencias}
+\author{Prof. Luis González Alcaino}
+\date{Universidad Santo Tomás - Agronomía 2026}
+
+% ==========================================================
+% DOCUMENTO
+% ==========================================================
+\begin{document}
+	
+	% ----------------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+		\begin{metaBox}
+			Aplicar el concepto de potencia y sus propiedades en ejercicios matemáticos y situaciones contextualizadas en Agronomía.
+		\end{metaBox}
+		
+		\pp
+		
+		\begin{block}{\faListOl\ \ Ruta de la sesión}
+			\begin{enumerate}
+				\item Inicio
+				\item Desarrollo conceptual
+				\item Práctica guiada
+				\item Aplicación agronómica
+				\item Práctica autónoma
+				\item Cierre
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoTiempo\ \ Distribución del tiempo}
+		\centering
+		\begin{tabular}{>{\raggedright\arraybackslash}p{4.4cm} >{\centering\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{4.6cm}}
+			\toprule
+			\textbf{Momento} & \textbf{Tiempo} & \textbf{Propósito} \\
+			\midrule
+			Inicio & 10 min & Activar conocimientos previos \\
+			Desarrollo & 25 min & Comprender concepto y propiedades \\
+			Práctica guiada & 15 min & Resolver paso a paso \\
+			Aplicación agronómica & 10 min & Conectar con el contexto profesional \\
+			Práctica autónoma & 15 min & Consolidar individualmente \\
+			Cierre & 5 min & Sintetizar y reflexionar \\
+			\bottomrule
+		\end{tabular}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\SectionFrame{\iconoInicio}{Inicio}{Activación y conexión inicial}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoInicio\ \ Activación inicial}
+		\begin{block}{Pensemos juntos}
+			\begin{itemize}
+				\item<1-> ¿Cómo escribirías \(2\cdot2\cdot2\cdot2\) de manera abreviada?
+				\item<2-> ¿Qué representa el exponente?
+				\item<3-> ¿Dónde aparecen multiplicaciones repetidas en Agronomía?
+			\end{itemize}
+		\end{block}
+		
+		\only<4>{
+			\begin{ideaBox}
+				Las potencias permiten expresar crecimiento, repetición y escala de forma compacta.
+			\end{ideaBox}
+		}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoInicio\ \ Motivación}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.48\textwidth}
+				\begin{block}{Usos en Agronomía}
+					\begin{itemize}
+						\item Densidad de siembra
+						\item Crecimiento bacteriano
+						\item Micronutrientes
+						\item Notación científica
+					\end{itemize}
+				\end{block}
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\begin{exampleblock}{Ejemplo}
+					\[
+					0{,}00045\ \text{kg}=4{,}5\times10^{-4}\ \text{kg}
+					\]
+					Esta escritura permite calcular y comunicar con mayor claridad.
+				\end{exampleblock}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\SectionFrame{\iconoDesarrollo}{Desarrollo}{Concepto y propiedades de las potencias}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Concepto de potencia}
+		\begin{block}{Definición}
+			\[
+			a^n=\underbrace{a\cdot a\cdot a\cdots a}_{n\text{ veces}}
+			\]
+		\end{block}
+		
+		\pp
+		
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.47\textwidth}
+				\begin{block}{Base}
+					Número que se repite como factor.
+				\end{block}
+			\end{column}
+			\begin{column}{0.47\textwidth}
+				\begin{exampleblock}{Exponente}
+					Cantidad de veces que se repite la base.
+				\end{exampleblock}
+			\end{column}
+		\end{columns}
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			5^3=5\cdot5\cdot5=125
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 1: producto de igual base}
+		\[
+		a^m\cdot a^n=a^{m+n}
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			2^3\cdot2^4=2^{3+4}=2^7=128
+			\]
+		\end{exampleblock}
+		
+		\pp
+		
+		\begin{ideaBox}
+			Misma base \(\rightarrow\) se suman exponentes.
+		\end{ideaBox}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 2: cociente de igual base}
+		\[
+		\frac{a^m}{a^n}=a^{m-n}, \qquad a\neq0
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			\frac{5^6}{5^2}=5^{6-2}=5^4=625
+			\]
+		\end{exampleblock}
+		
+		\pp
+		
+		\begin{ideaBox}
+			Misma base \(\rightarrow\) se restan exponentes.
+		\end{ideaBox}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 3: potencia de una potencia}
+		\[
+		(a^m)^n=a^{m\cdot n}
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			(3^2)^4=3^{2\cdot4}=3^8=6561
+			\]
+		\end{exampleblock}
+		
+		\pp
+		
+		\begin{ideaBox}
+			Potencia elevada a potencia \(\rightarrow\) se multiplican exponentes.
+		\end{ideaBox}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 4: potencia de un producto}
+		\[
+		(ab)^n=a^n b^n
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			(2\cdot5)^3=2^3\cdot5^3=8\cdot125=1000
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 5: potencia de un cociente}
+		\[
+		\left(\frac{a}{b}\right)^n=\frac{a^n}{b^n}, \qquad b\neq0
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			\left(\frac{2}{3}\right)^3=\frac{2^3}{3^3}=\frac{8}{27}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 6: exponente cero}
+		\[
+		a^0=1,\qquad a\neq0
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			7^0=1
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 7: exponente negativo}
+		\[
+		a^{-n}=\frac{1}{a^n},\qquad a\neq0
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplo}
+			\[
+			2^{-3}=\frac{1}{2^3}=\frac{1}{8}
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Propiedad 8: casos especiales}
+		\[
+		a^1=a
+		\qquad
+		1^n=1
+		\qquad
+		0^n=0 \text{ para } n>0
+		\]
+		
+		\pp
+		
+		\begin{exampleblock}{Ejemplos}
+			\[
+			9^1=9
+			\qquad
+			1^{12}=1
+			\qquad
+			0^5=0
+			\]
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoError\ \ Errores frecuentes}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.48\textwidth}
+				\begin{alertblock}{Error 1}
+					\[
+					a^m+a^n \neq a^{m+n}
+					\]
+					\[
+					2^2+2^3=12
+					\]
+					\[
+					2^5=32
+					\]
+				\end{alertblock}
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\begin{alertblock}{Error 2}
+					\[
+					(a+b)^n \neq a^n+b^n
+					\]
+					\[
+					(2+3)^2=25
+					\]
+					\[
+					2^2+3^2=13
+					\]
+				\end{alertblock}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoDesarrollo\ \ Patrones numéricos}
+		\begin{columns}[T,totalwidth=\textwidth]
+			\begin{column}{0.48\textwidth}
+				\begin{block}{Potencias de 2}
+					\[
+					2^1=2,\quad 2^2=4,\quad 2^3=8
+					\]
+					\[
+					2^4=16,\quad 2^5=32
+					\]
+				\end{block}
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\begin{exampleblock}{Potencias de 10}
+					\[
+					10^1=10,\quad 10^2=100
+					\]
+					\[
+					10^3=1000,\quad 10^4=10000
+					\]
+				\end{exampleblock}
+			\end{column}
+		\end{columns}
+		
+		\pp
+		
+		\begin{ideaBox}
+			Si el exponente aumenta en 1, la potencia se multiplica por la base.
+		\end{ideaBox}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\SectionFrame{\iconoPractica}{Práctica guiada}{Resolución paso a paso}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoPractica\ \ Ejercicio guiado 1}
+		\begin{block}{Problema}
+			Simplificar:
+			\[
+			2^4\cdot2^3
+			\]
+		\end{block}
+		
+		\only<2>{
+			\begin{exampleblock}{Paso 1}
+				Misma base:
+				\[
+				2^4\cdot2^3=2^{4+3}
+				\]
+			\end{exampleblock}
+		}
+		
+		\only<3>{
+			\begin{exampleblock}{Paso 2}
+				\[
+				2^{4+3}=2^7=128
+				\]
+			\end{exampleblock}
+		}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoPractica\ \ Ejercicio guiado 2}
+		\begin{block}{Problema}
+			Resolver:
+			\[
+			(3^2)^3
+			\]
+		\end{block}
+		
+		\only<2>{
+			\begin{exampleblock}{Paso 1}
+				Potencia de una potencia:
+				\[
+				(3^2)^3=3^{2\cdot3}
+				\]
+			\end{exampleblock}
+		}
+		
+		\only<3>{
+			\begin{exampleblock}{Paso 2}
+				\[
+				3^{2\cdot3}=3^6=729
+				\]
+			\end{exampleblock}
+		}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\SectionFrame{\iconoAgro}{Aplicación agronómica}{Matemática al servicio del contexto profesional}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoAgro\ \ Caso 1: semillas por superficie}
+		\begin{block}{Situación}
+			En una parcela experimental se usan:
+			\[
+			2^5
+			\]
+			semillas por metro cuadrado.
+			
+			La superficie cultivada es:
+			\[
+			2^3
+			\]
+			metros cuadrados.
+		\end{block}
+		
+		\pp
+		
+		\begin{exampleblock}{Resolución}
+			\[
+			2^5\cdot2^3=2^{8}=256
+			\]
+			Se utilizan \textbf{256 semillas}.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoAgro\ \ Caso 2: crecimiento bacteriano}
+		\begin{block}{Situación}
+			Una colonia bacteriana se duplica cada hora.
+			
+			Si parte con:
+			\[
+			2^3
+			\]
+			bacterias, luego de 4 horas habrá:
+			\[
+			2^3\cdot2^4
+			\]
+		\end{block}
+		
+		\pp
+		
+		\begin{exampleblock}{Resolución}
+			\[
+			2^3\cdot2^4=2^7=128
+			\]
+			Habrá \textbf{128 bacterias}.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoAgro\ \ Caso 3: fertilización}
+		\begin{block}{Situación}
+			Se aplican:
+			\[
+			5\times10^2 \text{ gramos por hectárea}
+			\]
+			en una superficie de:
+			\[
+			10^3 \text{ hectáreas}
+			\]
+		\end{block}
+		
+		\pp
+		
+		\begin{exampleblock}{Resolución}
+			\[
+			(5\times10^2)(10^3)=5\times10^5=500000
+			\]
+			Se requieren \textbf{500000 gramos}.
+		\end{exampleblock}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\SectionFrame{\iconoPractica}{Práctica autónoma}{Consolidación individual}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoPractica\ \ Ejercicios propuestos}
+		\begin{enumerate}
+			\item \(2^5\cdot2^2\)
+			\item \(\dfrac{3^7}{3^4}\)
+			\item \((4^2)^3\)
+			\item \((2\cdot3)^2\)
+			\item \(\left(\dfrac{3}{5}\right)^2\)
+			\item \(8^0\)
+			\item \(2^{-4}\)
+			\item En un cultivo hay \(3^4\) plantas por sector y \(3^2\) sectores. ¿Cuántas plantas hay en total?
+		\end{enumerate}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoPractica\ \ Respuestas}
+		\begin{multicols}{2}
+			\begin{enumerate}
+				\item \(2^5\cdot2^2=2^7=128\)
+				\item \(\dfrac{3^7}{3^4}=3^3=27\)
+				\item \((4^2)^3=4^6=4096\)
+				\item \((2\cdot3)^2=36\)
+				\item \(\left(\dfrac{3}{5}\right)^2=\dfrac{9}{25}\)
+				\item \(8^0=1\)
+				\item \(2^{-4}=\dfrac{1}{16}\)
+				\item \(3^4\cdot3^2=3^6=729\)
+			\end{enumerate}
+		\end{multicols}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\SectionFrame{\iconoCierre}{Cierre}{Síntesis y reflexión final}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoCierre\ \ Ideas clave}
+		\begin{block}{Síntesis}
+			\begin{itemize}
+				\item<1-> Una potencia representa una multiplicación repetida.
+				\item<2-> La base es el número que se repite.
+				\item<3-> El exponente indica cuántas veces se repite la base.
+				\item<4-> Las propiedades simplifican cálculos.
+				\item<5-> Las potencias modelan crecimiento, concentración y escala.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	% ----------------------------------------------------------
+	\begin{frame}{\iconoCierre\ \ Pregunta de salida}
+		\begin{exampleblock}{Reflexión final}
+			¿Por qué las potencias son una herramienta útil para describir fenómenos agrícolas como la siembra, la fertilización o el crecimiento bacteriano?
+		\end{exampleblock}
+		
+		\vspace{0.5cm}
+		
+		\begin{center}
+			{\Large\color{USTTeal}\faSeedling}
+			
+			\vspace{0.25cm}
+			
+			{\normalsize\textcolor{USTGray}{La matemática básica permite interpretar mejor la realidad técnica y profesional.}}
+		\end{center}
+	\end{frame}
+	
+\end{document}

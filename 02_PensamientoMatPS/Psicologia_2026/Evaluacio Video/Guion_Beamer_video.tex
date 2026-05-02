@@ -1,0 +1,720 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% =========================================================
+% PAQUETES
+% =========================================================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs,multirow}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,fit,backgrounds}
+\usepackage{multicol}
+%\usepackage{xcolor}
+
+% =========================================================
+% TEMA BASE
+% =========================================================
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[circle]
+
+% =========================================================
+% COLORES ESTILO UST MODERNO
+% =========================================================
+\definecolor{USTBlue}{RGB}{0,70,127}
+\definecolor{USTBlueDark}{RGB}{0,45,85}
+\definecolor{USTBlueSoft}{RGB}{228,238,248}
+\definecolor{USTTeal}{RGB}{0,153,117}
+\definecolor{USTGray}{RGB}{95,99,104}
+\definecolor{USTLight}{RGB}{247,249,252}
+\definecolor{USTBorder}{RGB}{210,220,230}
+\definecolor{USTText}{RGB}{35,40,45}
+\definecolor{USTAccent}{RGB}{109,76,139}
+
+% =========================================================
+% COLORES BEAMER
+% =========================================================
+\setbeamercolor{normal text}{fg=USTText,bg=white}
+\setbeamercolor{structure}{fg=USTBlue}
+\setbeamercolor{title}{fg=white,bg=USTBlue}
+\setbeamercolor{subtitle}{fg=white,bg=USTBlue}
+\setbeamercolor{frametitle}{fg=white,bg=USTBlue}
+\setbeamercolor{block title}{fg=USTBlueDark,bg=USTBlueSoft}
+\setbeamercolor{block body}{fg=USTText,bg=USTLight}
+\setbeamercolor{block title alerted}{fg=white,bg=USTAccent}
+\setbeamercolor{block body alerted}{fg=USTText,bg=USTLight}
+\setbeamercolor{block title example}{fg=white,bg=USTTeal}
+\setbeamercolor{block body example}{fg=USTText,bg=USTLight}
+
+% =========================================================
+% TIPOGRAFÍA
+% =========================================================
+\setbeamerfont{title}{series=\bfseries,size=\Large}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{footline}{size=\scriptsize}
+
+% =========================================================
+% BARRA SUPERIOR SIMPLE Y COMPILABLE
+% =========================================================
+\addtobeamertemplate{frametitle}{}{%
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[USTBlueSoft] (current page.north west) rectangle ([yshift=-0.12cm]current page.north east);
+	\end{tikzpicture}
+}
+
+% =========================================================
+% FOOTLINE MODERNA
+% =========================================================
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.72\paperwidth,ht=2.8ex,dp=1.2ex,leftskip=.35cm]{author in head/foot}
+			\color{white}\bfseries Pensamiento Matemático -- Psicología
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.18\paperwidth,ht=2.8ex,dp=1.2ex,center]{title in head/foot}
+			\color{white}\bfseries Guion Video
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.10\paperwidth,ht=2.8ex,dp=1.2ex,center]{date in head/foot}
+			\color{white}\bfseries \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+}
+\setbeamercolor{author in head/foot}{bg=USTBlueDark,fg=white}
+\setbeamercolor{title in head/foot}{bg=USTBlue,fg=white}
+\setbeamercolor{date in head/foot}{bg=USTTeal,fg=white}
+
+% =========================================================
+% COMANDOS PERSONALIZADOS
+% =========================================================
+\newcommand{\BloqueVisual}[2]{
+	\begin{block}{#1}
+		#2
+	\end{block}
+}
+
+\newcommand{\BloqueGuion}[1]{
+	\begin{exampleblock}{Guion sugerido}
+		#1
+	\end{exampleblock}
+}
+
+\newcommand{\BloqueClave}[1]{
+	\begin{alertblock}{Idea clave}
+		#1
+	\end{alertblock}
+}
+
+\newcommand{\Transicion}[1]{
+	\begin{center}
+		\begin{tikzpicture}
+			\node[rounded corners=10pt, fill=USTBlueSoft, draw=USTBorder, minimum width=.86\linewidth, inner sep=8pt]{
+				\parbox{.8\linewidth}{\centering\bfseries\color{USTBlueDark} #1}
+			};
+		\end{tikzpicture}
+	\end{center}
+}
+
+% =========================================================
+% DATOS
+% =========================================================
+\title{Guion Completo para Video}
+\subtitle{Evaluación Unidad 1\\Pensamiento Matemático -- Psicología}
+\author{Luis Tulio González Alcaino}
+\institute{Universidad Santo Tomás \\ Departamento de Ciencias Básicas}
+\date{}
+
+% =========================================================
+\begin{document}
+	% =========================================================
+	
+	% ---------------------------------------------------------
+	% PORTADA
+	% ---------------------------------------------------------
+	\begin{frame}[plain]
+		\begin{tikzpicture}[remember picture,overlay]
+			\fill[USTBlue] (current page.north west) rectangle (current page.south east);
+			\fill[USTBlueDark] (current page.south west) rectangle ([yshift=1.1cm]current page.south east);
+			\fill[USTTeal] ([yshift=-1.5cm]current page.north west) rectangle ([xshift=0.18\paperwidth]current page.north west);
+			\fill[white,opacity=.08] ([xshift=.72\paperwidth,yshift=-1.2cm]current page.north west) circle (1.2cm);
+			\fill[white,opacity=.06] ([xshift=.85\paperwidth,yshift=-2.3cm]current page.north west) circle (.75cm);
+			\draw[white,opacity=.15,line width=2pt] ([xshift=.08\paperwidth,yshift=-5.8cm]current page.north west) -- ([xshift=.92\paperwidth,yshift=-5.8cm]current page.north west);
+		\end{tikzpicture}
+		
+		\vspace*{1.4cm}
+		
+		{\color{white}\bfseries\fontsize{22}{24}\selectfont Guion Completo para Video\par}
+		\vspace{0.35cm}
+		{\color{white}\fontsize{14}{16}\selectfont Evaluación Unidad 1\par}
+		\vspace{0.15cm}
+		{\color{white}\fontsize{15}{17}\selectfont Pensamiento Matemático -- Psicología\par}
+		
+		\vspace{1cm}
+		
+		\begin{tikzpicture}
+			\node[
+			rounded corners=12pt,
+			fill=white,
+			inner sep=10pt,
+			text width=.78\linewidth,
+			align=left
+			]{
+				\color{USTText}
+				\textbf{Incluye:}
+				
+				\medskip
+				
+				\parbox{.72\linewidth}{
+					\begin{itemize}
+						\item estructura de video por escenas
+						\item desarrollo matemático correcto
+						\item guion para narrar frente a cámara
+						\item diseño pensado para grabación directa
+					\end{itemize}
+				}
+			};
+		\end{tikzpicture}
+		
+		\vfill
+		
+		{\color{white}\large Luis Tulio González Alcaino\par}
+		\vspace{0.1cm}
+		{\color{white}\small Universidad Santo Tomás\par}
+	\end{frame}
+	
+	% ---------------------------------------------------------
+	\begin{frame}{Ruta del video}
+		\tableofcontents
+	\end{frame}
+	
+	% =========================================================
+	\section{Estructura general}
+	% =========================================================
+	
+	\begin{frame}{Estructura sugerida para la grabación}
+		\begin{columns}[T]
+			\begin{column}{.54\textwidth}
+				\BloqueVisual{Secuencia del video}{
+					\begin{enumerate}
+						\item Presentación inicial
+						\item Problema 1
+						\item Problema 2
+						\item Problema 3
+						\item Problema 4
+						\item Cierre final
+					\end{enumerate}
+				}
+			\end{column}
+			\begin{column}{.43\textwidth}
+				\BloqueVisual{Duración recomendada}{
+					Entre 12 y 18 minutos.
+				}
+				
+				\BloqueClave{
+					En cada problema se debe mostrar:
+					\begin{itemize}
+						\item procedimiento
+						\item justificación
+						\item respuesta final
+					\end{itemize}
+				}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Introducción sugerida para el video}
+		\BloqueGuion{
+			``Hola. En este video resolveré paso a paso la Evaluación de la Unidad 1 de Pensamiento Matemático, contextualizada al área de la Psicología. Desarrollaré cada problema mostrando el procedimiento, la justificación lógica y la interpretación final de los resultados.''}
+		
+		\Transicion{Hablar con claridad, mostrar cada paso y evitar dar solo la respuesta final.}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 1}
+	% =========================================================
+	
+	\begin{frame}{Problema 1: Enunciado}
+		Dadas las proposiciones:
+		
+		\begin{align*}
+			p &: \text{La memoria a corto plazo tiene capacidad ilimitada.} \\
+			q &: \text{La memoria sensorial tiene una duración de varios minutos.} \\
+			r &: \text{La memoria a largo plazo es de duración prolongada.} \\
+			s &: \text{El individuo utiliza la información para tomar decisiones.}
+		\end{align*}
+		
+		\begin{enumerate}
+			\item[a)] Traduzca a lenguaje usual:
+			\[
+			(p \to q)\land(\sim r \to s)
+			\]
+			\item[b)] Determine el valor de verdad de:
+			\[
+			[(p\land \sim q)\lor r]\to s
+			\]
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Problema 1(a): Traducción}
+		\begin{columns}[T]
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Expresión simbólica}{
+					\[
+					(p \to q)\land(\sim r \to s)
+					\]
+				}
+			\end{column}
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Lectura lógica}{
+					\begin{itemize}
+						\item \(p\to q\): Si \(p\), entonces \(q\)
+						\item \(\sim r\to s\): Si no \(r\), entonces \(s\)
+						\item \(\land\): y
+					\end{itemize}
+				}
+			\end{column}
+		\end{columns}
+		
+		\vspace{0.2cm}
+		
+		\BloqueVisual{Traducción completa}{
+			\emph{Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos, y si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones.}
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 1(a): Guion para narrar}
+		\BloqueGuion{
+			``Primero traduzco la proposición compuesta \((p\to q)\land(\sim r\to s)\). La primera parte se lee: si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos. La segunda parte se lee: si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones. Como ambas expresiones están unidas por la conjunción, la traducción final se expresa con la palabra y.''}
+		
+			\emph{\textbf{Traducción completa:} "Si la memoria a corto plazo tiene capacidad ilimitada, entonces la memoria sensorial tiene una duración de varios minutos, y si la memoria a largo plazo no es de duración prolongada, entonces el individuo utiliza la información para tomar decisiones."}
+	\end{frame}
+	
+	\begin{frame}{Problema 1(b): Análisis lógico}
+		\begin{columns}[T]
+			\begin{column}{.44\textwidth}
+				\BloqueVisual{Proposición}{
+					\[
+					[(p\land \sim q)\lor r]\to s
+					\]
+				}
+				\BloqueVisual{Valores asignados}{
+					\[
+					p=F,\quad q=F,\quad r=V,\quad s=V
+					\]
+				}
+			\end{column}
+			\begin{column}{.52\textwidth}
+				\BloqueClave{
+					\begin{itemize}
+						\item La memoria a corto plazo no es ilimitada. (F)
+						\item La memoria sensorial no dura varios minutos. (F)
+						\item La memoria a largo plazo sí es prolongada. (V)
+						\item El individuo sí usa información para decidir. (V)
+					\end{itemize}
+				}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Problema 1(b): Desarrollo paso a paso}
+		\[
+		[(p\land \sim q)\lor r]\to s
+		\]
+		
+		\[
+		[(F\land \sim F)\lor V]\to V
+		\]
+		
+		\[
+		[(F\land V)\lor V]\to V
+		\]
+		
+		\[
+		[F\lor V]\to V
+		\]
+		
+		\[
+		V\to V = V
+		\]
+		
+		\BloqueVisual{Conclusión}{
+			La proposición compuesta es \textbf{verdadera}.
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 1(b): Guion para narrar}
+		\BloqueGuion{
+			``Ahora reemplazo los valores de verdad en la proposición \([(p\land \sim q)\lor r]\to s\). Como \(p\) es falso, \(q\) es falso, \(r\) es verdadero y \(s\) es verdadero, obtengo \([(F\land \sim F)\lor V]\to V\). Luego, como \(\sim F\) es verdadero, queda \((F\land V)\lor V\), es decir \(F\lor V\), que da verdadero. Finalmente, \(V\to V\) también es verdadero. Por lo tanto, la proposición compuesta es verdadera.''}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 2}
+	% =========================================================
+	
+	\begin{frame}{Problema 2: Enunciado}
+		Considere la proposición:
+		
+		\begin{quote}
+			``Si una persona no sigue las estrategias terapéuticas indicadas, entonces presenta dificultades emocionales o no logra mejorar su bienestar psicológico.''
+		\end{quote}
+		
+		\begin{enumerate}
+			\item[a)] Identifique las proposiciones simples y exprese el enunciado en lenguaje simbólico.
+			\item[b)] Construya una tabla de verdad e indique si corresponde a una tautología, contradicción o contingencia.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Problema 2(a): Simbolización}
+		\begin{columns}[T]
+			\begin{column}{.50\textwidth}
+				\BloqueVisual{Proposiciones simples}{
+					\begin{align*}
+						p &: \text{La persona sigue las estrategias terapéuticas}\\
+						q &: \text{La persona presenta dificultades emocionales}\\
+						r &: \text{La persona mejora su bienestar psicológico}
+					\end{align*}
+				}
+			\end{column}
+			\begin{column}{.46\textwidth}
+				\BloqueVisual{Construcción}{
+					\begin{itemize}
+						\item ``no sigue'' $\to \sim p$
+						\item ``dificultades o no mejora'' $\to q\lor \sim r$
+					\end{itemize}
+				}
+			\end{column}
+		\end{columns}
+		
+		\BloqueVisual{Expresión simbólica final}{
+			\[
+			\sim p \to (q\lor \sim r)
+			\]
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 2(b): Tabla de verdad}
+		\small
+		\[
+		\begin{array}{c|c|c|c|c|c|c}
+			p & q & r & \sim p & \sim r& q\lor \sim r & \sim p \to (q\lor \sim r)\\
+			\hline
+			V & V & V & F & F & V & V\\
+			V & V & F & F & V & V & V\\
+			V & F & V & F & F & F & V\\
+			V & F & F & F & V & V & V\\
+			F & V & V & V & F & V & V\\
+			F & V & F & V & V & V & V\\
+			F & F & V & V & F & F & F\\
+			F & F & F & V & V & V & V
+		\end{array}
+		\]
+		\normalsize
+		
+		\BloqueClave{
+			La última columna (columna principal) tiene valores verdaderos y falsos. Por lo tanto, la proposición no es tautología ni contradicción, por lo tanto es una \textbf{contingencia.}
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 2: Conclusión}
+		\BloqueVisual{Clasificación}{
+			\[
+			\sim p \to (q\lor \sim r)
+			\]
+			la proposición es una \textbf{contingencia}.
+		}
+		
+		\BloqueGuion{
+			``Al observar la tabla de verdad, noto que la proposición resulta verdadera en varias filas y falsa en una de ellas. Como no todos los resultados son verdaderos ni todos son falsos, concluyo que se trata de una contingencia.''}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 3}
+	% =========================================================
+	
+	\begin{frame}{Problema 3: Datos extraídos de la tabla}
+		\BloqueVisual{Conjuntos de intervención}{
+			\[
+			R=\{P1,P3,P5,P7,P9,P11,P13,P15,P17,P19\}
+			\]
+			
+			\[
+			C=\{P2,P3,P6,P9,P10,P13,P14,P17,P18\}
+			\]
+			
+			\[
+			H=\{P1,P4,P6,P7,P8,P12,P13,P15,P16,P18,P20\}
+			\]
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 3(a): Diagrama de Venn}
+		\centering
+		\begin{tikzpicture}[scale=0.92, every node/.style={font=\small}]
+			\fill[USTBlue!18] (-1.5,0) circle (2.3);
+			\fill[USTTeal!20] (1.5,0) circle (2.3);
+			\fill[USTAccent!16] (0,-1.7) circle (2.3);
+			
+			\draw[USTBlueDark, line width=1pt] (-1.5,0) circle (2.3);
+			\draw[USTTeal!80!black, line width=1pt] (1.5,0) circle (2.3);
+			\draw[USTAccent, line width=1pt] (0,-1.7) circle (2.3);
+			
+			\node[font=\bfseries\large, text=USTBlueDark] at (-3.2,2.2) {$R$};
+			\node[font=\bfseries\large, text=USTTeal!70!black] at (3.2,2.2) {$C$};
+			\node[font=\bfseries\large, text=USTAccent] at (0,-4.2) {$H$};
+			
+			\node[align=center] at (-2.4,0.5) {\(\{P5,P11,P19\}\)};
+			\node[align=center] at (2.5,0.3) {\(\{P2,P10,P14\}\)};
+			\node[align=center] at (0,-2.6) {\(\{P4,P8,P12,P16,P20\}\)};
+			
+			\node[align=center] at (0,1.05) {\(\{P3,P9,P17\}\)};
+			\node[align=center] at (-1.35,-1.35) {\(\{P1,P7,P15\}\)};
+			\node[align=center] at (1.35,-1.35) {\(\{P6,P18\}\)};
+			\node[draw=USTBorder, fill=white, rounded corners=4pt, inner sep=2pt] at (0,-0.45) {\(\{P13\}\)};
+		\end{tikzpicture}
+		
+		\vspace{0.15cm}
+		
+		\BloqueClave{
+			La intersección triple contiene a la persona \(P13\). Las intersecciones dobles exactas se obtienen excluyendo esa región central.
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 3(a): Guion para explicar el Venn}
+		\BloqueGuion{
+			``Para representar la información en el diagrama de Venn, distribuyo a las personas según participen en una sola intervención, en exactamente dos o en las tres. En solo Regulación Emocional ubico \(P5\), \(P11\) y \(P19\). En solo Entrenamiento Cognitivo ubico \(P2\), \(P10\) y \(P14\). En solo Habilidades Sociales ubico \(P4\), \(P8\), \(P12\), \(P16\) y \(P20\). En las intersecciones dobles coloco \(P3\), \(P9\), \(P17\); luego \(P1\), \(P7\), \(P15\); y después \(P6\), \(P18\). Finalmente, en la intersección triple ubico a \(P13\).''}
+	\end{frame}
+	
+	\begin{frame}{Problema 3(b): Exactamente dos intervenciones}
+		Se pide:
+		\[
+		A=\{x\in U \mid x \text{ participa exactamente en dos intervenciones}\}
+		\]
+		
+		\begin{columns}[T]
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Intersecciones dobles exactas}{
+					\[
+					R\cap C \text{ solo }=\{P3,P9,P17\}
+					\]
+					\[
+					R\cap H \text{ solo }=\{P1,P7,P15\}
+					\]
+					\[
+					C\cap H \text{ solo }=\{P6,P18\}
+					\]
+				}
+			\end{column}
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Conjunto pedido}{
+					\[
+					A=\{P1,P3,P6,P7,P9,P15,P17,P18\}
+					\]
+				}
+				\BloqueVisual{Cardinalidad}{
+					\[
+					|A|=8
+					\]
+				}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Problema 3(c): Conjunto por extensión}
+		\begin{columns}[T]
+			\begin{column}{.46\textwidth}
+				\BloqueVisual{Solo en \(H\)}{
+					\[
+					\{P4,P8,P12,P16,P20\}
+					\]
+				}
+			\end{column}
+			\begin{column}{.46\textwidth}
+				\BloqueVisual{\(R\cap C\)}{
+					\[
+					\{P3,P9,P13,P17\}
+					\]
+				}
+			\end{column}
+		\end{columns}
+		
+		\BloqueVisual{Unión final}{
+			\[
+			\{P4,P8,P12,P16,P20\}\cup \{P3,P9,P13,P17\}
+			=
+			\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}
+			\]
+		}
+	\end{frame}
+	
+	% =========================================================
+	\section{Problema 4}
+	% =========================================================
+	
+	\begin{frame}{Problema 4: Datos}
+		\[
+		U=\{1,2,3,\dots,20\}
+		\]
+		
+		\begin{columns}[T]
+			\begin{column}{.30\textwidth}
+				\BloqueVisual{Conjunto \(A\)}{
+					\[
+					\{2,4,6,8,10,12,14,16,18,20\}
+					\]
+				}
+			\end{column}
+			\begin{column}{.30\textwidth}
+				\BloqueVisual{Conjunto \(S\)}{
+					\[
+					\{5,7,9,11,13\}
+					\]
+				}
+			\end{column}
+			\begin{column}{.30\textwidth}
+				\BloqueVisual{Conjunto \(E\)}{
+					\[
+					\{3,6,9,12,15,18\}
+					\]
+				}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}{Problema 4(a): Operación entre conjuntos}
+		Calcular:
+		\[
+		(A-E)\cup(S\cap E)
+		\]
+		
+		\begin{columns}[T]
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Paso 1}{
+					\[
+					A-E=\{2,4,8,10,14,16,20\}
+					\]
+				}
+			\end{column}
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Paso 2}{
+					\[
+					S\cap E=\{9\}
+					\]
+				}
+			\end{column}
+		\end{columns}
+		
+		\BloqueVisual{Resultado}{
+			\[
+			(A-E)\cup(S\cap E)=\{2,4,8,9,10,14,16,20\}
+			\]
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 4(a): Guion para narrar}
+		\BloqueGuion{
+			``Primero calculo \(A-E\), es decir, los elementos de \(A\) que no pertenecen a \(E\). Al quitar \(6\), \(12\) y \(18\), obtengo \(\{2,4,8,10,14,16,20\}\). Luego calculo \(S\cap E\), que corresponde a los elementos comunes entre ambos conjuntos, y en este caso es \(\{9\}\). Finalmente uno ambos resultados y obtengo \(\{2,4,8,9,10,14,16,20\}\).''}
+	\end{frame}
+	
+	\begin{frame}{Problema 4(b): Desarrollo}
+		Interpretamos la expresión como:
+		\[
+		\big((A-S)^c\cap A^c\big)-E
+		\]
+		
+		\begin{align*}
+			A-S &= A \\
+			(A-S)^c &= A^c \\
+			A^c &= \{1,3,5,7,9,11,13,15,17,19\}
+		\end{align*}
+		
+		Entonces:
+		\[
+		(A-S)^c\cap A^c=A^c
+		\]
+		
+		Y finalmente:
+		\[
+		A^c-E=\{1,5,7,11,13,17,19\}
+		\]
+		
+		\BloqueVisual{Resultado final}{
+			\[
+			\big((A-S)^c\cap A^c\big)-E=\{1,5,7,11,13,17,19\}
+			\]
+			\[
+			\text{Cardinalidad}=7
+			\]
+		}
+	\end{frame}
+	
+	\begin{frame}{Problema 4(b): Guion para narrar}
+		\BloqueGuion{
+			``Como \(A\) y \(S\) no tienen elementos en común, entonces \(A-S=A\). Por eso, el complemento de \(A-S\) coincide con \(A^c\). Luego intersecto con \(A^c\), por lo que el resultado sigue siendo \(A^c\). Finalmente resto el conjunto \(E\), eliminando \(3\), \(9\) y \(15\), y obtengo \(\{1,5,7,11,13,17,19\}\). La cardinalidad de este conjunto es 7.''}
+	\end{frame}
+	
+	% =========================================================
+	\section{Cierre}
+	% =========================================================
+	
+	\begin{frame}{Resumen final}
+		\small
+		\begin{columns}[T]
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Problema 1}{
+					\begin{itemize}
+						\item Traducción correcta de \((p\to q)\land(\sim r\to s)\)
+						\item \([(p\land \sim q)\lor r]\to s\) es verdadera
+					\end{itemize}
+				}
+				
+				\BloqueVisual{Problema 2}{
+					\begin{itemize}
+						\item \(\sim p\to(q\lor \sim r)\)
+						\item Clasificación: contingencia
+					\end{itemize}
+				}
+			\end{column}
+			\begin{column}{.48\textwidth}
+				\BloqueVisual{Problema 3}{
+					\[
+					A=\{P1,P3,P6,P7,P9,P15,P17,P18\}
+					\]
+					\[
+					|A|=8
+					\]
+					\[
+					\{P3,P4,P8,P9,P12,P13,P16,P17,P20\}
+					\]
+				}
+				
+				\BloqueVisual{Problema 4}{
+					\[
+					(A-E)\cup(S\cap E)=\{2,4,8,9,10,14,16,20\}
+					\]
+					\[
+					\big((A-S)^c\cap A^c\big)-E=\{1,5,7,11,13,17,19\}
+					\]
+					\[
+					|\,\cdot\,|=7
+					\]
+				}
+			\end{column}
+		\end{columns}
+		\normalsize
+	\end{frame}
+	
+	\begin{frame}{Cierre del video}
+		\BloqueGuion{
+			``En esta evaluación trabajamos traducción de proposiciones, lenguaje simbólico, tablas de verdad, diagramas de Venn y operaciones entre conjuntos. En cada ejercicio se mostró el procedimiento paso a paso y la justificación matemática correspondiente. Muchas gracias.''}
+		
+		\vfill
+		
+		\Transicion{Fin del video}
+	\end{frame}
+	
+	% =========================================================
+\end{document}

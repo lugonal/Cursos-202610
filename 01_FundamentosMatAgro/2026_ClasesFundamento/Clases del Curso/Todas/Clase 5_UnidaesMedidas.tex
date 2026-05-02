@@ -1,0 +1,841 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169,10pt]{beamer}
+
+% =========================
+% PAQUETES
+% =========================
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+
+% =========================
+% TEMA Y COLORES
+% =========================
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{USTBlue}{HTML}{003B73}
+\definecolor{USTLightBlue}{HTML}{DCEAF7}
+\definecolor{USTGreen}{HTML}{4F772D}
+\definecolor{USTGold}{HTML}{D9A404}
+\definecolor{USTGray}{HTML}{4D4D4D}
+\definecolor{USTSoft}{HTML}{F7F9FB}
+
+\setbeamercolor{structure}{fg=USTBlue}
+\setbeamercolor{title}{fg=white,bg=USTBlue}
+\setbeamercolor{frametitle}{fg=white,bg=USTBlue}
+\setbeamercolor{block title}{fg=white,bg=USTBlue}
+\setbeamercolor{block body}{fg=black,bg=USTSoft}
+\setbeamercolor{block title alerted}{fg=white,bg=USTGreen}
+\setbeamercolor{block body alerted}{fg=black,bg=green!8}
+\setbeamercolor{block title example}{fg=white,bg=USTGold}
+\setbeamercolor{block body example}{fg=black,bg=yellow!10}
+\setbeamercolor{item projected}{fg=white,bg=USTBlue}
+
+% =========================
+% PIE DE PÁGINA
+% =========================
+\setbeamertemplate{footline}{
+	\leavevmode
+	\hbox{
+		\begin{beamercolorbox}[wd=.78\paperwidth,ht=2.5ex,dp=1ex,leftskip=0.3cm]{author in head/foot}
+			\color{USTGray}\scriptsize Fundamentos de Matemática Básica --- Unidad I --- Clase 5: Unidades de medida
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[wd=.22\paperwidth,ht=2.5ex,dp=1ex,rightskip=0.3cm plus1fil]{date in head/foot}
+			\color{USTGray}\scriptsize \insertframenumber/\inserttotalframenumber
+		\end{beamercolorbox}
+	}
+	\vskip0pt
+}
+
+% =========================
+% COMANDOS
+% =========================
+\newcommand{\idea}[1]{
+	\begin{block}{Idea clave}
+		#1
+	\end{block}
+}
+
+\newcommand{\ejemplo}[2]{
+	\begin{exampleblock}{Ejemplo}
+		#1
+		
+		\vspace{0.5em}
+		\textbf{Resolución:} #2
+	\end{exampleblock}
+}
+
+\newcommand{\alertacaja}[1]{
+	\begin{alertblock}{Atención}
+		#1
+	\end{alertblock}
+}
+
+% =========================
+% DATOS
+% =========================
+\title[MAT Básica]{Fundamentos de Matemática Básica}
+\subtitle{Unidad I --- Clase 5: Unidades de medida}
+\author{Profesor Luis Tulio González Alcaino}
+\institute{Universidad Santo Tomás \\ Departamento Ciencias Básicas --- Talca}
+\date{Semestre I -- 2026}
+
+% =========================
+% DOCUMENTO
+% =========================
+\begin{document}
+	
+	% -------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Objetivos de la clase}
+		\begin{itemize}[<+->]
+			\item Identificar el concepto de \textbf{magnitud} y su relación con la medición.
+			\item Reconocer y convertir unidades de \textbf{longitud, masa, área, volumen y tiempo}.
+			\item Resolver situaciones contextualizadas de conversión de unidades en \textbf{agronomía}.
+			\item Detectar \textbf{patrones} e \textbf{inconsistencias} en cálculos con unidades.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Motivación}
+		\begin{block}{Situación inicial}
+			En agronomía, medir correctamente permite:
+			\begin{itemize}[<+->]
+				\item dosificar fertilizantes,
+				\item calcular agua de riego,
+				\item estimar superficies cultivadas,
+				\item planificar tiempos de aplicación y cosecha.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\ejemplo
+		{No basta decir: ``hay mucha agua en el estanque''.}
+		{Debemos expresar una cantidad con unidad, por ejemplo:
+			\[
+			1500\ \text{L de agua}.
+			\]
+		}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{¿Qué es una magnitud?}
+		\idea{Toda propiedad que puede medirse se denomina \textbf{magnitud}.}
+		
+		\begin{columns}[T]
+			\column{0.48\textwidth}
+			\begin{block}{Sí son magnitudes}
+				\begin{itemize}[<+->]
+					\item Longitud
+					\item Masa
+					\item Tiempo
+					\item Área
+					\item Volumen
+				\end{itemize}
+			\end{block}
+			
+			\column{0.48\textwidth}
+			\begin{alertblock}{No son magnitudes}
+				\begin{itemize}[<+->]
+					\item Belleza del paisaje
+					\item Sabor de un fruto
+					\item Preferencia personal
+				\end{itemize}
+			\end{alertblock}
+		\end{columns}
+		
+		\pause
+		\begin{block}{Importancia en agronomía}
+			Trabajar con magnitudes correctas permite dosificar, planificar y evitar errores productivos.
+		\end{block}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Clasificación de magnitudes}
+		\begin{columns}[T]
+			\column{0.48\textwidth}
+			\begin{block}{Magnitudes fundamentales}
+				Son aquellas que se miden directamente.
+				\begin{itemize}[<+->]
+					\item Longitud
+					\item Masa
+					\item Tiempo
+				\end{itemize}
+			\end{block}
+			
+			\column{0.48\textwidth}
+			\begin{block}{Magnitudes derivadas}
+				Se obtienen a partir de otras magnitudes.
+				\begin{itemize}[<+->]
+					\item Área
+					\item Volumen
+					\item Densidad
+					\item Velocidad de riego
+				\end{itemize}
+			\end{block}
+		\end{columns}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Magnitudes frecuentes en agronomía}
+		\small
+		\begin{tabular}{>{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{6cm}}
+			\toprule
+			\textbf{Magnitud} & \textbf{Unidad habitual} & \textbf{Aplicación en agronomía} \\
+			\midrule
+			Longitud & m, cm, km & Distancia entre surcos o entre plantas \\
+			\pause
+			Masa & g, kg & Fertilizantes, semillas y frutos \\
+			\pause
+			Tiempo & s, min, h & Riego, turnos de trabajo y cosecha \\
+			\pause
+			Área & m$^2$, ha & Superficie cultivada \\
+			\pause
+			Volumen & mL, L, m$^3$ & Agua, mezclas y estanques \\
+			\bottomrule
+		\end{tabular}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Unidades básicas de longitud}
+		\idea{
+			Escala métrica:
+			\[
+			\text{km}\quad \text{hm}\quad \text{dam}\quad \text{m}\quad \text{dm}\quad \text{cm}\quad \text{mm}
+			\]
+			Cada paso hacia la derecha multiplica por \(10\).  
+			Cada paso hacia la izquierda divide por \(10\).
+		}
+		
+		\pause
+		\ejemplo
+		{La distancia entre plantas de tomate es de \(0{,}4\ \text{m}\). Exprésela en centímetros.}
+		{
+			\[
+			0{,}4\ \text{m} = 0{,}4 \times 100\ \text{cm} = 40\ \text{cm}
+			\]
+			Por lo tanto, la distancia entre plantas es de \(\boxed{40\ \text{cm}}\).
+		}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicio resuelto de longitud (develado)}
+		\begin{block}{Situación agronómica}
+			En un huerto frutal, la separación entre dos hileras es de \(2{,}5\ \text{m}\).  
+			Exprese esta longitud en centímetros.
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Identificamos la conversión
+		\[
+		1\ \text{m} = 100\ \text{cm}
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Multiplicamos
+		\[
+		2{,}5 \times 100 = 250
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		2{,}5\ \text{m} = \boxed{250\ \text{cm}}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Unidades básicas de masa}
+		\idea{
+			Escala métrica:
+			\[
+			\text{kg}\quad \text{hg}\quad \text{dag}\quad \text{g}\quad \text{dg}\quad \text{cg}\quad \text{mg}
+			\]
+			Cada paso hacia la derecha multiplica por \(10\).  
+			Cada paso hacia la izquierda divide por \(10\).
+		}
+		
+		\pause
+		\ejemplo
+		{Si una planta recibe \(250\ \text{g}\) de fertilizante, exprese la dosis en kilogramos.}
+		{
+			\[
+			250\ \text{g} = \frac{250}{1000}\ \text{kg} = 0{,}25\ \text{kg}
+			\]
+			Entonces, la dosis equivale a \(\boxed{0{,}25\ \text{kg}}\).
+		}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicio resuelto de masa (develado)}
+		\begin{block}{Situación agronómica}
+			Un saco contiene \(4{,}2\ \text{kg}\) de semilla de trigo.  
+			Exprese esta masa en gramos.
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Usamos la equivalencia
+		\[
+		1\ \text{kg} = 1000\ \text{g}
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Convertimos
+		\[
+		4{,}2 \times 1000 = 4200
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		4{,}2\ \text{kg} = \boxed{4200\ \text{g}}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Unidades de área}
+		\idea{
+			En área, cada salto entre unidades equivale a multiplicar o dividir por \(100\).
+			\[
+			\text{km}^2 \quad \text{hm}^2 \quad \text{dam}^2 \quad \text{m}^2 \quad \text{dm}^2 \quad \text{cm}^2 \quad \text{mm}^2
+			\]
+			Equivalencia importante:
+			\[
+			1\ \text{ha} = 10\,000\ \text{m}^2
+			\]
+		}
+		
+		\pause
+		\ejemplo
+		{Un predio tiene \(3{,}5\) hectáreas. Exprese esta superficie en metros cuadrados.}
+		{
+			\[
+			3{,}5 \times 10\,000 = 35\,000
+			\]
+			Por lo tanto:
+			\[
+			3{,}5\ \text{ha} = \boxed{35\,000\ \text{m}^2}
+			\]
+		}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicio resuelto de área (develado)}
+		\begin{block}{Situación agronómica}
+			Un terreno experimental de maíz tiene \(1{,}8\ \text{ha}\).  
+			Exprese esta superficie en metros cuadrados.
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Recordamos que
+		\[
+		1\ \text{ha} = 10\,000\ \text{m}^2
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Multiplicamos
+		\[
+		1{,}8 \times 10\,000 = 18\,000
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		1{,}8\ \text{ha} = \boxed{18\,000\ \text{m}^2}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Unidades de volumen}
+		\idea{
+			En volumen, cada salto entre unidades equivale a multiplicar o dividir por \(1000\).
+			\[
+			\text{km}^3 \quad \text{hm}^3 \quad \text{dam}^3 \quad \text{m}^3 \quad \text{dm}^3 \quad \text{cm}^3 \quad \text{mm}^3
+			\]
+			Equivalencias útiles:
+			\[
+			1\ \text{L} = 1000\ \text{mL}
+			\qquad
+			1\ \text{L} = 1\ \text{dm}^3
+			\]
+		}
+		
+		\pause
+		\ejemplo
+		{Para una mezcla foliar se necesitan \(2{,}5\ \text{L}\) de agua. Exprese ese volumen en mililitros.}
+		{
+			\[
+			2{,}5 \times 1000 = 2500
+			\]
+			Luego:
+			\[
+			2{,}5\ \text{L} = \boxed{2500\ \text{mL}}
+			\]
+		}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicio resuelto de volumen (develado)}
+		\begin{block}{Situación agronómica}
+			En un invernadero se suministran \(3{,}5\ \text{L}\) de agua a una bandeja de almácigos.  
+			Exprese esta cantidad en mililitros.
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Usamos la equivalencia
+		\[
+		1\ \text{L} = 1000\ \text{mL}
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Convertimos
+		\[
+		3{,}5 \times 1000 = 3500
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		3{,}5\ \text{L} = \boxed{3500\ \text{mL}}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Unidades de tiempo}
+		\idea{
+			Equivalencias:
+			\[
+			1\ \text{h} = 60\ \text{min}
+			\qquad
+			1\ \text{min} = 60\ \text{s}
+			\]
+			A diferencia de la longitud y la masa, el tiempo no cambia por potencias de \(10\).
+		}
+		
+		\pause
+		\ejemplo
+		{Si un sistema de riego opera durante \(2{,}5\) horas, exprese ese tiempo en minutos.}
+		{
+			\[
+			2{,}5 \times 60 = 150
+			\]
+			Entonces:
+			\[
+			2{,}5\ \text{h} = \boxed{150\ \text{min}}
+			\]
+		}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicio resuelto de tiempo (develado)}
+		\begin{block}{Situación agronómica}
+			Un sistema de riego funciona durante \(2\ \text{h}\ 30\ \text{min}\).  
+			Exprese el tiempo total en minutos.
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Convertimos las horas a minutos
+		\[
+		2\ \text{h} = 2 \times 60 = 120\ \text{min}
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Sumamos los minutos restantes
+		\[
+		120 + 30 = 150
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		2\ \text{h}\ 30\ \text{min} = \boxed{150\ \text{min}}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Operatoria con conversión de unidades}
+		\begin{block}{Procedimiento general}
+			\begin{enumerate}[<+->]
+				\item Identificar la magnitud involucrada.
+				\item Convertir todas las cantidades a una misma unidad.
+				\item Realizar la operación.
+				\item Expresar el resultado final con sentido agronómico.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejemplo 1: masa total de fertilizante}
+		\begin{block}{Situación}
+			Se aplican \(300\ \text{g}\) de fertilizante a cada planta en un sector con \(80\) plantas.
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Calculamos la masa total en gramos
+		\[
+		300 \times 80 = 24\,000\ \text{g}
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Convertimos a kilogramos
+		\[
+		24\,000\ \text{g} = 24\ \text{kg}
+		\]
+		
+		\pause
+		\textbf{Resultado:}
+		\[
+		\boxed{24\ \text{kg}}
+		\]
+		Se requieren \(24\ \text{kg}\) de fertilizante.
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejemplo 2: área de cultivo}
+		\begin{block}{Situación}
+			Un predio tiene \(3{,}5\) hectáreas. Exprese esta superficie en metros cuadrados.
+		\end{block}
+		
+		\pause
+		\[
+		1\ \text{ha} = 10\,000\ \text{m}^2
+		\]
+		
+		\pause
+		\[
+		3{,}5 \times 10\,000 = 35\,000
+		\]
+		
+		\pause
+		\textbf{Resultado:}
+		\[
+		\boxed{35\,000\ \text{m}^2}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejemplo 3: volumen total de agua}
+		\begin{block}{Situación}
+			Para una mezcla se necesitan \(4\) litros de agua por bandeja.  
+			Si se preparan \(6\) bandejas, ¿qué volumen total se requiere?
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Multiplicamos
+		\[
+		4 \times 6 = 24\ \text{L}
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Convertimos a mililitros
+		\[
+		24\ \text{L} = 24\,000\ \text{mL}
+		\]
+		
+		\pause
+		\textbf{Resultado:}
+		\[
+		\boxed{24\ \text{L}} \qquad \text{o} \qquad \boxed{24\,000\ \text{mL}}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejemplo 4: tiempo de riego}
+		\begin{block}{Situación}
+			Una parcela se riega durante \(1\ \text{h}\ 45\ \text{min}\). Exprese este tiempo en minutos.
+		\end{block}
+		
+		\pause
+		\[
+		1\ \text{h} = 60\ \text{min}
+		\]
+		
+		\pause
+		\[
+		60 + 45 = 105\ \text{min}
+		\]
+		
+		\pause
+		\textbf{Resultado:}
+		\[
+		\boxed{105\ \text{min}}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Patrones y relaciones en agronomía}
+		\begin{block}{Patrones observables}
+			\begin{itemize}[<+->]
+				\item Si aumenta el número de plantas, aumenta la cantidad total de fertilizante.
+				\item Si aumenta la superficie, aumenta el volumen de agua de riego.
+				\item Si aumenta el tiempo de funcionamiento del sistema, aumenta el agua aplicada.
+			\end{itemize}
+		\end{block}
+		
+		\pause
+		\idea{
+			Relación general:
+			\[
+			\text{Cantidad total} = \text{dosis por unidad} \times \text{número de unidades}
+			\]
+		}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicio resuelto de patrón (develado)}
+		\begin{block}{Situación agronómica}
+			Si cada planta de lechuga recibe \(150\ \text{mL}\) de agua y hay \(40\) plantas, ¿cuánta agua se necesita en total?
+		\end{block}
+		
+		\pause
+		\textbf{Paso 1:} Aplicamos la relación general
+		\[
+		\text{Cantidad total} = \text{dosis por planta} \times \text{número de plantas}
+		\]
+		
+		\pause
+		\[
+		150 \times 40 = 6000\ \text{mL}
+		\]
+		
+		\pause
+		\textbf{Paso 2:} Convertimos a litros
+		\[
+		6000\ \text{mL} = 6\ \text{L}
+		\]
+		
+		\pause
+		\textbf{Respuesta:}
+		\[
+		\boxed{6000\ \text{mL} = 6\ \text{L}}
+		\]
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Detección de inconsistencias}
+		\begin{alertblock}{Errores frecuentes}
+			\begin{itemize}[<+->]
+				\item Sumar cantidades con distintas unidades sin convertir.
+				\item Afirmar que \(1\ \text{ha} = 1000\ \text{m}^2\).
+				\item Confundir litros con mililitros.
+				\item No ajustar los insumos al aumentar la superficie cultivada.
+			\end{itemize}
+		\end{alertblock}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Análisis de una inconsistencia}
+		\begin{block}{Afirmación incorrecta}
+			\[
+			2\ \text{kg} + 500\ \text{g} = 2{,}500
+			\]
+		\end{block}
+		
+		\pause
+		\textbf{Corrección:} primero convertimos a la misma unidad.
+		\[
+		2\ \text{kg} = 2000\ \text{g}
+		\]
+		
+		\pause
+		\[
+		2000\ \text{g} + 500\ \text{g} = 2500\ \text{g}
+		\]
+		
+		\pause
+		\[
+		2500\ \text{g} = 2{,}5\ \text{kg}
+		\]
+		
+		\pause
+		\alertacaja{La operación numérica solo tiene sentido si las unidades también son correctas.}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicios propuestos}
+		\small
+		\begin{enumerate}[<+->]
+			\item Convertir \(4{,}2\ \text{kg}\) de semilla a gramos.
+			\item Convertir \(1{,}8\ \text{ha}\) a metros cuadrados.
+			\item Convertir \(3{,}5\ \text{L}\) a mililitros.
+			\item Expresar \(2\ \text{h}\ 30\ \text{min}\) en minutos.
+			\item Detectar el error en la afirmación:
+			\[
+			1\ \text{ha} = 1000\ \text{m}^2
+			\]
+		\end{enumerate}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicios resueltos}
+		\small
+		\begin{enumerate}[<+->]
+			\item \[
+			4{,}2\ \text{kg} = 4200\ \text{g}
+			\]
+			
+			\item \[
+			1{,}8\ \text{ha} = 18\,000\ \text{m}^2
+			\]
+			
+			\item \[
+			3{,}5\ \text{L} = 3500\ \text{mL}
+			\]
+			
+			\item \[
+			2\ \text{h}\ 30\ \text{min} = 150\ \text{min}
+			\]
+			
+			\item La afirmación es incorrecta porque:
+			\[
+			1\ \text{ha} = 10\,000\ \text{m}^2
+			\]
+		\end{enumerate}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Ejercicios contextualizados a agronomía}
+		\small
+		\begin{enumerate}[<+->]
+			\item En un cultivo experimental se debe aplicar un fertilizante en una dosis de \(500\ \text{mg}\) por planta. ¿Cuántos gramos equivalen a esta dosis?
+			\item En un invernadero se recomienda suministrar \(2\ \text{L}\) de agua al día a una bandeja de almácigos. ¿Cuántos mililitros equivalen a esta cantidad?
+			\item Para el tratamiento de semillas, se requiere aplicar \(750\ \mu\text{g}\) de un regulador de crecimiento por muestra. ¿Cuántos miligramos equivalen a esta dosis?
+			\item En un sistema de riego automatizado, una parcela recibe agua tres veces al día, con intervalos de 6 horas. Si el primer riego comienza a las 8:00, ¿a qué hora deben realizarse los otros dos riegos?
+			\item En un sistema de fertirrigación, una solución nutritiva se aplica a razón de \(100\ \text{mL}\) por hora. ¿Cuántos litros se aplican en 8 horas?
+		\end{enumerate}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Soluciones contextualizadas (1 y 2)}
+		\small
+		\begin{block}{1. Fertilizante por planta}
+			Se sabe que:
+			\[
+			1\ \text{g} = 1000\ \text{mg}
+			\]
+			\pause
+			Entonces:
+			\[
+			500\ \text{mg}=\frac{500}{1000}\ \text{g}=0{,}5\ \text{g}
+			\]
+			\pause
+			\textbf{Respuesta:}
+			Cada planta requiere \(\boxed{0{,}5\ \text{g}}\) de fertilizante.
+		\end{block}
+		
+		\pause
+		\begin{block}{2. Riego en almácigos}
+			Se sabe que:
+			\[
+			1\ \text{L} = 1000\ \text{mL}
+			\]
+			\pause
+			Entonces:
+			\[
+			2\ \text{L}=2\times 1000=2000\ \text{mL}
+			\]
+			\pause
+			\textbf{Respuesta:}
+			Cada bandeja recibe \(\boxed{2000\ \text{mL}}\) de agua diaria.
+		\end{block}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Soluciones contextualizadas (3 y 4)}
+		\small
+		\begin{block}{3. Regulador de crecimiento}
+			Se sabe que:
+			\[
+			1\ \text{mg} = 1000\ \mu\text{g}
+			\]
+			\pause
+			Entonces:
+			\[
+			750\ \mu\text{g}=\frac{750}{1000}\ \text{mg}=0{,}75\ \text{mg}
+			\]
+			\pause
+			\textbf{Respuesta:}
+			La dosis aplicada es de \(\boxed{0{,}75\ \text{mg}}\) por muestra.
+		\end{block}
+		
+		\pause
+		\begin{block}{4. Sistema de riego}
+			Primer riego:
+			\[
+			8{:}00
+			\]
+			\pause
+			Segundo riego:
+			\[
+			8{:}00 + 6\ \text{h} = 14{:}00
+			\]
+			\pause
+			Tercer riego:
+			\[
+			14{:}00 + 6\ \text{h} = 20{:}00
+			\]
+			\pause
+			\textbf{Respuesta:}
+			Los otros dos riegos deben realizarse a las \(\boxed{14{:}00}\) y \(\boxed{20{:}00}\).
+		\end{block}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Solución contextualizada (5)}
+		\small
+		\begin{block}{5. Fertirrigación}
+			La solución se aplica a razón de:
+			\[
+			100\ \text{mL/h}
+			\]
+			Durante \(8\) horas:
+			\[
+			100 \times 8 = 800\ \text{mL}
+			\]
+			\pause
+			Convertimos a litros:
+			\[
+			800\ \text{mL} = 0{,}8\ \text{L}
+			\]
+			\pause
+			\textbf{Respuesta:}
+			Se aplican \(\boxed{0{,}8\ \text{L}}\) de solución nutritiva en la jornada.
+		\end{block}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Síntesis}
+		\begin{itemize}[<+->]
+			\item Medir es comparar una cantidad con una unidad.
+			\item En agronomía, masa, longitud, tiempo, área y volumen aparecen constantemente.
+			\item Convertir correctamente las unidades permite tomar decisiones adecuadas.
+			\item Detectar patrones ayuda a anticipar resultados.
+			\item Detectar inconsistencias evita errores técnicos y económicos.
+		\end{itemize}
+	\end{frame}
+	
+	% -------------------------
+	\begin{frame}{Cierre}
+		\centering
+		\vspace{1cm}
+		{\Huge Fin de la clase}
+		
+		\vspace{0.6cm}
+		{\Large ¿Preguntas?}
+	\end{frame}
+	
+\end{document}
